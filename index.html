@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Your Name | Researcher | Publications | Academic CV</title>
+        content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Academic portfolio, CV, research, publications, education, experience and professional profile.">
+        content="Academic portfolio, research, publications, education and professional experience.">
 
-    <meta name="keywords"
-          content="academic CV, researcher, publications, research, academic portfolio, education, thesis, research papers">
+    <title>Your Name | Academic Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
 
-        /* =========================================================
+        /* =====================================================
            GLOBAL
-        ========================================================= */
+        ===================================================== */
 
         * {
             margin: 0;
@@ -31,9 +44,16 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #090912;
-            color: #f5f5ff;
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(
+                    circle at 80% 15%,
+                    rgba(111, 92, 255, 0.08),
+                    transparent 28%
+                ),
+                #090910;
+
+            color: #f5f5fa;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -47,327 +67,208 @@
             font-family: inherit;
         }
 
-        ::selection {
-            background: #6c63ff;
-            color: white;
+        img {
+            max-width: 100%;
+            display: block;
         }
 
 
-        /* =========================================================
-           BACKGROUND EFFECT
-        ========================================================= */
+        /* =====================================================
+           MAIN CONTAINER
+        ===================================================== */
 
-        body::before {
-            content: "";
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(
-                circle,
-                rgba(103, 95, 255, 0.13),
-                transparent 65%
-            );
-            top: -200px;
-            left: -150px;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        body::after {
-            content: "";
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(
-                circle,
-                rgba(103, 95, 255, 0.08),
-                transparent 65%
-            );
-            right: -200px;
-            bottom: -250px;
-            pointer-events: none;
-            z-index: -1;
+        .container {
+            width: min(1180px, calc(100% - 40px));
+            margin: auto;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            HEADER
-        ========================================================= */
+        ===================================================== */
 
         header {
             position: sticky;
-            top: 0;
+            top: 14px;
             z-index: 1000;
 
-            background: rgba(9, 9, 18, 0.88);
-            backdrop-filter: blur(20px);
+            width: min(1180px, calc(100% - 40px));
+            margin: 14px auto 0;
 
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: rgba(15, 15, 23, 0.92);
+
+            border: 1px solid rgba(255,255,255,0.10);
+
+            border-radius: 45px;
+
+            backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.25);
+
+            transition: 0.3s ease;
         }
 
+        header:hover {
+            border-color: rgba(150,130,255,0.25);
+        }
 
-        /* =========================================================
-           TOP BAR
-        ========================================================= */
-
-        .top-bar {
-            max-width: 1400px;
-            margin: auto;
-
-            height: 80px;
+        .navbar {
+            min-height: 88px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            padding: 0 30px;
-        }
+            gap: 25px;
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            font-size: 23px;
-            font-weight: 700;
-        }
-
-        .brand-logo {
-            width: 38px;
-            height: 38px;
-
-            border-radius: 10px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: linear-gradient(
-                135deg,
-                #756cff,
-                #5148dc
-            );
-
-            color: white;
-            font-weight: bold;
-
-            box-shadow:
-                0 0 25px rgba(108,99,255,0.35);
-        }
-
-        .brand span {
-            color: #aaa8bd;
+            padding: 0 28px;
         }
 
 
-        /* STATUS */
+        /* =====================================================
+           LOGO
+        ===================================================== */
 
-        .status {
-            display: flex;
-            align-items: center;
-            gap: 9px;
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
 
-            color: #b7b5c8;
+            letter-spacing: -1.2px;
 
-            font-size: 14px;
+            white-space: nowrap;
         }
 
-        .status-dot {
-            width: 10px;
-            height: 10px;
-
-            border-radius: 50%;
-
-            background: #19c37d;
-
-            box-shadow:
-                0 0 12px rgba(25,195,125,0.8);
-
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-
-            0% {
-                box-shadow:
-                    0 0 0 0 rgba(25,195,125,0.6);
-            }
-
-            70% {
-                box-shadow:
-                    0 0 0 8px rgba(25,195,125,0);
-            }
-
-            100% {
-                box-shadow:
-                    0 0 0 0 rgba(25,195,125,0);
-            }
+        .logo span {
+            color: #8d7cff;
         }
 
 
-        /* =========================================================
-           MAIN NAVIGATION
-        ========================================================= */
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
 
-        .main-nav {
-            max-width: 1400px;
-            margin: auto;
-
+        .nav-links {
             display: flex;
             align-items: center;
 
-            gap: 10px;
+            gap: 5px;
 
-            padding: 0 30px 14px;
+            padding: 6px;
+
+            background: rgba(255,255,255,0.035);
+
+            border-radius: 35px;
         }
 
+        .nav-link {
+            position: relative;
 
-        .nav-button {
-            border: 1px solid transparent;
+            padding: 13px 20px;
 
-            background: transparent;
+            border-radius: 28px;
 
-            color: #9997a9;
-
-            padding: 12px 20px;
-
-            border-radius: 13px;
+            color: #aaa9b8;
 
             font-size: 15px;
+            font-weight: 500;
 
             cursor: pointer;
 
             transition:
                 color 0.25s ease,
                 background 0.25s ease,
-                border 0.25s ease,
-                transform 0.25s ease,
-                box-shadow 0.25s ease;
+                transform 0.25s ease;
         }
 
-
-        .nav-button:hover {
-
+        .nav-link:hover {
             color: white;
 
-            background: rgba(108,99,255,0.13);
+            background: rgba(141,124,255,0.12);
 
-            border-color:
-                rgba(108,99,255,0.35);
-
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 8px 25px rgba(108,99,255,0.13);
+            transform: translateY(-1px);
         }
 
-
-        .nav-button.active {
-
+        .nav-link.active {
             color: white;
 
             background:
                 linear-gradient(
                     135deg,
-                    rgba(108,99,255,0.28),
-                    rgba(81,72,220,0.18)
+                    rgba(141,124,255,0.24),
+                    rgba(105,86,230,0.10)
                 );
 
-            border-color:
-                rgba(108,99,255,0.55);
+            box-shadow:
+                inset 0 0 0 1px rgba(141,124,255,0.15);
+        }
+
+        /* Purple moving highlight */
+
+        .nav-link.active::after {
+            content: "";
+
+            position: absolute;
+
+            bottom: 5px;
+            left: 50%;
+
+            width: 5px;
+            height: 5px;
+
+            transform: translateX(-50%);
+
+            border-radius: 50%;
+
+            background: #8d7cff;
 
             box-shadow:
-                0 0 25px rgba(108,99,255,0.18);
+                0 0 10px #8d7cff;
         }
 
 
-        /* =========================================================
-           SECONDARY NAV
-        ========================================================= */
+        /* =====================================================
+           RESUME BUTTON
+        ===================================================== */
 
-        .secondary-nav {
-            max-width: 1400px;
-            margin: auto;
+        .resume-btn {
+            padding: 14px 23px;
 
-            padding: 0 30px 15px;
+            border-radius: 30px;
 
-            display: flex;
+            border: 1px solid rgba(255,255,255,0.14);
 
-            gap: 8px;
-
-            overflow-x: auto;
-        }
-
-        .secondary-nav::-webkit-scrollbar {
-            height: 3px;
-        }
-
-        .secondary-nav::-webkit-scrollbar-thumb {
-            background: #5148dc;
-            border-radius: 20px;
-        }
-
-
-        .secondary-button {
-            white-space: nowrap;
-
-            border: 1px solid rgba(255,255,255,0.07);
-
-            background: rgba(255,255,255,0.025);
-
-            color: #858397;
-
-            padding: 9px 16px;
-
-            border-radius: 10px;
-
-            cursor: pointer;
-
-            transition: 0.25s ease;
-        }
-
-        .secondary-button:hover {
+            background: transparent;
 
             color: white;
 
-            background:
-                rgba(108,99,255,0.13);
+            font-weight: 700;
 
-            border-color:
-                rgba(108,99,255,0.35);
+            transition: 0.3s ease;
+
+            white-space: nowrap;
+        }
+
+        .resume-btn:hover {
+            background: #8d7cff;
+
+            border-color: #8d7cff;
+
+            box-shadow:
+                0 0 25px rgba(141,124,255,0.30);
 
             transform: translateY(-2px);
         }
 
-        .secondary-button.active {
 
-            color: white;
-
-            background:
-                rgba(108,99,255,0.20);
-
-            border-color:
-                rgba(108,99,255,0.50);
-
-            box-shadow:
-                0 0 20px rgba(108,99,255,0.15);
-        }
-
-
-        /* =========================================================
-           PAGE SYSTEM
-        ========================================================= */
+        /* =====================================================
+           PAGE SWITCHING
+        ===================================================== */
 
         .page {
             display: none;
 
-            max-width: 1400px;
-
-            margin: auto;
-
-            padding: 70px 30px 100px;
-
-            animation: pageIn 0.45s ease;
+            animation: pageIn 0.55s ease forwards;
         }
 
         .page.active-page {
@@ -378,273 +279,655 @@
 
             from {
                 opacity: 0;
-                transform: translateY(15px);
+                transform: translateY(18px);
             }
 
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
-
         }
 
 
-        /* =========================================================
+        /* =====================================================
            HERO
-        ========================================================= */
+        ===================================================== */
 
         .hero {
-
-            min-height: 620px;
+            min-height: 650px;
 
             display: grid;
 
             grid-template-columns:
-                1.15fr 0.85fr;
-
-            gap: 60px;
+                1.15fr
+                0.85fr;
 
             align-items: center;
+
+            gap: 70px;
+
+            padding: 85px 0 70px;
         }
 
-
-        .available {
-
+        .availability {
             display: inline-flex;
 
             align-items: center;
 
             gap: 10px;
 
-            padding: 9px 15px;
+            padding: 8px 15px;
 
             border-radius: 30px;
 
-            border: 1px solid
-                rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.09);
 
-            color: #8f8da1;
+            background: rgba(255,255,255,0.025);
+
+            color: #9896a7;
 
             font-size: 12px;
 
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
 
-            margin-bottom: 25px;
+            text-transform: uppercase;
+
+            margin-bottom: 28px;
         }
 
+        .availability-dot {
+            width: 9px;
+            height: 9px;
+
+            border-radius: 50%;
+
+            background: #15c98a;
+
+            box-shadow:
+                0 0 12px rgba(21,201,138,0.7);
+        }
 
         .hero h1 {
-
-            font-size:
-                clamp(50px, 7vw, 92px);
+            font-size: clamp(48px, 6vw, 78px);
 
             line-height: 0.98;
 
             letter-spacing: -4px;
 
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
-
 
         .hero h1 span {
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #ffffff,
-                    #827bff
-                );
-
-            -webkit-background-clip: text;
-
-            -webkit-text-fill-color:
-                transparent;
+            color: #9b8cff;
         }
-
 
         .hero-subtitle {
+            font-size: clamp(21px, 2.5vw, 32px);
 
-            font-size:
-                clamp(24px, 3vw, 42px);
+            color: #b5b3c5;
 
-            color: #b4b1c5;
-
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
-
 
         .hero-description {
+            max-width: 650px;
 
-            max-width: 700px;
+            color: #9694a7;
 
-            color: #858397;
+            font-size: 17px;
 
-            font-size: 18px;
+            line-height: 1.8;
 
-            margin-bottom: 35px;
+            margin-bottom: 34px;
         }
 
 
-        /* =========================================================
-           HERO BUTTONS
-        ========================================================= */
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
 
-        .hero-buttons {
-
+        .button-row {
             display: flex;
 
+            gap: 14px;
+
             flex-wrap: wrap;
-
-            gap: 15px;
         }
-
 
         .primary-btn,
         .secondary-btn {
-
-            padding: 15px 25px;
-
-            border-radius: 35px;
-
-            font-size: 16px;
-
-            cursor: pointer;
-
-            transition: 0.3s ease;
-
             display: inline-flex;
 
             align-items: center;
 
             gap: 12px;
-        }
 
-
-        .primary-btn {
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #7068ff,
-                    #5750e5
-                );
-
-            border: 1px solid #7770ff;
-
-            color: white;
-
-            box-shadow:
-                0 10px 35px
-                rgba(96,87,255,0.30);
-        }
-
-
-        .primary-btn:hover {
-
-            transform:
-                translateY(-4px);
-
-            box-shadow:
-                0 15px 45px
-                rgba(96,87,255,0.45);
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #ffffff,
-                    #ffffff
-                );
-
-            color: #4e46d6;
-        }
-
-
-        .secondary-btn {
-
-            background:
-                rgba(255,255,255,0.035);
-
-            border:
-                1px solid
-                rgba(255,255,255,0.10);
-
-            color: white;
-        }
-
-
-        .secondary-btn:hover {
-
-            background:
-                rgba(255,255,255,0.10);
-
-            border-color:
-                rgba(108,99,255,0.45);
-
-            transform:
-                translateY(-4px);
-        }
-
-
-        /* =========================================================
-           PROFILE CARD
-        ========================================================= */
-
-        .profile-card {
-
-            position: relative;
-
-            min-height: 560px;
+            padding: 15px 25px;
 
             border-radius: 35px;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.09);
+            font-weight: 600;
+
+            transition: 0.3s ease;
+
+            cursor: pointer;
+        }
+
+        .primary-btn {
+            background: #6860f3;
+
+            color: white;
+
+            box-shadow:
+                0 12px 30px rgba(104,96,243,0.25);
+        }
+
+        .primary-btn:hover {
+            background: #8178ff;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 35px rgba(104,96,243,0.4);
+        }
+
+        .secondary-btn {
+            border: 1px solid rgba(255,255,255,0.12);
+
+            background: rgba(255,255,255,0.035);
+
+            color: #eeeeF5;
+        }
+
+        .secondary-btn:hover {
+            border-color: #8d7cff;
+
+            background: rgba(141,124,255,0.10);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           PROFILE IMAGE
+        ===================================================== */
+
+        .profile-wrapper {
+            position: relative;
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+        .profile-card {
+            width: 380px;
+            height: 460px;
+
+            border-radius: 28px;
+
+            padding: 10px;
+
+            border: 1px solid rgba(255,255,255,0.10);
 
             background:
                 linear-gradient(
                     145deg,
-                    rgba(255,255,255,0.06),
-                    rgba(255,255,255,0.015)
+                    rgba(141,124,255,0.18),
+                    rgba(255,255,255,0.025)
                 );
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.35);
+
+            overflow: hidden;
+
+            transition: 0.4s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(141,124,255,0.35);
+
+            box-shadow:
+                0 30px 80px rgba(91,76,220,0.18);
+        }
+
+        .profile-card img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 21px;
+        }
+
+
+        /* =====================================================
+           SOCIAL ICONS
+        ===================================================== */
+
+        .socials {
+            display: flex;
+
+            gap: 13px;
+
+            margin-top: 38px;
+        }
+
+        .social {
+            width: 52px;
+            height: 52px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(255,255,255,0.10);
 
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
-            overflow: hidden;
+            color: #a7a5b7;
+
+            font-size: 19px;
+
+            transition: 0.3s ease;
+        }
+
+        .social:hover {
+            color: white;
+
+            background: #8d7cff;
+
+            border-color: #8d7cff;
+
+            transform:
+                translateY(-5px)
+                scale(1.05);
+
+            box-shadow:
+                0 10px 25px rgba(141,124,255,0.25);
         }
 
 
-        .profile-card::before {
+        /* =====================================================
+           MAIN SECTION NAVIGATION
+        ===================================================== */
 
-            content: "";
+        .section-menu {
+            display: flex;
 
-            position: absolute;
+            justify-content: center;
 
-            width: 420px;
-            height: 420px;
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin: 20px auto 70px;
+
+            padding: 8px;
+
+            max-width: 850px;
+
+            background: rgba(255,255,255,0.025);
+
+            border: 1px solid rgba(255,255,255,0.07);
+
+            border-radius: 35px;
+        }
+
+        .section-btn {
+            padding: 11px 18px;
+
+            border: 0;
+
+            border-radius: 25px;
+
+            background: transparent;
+
+            color: #92909f;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            transition: 0.3s ease;
+        }
+
+        .section-btn:hover,
+        .section-btn.active {
+            color: white;
+
+            background: #6860f3;
+
+            box-shadow:
+                0 7px 20px rgba(104,96,243,0.18);
+        }
+
+
+        /* =====================================================
+           CONTENT SECTIONS
+        ===================================================== */
+
+        .content-section {
+            padding: 80px 0;
+
+            border-top:
+                1px solid rgba(255,255,255,0.06);
+        }
+
+        .section-heading {
+            margin-bottom: 42px;
+        }
+
+        .eyebrow {
+            color: #8d7cff;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(32px, 4vw, 50px);
+
+            letter-spacing: -2px;
+
+            line-height: 1.1;
+        }
+
+        .section-heading p {
+            color: #9694a7;
+
+            max-width: 650px;
+
+            margin-top: 14px;
+        }
+
+
+        /* =====================================================
+           CARDS
+        ===================================================== */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0,1fr));
+
+            gap: 18px;
+        }
+
+        .card {
+            padding: 27px;
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(141,124,255,0.30);
+
+            background:
+                rgba(141,124,255,0.045);
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,0.18);
+        }
+
+        .card-icon {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 13px;
+
+            background:
+                rgba(141,124,255,0.12);
+
+            color: #9b8cff;
+
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 19px;
+
+            margin-bottom: 9px;
+        }
+
+        .card p {
+            color: #92909f;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           PUBLICATIONS
+        ===================================================== */
+
+        .publication-list {
+            display: grid;
+
+            gap: 13px;
+        }
+
+        .publication {
+            display: grid;
+
+            grid-template-columns:
+                60px 1fr auto;
+
+            align-items: center;
+
+            gap: 18px;
+
+            padding: 20px 22px;
+
+            border-radius: 18px;
+
+            border: 1px solid rgba(255,255,255,0.07);
+
+            background:
+                rgba(255,255,255,0.025);
+
+            transition: 0.3s ease;
+        }
+
+        .publication:hover {
+            transform: translateX(5px);
+
+            border-color:
+                rgba(141,124,255,0.30);
+
+            background:
+                rgba(141,124,255,0.05);
+        }
+
+        .publication-number {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
 
             border-radius: 50%;
 
             background:
-                radial-gradient(
-                    circle,
-                    rgba(103,95,255,0.45),
-                    transparent 70%
-                );
+                rgba(141,124,255,0.10);
+
+            color: #9b8cff;
+
+            font-weight: 700;
+        }
+
+        .publication h3 {
+            font-size: 15px;
+
+            margin-bottom: 4px;
+        }
+
+        .publication p {
+            color: #858392;
+
+            font-size: 13px;
+        }
+
+        .publication-link {
+            padding: 9px 15px;
+
+            border-radius: 20px;
+
+            color: #9b8cff;
+
+            border:
+                1px solid rgba(141,124,255,0.22);
+
+            font-size: 13px;
+
+            transition: 0.3s ease;
+        }
+
+        .publication-link:hover {
+            background: #6860f3;
+
+            color: white;
+
+            border-color: #6860f3;
         }
 
 
-        .profile-image {
+        /* =====================================================
+           TIMELINE
+        ===================================================== */
 
+        .timeline {
             position: relative;
 
-            width: 75%;
+            max-width: 900px;
+        }
 
-            max-width: 420px;
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 8px;
+            top: 8px;
+            bottom: 8px;
+
+            width: 1px;
+
+            background:
+                rgba(141,124,255,0.25);
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 40px;
+
+            margin-bottom: 38px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 0;
+            top: 7px;
+
+            width: 17px;
+            height: 17px;
+
+            border-radius: 50%;
+
+            background: #6860f3;
+
+            border: 4px solid #090910;
+
+            box-shadow:
+                0 0 0 1px #6860f3,
+                0 0 15px rgba(104,96,243,0.4);
+        }
+
+        .timeline-date {
+            color: #8d7cff;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            margin-bottom: 5px;
+        }
+
+        .timeline-item h3 {
+            font-size: 19px;
+        }
+
+        .timeline-item p {
+            color: #92909f;
+
+            margin-top: 5px;
+        }
+
+
+        /* =====================================================
+           ABOUT PAGE
+        ===================================================== */
+
+        .inner-page {
+            min-height: 700px;
+
+            padding: 90px 0;
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                0.8fr 1.2fr;
+
+            gap: 70px;
+
+            align-items: start;
+        }
+
+        .about-photo {
+            position: sticky;
+
+            top: 130px;
+        }
+
+        .about-photo img {
+            width: 100%;
+
+            max-width: 380px;
 
             height: 470px;
 
@@ -652,534 +935,123 @@
 
             border-radius: 25px;
 
-            z-index: 2;
-
             border:
-                1px solid
-                rgba(255,255,255,0.10);
+                1px solid rgba(255,255,255,0.09);
+        }
 
-            box-shadow:
-                0 30px 80px
-                rgba(0,0,0,0.5);
+        .about-text h1 {
+            font-size: clamp(40px, 5vw, 65px);
+
+            letter-spacing: -3px;
+
+            margin-bottom: 22px;
+        }
+
+        .about-text h1 span {
+            color: #8d7cff;
+        }
+
+        .about-text p {
+            color: #9694a7;
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+            margin-bottom: 18px;
         }
 
 
-        /* =========================================================
-           SOCIAL ICONS
-        ========================================================= */
+        /* =====================================================
+           TESTIMONIALS
+        ===================================================== */
 
-        .socials {
-
-            display: flex;
-
-            gap: 15px;
-
-            margin-top: 35px;
-        }
-
-
-        .social {
-
-            width: 55px;
-            height: 55px;
-
-            border-radius: 50%;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.10);
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color: #aaa8bb;
-
-            font-size: 19px;
-
-            transition: 0.3s ease;
-        }
-
-
-        .social:hover {
-
-            color: #ffffff;
-
-            background:
-                #6c63ff;
-
-            border-color:
-                #6c63ff;
-
-            transform:
-                translateY(-5px);
-
-            box-shadow:
-                0 10px 30px
-                rgba(108,99,255,0.35);
-        }
-
-
-        /* =========================================================
-           SECTION
-        ========================================================= */
-
-        .section {
-
-            margin-top: 100px;
-        }
-
-
-        .section-heading {
-
-            margin-bottom: 35px;
-        }
-
-
-        .section-heading small {
-
-            color: #716aff;
-
-            text-transform: uppercase;
-
-            letter-spacing: 3px;
-
-            font-size: 11px;
-        }
-
-
-        .section-heading h2 {
-
-            font-size: 42px;
-
-            margin-top: 8px;
-
-            letter-spacing: -1px;
-        }
-
-
-        .section-heading p {
-
-            color: #858397;
-
-            margin-top: 10px;
-
-            max-width: 700px;
-        }
-
-
-        /* =========================================================
-           CARDS
-        ========================================================= */
-
-        .grid {
-
+        .testimonial-grid {
             display: grid;
 
             grid-template-columns:
-                repeat(3, 1fr);
+                repeat(2, minmax(0,1fr));
 
             gap: 20px;
         }
 
+        .testimonial {
+            padding: 30px;
 
-        .card {
-
-            padding: 28px;
-
-            border-radius: 22px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
+            border-radius: 23px;
 
             background:
                 rgba(255,255,255,0.025);
 
-            transition:
-                0.3s ease;
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            transition: 0.3s ease;
         }
 
-
-        .card:hover {
-
-            transform:
-                translateY(-7px);
+        .testimonial:hover {
+            transform: translateY(-6px);
 
             border-color:
-                rgba(108,99,255,0.40);
-
-            background:
-                rgba(108,99,255,0.06);
-
-            box-shadow:
-                0 20px 50px
-                rgba(0,0,0,0.25);
+                rgba(141,124,255,0.28);
         }
 
+        .stars {
+            color: #9b8cff;
 
-        .card-icon {
+            margin-bottom: 18px;
 
-            width: 48px;
-            height: 48px;
+            letter-spacing: 2px;
+        }
 
-            border-radius: 14px;
+        .testimonial p {
+            color: #a09eae;
 
+            line-height: 1.8;
+
+            margin-bottom: 22px;
+        }
+
+        .person {
             display: flex;
 
             align-items: center;
 
-            justify-content: center;
-
-            background:
-                rgba(108,99,255,0.13);
-
-            color: #817aff;
-
-            margin-bottom: 20px;
-
-            font-size: 20px;
-        }
-
-
-        .card h3 {
-
-            margin-bottom: 10px;
-
-            font-size: 20px;
-        }
-
-
-        .card p {
-
-            color: #858397;
-
-            font-size: 15px;
-        }
-
-
-        /* =========================================================
-           TIMELINE
-        ========================================================= */
-
-        .timeline {
-
-            border-left:
-                1px solid
-                rgba(108,99,255,0.35);
-
-            padding-left: 30px;
-        }
-
-
-        .timeline-item {
-
-            position: relative;
-
-            margin-bottom: 40px;
-        }
-
-
-        .timeline-item::before {
-
-            content: "";
-
-            position: absolute;
-
-            left: -37px;
-
-            top: 5px;
-
-            width: 12px;
-            height: 12px;
-
-            border-radius: 50%;
-
-            background:
-                #6c63ff;
-
-            box-shadow:
-                0 0 15px
-                rgba(108,99,255,0.7);
-        }
-
-
-        .timeline-date {
-
-            color: #716aff;
-
-            font-size: 13px;
-
-            margin-bottom: 5px;
-        }
-
-
-        .timeline h3 {
-
-            font-size: 21px;
-
-            margin-bottom: 5px;
-        }
-
-
-        .timeline p {
-
-            color: #858397;
-        }
-
-
-        /* =========================================================
-           PUBLICATIONS
-        ========================================================= */
-
-        .publication {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            gap: 30px;
-
-            padding: 25px 0;
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.08);
-        }
-
-
-        .publication:last-child {
-
-            border-bottom: none;
-        }
-
-
-        .publication h3 {
-
-            font-size: 18px;
-
-            margin-bottom: 7px;
-        }
-
-
-        .publication p {
-
-            color: #858397;
-
-            font-size: 14px;
-        }
-
-
-        .publication-link {
-
-            flex-shrink: 0;
-
-            color: #8a84ff;
-
-            font-size: 14px;
-
-            padding: 9px 15px;
-
-            border:
-                1px solid
-                rgba(108,99,255,0.30);
-
-            border-radius: 20px;
-
-            transition: 0.3s;
-        }
-
-
-        .publication-link:hover {
-
-            background:
-                #6c63ff;
-
-            color: white;
-
-            box-shadow:
-                0 8px 25px
-                rgba(108,99,255,0.30);
-        }
-
-
-        /* =========================================================
-           SKILLS
-        ========================================================= */
-
-        .skills {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
             gap: 12px;
         }
 
+        .person-avatar {
+            width: 43px;
+            height: 43px;
 
-        .skill {
+            border-radius: 50%;
 
-            padding: 10px 17px;
+            display: flex;
 
-            border-radius: 30px;
+            align-items: center;
+            justify-content: center;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.09);
+            background: #6860f3;
 
-            color: #aaa8bb;
-
-            background:
-                rgba(255,255,255,0.025);
-
-            transition: 0.25s;
+            font-weight: 700;
         }
 
-
-        .skill:hover {
-
-            color: white;
-
-            border-color:
-                #6c63ff;
-
-            background:
-                rgba(108,99,255,0.13);
-
-            transform:
-                translateY(-3px);
+        .person strong {
+            display: block;
         }
-
-
-        /* =========================================================
-           ABOUT PAGE
-        ========================================================= */
-
-        .about-container {
-
-            max-width: 1000px;
-        }
-
-
-        .about-container h1 {
-
-            font-size:
-                clamp(45px, 7vw, 80px);
-
-            margin-bottom: 25px;
-        }
-
-
-        .about-container h1 span {
-
-            color: #756dff;
-        }
-
-
-        .about-container p {
-
-            color: #9997aa;
-
-            font-size: 18px;
-
-            margin-bottom: 22px;
-
-            max-width: 900px;
-        }
-
-
-        /* =========================================================
-           TESTIMONIALS
-        ========================================================= */
-
-        .testimonial-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 22px;
-        }
-
-
-        .testimonial {
-
-            padding: 30px;
-
-            border-radius: 24px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
-
-            background:
-                rgba(255,255,255,0.025);
-
-            transition: 0.3s;
-        }
-
-
-        .testimonial:hover {
-
-            transform:
-                translateY(-7px);
-
-            border-color:
-                rgba(108,99,255,0.40);
-
-            box-shadow:
-                0 20px 50px
-                rgba(108,99,255,0.10);
-        }
-
-
-        .stars {
-
-            color: #817aff;
-
-            letter-spacing: 3px;
-
-            margin-bottom: 20px;
-        }
-
-
-        .testimonial p {
-
-            color: #9b99aa;
-
-            font-size: 15px;
-
-            margin-bottom: 25px;
-        }
-
-
-        .person {
-
-            font-weight: 600;
-        }
-
 
         .person span {
+            color: #777584;
 
-            display: block;
-
-            color: #716f80;
-
-            font-size: 13px;
-
-            margin-top: 4px;
+            font-size: 12px;
         }
 
 
-        /* =========================================================
+        /* =====================================================
            CONTACT
-        ========================================================= */
+        ===================================================== */
 
         .contact-box {
-
             display: grid;
 
             grid-template-columns:
@@ -1188,244 +1060,296 @@
             gap: 20px;
         }
 
-
         .contact-item {
+            padding: 28px;
 
-            padding: 30px;
+            border:
+                1px solid rgba(255,255,255,0.08);
 
             border-radius: 20px;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
-
             background:
                 rgba(255,255,255,0.025);
+
+            transition: 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color:
+                rgba(141,124,255,0.3);
+        }
+
+        .contact-item i {
+            color: #8d7cff;
+
+            font-size: 21px;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .contact-item p {
+            color: #92909f;
         }
 
 
-        .contact-item small {
-
-            color: #716aff;
-
-            display: block;
-
-            margin-bottom: 8px;
-        }
-
-
-        .contact-item a {
-
-            font-size: 18px;
-
-            transition: 0.25s;
-        }
-
-
-        .contact-item a:hover {
-
-            color: #817aff;
-        }
-
-
-        /* =========================================================
+        /* =====================================================
            FOOTER
-        ========================================================= */
+        ===================================================== */
 
         footer {
+            padding: 50px 0;
 
             border-top:
-                1px solid
-                rgba(255,255,255,0.07);
+                1px solid rgba(255,255,255,0.07);
 
-            padding: 35px 30px;
+            margin-top: 60px;
+        }
 
-            text-align: center;
+        .footer-content {
+            display: flex;
 
-            color: #686678;
+            align-items: center;
 
-            font-size: 14px;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .footer-content p {
+            color: #777584;
+
+            font-size: 13px;
         }
 
 
-        /* =========================================================
-           SCROLL TOP
-        ========================================================= */
+        /* =====================================================
+           PURPLE PAGE TRANSITION
+        ===================================================== */
 
-        .scroll-top {
-
+        .transition-layer {
             position: fixed;
 
-            right: 25px;
+            inset: 0;
 
-            bottom: 25px;
+            z-index: 5000;
 
-            width: 48px;
-            height: 48px;
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(141,124,255,0.30),
+                    transparent 55%
+                );
+
+            opacity: 0;
+
+            transform: scale(0.4);
+
+            transition:
+                opacity 0.25s ease,
+                transform 0.5s ease;
+        }
+
+        .transition-layer.show {
+            opacity: 1;
+
+            transform: scale(1.7);
+        }
+
+
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
+
+        .mobile-menu-btn {
+            display: none;
+
+            width: 45px;
+            height: 45px;
 
             border-radius: 50%;
 
             border:
-                1px solid
-                rgba(255,255,255,0.12);
+                1px solid rgba(255,255,255,0.10);
 
-            background:
-                rgba(108,99,255,0.18);
+            background: transparent;
 
             color: white;
 
             cursor: pointer;
 
-            display: none;
-
-            align-items: center;
-
-            justify-content: center;
-
-            transition: 0.3s;
-
-            z-index: 999;
+            font-size: 18px;
         }
 
 
-        .scroll-top:hover {
-
-            background:
-                #6c63ff;
-
-            transform:
-                translateY(-5px);
-
-            box-shadow:
-                0 10px 30px
-                rgba(108,99,255,0.35);
-        }
-
-
-        /* =========================================================
+        /* =====================================================
            RESPONSIVE
-        ========================================================= */
+        ===================================================== */
 
-        @media (max-width: 950px) {
+        @media (max-width: 1000px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
 
             .hero {
-
                 grid-template-columns: 1fr;
 
+                text-align: center;
+
+                gap: 50px;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .button-row,
+            .socials {
+                justify-content: center;
+            }
+
+            .profile-wrapper {
+                order: -1;
             }
 
             .profile-card {
-
-                min-height: 500px;
-
+                width: 320px;
+                height: 390px;
             }
 
-            .grid,
-            .testimonial-grid {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-
+            .about-grid {
+                grid-template-columns: 1fr;
             }
 
+            .about-photo {
+                position: static;
+            }
+
+            .about-photo img {
+                margin: auto;
+            }
         }
 
 
-        @media (max-width: 650px) {
+        @media (max-width: 700px) {
 
-            .top-bar {
+            .container {
+                width:
+                    min(
+                        100% - 28px,
+                        1180px
+                    );
+            }
+
+            header {
+                width:
+                    calc(100% - 20px);
+
+                top: 8px;
+
+                border-radius: 25px;
+            }
+
+            .navbar {
+                min-height: 72px;
 
                 padding:
-                    0 15px;
-
+                    0 17px;
             }
 
-            .main-nav,
-            .secondary-nav {
-
-                padding-left: 15px;
-                padding-right: 15px;
-
+            .logo {
+                font-size: 20px;
             }
 
-            .status {
-
+            .resume-btn {
                 display: none;
-
-            }
-
-            .brand {
-
-                font-size: 19px;
-
-            }
-
-            .page {
-
-                padding:
-                    50px 18px 80px;
-
             }
 
             .hero {
-
                 min-height: auto;
 
-                gap: 40px;
-
+                padding:
+                    65px 0 50px;
             }
 
             .hero h1 {
+                font-size: 48px;
 
-                letter-spacing:
-                    -2px;
+                letter-spacing: -2.5px;
+            }
 
+            .hero-subtitle {
+                font-size: 22px;
+            }
+
+            .hero-description {
+                font-size: 15px;
             }
 
             .profile-card {
-
-                min-height: 430px;
-
+                width: 270px;
+                height: 335px;
             }
 
-            .profile-image {
+            .section-menu {
+                margin-bottom: 40px;
 
-                height: 370px;
+                justify-content: flex-start;
 
+                overflow-x: auto;
+
+                flex-wrap: nowrap;
+
+                max-width: 100%;
+
+                scrollbar-width: none;
             }
 
-            .grid,
+            .section-menu::-webkit-scrollbar {
+                display: none;
+            }
+
+            .section-btn {
+                white-space: nowrap;
+            }
+
+            .cards,
             .testimonial-grid,
             .contact-box {
-
                 grid-template-columns: 1fr;
-
             }
 
             .publication {
-
-                flex-direction: column;
-
+                grid-template-columns:
+                    45px 1fr;
             }
 
             .publication-link {
+                grid-column: 2;
 
-                align-self: flex-start;
-
+                justify-self: start;
             }
 
-            .section {
-
-                margin-top: 70px;
-
+            .content-section {
+                padding: 60px 0;
             }
 
-            .section-heading h2 {
+            .footer-content {
+                flex-direction: column;
 
-                font-size: 34px;
-
+                text-align: center;
             }
-
         }
 
     </style>
@@ -1435,1404 +1359,1449 @@
 <body>
 
 
-<!-- =============================================================
-     HEADER
-============================================================= -->
+    <!-- =====================================================
+         PURPLE TRANSITION
+    ====================================================== -->
 
-<header>
-
-    <!-- TOP -->
-    <div class="top-bar">
-
-        <div class="brand">
-
-            <div class="brand-logo">
-                Z
-            </div>
-
-            <div>
-                Your Name<span>.</span>
-            </div>
-
-        </div>
-
-
-        <div class="status">
-
-            <div class="status-dot"></div>
-
-            Available for Research & Collaboration
-
-        </div>
-
+    <div class="transition-layer"
+         id="transitionLayer">
     </div>
 
 
-    <!-- MAIN THREE PAGES -->
-    <nav class="main-nav">
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-        <button
-            class="nav-button active"
-            data-page="home">
+    <header>
 
-            ☰ &nbsp; Main
+        <nav class="navbar">
 
-        </button>
+            <a href="#"
+               class="logo"
+               onclick="showPage('main')">
 
-
-        <button
-            class="nav-button"
-            data-page="about">
-
-            ⓘ &nbsp; About
-
-        </button>
-
-
-        <button
-            class="nav-button"
-            data-page="reviews">
-
-            ☆ &nbsp; Testimonials
-
-        </button>
-
-    </nav>
-
-
-    <!-- REMAINING BUTTONS -->
-    <nav class="secondary-nav">
-
-        <button
-            class="secondary-button"
-            data-scroll="education">
-
-            Education
-
-        </button>
-
-
-        <button
-            class="secondary-button"
-            data-scroll="research">
-
-            Research
-
-        </button>
-
-
-        <button
-            class="secondary-button"
-            data-scroll="publications">
-
-            Publications
-
-        </button>
-
-
-        <button
-            class="secondary-button"
-            data-scroll="experience">
-
-            Experience
-
-        </button>
-
-
-        <button
-            class="secondary-button"
-            data-scroll="skills">
-
-            Skills
-
-        </button>
-
-
-        <button
-            class="secondary-button"
-            data-scroll="contact">
-
-            Contact
-
-        </button>
-
-
-        <a
-            href="CV.pdf"
-            target="_blank"
-            class="secondary-button">
-
-            Download CV ↗
-
-        </a>
-
-    </nav>
-
-</header>
-
-
-
-<!-- =============================================================
-     MAIN PAGE
-============================================================= -->
-
-<main id="home" class="page active-page">
-
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div>
-
-            <div class="available">
-
-                <span class="status-dot"></span>
-
-                RESEARCHER • WRITER • ACADEMIC
-
-            </div>
-
-
-            <h1>
-
-                Hi, I'm
-                <span>Your Name.</span>
-
-            </h1>
-
-
-            <div class="hero-subtitle">
-
-                Researcher & Academic Writer.
-
-            </div>
-
-
-            <p class="hero-description">
-
-                I am an academic researcher and writer
-                working in my field of specialization.
-                Explore my research, publications,
-                academic background, experience and
-                professional work.
-
-            </p>
-
-
-            <div class="hero-buttons">
-
-                <a
-                    href="#publications"
-                    class="primary-btn"
-                    onclick="goToSection('publications')">
-
-                    View Publications ↗
-
-                </a>
-
-
-                <a
-                    href="CV.pdf"
-                    target="_blank"
-                    class="secondary-btn">
-
-                    View My CV
-
-                </a>
-
-            </div>
-
-
-            <!-- SOCIAL ICONS -->
-
-            <div class="socials">
-
-                <a
-                    href="#"
-                    class="social"
-                    title="LinkedIn">
-
-                    in
-
-                </a>
-
-
-                <a
-                    href="#"
-                    class="social"
-                    title="Facebook">
-
-                    f
-
-                </a>
-
-
-                <a
-                    href="#"
-                    class="social"
-                    title="Instagram">
-
-                    ◎
-
-                </a>
-
-
-                <a
-                    href="#"
-                    class="social"
-                    title="Google Scholar">
-
-                    GS
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PROFILE -->
-
-        <div class="profile-card">
-
-            <!-- CHANGE profile.jpg TO YOUR PHOTO -->
-
-            <img
-                src="profile.jpg"
-                alt="Your Name"
-                class="profile-image">
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         EDUCATION
-    ========================================================= -->
-
-    <section
-        class="section"
-        id="education">
-
-        <div class="section-heading">
-
-            <small>Academic Background</small>
-
-            <h2>Education</h2>
-
-            <p>
-                My academic journey and current field
-                of study.
-            </p>
-
-        </div>
-
-
-        <div class="timeline">
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-date">
-                    20XX — Present
-                </div>
-
-                <h3>
-                    Your Current Degree
-                </h3>
-
-                <p>
-                    University Name —
-                    Department / Faculty
-                </p>
-
-                <p>
-                    Current Grade / CGPA:
-                    <strong>XX / XX</strong>
-                </p>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-date">
-                    20XX — 20XX
-                </div>
-
-                <h3>
-                    Previous Degree
-                </h3>
-
-                <p>
-                    Institution Name
-                </p>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-date">
-                    20XX
-                </div>
-
-                <h3>
-                    Previous Qualification
-                </h3>
-
-                <p>
-                    School / College Name
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         RESEARCH
-    ========================================================= -->
-
-    <section
-        class="section"
-        id="research">
-
-        <div class="section-heading">
-
-            <small>Academic Work</small>
-
-            <h2>Research</h2>
-
-            <p>
-                My research interests, areas of
-                specialization and academic projects.
-            </p>
-
-        </div>
-
-
-        <div class="grid">
-
-
-            <div class="card">
-
-                <div class="card-icon">
-                    R
-                </div>
-
-                <h3>
-                    Research Area One
-                </h3>
-
-                <p>
-                    Add information about your
-                    research field and specialization
-                    here.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">
-                    L
-                </div>
-
-                <h3>
-                    Research Area Two
-                </h3>
-
-                <p>
-                    Add your second major research
-                    area and explain your academic
-                    interests.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">
-                    A
-                </div>
-
-                <h3>
-                    Research Area Three
-                </h3>
-
-                <p>
-                    Add another area of research,
-                    methodology or specialization.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         PUBLICATIONS
-    ========================================================= -->
-
-    <section
-        class="section"
-        id="publications">
-
-        <div class="section-heading">
-
-            <small>Academic Publications</small>
-
-            <h2>
-                Publications
-            </h2>
-
-            <p>
-                More than 30 publications,
-                research papers and academic works.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-
-            <div class="publication">
-
-                <div>
-
-                    <h3>
-                        Publication Title One
-                    </h3>
-
-                    <p>
-                        Author Name • Journal Name • 2026
-                    </p>
-
-                </div>
-
-                <a
-                    href="#"
-                    target="_blank"
-                    class="publication-link">
-
-                    Read Paper ↗
-
-                </a>
-
-            </div>
-
-
-
-            <div class="publication">
-
-                <div>
-
-                    <h3>
-                        Publication Title Two
-                    </h3>
-
-                    <p>
-                        Author Name • Journal Name • 2026
-                    </p>
-
-                </div>
-
-                <a
-                    href="#"
-                    target="_blank"
-                    class="publication-link">
-
-                    Read Paper ↗
-
-                </a>
-
-            </div>
-
-
-
-            <div class="publication">
-
-                <div>
-
-                    <h3>
-                        Publication Title Three
-                    </h3>
-
-                    <p>
-                        Author Name • Journal Name • 2025
-                    </p>
-
-                </div>
-
-                <a
-                    href="#"
-                    target="_blank"
-                    class="publication-link">
-
-                    Read Paper ↗
-
-                </a>
-
-            </div>
-
-
-
-            <div class="publication">
-
-                <div>
-
-                    <h3>
-                        Publication Title Four
-                    </h3>
-
-                    <p>
-                        Author Name • Journal Name • 2025
-                    </p>
-
-                </div>
-
-                <a
-                    href="#"
-                    target="_blank"
-                    class="publication-link">
-
-                    Read Paper ↗
-
-                </a>
-
-            </div>
-
-
-
-            <div class="publication">
-
-                <div>
-
-                    <h3>
-                        Publication Title Five
-                    </h3>
-
-                    <p>
-                        Author Name • Journal Name • 2024
-                    </p>
-
-                </div>
-
-                <a
-                    href="#"
-                    target="_blank"
-                    class="publication-link">
-
-                    Read Paper ↗
-
-                </a>
-
-            </div>
-
-
-            <div style="margin-top:30px;">
-
-                <a
-                    href="#"
-                    class="primary-btn">
-
-                    View All 30+ Publications ↗
-
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         EXPERIENCE
-    ========================================================= -->
-
-    <section
-        class="section"
-        id="experience">
-
-        <div class="section-heading">
-
-            <small>Professional Journey</small>
-
-            <h2>
-                Experience
-            </h2>
-
-        </div>
-
-
-        <div class="timeline">
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-date">
-                    20XX — Present
-                </div>
-
-                <h3>
-                    Current Position
-                </h3>
-
-                <p>
-                    Organization / University Name
-                </p>
-
-                <p>
-                    Describe your role,
-                    responsibilities and achievements.
-                </p>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-date">
-                    20XX — 20XX
-                </div>
-
-                <h3>
-                    Previous Position
-                </h3>
-
-                <p>
-                    Organization Name
-                </p>
-
-                <p>
-                    Add your professional experience
-                    and major responsibilities.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         SKILLS
-    ========================================================= -->
-
-    <section
-        class="section"
-        id="skills">
-
-        <div class="section-heading">
-
-            <small>Professional Competencies</small>
-
-            <h2>
-                Skills
-            </h2>
-
-        </div>
-
-
-        <div class="skills">
-
-            <div class="skill">
-                Academic Writing
-            </div>
-
-            <div class="skill">
-                Research Methodology
-            </div>
-
-            <div class="skill">
-                Literature Review
-            </div>
-
-            <div class="skill">
-                Qualitative Research
-            </div>
-
-            <div class="skill">
-                Quantitative Research
-            </div>
-
-            <div class="skill">
-                Data Analysis
-            </div>
-
-            <div class="skill">
-                Academic Editing
-            </div>
-
-            <div class="skill">
-                Content Writing
-            </div>
-
-            <div class="skill">
-                Presentation
-            </div>
-
-            <div class="skill">
-                Communication
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         CONTACT
-    ========================================================= -->
-
-    <section
-        class="section"
-        id="contact">
-
-        <div class="section-heading">
-
-            <small>Get In Touch</small>
-
-            <h2>
-                Contact
-            </h2>
-
-            <p>
-                For research collaboration,
-                academic projects and professional
-                opportunities.
-            </p>
-
-        </div>
-
-
-        <div class="contact-box">
-
-
-            <div class="contact-item">
-
-                <small>Email</small>
-
-                <a href="mailto:your@email.com">
-
-                    your@email.com
-
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <small>Location</small>
-
-                <div>
-                    Islamabad, Pakistan
-                </div>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <small>LinkedIn</small>
-
-                <a
-                    href="#"
-                    target="_blank">
-
-                    LinkedIn Profile ↗
-
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <small>Google Scholar</small>
-
-                <a
-                    href="#"
-                    target="_blank">
-
-                    Google Scholar ↗
-
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-</main>
-
-
-
-<!-- =============================================================
-     ABOUT PAGE
-============================================================= -->
-
-<section
-    id="about"
-    class="page">
-
-
-    <div class="about-container">
-
-
-        <div class="section-heading">
-
-            <small>
-                About Me
-            </small>
-
-        </div>
-
-
-        <h1>
-
-            About
-            <span>Me.</span>
-
-        </h1>
-
-
-        <p>
-
-            Welcome to my academic and professional
-            portfolio. I am a researcher and academic
-            writer with a strong interest in research,
-            education and scholarly work.
-
-        </p>
-
-
-        <p>
-
-            My academic journey has allowed me to
-            explore different areas within my field,
-            develop research skills and contribute
-            through publications and academic projects.
-
-        </p>
-
-
-        <p>
-
-            Through this website, I have collected
-            my academic background, research interests,
-            publications, professional experience,
-            skills and CV in one place.
-
-        </p>
-
-
-        <p>
-
-            I am particularly interested in
-            research collaboration, academic projects,
-            scholarly communication and opportunities
-            to contribute to meaningful research.
-
-        </p>
-
-
-        <div class="hero-buttons"
-             style="margin-top:35px;">
-
-            <a
-                href="CV.pdf"
-                target="_blank"
-                class="primary-btn">
-
-                Open My CV ↗
+                YOUR<span>NAME.</span>
 
             </a>
 
+
+            <!-- MAIN NAV -->
+
+            <div class="nav-links">
+
+                <a class="nav-link active"
+                   data-page="main"
+                   onclick="showPage('main')">
+
+                    Main
+
+                </a>
+
+                <a class="nav-link"
+                   data-page="about"
+                   onclick="showPage('about')">
+
+                    About
+
+                </a>
+
+                <a class="nav-link"
+                   data-page="testimonials"
+                   onclick="showPage('testimonials')">
+
+                    Testimonials
+
+                </a>
+
+            </div>
+
+
+            <!-- RESUME -->
+
+            <a href="cv.pdf"
+               target="_blank"
+               class="resume-btn">
+
+                Resume
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </a>
+
+
+            <button class="mobile-menu-btn"
+                    onclick="toggleMobileMenu()">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN PAGE
+    ====================================================== -->
+
+    <main id="main"
+          class="page active-page">
+
+        <div class="container">
+
+
+            <!-- HERO -->
+
+            <section class="hero">
+
+                <div>
+
+                    <div class="availability">
+
+                        <span class="availability-dot"></span>
+
+                        AVAILABLE FOR RESEARCH & COLLABORATION
+
+                    </div>
+
+
+                    <h1>
+
+                        Hi, I'm
+                        <span>Your Name.</span>
+
+                    </h1>
+
+
+                    <div class="hero-subtitle">
+
+                        Researcher, Scholar & Academic Writer.
+
+                    </div>
+
+
+                    <p class="hero-description">
+
+                        I am an academic researcher interested in
+                        language, literature, education and
+                        interdisciplinary research. This website
+                        presents my academic journey, research,
+                        publications, education and professional
+                        experience.
+
+                    </p>
+
+
+                    <div class="button-row">
+
+                        <a href="#research"
+                           class="primary-btn">
+
+                            Explore my research
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a href="cv.pdf"
+                           target="_blank"
+                           class="secondary-btn">
+
+                            View CV
+
+                            <i class="fa-solid fa-file-lines"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- SOCIALS -->
+
+                    <div class="socials">
+
+                        <a href="#"
+                           class="social"
+                           title="LinkedIn">
+
+                            <i class="fa-brands fa-linkedin-in"></i>
+
+                        </a>
+
+                        <a href="#"
+                           class="social"
+                           title="Google Scholar">
+
+                            <i class="fa-solid fa-graduation-cap"></i>
+
+                        </a>
+
+                        <a href="#"
+                           class="social"
+                           title="ORCID">
+
+                            <i class="fa-brands fa-orcid"></i>
+
+                        </a>
+
+                        <a href="#"
+                           class="social"
+                           title="ResearchGate">
+
+                            <i class="fa-solid fa-flask"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE -->
+
+                <div class="profile-wrapper">
+
+                    <div class="profile-card">
+
+                        <!--
+                            CHANGE THIS IMAGE TO YOUR IMAGE.
+
+                            Example:
+                            profile.jpg
+                        -->
+
+                        <img src="profile.jpg"
+                             alt="Profile picture">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MAIN PAGE SECTION BUTTONS
+            ================================================== -->
+
+            <div class="section-menu">
+
+                <button class="section-btn active"
+                        onclick="scrollToSection('research', this)">
+
+                    Research
+
+                </button>
+
+                <button class="section-btn"
+                        onclick="scrollToSection('publications', this)">
+
+                    Publications
+
+                </button>
+
+                <button class="section-btn"
+                        onclick="scrollToSection('education', this)">
+
+                    Education
+
+                </button>
+
+                <button class="section-btn"
+                        onclick="scrollToSection('experience', this)">
+
+                    Experience
+
+                </button>
+
+                <button class="section-btn"
+                        onclick="scrollToSection('contact', this)">
+
+                    Contact
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RESEARCH
+            ================================================== -->
+
+            <section id="research"
+                     class="content-section">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        Academic Focus
+                    </div>
+
+                    <h2>
+                        Research
+                    </h2>
+
+                    <p>
+                        My research interests and academic work
+                        focus on the following areas.
+                    </p>
+
+                </div>
+
+
+                <div class="cards">
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+
+                        <h3>
+                            Linguistics
+                        </h3>
+
+                        <p>
+                            Research in syntax, sociolinguistics,
+                            corpus linguistics, discourse and
+                            language variation.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <h3>
+                            Literature
+                        </h3>
+
+                        <p>
+                            Literary studies, critical approaches,
+                            textual analysis and contemporary
+                            literary research.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+
+                        <h3>
+                            Sociolinguistics
+                        </h3>
+
+                        <p>
+                            Language use, identity, code-switching,
+                            multilingualism and language variation.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            <i class="fa-solid fa-microscope"></i>
+                        </div>
+
+                        <h3>
+                            Interdisciplinary Research
+                        </h3>
+
+                        <p>
+                            Exploring connections between language,
+                            education, society, technology and
+                            human communication.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PUBLICATIONS
+            ================================================== -->
+
+            <section id="publications"
+                     class="content-section">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        Academic Work
+                    </div>
+
+                    <h2>
+                        Publications
+                    </h2>
+
+                    <p>
+                        A collection of my research papers,
+                        articles and academic publications.
+                    </p>
+
+                </div>
+
+
+                <div class="publication-list">
+
+
+                    <!-- PUBLICATION 01 -->
+
+                    <article class="publication">
+
+                        <div class="publication-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Title of Your First Publication
+                            </h3>
+
+                            <p>
+                                Journal Name · 2026
+                            </p>
+
+                        </div>
+
+                        <a href="#"
+                           class="publication-link"
+                           target="_blank">
+
+                            Read
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- PUBLICATION 02 -->
+
+                    <article class="publication">
+
+                        <div class="publication-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Title of Your Second Publication
+                            </h3>
+
+                            <p>
+                                Journal Name · 2026
+                            </p>
+
+                        </div>
+
+                        <a href="#"
+                           class="publication-link"
+                           target="_blank">
+
+                            Read
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- PUBLICATION 03 -->
+
+                    <article class="publication">
+
+                        <div class="publication-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Title of Your Third Publication
+                            </h3>
+
+                            <p>
+                                Journal Name · 2025
+                            </p>
+
+                        </div>
+
+                        <a href="#"
+                           class="publication-link"
+                           target="_blank">
+
+                            Read
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- PUBLICATION 04 -->
+
+                    <article class="publication">
+
+                        <div class="publication-number">
+                            04
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Title of Your Fourth Publication
+                            </h3>
+
+                            <p>
+                                Journal Name · 2025
+                            </p>
+
+                        </div>
+
+                        <a href="#"
+                           class="publication-link"
+                           target="_blank">
+
+                            Read
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- PUBLICATION 05 -->
+
+                    <article class="publication">
+
+                        <div class="publication-number">
+                            05
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Title of Your Fifth Publication
+                            </h3>
+
+                            <p>
+                                Journal Name · 2025
+                            </p>
+
+                        </div>
+
+                        <a href="#"
+                           class="publication-link"
+                           target="_blank">
+
+                            Read
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </a>
+
+                    </article>
+
+
+                    <!-- PUBLICATION 06 -->
+
+                    <article class="publication">
+
+                        <div class="publication-number">
+                            06
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Title of Your Sixth Publication
+                            </h3>
+
+                            <p>
+                                Journal Name · 2024
+                            </p>
+
+                        </div>
+
+                        <a href="#"
+                           class="publication-link"
+                           target="_blank">
+
+                            Read
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 EDUCATION
+            ================================================== -->
+
+            <section id="education"
+                     class="content-section">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        Academic Journey
+                    </div>
+
+                    <h2>
+                        Education
+                    </h2>
+
+                    <p>
+                        My academic qualifications and current
+                        educational journey.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-date">
+                            2024 — Present
+                        </div>
+
+                        <h3>
+                            BS English
+                        </h3>
+
+                        <p>
+                            University Name · English Literature
+                            & Linguistics
+                        </p>
+
+                        <p>
+                            Current CGPA / Grade:
+                            <strong>
+                                Add your CGPA here
+                            </strong>
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-date">
+                            2021
+                        </div>
+
+                        <h3>
+                            FSc Pre-Medical
+                        </h3>
+
+                        <p>
+                            College Name · Board Name
+                        </p>
+
+                        <p>
+                            Marks / Grade:
+                            <strong>
+                                Add your marks here
+                            </strong>
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 EXPERIENCE
+            ================================================== -->
+
+            <section id="experience"
+                     class="content-section">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        Professional Journey
+                    </div>
+
+                    <h2>
+                        Experience
+                    </h2>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-date">
+                            2025 — Present
+                        </div>
+
+                        <h3>
+                            Research / Academic Position
+                        </h3>
+
+                        <p>
+                            Organization / University Name
+                        </p>
+
+                        <p>
+                            Add a short description of your role,
+                            responsibilities and achievements.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-date">
+                            2024 — 2025
+                        </div>
+
+                        <h3>
+                            Academic / Professional Role
+                        </h3>
+
+                        <p>
+                            Organization Name
+                        </p>
+
+                        <p>
+                            Add your experience, responsibilities
+                            and major achievements here.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CONTACT
+            ================================================== -->
+
+            <section id="contact"
+                     class="content-section">
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        Get In Touch
+                    </div>
+
+                    <h2>
+                        Contact
+                    </h2>
+
+                    <p>
+                        For research collaboration, academic
+                        discussion, writing or professional
+                        opportunities.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-box">
+
+
+                    <a href="mailto:your@email.com"
+                       class="contact-item">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <h3>
+                            Email
+                        </h3>
+
+                        <p>
+                            your@email.com
+                        </p>
+
+                    </a>
+
+
+                    <a href="#"
+                       class="contact-item">
+
+                        <i class="fa-brands fa-linkedin"></i>
+
+                        <h3>
+                            LinkedIn
+                        </h3>
+
+                        <p>
+                            Connect with me professionally.
+                        </p>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
         </div>
 
 
-    </div>
+        <!-- FOOTER -->
 
-</section>
+        <footer>
 
+            <div class="container">
 
+                <div class="footer-content">
 
-<!-- =============================================================
-     TESTIMONIALS PAGE
-============================================================= -->
+                    <p>
+                        © 2026 Your Name. All rights reserved.
+                    </p>
 
-<section
-    id="reviews"
-    class="page">
+                    <p>
+                        Academic Portfolio
+                    </p>
 
-
-    <div class="section-heading">
-
-        <small>
-            Reviews
-        </small>
-
-        <h1>
-            Testimonials
-        </h1>
-
-        <p>
-            What colleagues, students, supervisors
-            and collaborators say about my work.
-        </p>
-
-    </div>
-
-
-    <div class="testimonial-grid">
-
-
-        <div class="testimonial">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-
-                "Add a genuine testimonial about
-                your academic work, research,
-                professionalism or collaboration."
-
-            </p>
-
-            <div class="person">
-
-                Person Name
-
-                <span>
-                    Position / Institution
-                </span>
+                </div>
 
             </div>
 
-        </div>
+        </footer>
+
+    </main>
 
 
 
-        <div class="testimonial">
+    <!-- =====================================================
+         ABOUT PAGE
+    ====================================================== -->
 
-            <div class="stars">
-                ★★★★★
-            </div>
+    <section id="about"
+             class="page">
 
-            <p>
+        <div class="container inner-page">
 
-                "Add another testimonial from a
-                professor, supervisor, colleague
-                or professional collaborator."
-
-            </p>
-
-            <div class="person">
-
-                Person Name
-
-                <span>
-                    Position / Institution
-                </span>
-
-            </div>
-
-        </div>
+            <div class="about-grid">
 
 
+                <div class="about-photo">
 
-        <div class="testimonial">
+                    <img src="profile.jpg"
+                         alt="Your profile picture">
 
-            <div class="stars">
-                ★★★★★
-            </div>
+                </div>
 
-            <p>
 
-                "Add a third testimonial highlighting
-                your research, writing, teaching or
-                professional skills."
+                <div class="about-text">
 
-            </p>
+                    <div class="eyebrow">
+                        About Me
+                    </div>
 
-            <div class="person">
+                    <h1>
+                        About
+                        <span>Me.</span>
+                    </h1>
 
-                Person Name
 
-                <span>
-                    Position / Institution
-                </span>
+                    <p>
+                        Welcome to my academic portfolio. I am a
+                        researcher and student interested in
+                        language, literature, education and
+                        interdisciplinary research.
+                    </p>
+
+
+                    <p>
+                        My academic interests include linguistics,
+                        literature, sociolinguistics, discourse,
+                        language variation and research
+                        methodologies.
+                    </p>
+
+
+                    <p>
+                        This website provides an overview of my
+                        academic background, research interests,
+                        publications, education and professional
+                        experience.
+                    </p>
+
+
+                    <p>
+                        For a complete overview of my qualifications,
+                        experience and academic work, you can also
+                        view my CV.
+                    </p>
+
+
+                    <div class="button-row">
+
+                        <a href="cv.pdf"
+                           target="_blank"
+                           class="primary-btn">
+
+                            Open Full CV
+
+                            <i class="fa-solid fa-file-pdf"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
 
-
-    </div>
-
-</section>
+    </section>
 
 
 
-<!-- =============================================================
-     FOOTER
-============================================================= -->
+    <!-- =====================================================
+         TESTIMONIALS PAGE
+    ====================================================== -->
 
-<footer>
+    <section id="testimonials"
+             class="page">
 
-    © 2026 Your Name.
-    All Rights Reserved.
+        <div class="container inner-page">
 
-</footer>
+            <div class="section-heading">
 
+                <div class="eyebrow">
+                    Reviews
+                </div>
 
+                <h2>
+                    Testimonials
+                </h2>
 
-<!-- SCROLL TOP -->
+                <p>
+                    Feedback from professors, colleagues,
+                    students and professional collaborators.
+                </p>
 
-<button
-    class="scroll-top"
-    id="scrollTop">
-
-    ↑
-
-</button>
-
-
-
-<script>
-
-    /* =========================================================
-       PAGE NAVIGATION
-    ========================================================= */
-
-    const pages =
-        document.querySelectorAll(".page");
-
-    const navButtons =
-        document.querySelectorAll(".nav-button");
+            </div>
 
 
-    function showPage(pageId) {
-
-        /* Hide every page */
-
-        pages.forEach(page => {
-
-            page.classList.remove(
-                "active-page"
-            );
-
-        });
+            <div class="testimonial-grid">
 
 
-        /* Show selected page */
+                <article class="testimonial">
 
-        const selected =
-            document.getElementById(pageId);
+                    <div class="stars">
+                        ★★★★★
+                    </div>
 
-        if (selected) {
+                    <p>
+                        "Add your testimonial here. This section
+                        can include feedback from a professor,
+                        supervisor or professional colleague."
+                    </p>
 
-            selected.classList.add(
-                "active-page"
-            );
+                    <div class="person">
+
+                        <div class="person-avatar">
+                            A
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Person Name
+                            </strong>
+
+                            <span>
+                                Professor / Supervisor
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="testimonial">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "Add another genuine testimonial here
+                        describing your academic, research or
+                        professional work."
+                    </p>
+
+                    <div class="person">
+
+                        <div class="person-avatar">
+                            B
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Person Name
+                            </strong>
+
+                            <span>
+                                Research Collaborator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="testimonial">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "Your third testimonial can go here. Keep
+                        these short so the page remains clean and
+                        professional."
+                    </p>
+
+                    <div class="person">
+
+                        <div class="person-avatar">
+                            C
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Person Name
+                            </strong>
+
+                            <span>
+                                Academic Colleague
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="testimonial">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "Add another review from someone who has
+                        worked with you or supervised your
+                        academic research."
+                    </p>
+
+                    <div class="person">
+
+                        <div class="person-avatar">
+                            D
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Person Name
+                            </strong>
+
+                            <span>
+                                Professional Collaborator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =====================================================
+           PAGE NAVIGATION
+        ===================================================== */
+
+        function showPage(pageName) {
+
+            const transition =
+                document.getElementById("transitionLayer");
+
+            /*
+                Purple transition effect
+            */
+
+            transition.classList.add("show");
+
+
+            setTimeout(() => {
+
+                /*
+                    Hide every page
+                */
+
+                document
+                    .querySelectorAll(".page")
+                    .forEach(page => {
+
+                        page.classList.remove(
+                            "active-page"
+                        );
+
+                    });
+
+
+                /*
+                    Show selected page
+                */
+
+                const selectedPage =
+                    document.getElementById(pageName);
+
+                if (selectedPage) {
+
+                    selectedPage.classList.add(
+                        "active-page"
+                    );
+
+                }
+
+
+                /*
+                    Update active top navigation
+                */
+
+                document
+                    .querySelectorAll(".nav-link")
+                    .forEach(link => {
+
+                        link.classList.remove("active");
+
+                    });
+
+
+                const activeLink =
+                    document.querySelector(
+                        `.nav-link[data-page="${pageName}"]`
+                    );
+
+                if (activeLink) {
+
+                    activeLink.classList.add("active");
+
+                }
+
+
+                /*
+                    Scroll to top
+                */
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "instant"
+                });
+
+
+            }, 220);
+
+
+            setTimeout(() => {
+
+                transition.classList.remove("show");
+
+            }, 650);
 
         }
 
 
-        /* Update active main navigation */
 
-        navButtons.forEach(button => {
+        /* =====================================================
+           MAIN PAGE SECTION NAVIGATION
+        ===================================================== */
 
-            button.classList.remove(
-                "active"
-            );
+        function scrollToSection(
+            sectionId,
+            clickedButton
+        ) {
 
-            if (
-                button.dataset.page ===
-                pageId
-            ) {
+            /*
+                Purple highlight
+            */
 
-                button.classList.add(
-                    "active"
-                );
+            document
+                .querySelectorAll(".section-btn")
+                .forEach(button => {
 
-            }
+                    button.classList.remove("active");
 
-        });
-
-
-        /* Go to top */
-
-        window.scrollTo({
-
-            top: 0,
-
-            behavior: "smooth"
-
-        });
-
-    }
+                });
 
 
-
-    /* Main navigation */
-
-    navButtons.forEach(button => {
-
-        button.addEventListener(
-            "click",
-            function() {
-
-                showPage(
-                    this.dataset.page
-                );
-
-            }
-        );
-
-    });
+            clickedButton.classList.add("active");
 
 
-
-    /* =========================================================
-       SECONDARY NAVIGATION
-       All these sections live on MAIN PAGE.
-    ========================================================= */
-
-    const secondaryButtons =
-        document.querySelectorAll(
-            ".secondary-button[data-scroll]"
-        );
-
-
-    secondaryButtons.forEach(button => {
-
-        button.addEventListener(
-            "click",
-            function() {
-
-                const target =
-                    this.dataset.scroll;
-
-
-                /* Make sure Main page is open */
-
-                showPage("home");
-
-
-                /* Wait for page animation */
-
-                setTimeout(() => {
-
-                    const section =
-                        document.getElementById(
-                            target
-                        );
-
-                    if (section) {
-
-                        const headerHeight =
-                            document.querySelector(
-                                "header"
-                            ).offsetHeight;
-
-                        const position =
-                            section.offsetTop -
-                            headerHeight -
-                            20;
-
-                        window.scrollTo({
-
-                            top: position,
-
-                            behavior: "smooth"
-
-                        });
-
-                    }
-
-                }, 100);
-
-            }
-        );
-
-    });
-
-
-
-    /* =========================================================
-       HERO PUBLICATION BUTTON
-    ========================================================= */
-
-    function goToSection(sectionId) {
-
-        showPage("home");
-
-
-        setTimeout(() => {
+            /*
+                Scroll to section
+            */
 
             const section =
-                document.getElementById(
-                    sectionId
-                );
+                document.getElementById(sectionId);
 
             if (section) {
 
-                const headerHeight =
-                    document.querySelector(
-                        "header"
-                    ).offsetHeight;
-
-                window.scrollTo({
-
-                    top:
-                        section.offsetTop -
-                        headerHeight -
-                        20,
-
-                    behavior:
-                        "smooth"
-
+                section.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
                 });
 
             }
 
-        }, 100);
-
-    }
+        }
 
 
 
-    /* =========================================================
-       SCROLL TO TOP BUTTON
-    ========================================================= */
+        /* =====================================================
+           CURSOR GLOW
+        ===================================================== */
 
-    const scrollTop =
-        document.getElementById(
-            "scrollTop"
+        const cursorGlow =
+            document.createElement("div");
+
+        cursorGlow.style.position = "fixed";
+        cursorGlow.style.width = "180px";
+        cursorGlow.style.height = "180px";
+        cursorGlow.style.borderRadius = "50%";
+        cursorGlow.style.pointerEvents = "none";
+        cursorGlow.style.zIndex = "0";
+        cursorGlow.style.background =
+            "radial-gradient(circle, rgba(141,124,255,0.07), transparent 70%)";
+        cursorGlow.style.transform =
+            "translate(-50%, -50%)";
+        cursorGlow.style.opacity = "0";
+
+        document.body.appendChild(cursorGlow);
+
+
+        document.addEventListener(
+            "mousemove",
+            function(event) {
+
+                cursorGlow.style.left =
+                    event.clientX + "px";
+
+                cursorGlow.style.top =
+                    event.clientY + "px";
+
+                cursorGlow.style.opacity = "1";
+
+            }
         );
 
 
-    window.addEventListener(
-        "scroll",
-        function() {
+
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
+
+        function toggleMobileMenu() {
+
+            const nav =
+                document.querySelector(".nav-links");
 
             if (
-                window.scrollY > 500
+                nav.style.display === "flex"
             ) {
 
-                scrollTop.style.display =
-                    "flex";
+                nav.style.display = "none";
 
             } else {
 
-                scrollTop.style.display =
-                    "none";
+                nav.style.position = "absolute";
+
+                nav.style.top = "75px";
+
+                nav.style.left = "10px";
+
+                nav.style.right = "10px";
+
+                nav.style.display = "flex";
+
+                nav.style.flexDirection = "column";
+
+                nav.style.padding = "12px";
+
+                nav.style.background =
+                    "#111119";
+
+                nav.style.border =
+                    "1px solid rgba(255,255,255,0.1)";
+
+                nav.style.borderRadius = "20px";
 
             }
 
         }
-    );
-
-
-    scrollTop.addEventListener(
-        "click",
-        function() {
-
-            window.scrollTo({
-
-                top: 0,
-
-                behavior: "smooth"
-
-            });
-
-        }
-    );
 
 
 
-    /* =========================================================
-       MOUSE CURSOR GLOW
-    ========================================================= */
+        /* =====================================================
+           PUBLICATION COUNTER ANIMATION
+        ===================================================== */
 
-    const cursorGlow =
-        document.createElement("div");
+        const publicationNumbers =
+            document.querySelectorAll(
+                ".publication-number"
+            );
 
-    cursorGlow.style.position =
-        "fixed";
+        publicationNumbers.forEach(
+            (number, index) => {
 
-    cursorGlow.style.width =
-        "250px";
+                number.style.transition =
+                    "0.3s ease";
 
-    cursorGlow.style.height =
-        "250px";
+                number.addEventListener(
+                    "mouseenter",
+                    () => {
 
-    cursorGlow.style.borderRadius =
-        "50%";
+                        number.style.transform =
+                            "scale(1.1)";
 
-    cursorGlow.style.pointerEvents =
-        "none";
+                        number.style.background =
+                            "#6860f3";
 
-    cursorGlow.style.background =
-        "radial-gradient(circle, rgba(108,99,255,0.08), transparent 70%)";
+                        number.style.color =
+                            "white";
 
-    cursorGlow.style.transform =
-        "translate(-50%, -50%)";
+                    }
+                );
 
-    cursorGlow.style.zIndex =
-        "-1";
+                number.addEventListener(
+                    "mouseleave",
+                    () => {
 
-    document.body.appendChild(
-        cursorGlow
-    );
+                        number.style.transform =
+                            "scale(1)";
 
+                        number.style.background =
+                            "rgba(141,124,255,0.10)";
 
-    document.addEventListener(
-        "mousemove",
-        function(event) {
+                        number.style.color =
+                            "#9b8cff";
 
-            cursorGlow.style.left =
-                event.clientX + "px";
+                    }
+                );
 
-            cursorGlow.style.top =
-                event.clientY + "px";
-
-        }
-    );
+            }
+        );
 
 
-</script>
+
+        /* =====================================================
+           KEYBOARD NAVIGATION
+        ===================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                /*
+                    Press Escape to return to Main
+                */
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    showPage("main");
+
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
+
 </html>
