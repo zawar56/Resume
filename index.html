@@ -2,351 +2,136 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>
-        Your Name | Researcher, Academic & Writer
-    </title>
+        content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Academic portfolio of Your Name — researcher, academic, writer and scholar. Explore research, publications, education, experience and academic work.">
+        content="Academic portfolio of Your Name — researcher, writer and student specializing in language, literature, linguistics and interdisciplinary research.">
 
     <meta name="keywords"
-          content="researcher, academic, linguistics, literature, publications, research, CV, academic portfolio, scholar">
+        content="researcher, academic writer, English literature, linguistics, research, publications, academic portfolio">
+
+    <meta name="author"
+        content="Your Name">
+
+    <title>Your Name | Academic Portfolio</title>
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
 
     <style>
 
-        /* =========================================================
-           RESET
-        ========================================================= */
+        /* =====================================================
+           GLOBAL
+        ====================================================== */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
+        :root {
+            --background: #08080f;
+            --background-two: #0d0d17;
+            --card: #101018;
+            --card-two: #141420;
+
+            --text: #f5f5fa;
+            --muted: #9b9baa;
+
+            --purple: #8274ff;
+            --purple-light: #a49aff;
+
+            --border: rgba(255,255,255,0.10);
+
+            --green: #20d9a1;
+
+            --max-width: 1250px;
+        }
 
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
             font-family:
                 Inter,
-                Arial,
-                Helvetica,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
                 sans-serif;
 
-            background: #08080d;
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(92, 79, 255, 0.08),
+                    transparent 30%
+                ),
+                var(--background);
 
-            color: #f5f5f7;
+            color: var(--text);
 
-            line-height: 1.6;
+            line-height: 1.7;
 
             overflow-x: hidden;
-
-            cursor: none;
         }
-
 
         a {
             text-decoration: none;
             color: inherit;
         }
 
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
         button,
-        input,
-        textarea {
-            font-family: inherit;
+        input {
+            font: inherit;
         }
-
-
-
-        /* =========================================================
-           COLORS
-           SAME PURPLE / DARK COLOR SYSTEM
-        ========================================================= */
-
-        :root {
-
-            --background: #08080d;
-
-            --background-two: #0d0d14;
-
-            --card: #111119;
-
-            --card-light: #151520;
-
-            --border:
-                rgba(255,255,255,0.09);
-
-            --text: #f5f5f7;
-
-            --muted: #9696a8;
-
-            --purple: #756cff;
-
-            --purple-light: #a29cff;
-
-            --blue: #6e8cff;
-
-            --green: #16c79a;
-        }
-
-
-
-        /* =========================================================
-           BACKGROUND GLOW
-        ========================================================= */
-
-        body::before {
-
-            content: "";
-
-            position: fixed;
-
-            width: 500px;
-            height: 500px;
-
-            background: #5147ff;
-
-            filter: blur(180px);
-
-            opacity: 0.12;
-
-            top: -200px;
-            left: -150px;
-
-            z-index: -1;
-
-            pointer-events: none;
-        }
-
-
-        body::after {
-
-            content: "";
-
-            position: fixed;
-
-            width: 500px;
-            height: 500px;
-
-            background: #734dff;
-
-            filter: blur(180px);
-
-            opacity: 0.08;
-
-            bottom: -200px;
-            right: -150px;
-
-            z-index: -1;
-
-            pointer-events: none;
-        }
-
-
-
-        /* =========================================================
-           CUSTOM CURSOR
-        ========================================================= */
-
-        .cursor-dot {
-
-            width: 8px;
-            height: 8px;
-
-            background: white;
-
-            border-radius: 50%;
-
-            position: fixed;
-
-            top: 0;
-            left: 0;
-
-            pointer-events: none;
-
-            z-index: 99999;
-
-            transform:
-                translate(-50%, -50%);
-
-            box-shadow:
-                0 0 10px white,
-                0 0 25px
-                rgba(255,255,255,0.7);
-
-            transition:
-                width 0.15s ease,
-                height 0.15s ease;
-        }
-
-
-        .cursor-glow {
-
-            width: 35px;
-            height: 35px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.35);
-
-            background:
-                rgba(255,255,255,0.04);
-
-            border-radius: 50%;
-
-            position: fixed;
-
-            top: 0;
-            left: 0;
-
-            pointer-events: none;
-
-            z-index: 99998;
-
-            transform:
-                translate(-50%, -50%);
-
-            transition:
-                width 0.2s ease,
-                height 0.2s ease,
-                background 0.2s ease,
-                border 0.2s ease;
-        }
-
-
-        .cursor-hover .cursor-dot {
-
-            width: 12px;
-            height: 12px;
-        }
-
-
-        .cursor-hover .cursor-glow {
-
-            width: 60px;
-            height: 60px;
-
-            background:
-                rgba(255,255,255,0.08);
-
-            border-color:
-                rgba(255,255,255,0.7);
-        }
-
-
-
-        /* =========================================================
-           PAGE TRANSITION PURPLE EFFECT
-        ========================================================= */
-
-        .page-transition {
-
-            position: fixed;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(117,108,255,0.35),
-                    rgba(8,8,13,0.98) 65%
-                );
-
-            z-index: 99990;
-
-            pointer-events: none;
-
-            opacity: 0;
-
-            transform: scale(1.15);
-
-            transition:
-                opacity 0.35s ease,
-                transform 0.45s ease;
-        }
-
-
-        .page-transition.active {
-
-            opacity: 1;
-
-            transform: scale(1);
-        }
-
-
-
-        /* =========================================================
-           CONTAINER
-        ========================================================= */
 
         .container {
-
-            width: 90%;
-
-            max-width: 1250px;
+            width: min(
+                calc(100% - 48px),
+                var(--max-width)
+            );
 
             margin: auto;
         }
 
 
-
-        /* =========================================================
+        /* =====================================================
            NAVIGATION
-        ========================================================= */
+        ====================================================== */
 
-        nav {
-
-            position: fixed;
+        header {
+            position: sticky;
 
             top: 18px;
 
-            left: 50%;
-
-            transform:
-                translateX(-50%);
-
-            width: 94%;
-
-            max-width: 1400px;
-
             z-index: 1000;
 
-            background:
-                rgba(15,15,22,0.88);
-
-            backdrop-filter:
-                blur(20px);
-
-            border:
-                1px solid
-                var(--border);
-
-            border-radius: 50px;
-
-            box-shadow:
-                0 10px 40px
-                rgba(0,0,0,0.35);
+            padding-top: 18px;
         }
 
+        .navbar {
+            min-height: 78px;
 
-        .nav-inner {
+            border: 1px solid var(--border);
 
-            min-height: 72px;
+            border-radius: 40px;
+
+            background:
+                rgba(13, 13, 22, 0.92);
+
+            backdrop-filter: blur(18px);
 
             display: flex;
 
@@ -354,2287 +139,1268 @@
 
             justify-content: space-between;
 
-            padding:
-                0 20px 0 25px;
+            padding: 0 20px 0 28px;
 
-            gap: 20px;
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.25);
         }
-
 
         .logo {
+            font-size: 21px;
 
-            font-size: 22px;
-
-            font-weight: 800;
+            font-weight: 900;
 
             letter-spacing: -1px;
-
-            white-space: nowrap;
         }
-
 
         .logo span {
-
-            color:
-                var(--purple-light);
+            color: var(--purple-light);
         }
 
-
-
-        /* =========================================================
-           NAVIGATION LINKS
-        ========================================================= */
-
         .nav-links {
-
             display: flex;
+
+            align-items: center;
 
             gap: 4px;
 
-            list-style: none;
+            background: rgba(255,255,255,0.035);
 
-            background:
-                rgba(255,255,255,0.03);
+            border-radius: 35px;
 
             padding: 5px;
-
-            border-radius: 40px;
         }
 
-
         .nav-links a {
+            color: #aaa9b8;
 
-            position: relative;
+            padding: 10px 15px;
 
-            display: block;
-
-            padding:
-                9px 15px;
-
-            border-radius: 30px;
-
-            color: #a5a5b5;
+            border-radius: 25px;
 
             font-size: 14px;
 
-            transition:
-                color 0.3s ease,
-                background 0.3s ease,
-                transform 0.3s ease;
+            transition: 0.25s ease;
         }
-
 
         .nav-links a:hover {
+            background: rgba(255,255,255,0.08);
 
             color: white;
-
-            background:
-                rgba(255,255,255,0.07);
-
-            transform:
-                translateY(-1px);
         }
 
+        .resume-btn {
+            border: 1px solid var(--border);
 
-        /* PURPLE ACTIVE PAGE */
-
-        .nav-links a.active {
-
-            color: white;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(117,108,255,0.95),
-                    rgba(92,83,230,0.85)
-                );
-
-            box-shadow:
-                0 5px 20px
-                rgba(117,108,255,0.30);
-
-            text-shadow:
-                0 0 12px
-                rgba(255,255,255,0.35);
-        }
-
-
-        .nav-links a.active::after {
-
-            content: "";
-
-            position: absolute;
-
-            left: 18%;
-
-            right: 18%;
-
-            bottom: 3px;
-
-            height: 2px;
-
-            border-radius: 20px;
-
-            background: white;
-
-            opacity: 0.8;
-
-            animation:
-                navLine 0.3s ease;
-        }
-
-
-        @keyframes navLine {
-
-            from {
-                transform: scaleX(0);
-            }
-
-            to {
-                transform: scaleX(1);
-            }
-        }
-
-
-
-        /* =========================================================
-           RESUME BUTTON
-        ========================================================= */
-
-        .resume-button {
-
-            padding:
-                12px 22px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.15);
+            padding: 12px 21px;
 
             border-radius: 30px;
 
-            font-weight: 600;
+            font-weight: 700;
 
-            white-space: nowrap;
-
-            transition:
-                0.3s ease;
+            transition: 0.25s ease;
         }
 
-
-        .resume-button:hover {
-
+        .resume-btn:hover {
             background: white;
 
-            color:
-                #08080d;
-
-            transform:
-                translateY(-2px);
-
-            box-shadow:
-                0 8px 30px
-                rgba(255,255,255,0.15);
+            color: #09090f;
         }
 
 
-
-        /* =========================================================
-           PAGE SYSTEM
-        ========================================================= */
-
-        .page {
-
-            display: block;
-
-            min-height: 100vh;
-
-            padding-top: 130px;
-
-            padding-bottom: 100px;
-
-            animation: none;
-
-            scroll-margin-top: 105px;
-        }
-
-
-        .page.active-page {
-
-            display: block;
-        }
-
-
-        @keyframes pageIn {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    translateY(25px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-            }
-        }
-
-
-
-        /* =========================================================
-           HOME PAGE
-        ========================================================= */
-
-        #home {
-
-            padding-top: 130px;
-        }
-
+        /* =====================================================
+           HERO
+        ====================================================== */
 
         .hero {
-
-            min-height:
-                calc(100vh - 130px);
+            min-height: 760px;
 
             display: flex;
 
             align-items: center;
+
+            padding: 80px 0 100px;
         }
 
-
         .hero-grid {
-
             display: grid;
 
             grid-template-columns:
-                1.2fr 0.8fr;
+                minmax(0, 1.2fr)
+                minmax(360px, 0.8fr);
 
             gap: 70px;
 
             align-items: center;
         }
 
-
-
-        /* STATUS */
-
-        .status {
-
+        .availability {
             display: inline-flex;
 
             align-items: center;
 
-            gap: 12px;
+            gap: 10px;
 
-            padding:
-                9px 17px;
-
-            border-radius: 30px;
-
-            border:
-                1px solid
-                var(--border);
+            border: 1px solid var(--border);
 
             background:
                 rgba(255,255,255,0.025);
 
-            color: #8f8fa0;
+            padding: 10px 18px;
 
-            font-family:
-                monospace;
+            border-radius: 30px;
 
             font-size: 12px;
 
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
 
-            margin-bottom: 30px;
+            color: #a8a7b6;
+
+            text-transform: uppercase;
+
+            margin-bottom: 32px;
         }
 
+        .availability-dot {
+            width: 10px;
 
-        .status-dot {
-
-            width: 9px;
-
-            height: 9px;
-
-            background:
-                var(--green);
+            height: 10px;
 
             border-radius: 50%;
 
+            background: var(--green);
+
             box-shadow:
-                0 0 15px
-                var(--green);
-
-            animation:
-                pulse 2s infinite;
+                0 0 16px var(--green);
         }
-
-
-        @keyframes pulse {
-
-            0% {
-                box-shadow:
-                    0 0 5px
-                    var(--green);
-            }
-
-            50% {
-                box-shadow:
-                    0 0 20px
-                    var(--green);
-            }
-
-            100% {
-                box-shadow:
-                    0 0 5px
-                    var(--green);
-            }
-        }
-
-
-
-        /* HERO TEXT */
 
         .hero h1 {
+            font-size: clamp(
+                65px,
+                8vw,
+                108px
+            );
 
-            font-size:
-                clamp(55px, 7vw, 100px);
+            line-height: 0.95;
 
-            line-height:
-                0.95;
+            letter-spacing: -6px;
 
-            letter-spacing:
-                -5px;
+            font-weight: 900;
 
-            font-weight:
-                750;
-
-            margin-bottom:
-                25px;
+            margin-bottom: 34px;
         }
-
 
         .hero h1 span {
-
-            display: block;
-
-            color:
-                var(--purple-light);
+            color: var(--purple-light);
         }
 
-
         .hero-description {
+            max-width: 760px;
 
-            max-width: 700px;
+            color: #a7a6b6;
 
             font-size: 19px;
 
-            color:
-                #9898aa;
+            line-height: 1.9;
 
-            line-height:
-                1.8;
+            margin-bottom: 36px;
+        }
 
-            margin-bottom:
-                35px;
+        .hero-buttons {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 14px;
+
+            margin-bottom: 38px;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 15px 27px;
+
+            border-radius: 32px;
+
+            font-weight: 750;
+
+            border: 1px solid var(--border);
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background: var(--purple);
+
+            color: white;
+
+            box-shadow:
+                0 15px 40px
+                rgba(130,116,255,0.28);
+        }
+
+        .btn-primary:hover {
+            background: #9387ff;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.025);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
         }
 
 
+        /* =====================================================
+           SOCIAL MEDIA
+        ====================================================== */
 
-        /* BUTTONS */
-
-        .hero-buttons {
-
+        .socials {
             display: flex;
 
-            gap: 15px;
+            gap: 10px;
 
             flex-wrap: wrap;
         }
 
+        .social {
+            width: 44px;
 
-        .button {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 12px;
-
-            padding:
-                15px 25px;
-
-            border-radius:
-                35px;
-
-            font-weight:
-                650;
-
-            border:
-                1px solid
-                var(--border);
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease,
-                background 0.3s ease;
-        }
-
-
-        .button-primary {
-
-            background:
-                var(--purple);
-
-            color: white;
-
-            box-shadow:
-                0 10px 35px
-                rgba(117,108,255,0.25);
-        }
-
-
-        .button-primary:hover {
-
-            transform:
-                translateY(-4px);
-
-            box-shadow:
-                0 15px 45px
-                rgba(117,108,255,0.45);
-        }
-
-
-        .button-secondary {
-
-            background:
-                rgba(255,255,255,0.04);
-
-            color: white;
-        }
-
-
-        .button-secondary:hover {
-
-            background:
-                rgba(255,255,255,0.09);
-
-            transform:
-                translateY(-4px);
-        }
-
-
-
-        /* =========================================================
-           SOCIAL ICONS
-        ========================================================= */
-
-        .social-icons {
-
-            display: flex;
-
-            gap: 18px;
-
-            margin-top: 35px;
-        }
-
-
-        .social-icon {
-
-            width: 66px;
-
-            height: 66px;
+            height: 44px;
 
             display: flex;
 
             align-items: center;
 
             justify-content: center;
+
+            border: 1px solid var(--border);
 
             border-radius: 50%;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.10);
+            color: #aaa9b9;
 
-            background:
-                rgba(255,255,255,0.025);
+            font-size: 14px;
 
-            color:
-                #9999aa;
+            font-weight: 800;
 
-            transition:
-                transform 0.3s ease,
-                color 0.3s ease,
-                background 0.3s ease,
-                border-color 0.3s ease,
-                box-shadow 0.3s ease;
+            transition: 0.25s ease;
         }
 
-
-        .social-icon:hover {
-
+        .social:hover {
             color: white;
 
-            background:
-                rgba(255,255,255,0.08);
+            background: var(--purple);
 
-            border-color:
-                rgba(255,255,255,0.25);
+            border-color: var(--purple);
 
-            transform:
-                translateY(-5px);
-
-            box-shadow:
-                0 10px 30px
-                rgba(117,108,255,0.20);
+            transform: translateY(-3px);
         }
 
 
-        .social-icon svg {
+        /* =====================================================
+           PROFILE IMAGE CARD
+        ====================================================== */
 
-            width: 25px;
-
-            height: 25px;
-
-            fill:
-                currentColor;
-        }
-
-
-
-        /* =========================================================
-           PROFILE CARD
-        ========================================================= */
-
-        .profile-card {
-
+        .hero-card {
             position: relative;
 
-            height: 550px;
+            min-height: 580px;
 
-            border-radius: 35px;
+            border-radius: 38px;
+
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.045),
+                    rgba(255,255,255,0.015)
+                );
 
             overflow: hidden;
 
-            border:
-                1px solid
-                var(--border);
+            padding: 24px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+        }
+
+        /*
+            IMAGE IS FIXED INSIDE THE RIGHT-SIDE CARD.
+            Replace profile.jpg with your actual image filename.
+        */
+
+        .profile-photo {
+            width: 100%;
+
+            height: 380px;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            border-radius: 25px;
 
             background:
                 radial-gradient(
-                    circle at 50% 25%,
-                    rgba(91,80,255,0.65),
-                    transparent 45%
-                ),
-                #101018;
+                    circle,
+                    #4940c9,
+                    #131320 70%
+                );
 
-            box-shadow:
-                0 30px 80px
-                rgba(0,0,0,0.45);
-
-            transition:
-                transform 0.5s ease,
-                box-shadow 0.5s ease;
+            border: 1px solid
+                rgba(255,255,255,0.08);
         }
 
-
-        .profile-card:hover {
-
-            transform:
-                translateY(-8px);
-
-            box-shadow:
-                0 40px 100px
-                rgba(0,0,0,0.55);
-        }
-
-
-        .profile-card::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 300px;
-
-            height: 300px;
+        .research-card {
+            border: 1px solid var(--border);
 
             background:
-                #5c55ff;
+                rgba(8,8,15,0.75);
 
-            filter:
-                blur(100px);
+            border-radius: 22px;
 
-            opacity:
-                0.3;
-
-            top: -50px;
-
-            left: 50%;
-
-            transform:
-                translateX(-50%);
+            padding: 25px;
         }
 
+        .research-card small {
+            display: block;
 
-        .profile-image {
+            color: #8f8d9d;
 
-            position: absolute;
+            font-size: 11px;
 
-            bottom: 0;
+            letter-spacing: 2px;
 
-            left: 50%;
+            text-transform: uppercase;
 
-            transform:
-                translateX(-50%);
-
-            width: 90%;
-
-            height: 92%;
-
-            object-fit: contain;
-
-            object-position: bottom;
-
-            transition:
-                transform 0.5s ease;
+            margin-bottom: 10px;
         }
 
-
-        .profile-card:hover
-        .profile-image {
-
-            transform:
-                translateX(-50%)
-                scale(1.025);
-        }
-
-
-        .profile-label {
-
-            position: absolute;
-
-            bottom: 22px;
-
-            left: 22px;
-
-            right: 22px;
-
-            padding: 20px;
-
-            background:
-                rgba(12,12,18,0.88);
-
-            backdrop-filter:
-                blur(20px);
-
-            border:
-                1px solid
-                var(--border);
-
-            border-radius:
-                18px;
-        }
-
-
-        .profile-label small {
-
-            color:
-                #858597;
-
-            font-size:
-                11px;
-
-            letter-spacing:
-                2px;
-
-            text-transform:
-                uppercase;
-        }
-
-
-        .profile-label h3 {
-
-            margin-top: 5px;
-
+        .research-card strong {
             font-size: 18px;
+
+            line-height: 1.5;
         }
 
 
+        /* =====================================================
+           SECTION
+        ====================================================== */
 
-        /* =========================================================
-           STATS
-        ========================================================= */
+        section {
+            padding: 105px 0;
 
-        .stats {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(4,1fr);
-
-            gap: 15px;
-
-            margin-top: 70px;
+            border-top: 1px solid
+                rgba(255,255,255,0.045);
         }
 
+        .section-heading {
+            max-width: 750px;
 
-        .stat {
-
-            padding: 28px;
-
-            background:
-                rgba(255,255,255,0.025);
-
-            border:
-                1px solid
-                var(--border);
-
-            border-radius:
-                20px;
-
-            text-align:
-                center;
-
-            transition:
-                transform 0.3s ease,
-                border-color 0.3s ease;
+            margin-bottom: 55px;
         }
-
-
-        .stat:hover {
-
-            transform:
-                translateY(-6px);
-
-            border-color:
-                rgba(117,108,255,0.35);
-        }
-
-
-        .stat h3 {
-
-            font-size: 30px;
-
-            color: white;
-        }
-
-
-        .stat p {
-
-            color:
-                #858597;
-
-            font-size: 13px;
-
-            margin-top: 4px;
-        }
-
-
-
-        /* =========================================================
-           SECTION HEADINGS
-        ========================================================= */
 
         .section-label {
+            color: var(--purple-light);
 
-            color:
-                var(--purple-light);
+            text-transform: uppercase;
 
-            font-family:
-                monospace;
+            letter-spacing: 3px;
 
-            letter-spacing:
-                2px;
+            font-size: 12px;
 
-            font-size:
-                12px;
+            font-weight: 800;
 
-            text-transform:
-                uppercase;
+            margin-bottom: 13px;
+        }
 
-            margin-bottom:
-                15px;
+        .section-heading h2 {
+            font-size: clamp(
+                40px,
+                5vw,
+                65px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 18px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+
+            font-size: 17px;
         }
 
 
-        .section-title {
+        /* =====================================================
+           ABOUT
+        ====================================================== */
 
-            font-size:
-                clamp(40px,5vw,70px);
-
-            line-height:
-                1;
-
-            letter-spacing:
-                -3px;
-
-            margin-bottom:
-                20px;
-        }
-
-
-        .section-description {
-
-            color:
-                var(--muted);
-
-            max-width:
-                750px;
-
-            font-size:
-                17px;
-        }
-
-
-
-        /* =========================================================
-           GENERAL GRID
-        ========================================================= */
-
-        .two-column {
-
+        .about-grid {
             display: grid;
 
             grid-template-columns:
                 1fr 1fr;
 
-            gap: 25px;
+            gap: 24px;
+        }
 
-            margin-top: 50px;
+        .about-card {
+            border: 1px solid var(--border);
+
+            background:
+                rgba(255,255,255,0.025);
+
+            border-radius: 25px;
+
+            padding: 34px;
+        }
+
+        .about-card h3 {
+            margin-bottom: 15px;
+
+            font-size: 23px;
+        }
+
+        .about-card p {
+            color: var(--muted);
+
+            line-height: 1.9;
         }
 
 
-        .three-column {
+        /* =====================================================
+           RESEARCH
+        ====================================================== */
 
+        .research-grid {
             display: grid;
 
             grid-template-columns:
-                repeat(3,1fr);
+                repeat(3, 1fr);
 
             gap: 20px;
-
-            margin-top: 50px;
         }
 
+        .research-item {
+            border: 1px solid var(--border);
 
-
-        /* =========================================================
-           CARDS
-        ========================================================= */
-
-        .card {
+            border-radius: 25px;
 
             padding: 30px;
 
             background:
                 rgba(255,255,255,0.025);
 
-            border:
-                1px solid
-                var(--border);
-
-            border-radius:
-                24px;
-
-            transition:
-                transform 0.35s ease,
-                border-color 0.35s ease,
-                background 0.35s ease,
-                box-shadow 0.35s ease;
+            transition: 0.25s ease;
         }
 
-
-        .card:hover {
-
-            transform:
-                translateY(-7px);
+        .research-item:hover {
+            transform: translateY(-5px);
 
             border-color:
-                rgba(117,108,255,0.35);
-
-            background:
-                rgba(117,108,255,0.035);
-
-            box-shadow:
-                0 20px 50px
-                rgba(0,0,0,0.25);
+                rgba(130,116,255,0.4);
         }
-
-
-        .card h3 {
-
-            font-size:
-                22px;
-
-            margin-bottom:
-                12px;
-        }
-
-
-        .card p {
-
-            color:
-                var(--muted);
-
-            line-height:
-                1.8;
-        }
-
-
-
-        /* =========================================================
-           ABOUT
-        ========================================================= */
-
-        .about-intro {
-
-            max-width:
-                900px;
-
-            margin-top:
-                40px;
-        }
-
-
-        .about-intro p {
-
-            color:
-                #b0b0bf;
-
-            font-size:
-                18px;
-
-            line-height:
-                1.9;
-
-            margin-bottom:
-                20px;
-        }
-
-
-        .info-list {
-
-            margin-top:
-                20px;
-        }
-
-
-        .info-row {
-
-            display:
-                flex;
-
-            justify-content:
-                space-between;
-
-            gap:
-                30px;
-
-            padding:
-                18px 0;
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.07);
-        }
-
-
-        .info-row strong {
-
-            color:
-                white;
-        }
-
-
-        .info-row span {
-
-            color:
-                var(--muted);
-
-            text-align:
-                right;
-        }
-
-
-
-        /* =========================================================
-           RESEARCH
-        ========================================================= */
 
         .research-number {
+            color: var(--purple-light);
 
-            color:
-                var(--purple-light);
+            font-size: 14px;
 
-            font-family:
-                monospace;
+            font-weight: 800;
 
-            font-size:
-                13px;
+            margin-bottom: 18px;
+        }
 
-            margin-bottom:
-                18px;
+        .research-item h3 {
+            margin-bottom: 12px;
+
+            font-size: 21px;
+        }
+
+        .research-item p {
+            color: var(--muted);
+
+            font-size: 15px;
         }
 
 
-        .research-card {
+        /* =====================================================
+           PUBLICATIONS
+        ====================================================== */
 
-            min-height:
-                230px;
+        .publication-controls {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            margin-bottom: 30px;
         }
 
+        .search-box {
+            position: relative;
 
-        .tag {
+            width: 100%;
 
-            display:
-                inline-block;
+            max-width: 500px;
+        }
 
-            padding:
-                6px 11px;
+        .search-box input {
+            width: 100%;
 
-            margin:
-                6px 5px 0 0;
+            padding: 16px 20px;
 
-            border:
-                1px solid
-                rgba(117,108,255,0.25);
+            border-radius: 14px;
+
+            border: 1px solid var(--border);
+
+            outline: none;
+
+            color: white;
 
             background:
-                rgba(117,108,255,0.08);
-
-            color:
-                var(--purple-light);
-
-            border-radius:
-                20px;
-
-            font-size:
-                12px;
+                rgba(255,255,255,0.035);
         }
 
-
-
-        /* =========================================================
-           PUBLICATIONS
-        ========================================================= */
-
-        .publication-header {
-
-            display:
-                flex;
-
-            justify-content:
-                space-between;
-
-            align-items:
-                end;
-
-            gap:
-                30px;
-
-            margin-bottom:
-                40px;
+        .search-box input:focus {
+            border-color: var(--purple);
         }
-
 
         .publication-count {
+            color: #8f8d9d;
 
-            font-size:
-                65px;
+            font-size: 14px;
 
-            font-weight:
-                750;
-
-            color:
-                var(--purple-light);
-
-            line-height:
-                1;
+            white-space: nowrap;
         }
 
+        .publications-list {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
 
         .publication {
-
-            display:
-                grid;
+            display: grid;
 
             grid-template-columns:
-                55px 1fr auto;
+                75px 1fr auto;
 
-            gap:
-                20px;
+            gap: 25px;
 
-            align-items:
-                start;
+            align-items: center;
 
-            padding:
-                25px 0;
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.08);
-        }
-
-
-        .publication-number {
-
-            color:
-                var(--purple-light);
-
-            font-family:
-                monospace;
-
-            font-size:
-                13px;
-        }
-
-
-        .publication h3 {
-
-            font-size:
-                18px;
-
-            margin-bottom:
-                7px;
-        }
-
-
-        .publication p {
-
-            color:
-                var(--muted);
-
-            font-size:
-                14px;
-        }
-
-
-        .publication-link {
-
-            color:
-                white;
-
-            padding:
-                9px 15px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.12);
-
-            border-radius:
-                25px;
-
-            font-size:
-                13px;
-
-            transition:
-                0.3s ease;
-        }
-
-
-        .publication-link:hover {
+            border: 1px solid var(--border);
 
             background:
-                var(--purple);
+                rgba(255,255,255,0.02);
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            transition: 0.25s ease;
+        }
+
+        .publication:hover {
+            background:
+                rgba(255,255,255,0.045);
 
             border-color:
-                var(--purple);
+                rgba(130,116,255,0.35);
+        }
 
-            transform:
-                translateY(-2px);
+        .publication-number {
+            color: var(--purple-light);
+
+            font-size: 14px;
+
+            font-weight: 800;
+        }
+
+        .publication h3 {
+            font-size: 18px;
+
+            margin-bottom: 5px;
+        }
+
+        .publication p {
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+        .publication-link {
+            color: var(--purple-light);
+
+            font-weight: 700;
+
+            white-space: nowrap;
+        }
+
+        /*
+            First 10 publications are visible.
+            Everything after number 10 is hidden initially.
+        */
+
+        .publication.hidden-publication {
+            display: none;
+        }
+
+        .publication-actions {
+            text-align: center;
+
+            margin-top: 30px;
+        }
+
+        .no-results {
+            display: none;
+
+            padding: 40px;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            border: 1px dashed var(--border);
+
+            border-radius: 20px;
         }
 
 
-
-        /* =========================================================
+        /* =====================================================
            EDUCATION
-        ========================================================= */
+        ====================================================== */
 
         .timeline {
+            position: relative;
 
-            position:
-                relative;
-
-            margin-top:
-                55px;
-
-            padding-left:
-                35px;
+            max-width: 900px;
         }
-
 
         .timeline::before {
+            content: "";
 
-            content:
-                "";
+            position: absolute;
 
-            position:
-                absolute;
+            left: 9px;
 
-            left:
-                8px;
+            top: 5px;
 
-            top:
-                0;
+            bottom: 5px;
 
-            bottom:
-                0;
-
-            width:
-                2px;
+            width: 1px;
 
             background:
-                linear-gradient(
-                    var(--purple),
-                    rgba(117,108,255,0.05)
-                );
+                rgba(255,255,255,0.12);
         }
-
 
         .timeline-item {
+            position: relative;
 
-            position:
-                relative;
+            padding-left: 48px;
 
-            padding:
-                0 0 45px 25px;
+            margin-bottom: 42px;
         }
 
+        .timeline-dot {
+            position: absolute;
 
-        .timeline-item::before {
+            left: 0;
 
-            content:
-                "";
+            top: 7px;
 
-            position:
-                absolute;
+            width: 19px;
 
-            left:
-                -33px;
+            height: 19px;
 
-            top:
-                5px;
+            border-radius: 50%;
 
-            width:
-                13px;
+            background: var(--purple);
 
-            height:
-                13px;
-
-            border-radius:
-                50%;
-
-            background:
-                var(--purple);
-
-            box-shadow:
-                0 0 20px
-                rgba(117,108,255,0.7);
+            border: 5px solid var(--background);
         }
 
+        .timeline-item span {
+            color: var(--purple-light);
 
-        .timeline-year {
+            font-size: 13px;
 
-            color:
-                var(--purple-light);
-
-            font-family:
-                monospace;
-
-            font-size:
-                13px;
-
-            margin-bottom:
-                8px;
+            font-weight: 800;
         }
-
 
         .timeline-item h3 {
+            margin: 5px 0;
 
-            font-size:
-                24px;
-
-            margin-bottom:
-                5px;
+            font-size: 23px;
         }
-
 
         .timeline-item p {
-
-            color:
-                var(--muted);
+            color: var(--muted);
         }
 
 
-
-        /* =========================================================
+        /* =====================================================
            EXPERIENCE
-        ========================================================= */
+        ====================================================== */
 
-        .experience-card {
-
-            display:
-                grid;
+        .experience-grid {
+            display: grid;
 
             grid-template-columns:
-                180px 1fr;
+                repeat(2, 1fr);
 
-            gap:
-                30px;
-
-            padding:
-                30px 0;
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.08);
+            gap: 20px;
         }
 
+        .experience-card {
+            padding: 32px;
 
-        .experience-date {
+            border-radius: 25px;
 
-            color:
-                var(--purple-light);
+            border: 1px solid var(--border);
 
-            font-family:
-                monospace;
-
-            font-size:
-                13px;
+            background:
+                rgba(255,255,255,0.025);
         }
 
+        .experience-card .date {
+            color: var(--purple-light);
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            margin-bottom: 10px;
+        }
 
         .experience-card h3 {
+            font-size: 23px;
 
-            font-size:
-                23px;
-
-            margin-bottom:
-                5px;
+            margin-bottom: 5px;
         }
 
+        .experience-card h4 {
+            color: #aaa8b8;
 
-        .experience-company {
+            font-weight: 500;
 
-            color:
-                #b0b0bd;
-
-            margin-bottom:
-                12px;
+            margin-bottom: 15px;
         }
-
 
         .experience-card p {
-
-            color:
-                var(--muted);
+            color: var(--muted);
         }
 
 
+        /* =====================================================
+           TESTIMONIALS
+           DIRECTLY BEFORE CONTACT
+        ====================================================== */
 
-        /* =========================================================
-           REVIEWS / TESTIMONIALS
-        ========================================================= */
+        .testimonials {
+            display: grid;
 
-        .review-card {
+            grid-template-columns:
+                repeat(3, 1fr);
 
-            position:
-                relative;
+            gap: 20px;
+        }
 
-            min-height:
-                280px;
+        .testimonial {
+            padding: 30px;
+
+            border-radius: 25px;
+
+            border: 1px solid var(--border);
+
+            background:
+                rgba(255,255,255,0.025);
+        }
+
+        .stars {
+            color: #a49aff;
+
+            margin-bottom: 20px;
+
+            letter-spacing: 3px;
+        }
+
+        .testimonial p {
+            color: #b0afbc;
+
+            line-height: 1.8;
+
+            margin-bottom: 24px;
+        }
+
+        .testimonial strong {
+            display: block;
+
+            margin-bottom: 3px;
+        }
+
+        .testimonial span {
+            color: #777686;
+
+            font-size: 13px;
         }
 
 
-        .quote {
+        /* =====================================================
+           CONTACT
+        ====================================================== */
 
-            font-size:
-                50px;
+        .contact-box {
+            display: grid;
 
-            line-height:
-                1;
+            grid-template-columns:
+                1fr 1fr;
 
-            color:
-                var(--purple-light);
+            gap: 30px;
 
-            opacity:
-                0.8;
+            padding: 45px;
 
-            margin-bottom:
-                15px;
-        }
+            border-radius: 32px;
 
-
-        .review-text {
-
-            color:
-                #b8b8c5;
-
-            font-size:
-                16px;
-
-            line-height:
-                1.8;
-
-            margin-bottom:
-                25px;
-        }
-
-
-        .review-person {
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            gap:
-                13px;
-        }
-
-
-        .review-avatar {
-
-            width:
-                45px;
-
-            height:
-                45px;
-
-            border-radius:
-                50%;
+            border: 1px solid var(--border);
 
             background:
                 linear-gradient(
                     135deg,
-                    var(--purple),
-                    #4740b8
+                    rgba(130,116,255,0.10),
+                    rgba(255,255,255,0.02)
                 );
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            font-weight:
-                700;
         }
 
+        .contact-box h2 {
+            font-size: 45px;
 
-        .review-person strong {
+            line-height: 1;
 
-            display:
-                block;
+            letter-spacing: -2px;
+
+            margin-bottom: 20px;
         }
 
+        .contact-box p {
+            color: var(--muted);
 
-        .review-person span {
-
-            color:
-                var(--muted);
-
-            font-size:
-                13px;
+            max-width: 550px;
         }
 
+        .contact-details {
+            display: flex;
 
+            flex-direction: column;
 
-        /* =========================================================
-           CONTACT
-        ========================================================= */
+            gap: 15px;
 
-        .contact-grid {
-
-            display:
-                grid;
-
-            grid-template-columns:
-                0.8fr 1.2fr;
-
-            gap:
-                30px;
-
-            margin-top:
-                50px;
+            justify-content: center;
         }
-
 
         .contact-item {
+            display: flex;
 
-            padding:
-                20px 0;
+            align-items: center;
 
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.08);
+            gap: 15px;
+
+            padding: 16px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,0.025);
         }
 
+        .contact-icon {
+            width: 40px;
+
+            height: 40px;
+
+            border-radius: 50%;
+
+            background: var(--purple);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 13px;
+
+            font-weight: 800;
+        }
 
         .contact-item small {
+            display: block;
 
-            display:
-                block;
+            color: #777686;
 
-            color:
-                var(--purple-light);
+            font-size: 11px;
 
-            font-family:
-                monospace;
+            text-transform: uppercase;
 
-            margin-bottom:
-                5px;
+            letter-spacing: 1px;
         }
 
 
-        .contact-item a {
-
-            color:
-                #c4c4d0;
-
-            transition:
-                0.3s;
-        }
-
-
-        .contact-item a:hover {
-
-            color:
-                white;
-        }
-
-
-        form {
-
-            display:
-                grid;
-
-            gap:
-                15px;
-        }
-
-
-        input,
-        textarea {
-
-            width:
-                100%;
-
-            padding:
-                16px 18px;
-
-            background:
-                rgba(255,255,255,0.03);
-
-            color:
-                white;
-
-            border:
-                1px solid
-                var(--border);
-
-            border-radius:
-                14px;
-
-            outline:
-                none;
-
-            transition:
-                0.3s ease;
-        }
-
-
-        input:focus,
-        textarea:focus {
-
-            border-color:
-                rgba(117,108,255,0.6);
-
-            box-shadow:
-                0 0 25px
-                rgba(117,108,255,0.08);
-        }
-
-
-        textarea {
-
-            min-height:
-                160px;
-
-            resize:
-                vertical;
-        }
-
-
-
-        /* =========================================================
+        /* =====================================================
            FOOTER
-        ========================================================= */
+        ====================================================== */
 
         footer {
+            border-top: 1px solid var(--border);
 
-            padding:
-                40px 0;
+            padding: 35px 0;
 
-            border-top:
-                1px solid
-                rgba(255,255,255,0.07);
+            color: #777686;
 
-            background:
-                rgba(0,0,0,0.15);
+            font-size: 13px;
+        }
+
+        .footer-content {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            align-items: center;
         }
 
 
-        .footer-inner {
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
 
-            display:
-                flex;
+        .menu-button {
+            display: none;
 
-            justify-content:
-                space-between;
+            border: 1px solid var(--border);
 
-            align-items:
-                center;
+            background: transparent;
 
-            gap:
-                20px;
+            color: white;
+
+            border-radius: 12px;
+
+            padding: 10px 13px;
+
+            cursor: pointer;
         }
 
 
-        .footer-inner p {
-
-            color:
-                #777789;
-
-            font-size:
-                13px;
-        }
-
-
-
-        /* =========================================================
-           SCROLLBAR
-        ========================================================= */
-
-        ::-webkit-scrollbar {
-
-            width:
-                8px;
-        }
-
-
-        ::-webkit-scrollbar-track {
-
-            background:
-                #08080d;
-        }
-
-
-        ::-webkit-scrollbar-thumb {
-
-            background:
-                #272538;
-
-            border-radius:
-                20px;
-        }
-
-
-        ::-webkit-scrollbar-thumb:hover {
-
-            background:
-                var(--purple);
-        }
-
-
-
-        /* =========================================================
-           MOBILE NAVIGATION
-        ========================================================= */
-
-        .mobile-menu {
-
-            display:
-                none;
-
-            width:
-                45px;
-
-            height:
-                45px;
-
-            border:
-                1px solid
-                var(--border);
-
-            border-radius:
-                50%;
-
-            background:
-                rgba(255,255,255,0.04);
-
-            color:
-                white;
-
-            cursor:
-                pointer;
-
-            font-size:
-                20px;
-        }
-
-
-
-        /* =========================================================
+        /* =====================================================
            RESPONSIVE
-        ========================================================= */
+        ====================================================== */
 
         @media (max-width: 1050px) {
 
             .nav-links {
-
-                gap:
-                    0;
+                gap: 0;
             }
-
 
             .nav-links a {
+                padding: 9px 10px;
 
-                padding:
-                    9px 10px;
-
-                font-size:
-                    12px;
+                font-size: 13px;
             }
-
 
             .hero-grid {
-
-                grid-template-columns:
-                    1fr;
-
+                gap: 40px;
             }
 
-
-            .profile-card {
-
-                max-width:
-                    500px;
-
-                margin:
-                    auto;
-            }
-
-
-            .three-column {
-
-                grid-template-columns:
-                    1fr 1fr;
+            .hero h1 {
+                font-size: 75px;
             }
         }
 
 
+        @media (max-width: 850px) {
 
-        @media (max-width: 800px) {
-
-            body {
-
-                cursor:
-                    auto;
+            header {
+                top: 8px;
             }
 
+            .navbar {
+                border-radius: 20px;
 
-            .cursor-dot,
-            .cursor-glow {
-
-                display:
-                    none;
+                min-height: 65px;
             }
 
-
-            nav {
-
-                border-radius:
-                    22px;
+            .menu-button {
+                display: block;
             }
-
-
-            .nav-inner {
-
-                min-height:
-                    65px;
-            }
-
 
             .nav-links {
+                display: none;
 
-                display:
-                    none;
+                position: absolute;
 
-                position:
-                    absolute;
+                top: 78px;
 
-                top:
-                    75px;
+                left: 20px;
 
-                left:
-                    0;
+                right: 20px;
 
-                right:
-                    0;
+                flex-direction: column;
 
-                flex-direction:
-                    column;
+                padding: 10px;
+
+                border-radius: 20px;
 
                 background:
-                    rgba(15,15,22,0.98);
+                    rgba(13,13,22,0.98);
 
-                border:
-                    1px solid
-                    var(--border);
-
-                border-radius:
-                    20px;
-
-                padding:
-                    10px;
+                border: 1px solid var(--border);
             }
 
-
-            .nav-links.mobile-open {
-
-                display:
-                    flex;
+            .nav-links.active {
+                display: flex;
             }
-
 
             .nav-links a {
+                width: 100%;
 
-                padding:
-                    13px 16px;
+                text-align: center;
 
-                text-align:
-                    center;
+                padding: 13px;
             }
 
-
-            .mobile-menu {
-
-                display:
-                    block;
+            .resume-btn {
+                display: none;
             }
 
-
-            .resume-button {
-
-                display:
-                    none;
+            .hero {
+                padding-top: 70px;
             }
 
-
-            .hero h1 {
-
-                font-size:
-                    58px;
-
-                letter-spacing:
-                    -3px;
+            .hero-grid {
+                grid-template-columns: 1fr;
             }
 
-
-            .two-column,
-            .three-column,
-            .contact-grid {
-
-                grid-template-columns:
-                    1fr;
+            .hero-card {
+                min-height: 500px;
             }
 
-
-            .stats {
-
-                grid-template-columns:
-                    1fr 1fr;
+            .about-grid,
+            .research-grid,
+            .experience-grid,
+            .testimonials,
+            .contact-box {
+                grid-template-columns: 1fr;
             }
 
+            .publication-controls {
+                flex-direction: column;
 
-            .experience-card {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    8px;
+                align-items: stretch;
             }
 
-
-            .publication {
-
-                grid-template-columns:
-                    40px 1fr;
-            }
-
-
-            .publication-link {
-
-                grid-column:
-                    2;
-
-                width:
-                    fit-content;
-            }
-
-
-            .publication-header {
-
-                align-items:
-                    start;
-
-                flex-direction:
-                    column;
-            }
-
-
-            .footer-inner {
-
-                flex-direction:
-                    column;
-
-                text-align:
-                    center;
+            .publication-count {
+                white-space: normal;
             }
         }
 
 
-
-        @media (max-width: 500px) {
+        @media (max-width: 600px) {
 
             .container {
-
                 width:
-                    92%;
+                    min(
+                        calc(100% - 30px),
+                        var(--max-width)
+                    );
             }
 
+            .hero {
+                min-height: auto;
+
+                padding:
+                    70px 0 80px;
+            }
 
             .hero h1 {
+                font-size: 57px;
 
-                font-size:
-                    48px;
+                letter-spacing: -3px;
             }
-
 
             .hero-description {
-
-                font-size:
-                    16px;
+                font-size: 16px;
             }
 
+            .hero-card {
+                min-height: 460px;
 
-            .profile-card {
-
-                height:
-                    430px;
+                padding: 15px;
             }
 
-
-            .stats {
-
-                grid-template-columns:
-                    1fr;
+            .profile-photo {
+                height: 300px;
             }
 
-
-            .section-title {
-
-                font-size:
-                    42px;
+            section {
+                padding: 75px 0;
             }
 
-
-            .social-icons {
-
-                gap:
-                    10px;
+            .section-heading h2 {
+                font-size: 42px;
             }
 
+            .publication {
+                grid-template-columns: 1fr;
 
-            .social-icon {
-
-                width:
-                    56px;
-
-                height:
-                    56px;
+                gap: 10px;
             }
 
-
-            .info-row {
-
-                flex-direction:
-                    column;
-
-                gap:
-                    5px;
+            .publication-number {
+                font-size: 12px;
             }
 
+            .publication-link {
+                display: inline-block;
 
-            .info-row span {
+                margin-top: 8px;
+            }
 
-                text-align:
-                    left;
+            .contact-box {
+                padding: 28px;
+            }
+
+            .contact-box h2 {
+                font-size: 38px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+
+                align-items: flex-start;
             }
         }
 
-    
-
-    /* FINAL VERTICAL LAYOUT */
-    .hero-grid{display:flex;flex-direction:column;gap:45px;align-items:stretch;width:100%;max-width:900px;margin:0 auto;}
-    .hero-grid>div{width:100%;}
-    .profile-card{width:100%;max-width:700px;height:500px;margin:0 auto;}
-    .two-column,.three-column,.contact-grid{display:flex;flex-direction:column;gap:20px;width:100%;max-width:900px;margin-left:auto;margin-right:auto;}
-    .publication-header{display:flex;flex-direction:column;align-items:flex-start;gap:20px;}
-    .publication{display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
-    .experience-card{display:flex;flex-direction:column;gap:8px;}
-    .publication-search{width:100%;max-width:900px;margin:0 auto 25px;}
-    .publication-search input{width:100%;padding:16px 20px;background:rgba(255,255,255,0.03);color:white;border:1px solid var(--border);border-radius:14px;outline:none;font-size:15px;}
-    .publication-search input:focus{border-color:rgba(117,108,255,0.6);box-shadow:0 0 25px rgba(117,108,255,0.08);}
-    .publication-extra{display:none;}
-    .publication-more-wrap{display:flex;justify-content:center;margin-top:30px;}
-    .publication-more-button{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:30px;border:1px solid var(--border);background:rgba(255,255,255,0.04);color:white;font-weight:650;cursor:pointer;transition:0.3s ease;}
-    .publication-more-button:hover{background:var(--purple);border-color:var(--purple);transform:translateY(-3px);box-shadow:0 12px 35px rgba(117,108,255,0.25);}
-    .publication-empty{display:none;color:var(--muted);text-align:center;padding:25px;}
-    @media (max-width:800px){.hero-grid,.two-column,.three-column,.contact-grid{max-width:100%;}.profile-card{height:430px;}}
-
-
-
-    /* ANIMATED S LOGO */
-    .logo{display:flex;align-items:center;gap:10px;}
-    .s-logo{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:linear-gradient(135deg,var(--purple),var(--purple-light));color:white;font-size:23px;font-weight:900;box-shadow:0 0 20px rgba(117,108,255,0.35);position:relative;overflow:hidden;animation:sLogoFloat 3s ease-in-out infinite;}
-    .s-logo::after{content:"";position:absolute;width:18px;height:70px;background:rgba(255,255,255,0.35);transform:rotate(30deg) translateX(-65px);animation:sLogoShine 3s ease-in-out infinite;}
-    @keyframes sLogoFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-3px);}}
-    @keyframes sLogoShine{0%{transform:rotate(30deg) translateX(-65px);}45%,100%{transform:rotate(30deg) translateX(65px);}}
-
-</style>
+    </style>
 
 </head>
-
 
 
 <body>
 
 
-    <!-- =========================================================
-         PAGE TRANSITION
-    ========================================================= -->
-
-    <div class="page-transition"></div>
-
-
-    <!-- =========================================================
-         CUSTOM CURSOR
-    ========================================================= -->
-
-    <div class="cursor-dot"></div>
-
-    <div class="cursor-glow"></div>
-
-
-
-    <!-- =========================================================
+    <!-- =====================================================
          NAVIGATION
-    ========================================================= -->
+    ====================================================== -->
 
-    <nav>
+    <header>
 
-        <div class="nav-inner">
+        <div class="container">
 
+            <nav class="navbar">
 
-            <a href="#home"
-               class="logo nav-link"
-               data-page="home">
+                <a href="#home" class="logo">
+                    YOUR<span>NAME.</span>
+                </a>
 
-                <span class="s-logo">S</span>
 
-            <span class="logo-name">
-                YOUR NAME.
-            </span>
+                <div class="nav-links" id="navLinks">
 
-            </a>
+                    <a href="#about">About</a>
 
+                    <a href="#research">Research</a>
 
-            <ul class="nav-links">
+                    <a href="#publications">Publications</a>
 
+                    <a href="#education">Education</a>
 
-                <li>
+                    <a href="#experience">Experience</a>
 
-                    <a href="#home"
-                       class="nav-link active"
-                       data-page="home">
+                    <a href="#testimonials">Testimonials</a>
 
-                        Home
+                    <a href="#contact">Contact</a>
 
-                    </a>
+                </div>
 
-                </li>
 
+                <a href="resume.pdf"
+                   class="resume-btn"
+                   target="_blank">
 
-                <li>
+                    Resume ↗
 
-                    <a href="#about"
-                       class="nav-link"
-                       data-page="about">
+                </a>
 
-                        About
 
-                    </a>
+                <button
+                    class="menu-button"
+                    id="menuButton">
 
-                </li>
+                    ☰
 
+                </button>
 
-                <li>
-
-                    <a href="#reviews"
-                       class="nav-link"
-                       data-page="reviews">
-
-                        Reviews
-
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="#research"
-                       class="nav-link"
-                       data-page="research">
-
-                        Research
-
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="#publications"
-                       class="nav-link"
-                       data-page="publications">
-
-                        Publications
-
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="#education"
-                       class="nav-link"
-                       data-page="education">
-
-                        Education
-
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="#experience"
-                       class="nav-link"
-                       data-page="experience">
-
-                        Experience
-
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="#contact"
-                       class="nav-link"
-                       data-page="contact">
-
-                        Contact
-
-                    </a>
-
-                </li>
-
-
-            </ul>
-
-
-            <a href="cv.pdf"
-               target="_blank"
-               class="resume-button">
-
-                Resume ↗
-
-            </a>
-
-
-            <button class="mobile-menu"
-                    id="mobileMenu">
-
-                ☰
-
-            </button>
-
+            </nav>
 
         </div>
 
-    </nav>
+    </header>
 
 
 
-    <!-- =========================================================
-         HOME PAGE
-    ========================================================= -->
+    <!-- =====================================================
+         HOME
+    ====================================================== -->
 
-    <main class="page active-page"
-          id="home">
+    <main>
 
-
-        <section class="hero">
+        <section id="home" class="hero">
 
             <div class="container">
-
 
                 <div class="hero-grid">
 
 
-                    <!-- LEFT -->
+                    <!-- LEFT SIDE -->
 
                     <div>
 
+                        <div class="availability">
 
-                        <div class="status">
+                            <span class="availability-dot"></span>
 
-                            <span class="status-dot"></span>
-
-                            OPEN TO RESEARCH &
-                            ACADEMIC COLLABORATION
+                            Open to Research & Academic Collaboration
 
                         </div>
 
@@ -2642,6 +1408,8 @@
                         <h1>
 
                             Hi, I'm
+
+                            <br>
 
                             <span>
                                 Your Name.
@@ -2653,213 +1421,140 @@
                         <p class="hero-description">
 
                             Researcher, academic and writer working
-                            at the intersection of language,
-                            literature, education and interdisciplinary
-                            research.
+                            at the intersection of language, literature,
+                            education and interdisciplinary research.
+                            I am passionate about producing meaningful
+                            research and contributing to academic
+                            knowledge.
 
                         </p>
 
 
                         <div class="hero-buttons">
 
+                            <a
+                                href="#publications"
+                                class="btn btn-primary">
 
-                            <a href="#publications"
-                               class="button button-primary nav-link"
-                               data-page="publications">
-
-                                View my work
-                                ↗
+                                View Publications ↗
 
                             </a>
 
 
-                            <a href="#about"
-                               class="button button-secondary nav-link"
-                               data-page="about">
+                            <a
+                                href="#contact"
+                                class="btn btn-secondary">
 
-                                Let's Talk
+                                Let's Connect
 
                             </a>
-
 
                         </div>
 
 
-                        <!-- SOCIAL ICONS -->
+                        <!-- SOCIAL MEDIA -->
 
-                        <div class="social-icons">
+                        <div class="socials">
 
+                            <!-- Replace # with your actual links -->
 
-                            <!-- LINKEDIN -->
+                            <a
+                                href="#"
+                                class="social"
+                                target="_blank"
+                                title="LinkedIn">
 
-                            <a href="#"
-                               class="social-icon"
-                               target="_blank"
-                               aria-label="LinkedIn">
-
-                                <svg viewBox="0 0 24 24">
-
-                                    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V8.98h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.62 0 4.29 2.38 4.29 5.48v6.28zM5.34 7.42a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V8.98h3.56v11.47z"/>
-
-                                </svg>
+                                in
 
                             </a>
 
 
-                            <!-- FACEBOOK -->
+                            <a
+                                href="#"
+                                class="social"
+                                target="_blank"
+                                title="Google Scholar">
 
-                            <a href="#"
-                               class="social-icon"
-                               target="_blank"
-                               aria-label="Facebook">
-
-                                <svg viewBox="0 0 24 24">
-
-                                    <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.87.24-1.46 1.5-1.46h1.61V4.96c-.28-.04-1.25-.12-2.38-.12-2.36 0-3.98 1.44-3.98 4.08V11H7.57v3h2.7v8h3.23z"/>
-
-                                </svg>
+                                GS
 
                             </a>
 
 
-                            <!-- INSTAGRAM -->
+                            <a
+                                href="#"
+                                class="social"
+                                target="_blank"
+                                title="ResearchGate">
 
-                            <a href="#"
-                               class="social-icon"
-                               target="_blank"
-                               aria-label="Instagram">
-
-                                <svg viewBox="0 0 24 24">
-
-                                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A4.5 4.5 0 1 1 12 16.5 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 12 14.5 2.5 2.5 0 0 0 12 9.5zM17.5 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-
-                                </svg>
+                                RG
 
                             </a>
 
 
-                            <!-- RESEARCHGATE -->
+                            <a
+                                href="#"
+                                class="social"
+                                target="_blank"
+                                title="ORCID">
 
-                            <a href="#"
-                               class="social-icon"
-                               target="_blank"
-                               aria-label="ResearchGate">
-
-                                <strong style="font-size:18px;">
-                                    RG
-                                </strong>
+                                iD
 
                             </a>
 
+
+                            <a
+                                href="#"
+                                class="social"
+                                target="_blank"
+                                title="GitHub">
+
+                                GH
+
+                            </a>
 
                         </div>
 
-
                     </div>
 
 
 
-                    <!-- RIGHT PROFILE -->
+                    <!-- RIGHT SIDE — PHOTO -->
 
-                    <div>
+                    <div class="hero-card">
+
+                        <!--
+                            =================================================
+                            YOUR PHOTO GOES HERE
+                            =================================================
+
+                            Put your image in the same folder as this HTML
+                            file and name it:
+
+                            profile.jpg
+
+                            OR change "profile.jpg" below to your filename.
+                        -->
+
+                        <img
+                            src="profile.jpg"
+                            alt="Your Name"
+                            class="profile-photo">
 
 
-                        <div class="profile-card">
+                        <div class="research-card">
 
+                            <small>
+                                Currently Researching
+                            </small>
 
-                            <!--
-                                CHANGE THIS IMAGE TO YOUR IMAGE.
-
-                                Upload:
-                                profile.jpg
-
-                                to the same GitHub folder.
-                            -->
-
-                            <img src="profile.jpg"
-                                 alt="Profile photo"
-                                 class="profile-image">
-
-
-                            <div class="profile-label">
-
-                                <small>
-                                    CURRENTLY RESEARCHING
-                                </small>
-
-                                <h3>
-                                    Language • Literature • Research
-                                </h3>
-
-                            </div>
-
+                            <strong>
+                                Language, Literature &
+                                Interdisciplinary Studies
+                            </strong>
 
                         </div>
 
-
                     </div>
-
-
-                </div>
-
-
-
-                <!-- STATS -->
-
-                <div class="stats">
-
-
-                    <div class="stat">
-
-                        <h3>
-                            30+
-                        </h3>
-
-                        <p>
-                            Publications
-                        </p>
-
-                    </div>
-
-
-                    <div class="stat">
-
-                        <h3>
-                            10+
-                        </h3>
-
-                        <p>
-                            Research Projects
-                        </p>
-
-                    </div>
-
-
-                    <div class="stat">
-
-                        <h3>
-                            3+
-                        </h3>
-
-                        <p>
-                            Research Areas
-                        </p>
-
-                    </div>
-
-
-                    <div class="stat">
-
-                        <h3>
-                            1
-                        </h3>
-
-                        <p>
-                            Academic CV
-                        </p>
-
-                    </div>
-
 
                 </div>
 
@@ -2868,425 +1563,111 @@
         </section>
 
 
-    </main>
 
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
 
-
-    <!-- =========================================================
-         ABOUT PAGE
-    ========================================================= -->
-
-    <main class="page"
-          id="about">
-
-
-        <section>
+        <section id="about">
 
             <div class="container">
 
+                <div class="section-heading">
 
-                <div class="section-label">
-                    01 — About
-                </div>
+                    <div class="section-label">
+                        About Me
+                    </div>
 
-
-                <h2 class="section-title">
-                    About Me.
-                </h2>
-
-
-                <p class="section-description">
-
-                    A brief academic profile, current studies,
-                    interests and professional background.
-
-                </p>
-
-
-                <div class="about-intro">
-
+                    <h2>
+                        Research with purpose.
+                    </h2>
 
                     <p>
-
-                        I am an academic researcher, writer and
-                        student interested in language, literature,
-                        linguistics, education and interdisciplinary
-                        research.
-
+                        A concise overview of my academic interests,
+                        intellectual background and approach to research.
                     </p>
-
-
-                    <p>
-
-                        My academic work focuses on developing
-                        meaningful research, exploring language and
-                        literary phenomena, and contributing to
-                        knowledge through academic writing and
-                        publication.
-
-                    </p>
-
-
-                    <p>
-
-                        This website provides an overview of my
-                        academic journey, research interests,
-                        publications, education, experience and
-                        professional activities.
-
-                    </p>
-
 
                 </div>
 
 
+                <div class="about-grid">
 
-                <div class="two-column">
-
-
-                    <div class="card">
+                    <div class="about-card">
 
                         <h3>
-                            Academic Profile
+                            Who I Am
                         </h3>
 
                         <p>
 
-                            Researcher and academic writer with
-                            interests spanning linguistics,
-                            literature, language education and
-                            interdisciplinary studies.
+                            I am an academic researcher and writer
+                            interested in language, literature,
+                            linguistics, education and interdisciplinary
+                            studies.
 
                         </p>
 
                     </div>
 
 
-                    <div class="card">
+                    <div class="about-card">
 
                         <h3>
-                            Current Focus
+                            What I Do
                         </h3>
 
                         <p>
 
-                            Current academic work, research projects,
-                            publications and development of advanced
-                            research skills.
+                            My work focuses on developing research,
+                            academic writing, critical analysis and
+                            interdisciplinary perspectives that connect
+                            language and society.
 
                         </p>
 
                     </div>
 
-
                 </div>
-
-
-
-                <div class="card"
-                     style="margin-top:25px;">
-
-
-                    <h3>
-                        Personal Information
-                    </h3>
-
-
-                    <div class="info-list">
-
-
-                        <div class="info-row">
-
-                            <strong>
-                                Current Institution
-                            </strong>
-
-                            <span>
-                                Your University
-                            </span>
-
-                        </div>
-
-
-                        <div class="info-row">
-
-                            <strong>
-                                Degree
-                            </strong>
-
-                            <span>
-                                BS English
-                            </span>
-
-                        </div>
-
-
-                        <div class="info-row">
-
-                            <strong>
-                                Current Grade / CGPA
-                            </strong>
-
-                            <span>
-                                Add Your Grade
-                            </span>
-
-                        </div>
-
-
-                        <div class="info-row">
-
-                            <strong>
-                                Field
-                            </strong>
-
-                            <span>
-                                English Literature & Linguistics
-                            </span>
-
-                        </div>
-
-
-                        <div class="info-row">
-
-                            <strong>
-                                Location
-                            </strong>
-
-                            <span>
-                                Islamabad, Pakistan
-                            </span>
-
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
 
             </div>
 
         </section>
 
 
-    </main>
 
+        <!-- =====================================================
+             RESEARCH
+        ====================================================== -->
 
-
-    <!-- =========================================================
-         REVIEWS PAGE
-    ========================================================= -->
-
-    <main class="page"
-          id="reviews">
-
-
-        <section>
+        <section id="research">
 
             <div class="container">
 
+                <div class="section-heading">
 
-                <div class="section-label">
-                    02 — Reviews
-                </div>
-
-
-                <h2 class="section-title">
-                    Testimonials.
-                </h2>
-
-
-                <p class="section-description">
-
-                    Feedback from teachers, researchers,
-                    collaborators, students and professional
-                    colleagues.
-
-                </p>
-
-
-
-                <div class="three-column">
-
-
-                    <div class="card review-card">
-
-
-                        <div class="quote">
-                            “
-                        </div>
-
-
-                        <p class="review-text">
-
-                            Add a genuine testimonial from a
-                            professor, supervisor, colleague or
-                            collaborator here.
-
-                        </p>
-
-
-                        <div class="review-person">
-
-                            <div class="review-avatar">
-                                A
-                            </div>
-
-                            <div>
-
-                                <strong>
-                                    Professor Name
-                                </strong>
-
-                                <span>
-                                    University / Institution
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
+                    <div class="section-label">
+                        Research
                     </div>
 
+                    <h2>
+                        Areas of interest.
+                    </h2>
 
-
-                    <div class="card review-card">
-
-
-                        <div class="quote">
-                            “
-                        </div>
-
-
-                        <p class="review-text">
-
-                            Add another professional or academic
-                            review here. Keep testimonials concise
-                            and authentic.
-
-                        </p>
-
-
-                        <div class="review-person">
-
-                            <div class="review-avatar">
-                                B
-                            </div>
-
-                            <div>
-
-                                <strong>
-                                    Researcher Name
-                                </strong>
-
-                                <span>
-                                    Academic Institution
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="card review-card">
-
-
-                        <div class="quote">
-                            “
-                        </div>
-
-
-                        <p class="review-text">
-
-                            Add feedback about your research,
-                            academic writing, teaching or
-                            professional collaboration.
-
-                        </p>
-
-
-                        <div class="review-person">
-
-                            <div class="review-avatar">
-                                C
-                            </div>
-
-                            <div>
-
-                                <strong>
-                                    Colleague Name
-                                </strong>
-
-                                <span>
-                                    Organization
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
+                    <p>
+                        Key areas where I explore questions,
+                        develop ideas and conduct research.
+                    </p>
 
                 </div>
 
 
-            </div>
-
-        </section>
+                <div class="research-grid">
 
 
-    </main>
-
-
-
-    <!-- =========================================================
-         RESEARCH PAGE
-    ========================================================= -->
-
-    <main class="page"
-          id="research">
-
-
-        <section>
-
-            <div class="container">
-
-
-                <div class="section-label">
-                    03 — Research
-                </div>
-
-
-                <h2 class="section-title">
-                    Research Areas.
-                </h2>
-
-
-                <p class="section-description">
-
-                    My research interests, projects and areas of
-                    academic investigation.
-
-                </p>
-
-
-
-                <div class="three-column">
-
-
-                    <div class="card research-card">
+                    <div class="research-item">
 
                         <div class="research-number">
-                            RESEARCH 01
+                            01
                         </div>
 
                         <h3>
@@ -3294,38 +1675,17 @@
                         </h3>
 
                         <p>
-
-                            Research in sociolinguistics,
-                            syntax, discourse, corpus linguistics,
-                            language variation and multilingualism.
-
+                            Syntax, sociolinguistics, discourse,
+                            morphology, semantics and language variation.
                         </p>
-
-
-                        <div>
-
-                            <span class="tag">
-                                Sociolinguistics
-                            </span>
-
-                            <span class="tag">
-                                Syntax
-                            </span>
-
-                            <span class="tag">
-                                Corpus
-                            </span>
-
-                        </div>
 
                     </div>
 
 
-
-                    <div class="card research-card">
+                    <div class="research-item">
 
                         <div class="research-number">
-                            RESEARCH 02
+                            02
                         </div>
 
                         <h3>
@@ -3333,77 +1693,35 @@
                         </h3>
 
                         <p>
-
-                            Literary analysis, critical theory,
-                            contemporary literature and
-                            interdisciplinary approaches to texts.
-
+                            Literary criticism, theory, close reading,
+                            comparative literature and cultural studies.
                         </p>
-
-
-                        <div>
-
-                            <span class="tag">
-                                Literary Studies
-                            </span>
-
-                            <span class="tag">
-                                Theory
-                            </span>
-
-                            <span class="tag">
-                                Criticism
-                            </span>
-
-                        </div>
 
                     </div>
 
 
-
-                    <div class="card research-card">
+                    <div class="research-item">
 
                         <div class="research-number">
-                            RESEARCH 03
+                            03
                         </div>
 
                         <h3>
-                            Language & Education
+                            Education
                         </h3>
 
                         <p>
-
-                            English language teaching, academic
-                            writing, language learning and
-                            educational research.
-
+                            English language teaching, academic writing,
+                            learning and educational research.
                         </p>
-
-
-                        <div>
-
-                            <span class="tag">
-                                ELT
-                            </span>
-
-                            <span class="tag">
-                                Academic Writing
-                            </span>
-
-                            <span class="tag">
-                                Education
-                            </span>
-
-                        </div>
 
                     </div>
 
 
-
-                    <div class="card research-card">
+                    <div class="research-item">
 
                         <div class="research-number">
-                            RESEARCH 04
+                            04
                         </div>
 
                         <h3>
@@ -3411,73 +1729,35 @@
                         </h3>
 
                         <p>
-
-                            Investigation of language use,
-                            identity, discourse practices and
-                            communication.
-
+                            Language, identity, society, communication
+                            and critical discourse analysis.
                         </p>
-
-
-                        <div>
-
-                            <span class="tag">
-                                Discourse
-                            </span>
-
-                            <span class="tag">
-                                Identity
-                            </span>
-
-                            <span class="tag">
-                                Communication
-                            </span>
-
-                        </div>
 
                     </div>
 
 
-
-                    <div class="card research-card">
+                    <div class="research-item">
 
                         <div class="research-number">
-                            RESEARCH 05
+                            05
                         </div>
 
                         <h3>
-                            Multilingualism
+                            Corpus Linguistics
                         </h3>
 
                         <p>
-
-                            Code-switching, translanguaging,
-                            multilingual communication and
-                            language contact.
-
+                            Corpus-based approaches to language,
+                            patterns, variation and textual analysis.
                         </p>
-
-
-                        <div>
-
-                            <span class="tag">
-                                Code-Switching
-                            </span>
-
-                            <span class="tag">
-                                Multilingualism
-                            </span>
-
-                        </div>
 
                     </div>
 
 
-
-                    <div class="card research-card">
+                    <div class="research-item">
 
                         <div class="research-number">
-                            RESEARCH 06
+                            06
                         </div>
 
                         <h3>
@@ -3485,98 +1765,79 @@
                         </h3>
 
                         <p>
-
-                            Research combining language,
-                            literature, education, society and
-                            emerging academic fields.
-
+                            Connecting language, literature, education
+                            and social research.
                         </p>
-
-
-                        <div>
-
-                            <span class="tag">
-                                Interdisciplinary
-                            </span>
-
-                            <span class="tag">
-                                Research
-                            </span>
-
-                        </div>
 
                     </div>
 
-
                 </div>
-
 
             </div>
 
         </section>
 
 
-    </main>
 
+        <!-- =====================================================
+             PUBLICATIONS
+        ====================================================== -->
 
-
-    <!-- =========================================================
-         PUBLICATIONS PAGE
-    ========================================================= -->
-
-    <main class="page"
-          id="publications">
-
-
-        <section>
+        <section id="publications">
 
             <div class="container">
 
+                <div class="section-heading">
 
-                <div class="publication-header">
+                    <div class="section-label">
+                        Publications
+                    </div>
+
+                    <h2>
+                        Selected research.
+                    </h2>
+
+                    <p>
+                        Explore my academic publications, papers,
+                        research projects and scholarly work.
+                    </p>
+
+                </div>
 
 
-                    <div>
+                <div class="publication-controls">
 
-                        <div class="section-label">
-                            04 — Publications
-                        </div>
+                    <div class="search-box">
 
-                        <h2 class="section-title">
-                            My Publications.
-                        </h2>
-
-                        <p class="section-description">
-
-                            Explore my academic publications,
-                            research papers, articles and other
-                            scholarly work.
-
-                        </p>
+                        <input
+                            type="text"
+                            id="publicationSearch"
+                            placeholder="Search publications...">
 
                     </div>
 
 
                     <div class="publication-count">
-                        30+
+
+                        Showing
+                        <strong id="visibleCount">
+                            10
+                        </strong>
+                        publications
+
                     </div>
 
-
                 </div>
 
 
-
-                <div class="publication-search">
-                    <input type="search" id="publicationSearch" placeholder="Search publications..." aria-label="Search publications">
-                </div>
-
-
-                <div id="publicationList">
+                <div
+                    class="publications-list"
+                    id="publicationsList">
 
 
                     <!-- PUBLICATION 01 -->
 
-                    <div class="publication">
+                    <article class="publication">
 
                         <div class="publication-number">
                             01
@@ -3585,30 +1846,31 @@
                         <div>
 
                             <h3>
-                                Title of Your Publication
+                                Parametric Variation Across
+                                Pashto, Urdu and English
                             </h3>
 
                             <p>
-                                Journal / Publisher • 2026
+                                Comparative study of linguistic
+                                structures and syntactic variation.
                             </p>
 
                         </div>
 
-                        <a href="#"
-                           target="_blank"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
 
-                            Read ↗
+                            View ↗
 
                         </a>
 
-                    </div>
-
+                    </article>
 
 
                     <!-- PUBLICATION 02 -->
 
-                    <div class="publication">
+                    <article class="publication">
 
                         <div class="publication-number">
                             02
@@ -3617,30 +1879,31 @@
                         <div>
 
                             <h3>
-                                Title of Your Research Paper
+                                Code-Switching Practices Among
+                                University Students
                             </h3>
 
                             <p>
-                                Journal / Publisher • 2026
+                                A sociolinguistic investigation of
+                                multilingual communication.
                             </p>
 
                         </div>
 
-                        <a href="#"
-                           target="_blank"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
 
-                            Read ↗
+                            View ↗
 
                         </a>
 
-                    </div>
-
+                    </article>
 
 
                     <!-- PUBLICATION 03 -->
 
-                    <div class="publication">
+                    <article class="publication">
 
                         <div class="publication-number">
                             03
@@ -3649,30 +1912,30 @@
                         <div>
 
                             <h3>
-                                Title of Your Article
+                                Language, Identity and Society
                             </h3>
 
                             <p>
-                                Journal / Publisher • 2025
+                                Exploring the relationship between
+                                linguistic practices and identity.
                             </p>
 
                         </div>
 
-                        <a href="#"
-                           target="_blank"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
 
-                            Read ↗
+                            View ↗
 
                         </a>
 
-                    </div>
-
+                    </article>
 
 
                     <!-- PUBLICATION 04 -->
 
-                    <div class="publication">
+                    <article class="publication">
 
                         <div class="publication-number">
                             04
@@ -3681,30 +1944,31 @@
                         <div>
 
                             <h3>
-                                Title of Your Publication
+                                English-Urdu Code-Switching
+                                in Pakistani Novels
                             </h3>
 
                             <p>
-                                Journal / Publisher • 2025
+                                A comparative study of linguistic
+                                practices in contemporary fiction.
                             </p>
 
                         </div>
 
-                        <a href="#"
-                           target="_blank"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
 
-                            Read ↗
+                            View ↗
 
                         </a>
 
-                    </div>
-
+                    </article>
 
 
                     <!-- PUBLICATION 05 -->
 
-                    <div class="publication">
+                    <article class="publication">
 
                         <div class="publication-number">
                             05
@@ -3713,30 +1977,30 @@
                         <div>
 
                             <h3>
-                                Title of Your Publication
+                                Critical Discourse and Representation
                             </h3>
 
                             <p>
-                                Journal / Publisher • 2025
+                                An analysis of discourse,
+                                representation and power.
                             </p>
 
                         </div>
 
-                        <a href="#"
-                           target="_blank"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
 
-                            Read ↗
+                            View ↗
 
                         </a>
 
-                    </div>
-
+                    </article>
 
 
                     <!-- PUBLICATION 06 -->
 
-                    <div class="publication">
+                    <article class="publication">
 
                         <div class="publication-number">
                             06
@@ -3745,30 +2009,30 @@
                         <div>
 
                             <h3>
-                                Title of Your Publication
+                                Reader Response and Literary Meaning
                             </h3>
 
                             <p>
-                                Journal / Publisher • 2025
+                                Exploring the relationship between
+                                readers, texts and interpretation.
                             </p>
 
                         </div>
 
-                        <a href="#"
-                           target="_blank"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
 
-                            Read ↗
+                            View ↗
 
                         </a>
 
-                    </div>
-
+                    </article>
 
 
                     <!-- PUBLICATION 07 -->
 
-                    <div class="publication">
+                    <article class="publication">
 
                         <div class="publication-number">
                             07
@@ -3777,30 +2041,30 @@
                         <div>
 
                             <h3>
-                                Title of Your Publication
+                                Marxism and Literary Criticism
                             </h3>
 
                             <p>
-                                Journal / Publisher • 2024
+                                Literature, ideology, class and
+                                social structures.
                             </p>
 
                         </div>
 
-                        <a href="#"
-                           target="_blank"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
 
-                            Read ↗
+                            View ↗
 
                         </a>
 
-                    </div>
-
+                    </article>
 
 
                     <!-- PUBLICATION 08 -->
 
-                    <div class="publication">
+                    <article class="publication">
 
                         <div class="publication-number">
                             08
@@ -3809,30 +2073,30 @@
                         <div>
 
                             <h3>
-                                Title of Your Publication
+                                Morphology and Word Formation
                             </h3>
 
                             <p>
-                                Journal / Publisher • 2024
+                                An examination of morphological
+                                structures and lexical processes.
                             </p>
 
                         </div>
 
-                        <a href="#"
-                           target="_blank"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
 
-                            Read ↗
+                            View ↗
 
                         </a>
 
-                    </div>
-
+                    </article>
 
 
                     <!-- PUBLICATION 09 -->
 
-                    <div class="publication">
+                    <article class="publication">
 
                         <div class="publication-number">
                             09
@@ -3841,30 +2105,30 @@
                         <div>
 
                             <h3>
-                                Title of Your Publication
+                                Semantics and Meaning
                             </h3>
 
                             <p>
-                                Journal / Publisher • 2024
+                                A study of meaning, interpretation
+                                and linguistic relationships.
                             </p>
 
                         </div>
 
-                        <a href="#"
-                           target="_blank"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
 
-                            Read ↗
+                            View ↗
 
                         </a>
 
-                    </div>
-
+                    </article>
 
 
                     <!-- PUBLICATION 10 -->
 
-                    <div class="publication">
+                    <article class="publication">
 
                         <div class="publication-number">
                             10
@@ -3873,126 +2137,241 @@
                         <div>
 
                             <h3>
-                                Title of Your Publication
+                                Academic Writing and Research Methods
                             </h3>
 
                             <p>
-                                Journal / Publisher • 2024
+                                Approaches to academic research,
+                                argumentation and scholarly writing.
                             </p>
 
                         </div>
 
-                        <a href="#"
-                           target="_blank"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
 
-                            Read ↗
+                            View ↗
 
                         </a>
 
+                    </article>
+
+
+
+                    <!-- =================================================
+                         PUBLICATIONS 11+
+                         HIDDEN INITIALLY
+                    ================================================== -->
+
+
+                    <article class="publication hidden-publication">
+
+                        <div class="publication-number">
+                            11
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Corpus Linguistics and Language Patterns
+                            </h3>
+
+                            <p>
+                                Corpus-based analysis of linguistic data.
+                            </p>
+
+                        </div>
+
+                        <a href="#" class="publication-link">
+                            View ↗
+                        </a>
+
+                    </article>
+
+
+                    <article class="publication hidden-publication">
+
+                        <div class="publication-number">
+                            12
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Psycholinguistics and Language Processing
+                            </h3>
+
+                            <p>
+                                Language processing and cognitive approaches.
+                            </p>
+
+                        </div>
+
+                        <a href="#" class="publication-link">
+                            View ↗
+                        </a>
+
+                    </article>
+
+
+                    <article class="publication hidden-publication">
+
+                        <div class="publication-number">
+                            13
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Computational Approaches to Linguistics
+                            </h3>
+
+                            <p>
+                                Digital methods and computational
+                                approaches to language research.
+                            </p>
+
+                        </div>
+
+                        <a href="#" class="publication-link">
+                            View ↗
+                        </a>
+
+                    </article>
+
+
+                    <article class="publication hidden-publication">
+
+                        <div class="publication-number">
+                            14
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Language Variation in Multilingual Communities
+                            </h3>
+
+                            <p>
+                                Linguistic variation across multilingual
+                                communities.
+                            </p>
+
+                        </div>
+
+                        <a href="#" class="publication-link">
+                            View ↗
+                        </a>
+
+                    </article>
+
+
+                    <article class="publication hidden-publication">
+
+                        <div class="publication-number">
+                            15
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Literature and Cultural Identity
+                            </h3>
+
+                            <p>
+                                Literature as a site for cultural
+                                representation and identity.
+                            </p>
+
+                        </div>
+
+                        <a href="#" class="publication-link">
+                            View ↗
+                        </a>
+
+                    </article>
+
+
+                    <article class="publication hidden-publication">
+
+                        <div class="publication-number">
+                            16
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Contemporary Approaches to Literary Theory
+                            </h3>
+
+                            <p>
+                                An overview of modern approaches
+                                to literary interpretation.
+                            </p>
+
+                        </div>
+
+                        <a href="#" class="publication-link">
+                            View ↗
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+
+                <div
+                    class="no-results"
+                    id="noResults">
+
+                    No publications found.
+
+                </div>
+
+
+                <div class="publication-actions">
+
+                    <button
+                        class="btn btn-primary"
+                        id="viewMoreBtn">
+
+                        View All Publications
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             EDUCATION
+        ====================================================== -->
+
+        <section id="education">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        Education
                     </div>
 
+                    <h2>
+                        Academic journey.
+                    </h2>
 
-
-
-
-                    <!-- PUBLICATIONS 11–30 ARE CREATED BY JAVASCRIPT AND HIDDEN INITIALLY. -->
-
-
+                    <p>
+                        My educational background and academic development.
+                    </p>
 
                 </div>
-
-
-            </div>
-
-
-
-                <div class="publication-empty" id="publicationEmpty">
-                    No publications found. Try another search term.
-                </div>
-
-
-                <div class="publication-more-wrap">
-                    <button type="button" class="publication-more-button" id="viewMorePublications">
-                        View More Publications ↗
-                    </button>
-                </div>
-        </section>
-
-
-    </main>
-
-
-
-    <!-- =========================================================
-         ALL PUBLICATIONS PAGE
-    ========================================================= -->
-
-    <main class="page" id="all-publications">
-
-        <section>
-
-            <div class="container">
-
-                <div class="section-label">
-                    04 — All Publications
-                </div>
-
-                <h2 class="section-title">
-                    All Publications.
-                </h2>
-
-                <p class="section-description">
-                    Browse the complete collection of academic publications, research papers, articles and scholarly work.
-                </p>
-
-                <div class="publication-search">
-                    <input type="search" id="allPublicationSearch" placeholder="Search all publications..." aria-label="Search all publications">
-                </div>
-
-                <div id="allPublicationList"></div>
-
-                <div class="publication-empty" id="allPublicationEmpty">
-                    No publications found. Try another search term.
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================================================
-         EDUCATION PAGE
-    ========================================================= -->
-
-    <main class="page"
-          id="education">
-
-
-        <section>
-
-            <div class="container">
-
-
-                <div class="section-label">
-                    05 — Education
-                </div>
-
-
-                <h2 class="section-title">
-                    Academic Journey.
-                </h2>
-
-
-                <p class="section-description">
-
-                    My educational background, degrees,
-                    academic achievements and qualifications.
-
-                </p>
-
 
 
                 <div class="timeline">
@@ -4000,409 +2379,432 @@
 
                     <div class="timeline-item">
 
-                        <div class="timeline-year">
-                            202X — PRESENT
-                        </div>
+                        <div class="timeline-dot"></div>
+
+                        <span>
+                            PRESENT
+                        </span>
 
                         <h3>
                             BS English
                         </h3>
 
                         <p>
-                            Your University — English Literature
-                            & Linguistics
-                        </p>
-
-                        <p>
-                            Current Grade / CGPA:
-                            <strong style="color:white;">
-                                Add Your Grade
-                            </strong>
+                            English Literature & Linguistics
+                            — Iqra University.
                         </p>
 
                     </div>
 
 
-
                     <div class="timeline-item">
 
-                        <div class="timeline-year">
-                            202X
-                        </div>
+                        <div class="timeline-dot"></div>
+
+                        <span>
+                            PREVIOUS
+                        </span>
 
                         <h3>
-                            Previous Qualification
+                            FSc Pre-Medical
                         </h3>
 
                         <p>
-                            Your College / Institution
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="timeline-item">
-
-                        <div class="timeline-year">
-                            202X
-                        </div>
-
-                        <h3>
-                            Secondary Education
-                        </h3>
-
-                        <p>
-                            Your School / Institution
+                            Academic foundation in science
+                            and general education.
                         </p>
 
                     </div>
 
 
                 </div>
-
 
             </div>
 
         </section>
 
 
-    </main>
 
+        <!-- =====================================================
+             EXPERIENCE
+        ====================================================== -->
 
-
-    <!-- =========================================================
-         EXPERIENCE PAGE
-    ========================================================= -->
-
-    <main class="page"
-          id="experience">
-
-
-        <section>
+        <section id="experience">
 
             <div class="container">
 
+                <div class="section-heading">
 
-                <div class="section-label">
-                    06 — Experience
+                    <div class="section-label">
+                        Experience
+                    </div>
+
+                    <h2>
+                        Work & experience.
+                    </h2>
+
+                    <p>
+                        Professional experience in education,
+                        communication and academic work.
+                    </p>
+
                 </div>
 
 
-                <h2 class="section-title">
-                    Experience.
-                </h2>
-
-
-                <p class="section-description">
-
-                    Academic, research, teaching and professional
-                    experience.
-
-                </p>
-
-
-
-                <div style="margin-top:50px;">
+                <div class="experience-grid">
 
 
                     <div class="experience-card">
 
-
-                        <div class="experience-date">
-                            202X — PRESENT
+                        <div class="date">
+                            EXPERIENCE
                         </div>
 
+                        <h3>
+                            Academic / Home Tutor
+                        </h3>
 
-                        <div>
+                        <h4>
+                            Education & English
+                        </h4>
 
-                            <h3>
-                                Researcher / Academic
-                            </h3>
-
-                            <div class="experience-company">
-                                Your Institution
-                            </div>
-
-                            <p>
-
-                                Describe your research,
-                                responsibilities, academic
-                                activities and contributions.
-
-                            </p>
-
-                        </div>
-
+                        <p>
+                            Supporting students through tutoring,
+                            academic writing, English language learning
+                            and educational guidance.
+                        </p>
 
                     </div>
-
 
 
                     <div class="experience-card">
 
-
-                        <div class="experience-date">
-                            202X — 202X
+                        <div class="date">
+                            EXPERIENCE
                         </div>
 
+                        <h3>
+                            Customer Support Executive
+                        </h3>
 
-                        <div>
+                        <h4>
+                            Professional Communication
+                        </h4>
 
-                            <h3>
-                                Research Assistant
-                            </h3>
-
-                            <div class="experience-company">
-                                University / Organization
-                            </div>
-
-                            <p>
-
-                                Add your research assistantship,
-                                projects, data collection,
-                                analysis or academic support work.
-
-                            </p>
-
-                        </div>
-
+                        <p>
+                            Experience in professional communication,
+                            customer interaction, problem solving and
+                            service delivery.
+                        </p>
 
                     </div>
-
 
 
                     <div class="experience-card">
 
-
-                        <div class="experience-date">
-                            202X — 202X
+                        <div class="date">
+                            FREELANCE
                         </div>
 
+                        <h3>
+                            Academic & Content Writer
+                        </h3>
 
-                        <div>
+                        <h4>
+                            Writing & Research
+                        </h4>
 
-                            <h3>
-                                Teacher / Tutor
-                            </h3>
-
-                            <div class="experience-company">
-                                Institution / Academy
-                            </div>
-
-                            <p>
-
-                                Add teaching experience,
-                                subjects taught and relevant
-                                responsibilities.
-
-                            </p>
-
-                        </div>
-
+                        <p>
+                            Academic writing, research assistance,
+                            content development and structured writing.
+                        </p>
 
                     </div>
 
+
+                    <div class="experience-card">
+
+                        <div class="date">
+                            RESEARCH
+                        </div>
+
+                        <h3>
+                            Research Projects
+                        </h3>
+
+                        <h4>
+                            Linguistics & Literature
+                        </h4>
+
+                        <p>
+                            Developing research ideas, proposals,
+                            literature reviews and analytical projects.
+                        </p>
+
+                    </div>
 
                 </div>
-
 
             </div>
 
         </section>
 
 
-    </main>
 
+        <!-- =====================================================
+             TESTIMONIALS
+             THIS SECTION IS DIRECTLY BEFORE CONTACT
+        ====================================================== -->
 
-
-    <!-- =========================================================
-         CONTACT PAGE
-    ========================================================= -->
-
-    <main class="page"
-          id="contact">
-
-
-        <section>
+        <section id="testimonials">
 
             <div class="container">
 
+                <div class="section-heading">
 
-                <div class="section-label">
-                    07 — Contact
+                    <div class="section-label">
+                        Testimonials
+                    </div>
+
+                    <h2>
+                        What people say.
+                    </h2>
+
+                    <p>
+                        Feedback from students, colleagues and
+                        academic collaborators.
+                    </p>
+
                 </div>
 
 
-                <h2 class="section-title">
-                    Let's Talk.
-                </h2>
+                <div class="testimonials">
 
 
-                <p class="section-description">
+                    <div class="testimonial">
 
-                    For research collaboration, academic
-                    discussion, professional opportunities or
-                    other inquiries.
+                        <div class="stars">
+                            ★★★★★
+                        </div>
 
-                </p>
+                        <p>
+                            “A highly dedicated and thoughtful
+                            academic professional with strong
+                            communication and research skills.”
+                        </p>
+
+                        <strong>
+                            Academic Colleague
+                        </strong>
+
+                        <span>
+                            Research Collaboration
+                        </span>
+
+                    </div>
+
+
+                    <div class="testimonial">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            “Excellent at explaining complex ideas
+                            clearly and helping students approach
+                            academic work with confidence.”
+                        </p>
+
+                        <strong>
+                            Student
+                        </strong>
+
+                        <span>
+                            Academic Support
+                        </span>
+
+                    </div>
+
+
+                    <div class="testimonial">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            “Professional, reliable and committed
+                            to producing high-quality academic work.”
+                        </p>
+
+                        <strong>
+                            Research Collaborator
+                        </strong>
+
+                        <span>
+                            Academic Project
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
 
 
 
-                <div class="contact-grid">
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="contact-box">
 
 
-                    <div class="card">
+                    <div>
+
+                        <div class="section-label">
+                            Contact
+                        </div>
+
+                        <h2>
+                            Let's work together.
+                        </h2>
+
+                        <p>
+
+                            I am open to academic collaboration,
+                            research opportunities, writing projects,
+                            educational work and meaningful
+                            professional conversations.
+
+                        </p>
+
+                    </div>
 
 
-                        <h3>
-                            Contact Information
-                        </h3>
+                    <div class="contact-details">
 
 
-                        <div class="contact-item">
+                        <a
+                            href="mailto:your@email.com"
+                            class="contact-item">
 
-                            <small>
-                                EMAIL
-                            </small>
+                            <div class="contact-icon">
+                                @
+                            </div>
 
-                            <a href="mailto:your@email.com">
+                            <div>
+
+                                <small>
+                                    Email
+                                </small>
 
                                 your@email.com
 
-                            </a>
+                            </div>
 
-                        </div>
-
-
-                        <div class="contact-item">
-
-                            <small>
-                                LOCATION
-                            </small>
-
-                            <span>
-                                Islamabad, Pakistan
-                            </span>
-
-                        </div>
+                        </a>
 
 
-                        <div class="contact-item">
+                        <a
+                            href="#"
+                            class="contact-item">
 
-                            <small>
-                                LINKEDIN
-                            </small>
+                            <div class="contact-icon">
+                                in
+                            </div>
 
-                            <a href="#"
-                               target="_blank">
+                            <div>
 
-                                LinkedIn Profile ↗
+                                <small>
+                                    LinkedIn
+                                </small>
 
-                            </a>
+                                Connect with me
 
-                        </div>
+                            </div>
 
-
-                        <div class="contact-item">
-
-                            <small>
-                                RESEARCH
-                            </small>
-
-                            <a href="#"
-                               target="_blank">
-
-                                Research Profile ↗
-
-                            </a>
-
-                        </div>
+                        </a>
 
 
-                    </div>
+                        <a
+                            href="#"
+                            class="contact-item">
+
+                            <div class="contact-icon">
+                                RG
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    ResearchGate
+                                </small>
+
+                                Academic Profile
+
+                            </div>
+
+                        </a>
 
 
+                        <a
+                            href="#"
+                            class="contact-item">
 
-                    <div class="card">
+                            <div class="contact-icon">
+                                iD
+                            </div>
 
+                            <div>
 
-                        <h3>
-                            Send a Message
-                        </h3>
+                                <small>
+                                    ORCID
+                                </small>
 
+                                Research Identity
 
-                        <form
-                            action="mailto:your@email.com"
-                            method="post"
-                            enctype="text/plain">
+                            </div>
 
-
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Your Name"
-                                required>
-
-
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Your Email"
-                                required>
-
-
-                            <textarea
-                                name="message"
-                                placeholder="Your Message"
-                                required></textarea>
-
-
-                            <button
-                                type="submit"
-                                class="button button-primary">
-
-                                Send Message ↗
-
-                            </button>
-
-
-                        </form>
+                        </a>
 
 
                     </div>
-
 
                 </div>
-
 
             </div>
 
         </section>
 
-
     </main>
 
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          FOOTER
-    ========================================================= -->
+    ====================================================== -->
 
     <footer>
 
         <div class="container">
 
-            <div class="footer-inner">
+            <div class="footer-content">
 
-                <p>
-                    © 2026 Your Name.
-                    All rights reserved.
-                </p>
+                <div>
+                    © 2026 Your Name. All rights reserved.
+                </div>
 
-                <p>
+                <div>
                     Academic Portfolio
-                </p>
+                </div>
 
             </div>
 
@@ -4412,449 +2814,311 @@
 
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          JAVASCRIPT
-    ========================================================= -->
+    ====================================================== -->
 
     <script>
 
-
-        /* =========================================================
-           CUSTOM CURSOR
-        ========================================================= */
-
-        const cursorDot =
-            document.querySelector(".cursor-dot");
-
-
-        const cursorGlow =
-            document.querySelector(".cursor-glow");
-
-
-        document.addEventListener(
-            "mousemove",
-            function(event) {
-
-                cursorDot.style.left =
-                    event.clientX + "px";
-
-                cursorDot.style.top =
-                    event.clientY + "px";
-
-
-                cursorGlow.style.left =
-                    event.clientX + "px";
-
-                cursorGlow.style.top =
-                    event.clientY + "px";
-
-            }
-        );
-
-
-
-        /* =========================================================
-           CURSOR HOVER
-        ========================================================= */
-
-        function addCursorHover() {
-
-            const hoverElements =
-                document.querySelectorAll(
-                    "a, button, .card, .stat, .profile-card, .social-icon, .publication-link"
-                );
-
-
-            hoverElements.forEach(
-                function(element) {
-
-                    element.addEventListener(
-                        "mouseenter",
-                        function() {
-
-                            document.body
-                                .classList
-                                .add("cursor-hover");
-
-                        }
-                    );
-
-
-                    element.addEventListener(
-                        "mouseleave",
-                        function() {
-
-                            document.body
-                                .classList
-                                .remove("cursor-hover");
-
-                        }
-                    );
-
-                }
-            );
-
-        }
-
-
-        addCursorHover();
-
-
-
-        /* =========================================================
-           PUBLICATION SEARCH + VIEW MORE
-        ========================================================= */
-
-        const publicationSearch =
-            document.getElementById("publicationSearch");
-
-        const viewMorePublications =
-            document.getElementById("viewMorePublications");
-
-        const publicationEmpty =
-            document.getElementById("publicationEmpty");
-
-        let allPublicationsVisible = false;
-
-        /* Generate publications 11–30 without bloating the HTML. */
-
-        const publicationList =
-            document.getElementById("publicationList");
-
-        for (let number = 11; number <= 30; number++) {
-
-            const publication = document.createElement("div");
-            publication.className = "publication publication-extra";
-
-            const year = number >= 17 ? 2024 : 2025;
-
-            publication.innerHTML = `
-                <div class="publication-number">
-                    ${String(number).padStart(2, "0")}
-                </div>
-
-                <div>
-                    <h3>Title of Your Publication ${number}</h3>
-                    <p>Journal / Publisher • ${year}</p>
-                </div>
-
-                <a href="#" target="_blank" class="publication-link">
-                    Read ↗
-                </a>
-            `;
-
-            publicationList.appendChild(publication);
-        }
-
-
-        const publicationItems =
-            document.querySelectorAll("#publicationList .publication");
-
-
-        function updatePublicationVisibility() {
-
-            const searchText = publicationSearch
-                ? publicationSearch.value.trim().toLowerCase()
-                : "";
-
-            let visibleCount = 0;
-
-            publicationItems.forEach(function(publication) {
-
-                const matches = publication.innerText
-                    .toLowerCase()
-                    .includes(searchText);
-
-                const isExtra = publication.classList
-                    .contains("publication-extra");
-
-                const shouldShow =
-                    matches &&
-                    (!isExtra || allPublicationsVisible || searchText !== "");
-
-                publication.style.display =
-                    shouldShow ? "flex" : "none";
-
-                if (shouldShow) visibleCount++;
-            });
-
-            if (publicationEmpty) {
-                publicationEmpty.style.display =
-                    visibleCount === 0 ? "block" : "none";
-            }
-
-            if (viewMorePublications) {
-                viewMorePublications.style.display =
-                    allPublicationsVisible ? "none" : "inline-flex";
-            }
-        }
-
-        if (publicationSearch) {
-            publicationSearch.addEventListener(
-                "input",
-                updatePublicationVisibility
-            );
-        }
-
-        if (viewMorePublications) {
-            viewMorePublications.addEventListener(
-                "click",
-                function() {
-                    if (typeof showPage === "function") {
-                        showPage("all-publications");
-                        history.pushState(null, "", "#all-publications");
-                    }
-                }
-            );
-        }
-
-        updatePublicationVisibility();
-
-
-        /* =========================================================
-           ALL PUBLICATIONS PAGE
-        ========================================================= */
-
-        const allPublicationList =
-            document.getElementById("allPublicationList");
-
-        const allPublicationSearch =
-            document.getElementById("allPublicationSearch");
-
-        const allPublicationEmpty =
-            document.getElementById("allPublicationEmpty");
-
-        if (allPublicationList) {
-
-            publicationItems.forEach(function(publication) {
-                allPublicationList.appendChild(
-                    publication.cloneNode(true)
-                );
-            });
-
-        }
-
-        function searchAllPublications() {
-
-            const searchText = allPublicationSearch
-                ? allPublicationSearch.value.trim().toLowerCase()
-                : "";
-
-            const allItems = allPublicationList
-                ? allPublicationList.querySelectorAll(".publication")
-                : [];
-
-            let visibleCount = 0;
-
-            allItems.forEach(function(publication) {
-
-                const show = publication.innerText
-                    .toLowerCase()
-                    .includes(searchText);
-
-                publication.style.display =
-                    show ? "flex" : "none";
-
-                if (show) visibleCount++;
-
-            });
-
-            if (allPublicationEmpty) {
-                allPublicationEmpty.style.display =
-                    visibleCount === 0 ? "block" : "none";
-            }
-
-        }
-
-        if (allPublicationSearch) {
-            allPublicationSearch.addEventListener(
-                "input",
-                searchAllPublications
-            );
-        }
-
-        searchAllPublications();
-
-
-        /* =========================================================
-           PAGE NAVIGATION
-        ========================================================= */
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
+
+        const menuButton =
+            document.getElementById("menuButton");
 
         const navLinks =
-            document.querySelectorAll(".nav-link");
+            document.getElementById("navLinks");
 
 
-        const pages =
-            document.querySelectorAll(".page");
+        menuButton.addEventListener(
+            "click",
+            function () {
 
+                navLinks.classList.toggle("active");
 
-        const transition =
-            document.querySelector(".page-transition");
-
-
-        const mobileMenu =
-            document.getElementById("mobileMenu");
-
-
-        const navLinksContainer =
-            document.querySelector(".nav-links");
-
-
-
-        function showPage(pageId) {
-
-            const target = document.getElementById(pageId);
-
-            if (!target) return;
-
-            /* All sections stay on one continuous page.
-               Navigation scrolls vertically to the section. */
-
-            window.scrollTo({
-                top: Math.max(0, target.offsetTop - 105),
-                behavior: "smooth"
-            });
-
-            navLinks.forEach(function(link) {
-
-                link.classList.toggle(
-                    "active",
-                    link.dataset.page === pageId
-                );
-
-            });
-
-            navLinksContainer.classList.remove("mobile-open");
-
-            history.pushState(null, "", "#" + pageId);
-        }
-
-
-        /* =========================================================
-           NAVIGATION CLICK
-        ========================================================= */
-
-        navLinks.forEach(function(link) {
-
-            link.addEventListener("click", function(event) {
-
-                event.preventDefault();
-
-                const page = link.dataset.page;
-
-                if (page) {
-                    showPage(page);
-                }
-
-            });
-
-        });
-
-
-        /* =========================================================
-           ACTIVE NAVIGATION WHILE SCROLLING
-        ========================================================= */
-
-        const pageSections = Array.from(pages);
-
-        function updateActiveSection() {
-
-            const scrollPosition = window.scrollY + 180;
-
-            let current =
-                pageSections.length ?
-                pageSections[0].id :
-                "home";
-
-            pageSections.forEach(function(section) {
-
-                if (section.offsetTop <= scrollPosition) {
-                    current = section.id;
-                }
-
-            });
-
-            navLinks.forEach(function(link) {
-
-                link.classList.toggle(
-                    "active",
-                    link.dataset.page === current
-                );
-
-            });
-        }
-
-        window.addEventListener(
-            "scroll",
-            updateActiveSection,
-            { passive: true }
+            }
         );
 
 
-        /* =========================================================
-           OPEN SECTION FROM URL HASH
-        ========================================================= */
+        /*
+            Close mobile menu after clicking a link.
+        */
 
-        function loadFromHash() {
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function(link) {
 
-            const hash =
-                window.location.hash.replace("#", "");
+                link.addEventListener(
+                    "click",
+                    function() {
 
-            if (hash && document.getElementById(hash)) {
+                        navLinks.classList.remove("active");
 
-                setTimeout(function() {
+                    }
+                );
 
-                    const target =
-                        document.getElementById(hash);
+            });
 
-                    window.scrollTo({
-                        top: Math.max(0, target.offsetTop - 105),
-                        behavior: "auto"
-                    });
 
-                    updateActiveSection();
 
-                }, 50);
+        /* =====================================================
+           PUBLICATION SEARCH
+        ====================================================== */
+
+        const searchInput =
+            document.getElementById(
+                "publicationSearch"
+            );
+
+        const publicationItems =
+            document.querySelectorAll(
+                ".publication"
+            );
+
+        const noResults =
+            document.getElementById(
+                "noResults"
+            );
+
+        const visibleCount =
+            document.getElementById(
+                "visibleCount"
+            );
+
+
+        searchInput.addEventListener(
+            "input",
+            function() {
+
+                const searchTerm =
+                    this.value
+                        .toLowerCase()
+                        .trim();
+
+
+                let count = 0;
+
+
+                publicationItems.forEach(
+                    function(publication) {
+
+                        const text =
+                            publication
+                                .innerText
+                                .toLowerCase();
+
+
+                        if (
+                            text.includes(searchTerm)
+                        ) {
+
+                            publication.style.display =
+                                "grid";
+
+                            count++;
+
+                        } else {
+
+                            publication.style.display =
+                                "none";
+
+                        }
+
+                    }
+                );
+
+
+                visibleCount.innerText =
+                    count;
+
+
+                if (count === 0) {
+
+                    noResults.style.display =
+                        "block";
+
+                } else {
+
+                    noResults.style.display =
+                        "none";
+
+                }
+
             }
-        }
-
-        window.addEventListener("load", loadFromHash);
-
-        window.addEventListener("hashchange", loadFromHash);
+        );
 
 
-/* =========================================================
-           MOBILE MENU
-        ========================================================= */
 
-        mobileMenu.addEventListener(
+        /* =====================================================
+           VIEW ALL PUBLICATIONS
+        ====================================================== */
+
+        const viewMoreBtn =
+            document.getElementById(
+                "viewMoreBtn"
+            );
+
+
+        let publicationsExpanded = false;
+
+
+        viewMoreBtn.addEventListener(
             "click",
             function() {
 
-                navLinksContainer.classList.toggle(
-                    "mobile-open"
-                );
+                const hiddenPublications =
+                    document.querySelectorAll(
+                        ".hidden-publication"
+                    );
+
+
+                if (!publicationsExpanded) {
+
+                    hiddenPublications.forEach(
+                        function(publication) {
+
+                            publication.classList.remove(
+                                "hidden-publication"
+                            );
+
+                            publication.style.display =
+                                "grid";
+
+                        }
+                    );
+
+
+                    publicationsExpanded = true;
+
+
+                    viewMoreBtn.innerText =
+                        "Show Fewer Publications";
+
+
+                    visibleCount.innerText =
+                        document.querySelectorAll(
+                            ".publication"
+                        ).length;
+
+                }
+
+                else {
+
+                    publicationItems.forEach(
+                        function(publication, index) {
+
+                            if (index >= 10) {
+
+                                publication.classList.add(
+                                    "hidden-publication"
+                                );
+
+                                publication.style.display =
+                                    "none";
+
+                            }
+
+                        }
+                    );
+
+
+                    publicationsExpanded = false;
+
+
+                    viewMoreBtn.innerText =
+                        "View All Publications";
+
+
+                    visibleCount.innerText =
+                        "10";
+
+
+                    /*
+                        Return the reader to the
+                        beginning of the publications
+                        section.
+                    */
+
+                    document
+                        .getElementById("publications")
+                        .scrollIntoView({
+                            behavior: "smooth"
+                        });
+
+                }
 
             }
         );
 
 
 
-        /* =========================================================
-           ESC KEY CLOSE MENU
-        ========================================================= */
+        /* =====================================================
+           NAVIGATION ACTIVE STATE
+        ====================================================== */
 
-        document.addEventListener(
-            "keydown",
-            function(event) {
+        const sections =
+            document.querySelectorAll(
+                "section"
+            );
 
-                if (event.key === "Escape") {
+        const navigationLinks =
+            document.querySelectorAll(
+                ".nav-links a"
+            );
 
-                    navLinksContainer.classList.remove(
-                        "mobile-open"
-                    );
 
-                }
+        window.addEventListener(
+            "scroll",
+            function() {
+
+                let currentSection = "";
+
+
+                sections.forEach(
+                    function(section) {
+
+                        const sectionTop =
+                            section.offsetTop - 180;
+
+
+                        if (
+                            window.scrollY >=
+                            sectionTop
+                        ) {
+
+                            currentSection =
+                                section.getAttribute(
+                                    "id"
+                                );
+
+                        }
+
+                    }
+                );
+
+
+                navigationLinks.forEach(
+                    function(link) {
+
+                        link.style.color =
+                            "#aaa9b8";
+
+
+                        if (
+                            link.getAttribute(
+                                "href"
+                            ) ===
+                            "#" + currentSection
+                        ) {
+
+                            link.style.color =
+                                "#ffffff";
+
+                        }
+
+                    }
+                );
 
             }
         );
