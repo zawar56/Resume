@@ -544,7 +544,7 @@
 
         .page {
 
-            display: none;
+            display: block;
 
             min-height: 100vh;
 
@@ -552,8 +552,9 @@
 
             padding-bottom: 100px;
 
-            animation:
-                pageIn 0.55s ease;
+            animation: none;
+
+            scroll-margin-top: 105px;
         }
 
 
@@ -4702,207 +4703,127 @@
 
         function showPage(pageId) {
 
+            const target = document.getElementById(pageId);
 
-            /* Purple transition */
+            if (!target) return;
 
-            transition.classList.add("active");
+            /* All sections stay on one continuous page.
+               Navigation scrolls vertically to the section. */
 
+            window.scrollTo({
+                top: Math.max(0, target.offsetTop - 105),
+                behavior: "smooth"
+            });
 
-            setTimeout(function() {
+            navLinks.forEach(function(link) {
 
-
-                /* Hide all pages */
-
-                pages.forEach(
-                    function(page) {
-
-                        page.classList.remove(
-                            "active-page"
-                        );
-
-                    }
+                link.classList.toggle(
+                    "active",
+                    link.dataset.page === pageId
                 );
 
+            });
 
-                /* Show selected page */
+            navLinksContainer.classList.remove("mobile-open");
 
-                const target =
-                    document.getElementById(pageId);
-
-
-                if (target) {
-
-                    target.classList.add(
-                        "active-page"
-                    );
-
-                }
-
-
-                /* Update navigation */
-
-                navLinks.forEach(
-                    function(link) {
-
-                        link.classList.remove(
-                            "active"
-                        );
-
-
-                        if (
-                            link.dataset.page ===
-                            pageId
-                        ) {
-
-                            link.classList.add(
-                                "active"
-                            );
-
-                        }
-
-                    }
-                );
-
-
-                /* Scroll to top */
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: "instant"
-                });
-
-
-                /* Close mobile menu */
-
-                navLinksContainer.classList.remove(
-                    "mobile-open"
-                );
-
-
-                transition.classList.remove(
-                    "active"
-                );
-
-
-            }, 250);
-
+            history.pushState(null, "", "#" + pageId);
         }
-
 
 
         /* =========================================================
            NAVIGATION CLICK
         ========================================================= */
 
-        navLinks.forEach(
-            function(link) {
+        navLinks.forEach(function(link) {
 
-                link.addEventListener(
-                    "click",
-                    function(event) {
+            link.addEventListener("click", function(event) {
 
-                        event.preventDefault();
+                event.preventDefault();
 
+                const page = link.dataset.page;
 
-                        const page =
-                            link.dataset.page;
+                if (page) {
+                    showPage(page);
+                }
 
+            });
 
-                        if (page) {
-
-                            showPage(page);
-
-                            history.pushState(
-                                null,
-                                "",
-                                "#" + page
-                            );
-
-                        }
-
-                    }
-                );
-
-            }
-        );
-
+        });
 
 
         /* =========================================================
-           OPEN PAGE FROM URL HASH
+           ACTIVE NAVIGATION WHILE SCROLLING
+        ========================================================= */
+
+        const pageSections = Array.from(pages);
+
+        function updateActiveSection() {
+
+            const scrollPosition = window.scrollY + 180;
+
+            let current =
+                pageSections.length ?
+                pageSections[0].id :
+                "home";
+
+            pageSections.forEach(function(section) {
+
+                if (section.offsetTop <= scrollPosition) {
+                    current = section.id;
+                }
+
+            });
+
+            navLinks.forEach(function(link) {
+
+                link.classList.toggle(
+                    "active",
+                    link.dataset.page === current
+                );
+
+            });
+        }
+
+        window.addEventListener(
+            "scroll",
+            updateActiveSection,
+            { passive: true }
+        );
+
+
+        /* =========================================================
+           OPEN SECTION FROM URL HASH
         ========================================================= */
 
         function loadFromHash() {
 
             const hash =
-                window.location.hash
-                    .replace("#", "");
+                window.location.hash.replace("#", "");
 
+            if (hash && document.getElementById(hash)) {
 
-            if (
-                hash &&
-                document.getElementById(hash)
-            ) {
+                setTimeout(function() {
 
-                showPage(hash);
+                    const target =
+                        document.getElementById(hash);
 
+                    window.scrollTo({
+                        top: Math.max(0, target.offsetTop - 105),
+                        behavior: "auto"
+                    });
+
+                    updateActiveSection();
+
+                }, 50);
             }
-
         }
 
+        window.addEventListener("load", loadFromHash);
 
-        window.addEventListener(
-            "load",
-            function() {
-
-                const hash =
-                    window.location.hash
-                        .replace("#", "");
+        window.addEventListener("hashchange", loadFromHash);
 
 
-                if (
-                    hash &&
-                    document.getElementById(hash)
-                ) {
-
-                    pages.forEach(
-                        function(page) {
-
-                            page.classList.remove(
-                                "active-page"
-                            );
-
-                        }
-                    );
-
-
-                    document
-                        .getElementById(hash)
-                        .classList.add(
-                            "active-page"
-                        );
-
-
-                    navLinks.forEach(
-                        function(link) {
-
-                            link.classList.toggle(
-                                "active",
-                                link.dataset.page ===
-                                hash
-                            );
-
-                        }
-                    );
-
-                }
-
-            }
-        );
-
-
-
-        /* =========================================================
+/* =========================================================
            MOBILE MENU
         ========================================================= */
 
