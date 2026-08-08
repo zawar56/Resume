@@ -21,24 +21,46 @@
 
 
     <!-- =====================================================
+         SCHOLARLY S FAVICON
+    ====================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='110' fill='%230d0d17'/%3E%3Ccircle cx='256' cy='245' r='190' fill='%238274ff' opacity='.12'/%3E%3Cpath d='M112 185L256 112l144 73-144 73z' fill='%238274ff' stroke='%23a49aff' stroke-width='12'/%3E%3Cpath d='M155 218v49c0 51 46 84 101 84s101-33 101-84v-49' fill='%235148b9' stroke='%23a49aff' stroke-width='10'/%3E%3Cpath d='M332 222c-15-20-39-31-69-31-41 0-72 22-72 52 0 27 21 40 65 53 38 11 54 20 54 39 0 19-19 33-51 33-30 0-57-13-75-35' fill='none' stroke='white' stroke-width='24' stroke-linecap='round'/%3E%3Ccircle cx='211' cy='258' r='39' fill='%230d0d17' stroke='white' stroke-width='11'/%3E%3Ccircle cx='301' cy='258' r='39' fill='%230d0d17' stroke='white' stroke-width='11'/%3E%3Cpath d='M250 258c10-11 20-11 30 0' fill='none' stroke='white' stroke-width='10' stroke-linecap='round'/%3E%3Ccircle cx='198' cy='246' r='8' fill='%23a49aff'/%3E%3Ccircle cx='288' cy='246' r='8' fill='%23a49aff'/%3E%3Cpath d='M154 399c37-17 72-17 102 0 30-17 65-17 102 0v34c-37-17-72-17-102 0-30-17-65-17-102 0z' fill='%238274ff' stroke='%23a49aff' stroke-width='8'/%3E%3Cline x1='256' y1='399' x2='256' y2='433' stroke='white' stroke-width='7'/%3E%3C/svg%3E">
+
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- =====================================================
          CSS
     ====================================================== -->
 
     <style>
 
-        /* =====================================================
-           GLOBAL
-        ====================================================== */
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
+
 
         :root {
 
@@ -58,9 +80,15 @@
 
             --green: #20d9a1;
 
-            --red: #ff5d68;
+            --danger: #ff5c67;
 
             --max-width: 1250px;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 120px;
         }
 
 
@@ -136,21 +164,15 @@
 
             position: fixed;
 
-            top: 0;
+            top: 18px;
+
             left: 0;
 
             width: 100%;
 
             z-index: 9999;
 
-            padding-top: 16px;
-
             pointer-events: none;
-        }
-
-
-        header .container {
-            pointer-events: auto;
         }
 
 
@@ -158,19 +180,16 @@
 
             min-height: 78px;
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
             border-radius: 40px;
 
             background:
                 rgba(13,13,22,0.94);
 
-            backdrop-filter:
-                blur(18px);
+            backdrop-filter: blur(20px);
 
-            -webkit-backdrop-filter:
-                blur(18px);
+            -webkit-backdrop-filter: blur(20px);
 
             display: flex;
 
@@ -182,8 +201,9 @@
                 0 20px 0 28px;
 
             box-shadow:
-                0 20px 50px
-                rgba(0,0,0,0.28);
+                0 20px 50px rgba(0,0,0,0.30);
+
+            pointer-events: auto;
         }
 
 
@@ -194,6 +214,8 @@
             font-weight: 900;
 
             letter-spacing: -1px;
+
+            white-space: nowrap;
         }
 
 
@@ -233,7 +255,8 @@
         }
 
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a.active {
 
             background:
                 rgba(255,255,255,0.08);
@@ -255,6 +278,8 @@
             font-weight: 700;
 
             transition: 0.25s ease;
+
+            white-space: nowrap;
         }
 
 
@@ -280,10 +305,9 @@
 
             border-radius: 12px;
 
-            padding:
-                9px 12px;
+            padding: 10px 13px;
 
-            font-size: 20px;
+            cursor: pointer;
         }
 
 
@@ -294,14 +318,14 @@
 
         .hero {
 
-            min-height: 760px;
+            min-height: 850px;
 
             display: flex;
 
             align-items: center;
 
             padding:
-                165px 0 100px;
+                150px 0 100px;
         }
 
 
@@ -353,12 +377,12 @@
         .availability-dot {
 
             width: 10px;
+
             height: 10px;
 
             border-radius: 50%;
 
-            background:
-                var(--green);
+            background: var(--green);
 
             box-shadow:
                 0 0 16px var(--green);
@@ -411,7 +435,7 @@
 
             gap: 14px;
 
-            margin-bottom: 30px;
+            margin-bottom: 38px;
         }
 
 
@@ -436,8 +460,9 @@
                 1px solid var(--border);
 
             transition:
-                transform 0.25s ease,
-                background 0.25s ease;
+                transform .25s ease,
+                background .25s ease,
+                border .25s ease;
         }
 
 
@@ -448,8 +473,7 @@
 
         .btn-primary {
 
-            background:
-                var(--purple);
+            background: var(--purple);
 
             color: white;
 
@@ -480,7 +504,7 @@
 
 
         /* =====================================================
-           SOCIAL MEDIA
+           SOCIALS
         ====================================================== */
 
         .socials {
@@ -496,6 +520,7 @@
         .social {
 
             width: 44px;
+
             height: 44px;
 
             display: flex;
@@ -511,11 +536,11 @@
 
             color: #aaa9b9;
 
-            font-size: 13px;
+            font-size: 14px;
 
             font-weight: 800;
 
-            transition: 0.25s ease;
+            transition: .25s ease;
         }
 
 
@@ -523,14 +548,11 @@
 
             color: white;
 
-            background:
-                var(--purple);
+            background: var(--purple);
 
-            border-color:
-                var(--purple);
+            border-color: var(--purple);
 
-            transform:
-                translateY(-3px);
+            transform: translateY(-3px);
         }
 
 
@@ -567,6 +589,10 @@
             flex-direction: column;
 
             justify-content: space-between;
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,0.22);
         }
 
 
@@ -602,7 +628,7 @@
                 1px solid var(--border);
 
             background:
-                rgba(8,8,15,0.75);
+                rgba(8,8,15,0.78);
 
             border-radius: 22px;
 
@@ -647,8 +673,6 @@
             border-top:
                 1px solid
                 rgba(255,255,255,0.045);
-
-            scroll-margin-top: 120px;
         }
 
 
@@ -665,7 +689,8 @@
             color:
                 var(--purple-light);
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
 
             letter-spacing: 3px;
 
@@ -696,8 +721,7 @@
 
         .section-heading p {
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             font-size: 17px;
         }
@@ -743,8 +767,7 @@
 
         .about-card p {
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             line-height: 1.9;
         }
@@ -778,7 +801,7 @@
             background:
                 rgba(255,255,255,0.025);
 
-            transition: 0.25s ease;
+            transition: .25s ease;
         }
 
 
@@ -815,8 +838,7 @@
 
         .research-item p {
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             font-size: 15px;
         }
@@ -843,6 +865,8 @@
 
 
         .search-box {
+
+            position: relative;
 
             width: 100%;
 
@@ -880,8 +904,7 @@
 
         .publication-count {
 
-            color:
-                #8f8d9d;
+            color: #8f8d9d;
 
             font-size: 14px;
 
@@ -920,7 +943,7 @@
 
             border-radius: 20px;
 
-            transition: 0.25s ease;
+            transition: .25s ease;
         }
 
 
@@ -955,8 +978,7 @@
 
         .publication p {
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             font-size: 14px;
         }
@@ -994,8 +1016,7 @@
 
             text-align: center;
 
-            color:
-                var(--muted);
+            color: var(--muted);
 
             border:
                 1px dashed var(--border);
@@ -1064,8 +1085,7 @@
                 var(--purple);
 
             border:
-                5px solid
-                var(--background);
+                5px solid var(--background);
         }
 
 
@@ -1090,8 +1110,7 @@
 
         .timeline-item p {
 
-            color:
-                var(--muted);
+            color: var(--muted);
         }
 
 
@@ -1148,8 +1167,7 @@
 
         .experience-card h4 {
 
-            color:
-                #aaa8b8;
+            color: #aaa8b8;
 
             font-weight: 500;
 
@@ -1159,8 +1177,7 @@
 
         .experience-card p {
 
-            color:
-                var(--muted);
+            color: var(--muted);
         }
 
 
@@ -1207,8 +1224,7 @@
 
         .testimonial p {
 
-            color:
-                #b0afbc;
+            color: #b0afbc;
 
             line-height: 1.8;
 
@@ -1226,8 +1242,7 @@
 
         .testimonial span {
 
-            color:
-                #777686;
+            color: #777686;
 
             font-size: 13px;
         }
@@ -1238,26 +1253,31 @@
            CONTACT
         ====================================================== */
 
-        .contact-box {
+        .contact-wrapper {
 
             display: grid;
 
             grid-template-columns:
                 0.8fr 1.2fr;
 
-            gap: 40px;
+            gap: 24px;
 
-            padding: 45px;
+            align-items: stretch;
+        }
 
-            border-radius: 32px;
+
+        .contact-intro {
+
+            padding: 40px;
 
             border:
                 1px solid var(--border);
 
-            background:
+            border-radius: 30px;
 
+            background:
                 linear-gradient(
-                    135deg,
+                    145deg,
                     rgba(130,116,255,0.10),
                     rgba(255,255,255,0.02)
                 );
@@ -1276,20 +1296,13 @@
         }
 
 
-        .contact-intro p {
+        .contact-intro > p {
 
-            color:
-                var(--muted);
-
-            max-width: 550px;
+            color: var(--muted);
 
             margin-bottom: 30px;
         }
 
-
-        /* =====================================================
-           CONTACT INFORMATION
-        ====================================================== */
 
         .contact-details {
 
@@ -1307,9 +1320,9 @@
 
             align-items: center;
 
-            gap: 15px;
+            gap: 14px;
 
-            padding: 15px;
+            padding: 14px;
 
             border:
                 1px solid var(--border);
@@ -1319,23 +1332,27 @@
             background:
                 rgba(255,255,255,0.025);
 
-            transition: 0.25s ease;
+            transition: .25s ease;
         }
 
 
         .contact-item:hover {
 
-            background:
-                rgba(255,255,255,0.06);
-
             border-color:
-                rgba(130,116,255,0.35);
+                rgba(130,116,255,0.45);
+
+            background:
+                rgba(255,255,255,0.05);
+
+            transform:
+                translateX(3px);
         }
 
 
         .contact-icon {
 
             width: 40px;
+
             height: 40px;
 
             flex-shrink: 0;
@@ -1351,7 +1368,7 @@
 
             justify-content: center;
 
-            font-size: 13px;
+            font-size: 12px;
 
             font-weight: 800;
         }
@@ -1361,10 +1378,9 @@
 
             display: block;
 
-            color:
-                #777686;
+            color: #777686;
 
-            font-size: 11px;
+            font-size: 10px;
 
             text-transform: uppercase;
 
@@ -1372,45 +1388,58 @@
         }
 
 
-
         /* =====================================================
            CONTACT FORM
         ====================================================== */
 
-        .contact-form {
+        .contact-form-box {
 
             border:
                 1px solid var(--border);
 
-            border-radius: 25px;
+            border-radius: 30px;
 
-            padding: 30px;
+            padding: 40px;
 
             background:
-                rgba(8,8,15,0.35);
+
+                linear-gradient(
+                    135deg,
+                    rgba(130,116,255,0.08),
+                    rgba(255,255,255,0.018)
+                );
         }
 
 
-        .form-row {
+        .form-grid {
 
             display: grid;
 
             grid-template-columns:
                 1fr 1fr;
 
-            gap: 20px;
+            gap: 25px;
+
+            margin-bottom: 25px;
         }
 
 
         .form-group {
 
-            margin-bottom: 22px;
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .form-group.full {
+
+            grid-column:
+                1 / -1;
         }
 
 
         .form-group label {
-
-            display: block;
 
             color:
                 #8f8d9d;
@@ -1433,27 +1462,29 @@
             border:
                 1px solid var(--border);
 
-            border-radius: 20px;
+            border-radius: 22px;
+
+            outline: none;
+
+            color: white;
 
             background:
                 rgba(255,255,255,0.035);
 
-            color: white;
-
-            outline: none;
-
-            padding:
-                15px 20px;
-
             transition:
-                border 0.25s ease,
-                background 0.25s ease;
+                border .25s ease,
+                background .25s ease;
         }
 
 
         .form-group input {
 
-            height: 58px;
+            height: 74px;
+
+            padding:
+                0 25px;
+
+            font-size: 17px;
         }
 
 
@@ -1462,6 +1493,11 @@
             min-height: 190px;
 
             resize: vertical;
+
+            padding:
+                20px 25px;
+
+            font-size: 17px;
         }
 
 
@@ -1469,7 +1505,7 @@
         .form-group textarea::placeholder {
 
             color:
-                #68677b;
+                #69697d;
         }
 
 
@@ -1480,70 +1516,96 @@
                 var(--purple);
 
             background:
-                rgba(255,255,255,0.05);
+                rgba(255,255,255,0.045);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(130,116,255,0.08);
         }
 
 
-        .send-button {
+        .form-submit {
 
-            width: 275px;
+            display: inline-flex;
 
-            max-width: 100%;
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            min-width: 275px;
+
+            height: 68px;
 
             border: none;
-
-            padding:
-                16px 28px;
 
             border-radius: 35px;
 
             background:
-                #6258ef;
+                #6860ee;
 
             color: white;
 
-            font-size: 18px;
+            font-size: 20px;
 
-            font-weight: 800;
+            font-weight: 750;
 
             box-shadow:
                 0 15px 35px
-                rgba(98,88,239,0.25);
+                rgba(104,96,238,0.25);
 
-            transition:
-                0.25s ease;
+            transition: .25s ease;
         }
 
 
-        .send-button:hover {
+        .form-submit:hover {
 
             transform:
                 translateY(-3px);
 
             background:
-                #756bff;
+                #7971f5;
         }
 
 
-        .form-status {
+        .form-submit svg {
+
+            width: 23px;
+
+            height: 23px;
+        }
+
+
+        .form-message {
 
             display: none;
 
-            margin-top: 18px;
+            margin-top: 20px;
 
             color:
-                var(--red);
+                var(--danger);
 
-            font-size: 14px;
+            font-size: 16px;
 
             font-weight: 600;
+
+            align-items: center;
+
+            gap: 10px;
         }
 
 
-        .form-status.success {
+        .form-message.success {
 
             color:
                 var(--green);
+        }
+
+
+        .form-message.show {
+
+            display: flex;
         }
 
 
@@ -1560,8 +1622,7 @@
             padding:
                 35px 0;
 
-            color:
-                #777686;
+            color: #777686;
 
             font-size: 13px;
         }
@@ -1582,14 +1643,79 @@
 
 
         /* =====================================================
+           BACK TO TOP
+        ====================================================== */
+
+        .back-to-top {
+
+            position: fixed;
+
+            right: 28px;
+
+            bottom: 28px;
+
+            width: 58px;
+
+            height: 58px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                rgba(13,13,22,0.92);
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 24px;
+
+            z-index: 999;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform:
+                translateY(10px);
+
+            transition: .3s ease;
+        }
+
+
+        .back-to-top.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform:
+                translateY(0);
+        }
+
+
+        .back-to-top:hover {
+
+            background:
+                var(--purple);
+
+            border-color:
+                var(--purple);
+        }
+
+
+
+        /* =====================================================
            RESPONSIVE
         ====================================================== */
 
-        @media (max-width: 1050px) {
-
-            .nav-links {
-                gap: 0;
-            }
+        @media (max-width: 1100px) {
 
             .nav-links a {
 
@@ -1599,21 +1725,26 @@
                 font-size: 13px;
             }
 
+
             .hero-grid {
+
                 gap: 40px;
             }
 
+
             .hero h1 {
+
                 font-size: 75px;
             }
         }
 
 
 
-        @media (max-width: 850px) {
+        @media (max-width: 900px) {
 
             header {
-                padding-top: 8px;
+
+                top: 8px;
             }
 
 
@@ -1626,6 +1757,7 @@
 
 
             .menu-button {
+
                 display: block;
             }
 
@@ -1657,6 +1789,7 @@
 
 
             .nav-links.active {
+
                 display: flex;
             }
 
@@ -1672,14 +1805,14 @@
 
 
             .resume-btn {
+
                 display: none;
             }
 
 
             .hero {
 
-                padding:
-                    125px 0 80px;
+                padding-top: 125px;
             }
 
 
@@ -1702,11 +1835,11 @@
             .testimonials {
 
                 grid-template-columns:
-                    1fr;
+                    1fr 1fr;
             }
 
 
-            .contact-box {
+            .contact-wrapper {
 
                 grid-template-columns:
                     1fr;
@@ -1729,7 +1862,7 @@
 
 
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
 
             .container {
 
@@ -1746,7 +1879,7 @@
                 min-height: auto;
 
                 padding:
-                    120px 0 80px;
+                    125px 0 80px;
             }
 
 
@@ -1780,16 +1913,23 @@
 
             section {
 
-                padding:
-                    75px 0;
-
-                scroll-margin-top: 95px;
+                padding: 75px 0;
             }
 
 
             .section-heading h2 {
 
                 font-size: 42px;
+            }
+
+
+            .about-grid,
+            .research-grid,
+            .experience-grid,
+            .testimonials {
+
+                grid-template-columns:
+                    1fr;
             }
 
 
@@ -1816,11 +1956,10 @@
             }
 
 
-            .contact-box {
+            .contact-intro,
+            .contact-form-box {
 
-                padding: 20px;
-
-                border-radius: 25px;
+                padding: 28px;
             }
 
 
@@ -1830,24 +1969,27 @@
             }
 
 
-            .contact-form {
-
-                padding: 20px;
-            }
-
-
-            .form-row {
+            .form-grid {
 
                 grid-template-columns:
                     1fr;
 
-                gap: 0;
+                gap: 20px;
             }
 
 
-            .send-button {
+            .form-group.full {
+
+                grid-column:
+                    auto;
+            }
+
+
+            .form-submit {
 
                 width: 100%;
+
+                min-width: 0;
             }
 
 
@@ -1857,11 +1999,24 @@
 
                 align-items: flex-start;
             }
+
+
+            .back-to-top {
+
+                right: 18px;
+
+                bottom: 18px;
+
+                width: 52px;
+
+                height: 52px;
+            }
         }
 
     </style>
 
 </head>
+
 
 
 <body>
@@ -1933,7 +2088,8 @@
 
                 <button
                     class="menu-button"
-                    id="menuButton">
+                    id="menuButton"
+                    aria-label="Open navigation">
 
                     ☰
 
@@ -2031,8 +2187,6 @@
                         </div>
 
 
-                        <!-- SOCIAL MEDIA -->
-
                         <div class="socials">
 
                             <a
@@ -2095,20 +2249,9 @@
 
 
 
-                    <!-- RIGHT PHOTO CARD -->
+                    <!-- RIGHT PHOTO -->
 
                     <div class="hero-card">
-
-                        <!--
-                            Put your picture in the same folder
-                            as index.html.
-
-                            Rename it:
-
-                            profile.jpg
-
-                            OR change the filename below.
-                        -->
 
                         <img
                             src="profile.jpg"
@@ -2172,7 +2315,6 @@
 
                 <div class="about-grid">
 
-
                     <div class="about-card">
 
                         <h3>
@@ -2181,8 +2323,8 @@
 
                         <p>
 
-                            I am an academic researcher
-                            and writer interested in language,
+                            I am an academic researcher and
+                            writer interested in language,
                             literature, linguistics, education
                             and interdisciplinary studies.
 
@@ -2441,8 +2583,6 @@
                     id="publicationsList">
 
 
-                    <!-- 01 -->
-
                     <article class="publication">
 
                         <div class="publication-number">
@@ -2463,15 +2603,14 @@
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 02 -->
 
                     <article class="publication">
 
@@ -2482,8 +2621,8 @@
                         <div>
 
                             <h3>
-                                Code-Switching Practices Among
-                                University Students
+                                Code-Switching Practices
+                                Among University Students
                             </h3>
 
                             <p>
@@ -2493,15 +2632,14 @@
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 03 -->
 
                     <article class="publication">
 
@@ -2516,22 +2654,20 @@
                             </h3>
 
                             <p>
-                                Exploring the relationship
-                                between linguistic practices
-                                and identity.
+                                Exploring the relationship between
+                                linguistic practices and identity.
                             </p>
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 04 -->
 
                     <article class="publication">
 
@@ -2553,15 +2689,14 @@
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 05 -->
 
                     <article class="publication">
 
@@ -2582,15 +2717,14 @@
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 06 -->
 
                     <article class="publication">
 
@@ -2611,15 +2745,14 @@
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 07 -->
 
                     <article class="publication">
 
@@ -2640,15 +2773,14 @@
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 08 -->
 
                     <article class="publication">
 
@@ -2669,15 +2801,14 @@
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 09 -->
 
                     <article class="publication">
 
@@ -2698,15 +2829,14 @@
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 10 -->
 
                     <article class="publication">
 
@@ -2727,15 +2857,16 @@
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a
+                            href="#"
+                            class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
 
-                    <!-- 11 -->
+                    <!-- HIDDEN PUBLICATIONS -->
 
                     <article class="publication hidden-publication">
 
@@ -2750,20 +2881,18 @@
                             </h3>
 
                             <p>
-                                Corpus-based analysis of linguistic data.
+                                Corpus-based analysis of
+                                linguistic data.
                             </p>
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a href="#" class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 12 -->
 
                     <article class="publication hidden-publication">
 
@@ -2778,20 +2907,18 @@
                             </h3>
 
                             <p>
-                                Language processing and cognitive approaches.
+                                Language processing and
+                                cognitive approaches.
                             </p>
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a href="#" class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 13 -->
 
                     <article class="publication hidden-publication">
 
@@ -2812,15 +2939,12 @@
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a href="#" class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 14 -->
 
                     <article class="publication hidden-publication">
 
@@ -2842,15 +2966,12 @@
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a href="#" class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 15 -->
 
                     <article class="publication hidden-publication">
 
@@ -2871,15 +2992,12 @@
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a href="#" class="publication-link">
                             View ↗
                         </a>
 
                     </article>
 
-
-                    <!-- 16 -->
 
                     <article class="publication hidden-publication">
 
@@ -2901,8 +3019,7 @@
 
                         </div>
 
-                        <a href="#"
-                           class="publication-link">
+                        <a href="#" class="publication-link">
                             View ↗
                         </a>
 
@@ -3176,11 +3293,9 @@
                         </div>
 
                         <p>
-
                             “A highly dedicated and thoughtful
                             academic professional with strong
                             communication and research skills.”
-
                         </p>
 
                         <strong>
@@ -3201,11 +3316,9 @@
                         </div>
 
                         <p>
-
                             “Excellent at explaining complex
                             ideas clearly and helping students
                             approach academic work with confidence.”
-
                         </p>
 
                         <strong>
@@ -3226,10 +3339,8 @@
                         </div>
 
                         <p>
-
                             “Professional, reliable and committed
                             to producing high-quality academic work.”
-
                         </p>
 
                         <strong>
@@ -3258,7 +3369,26 @@
 
             <div class="container">
 
-                <div class="contact-box">
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        Contact
+                    </div>
+
+                    <h2>
+                        Let's work together.
+                    </h2>
+
+                    <p>
+                        Have a research idea, academic project
+                        or collaboration opportunity?
+                        Get in touch.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-wrapper">
 
 
                     <!-- CONTACT INFORMATION -->
@@ -3266,11 +3396,11 @@
                     <div class="contact-intro">
 
                         <div class="section-label">
-                            Contact
+                            Contact Information
                         </div>
 
                         <h2>
-                            Let's work together.
+                            Let's connect.
                         </h2>
 
                         <p>
@@ -3286,7 +3416,7 @@
                         <div class="contact-details">
 
 
-                            <!-- EMAIL -->
+                            <!-- CHANGE EMAIL HERE -->
 
                             <a
                                 href="mailto:your@email.com"
@@ -3309,7 +3439,7 @@
                             </a>
 
 
-                            <!-- LINKEDIN -->
+                            <!-- CHANGE LINKEDIN HERE -->
 
                             <a
                                 href="#"
@@ -3333,7 +3463,7 @@
                             </a>
 
 
-                            <!-- RESEARCHGATE -->
+                            <!-- CHANGE RESEARCHGATE HERE -->
 
                             <a
                                 href="#"
@@ -3357,7 +3487,7 @@
                             </a>
 
 
-                            <!-- ORCID -->
+                            <!-- CHANGE ORCID HERE -->
 
                             <a
                                 href="#"
@@ -3388,80 +3518,134 @@
 
                     <!-- CONTACT FORM -->
 
-                    <form
-                        class="contact-form"
-                        id="contactForm">
+                    <div class="contact-form-box">
+
+                        <form
+                            id="contactForm"
+                            action="https://formsubmit.co/your@email.com"
+                            method="POST">
 
 
-                        <div class="form-row">
+                            <!-- FORM SETTINGS -->
+
+                            <input
+                                type="hidden"
+                                name="_subject"
+                                value="New message from Academic Portfolio">
+
+                            <input
+                                type="hidden"
+                                name="_captcha"
+                                value="false">
+
+                            <input
+                                type="hidden"
+                                name="_template"
+                                value="table">
 
 
-                            <div class="form-group">
+                            <div class="form-grid">
 
-                                <label for="name">
-                                    Name
-                                </label>
 
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    placeholder="Your name"
-                                    required>
+                                <!-- NAME -->
+
+                                <div class="form-group">
+
+                                    <label for="name">
+                                        Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Your name"
+                                        required>
+
+                                </div>
+
+
+                                <!-- EMAIL -->
+
+                                <div class="form-group">
+
+                                    <label for="email">
+                                        Email
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="you@example.com"
+                                        required>
+
+                                </div>
+
+
+                                <!-- MESSAGE -->
+
+                                <div class="form-group full">
+
+                                    <label for="message">
+                                        Message
+                                    </label>
+
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        placeholder="Tell me a little about your project..."
+                                        required></textarea>
+
+                                </div>
 
                             </div>
 
 
-                            <div class="form-group">
+                            <button
+                                type="submit"
+                                class="form-submit">
 
-                                <label for="email">
-                                    Email
-                                </label>
+                                <span>
+                                    Send message
+                                </span>
 
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    placeholder="abc@company.com"
-                                    required>
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2">
+
+                                    <path
+                                        d="M22 2L11 13">
+                                    </path>
+
+                                    <path
+                                        d="M22 2L15 22L11 13L2 9L22 2Z">
+                                    </path>
+
+                                </svg>
+
+                            </button>
+
+
+                            <div
+                                class="form-message"
+                                id="formMessage">
+
+                                <span>
+                                    ⚠
+                                </span>
+
+                                <span id="formMessageText">
+                                    Please fill out all fields before sending.
+                                </span>
 
                             </div>
 
-                        </div>
+                        </form>
 
-
-                        <div class="form-group">
-
-                            <label for="message">
-                                Message
-                            </label>
-
-                            <textarea
-                                id="message"
-                                name="message"
-                                placeholder="Tell me a little about your project..."
-                                required></textarea>
-
-                        </div>
-
-
-                        <button
-                            type="submit"
-                            class="send-button">
-
-                            Send message
-                            &nbsp; ➤
-
-                        </button>
-
-
-                        <div
-                            class="form-status"
-                            id="formStatus">
-
-                        </div>
-
-                    </form>
+                    </div>
 
                 </div>
 
@@ -3484,16 +3668,11 @@
             <div class="footer-content">
 
                 <div>
-
-                    © 2026 Your Name.
-                    All rights reserved.
-
+                    © 2026 Your Name. All rights reserved.
                 </div>
 
                 <div>
-
                     Academic Portfolio
-
                 </div>
 
             </div>
@@ -3501,6 +3680,21 @@
         </div>
 
     </footer>
+
+
+
+    <!-- =====================================================
+         BACK TO TOP
+    ====================================================== -->
+
+    <button
+        class="back-to-top"
+        id="backToTop"
+        aria-label="Back to top">
+
+        ↑
+
+    </button>
 
 
 
@@ -3560,18 +3754,15 @@
                 "publicationSearch"
             );
 
-
         const publicationItems =
             document.querySelectorAll(
                 ".publication"
             );
 
-
         const noResults =
             document.getElementById(
                 "noResults"
             );
-
 
         const visibleCount =
             document.getElementById(
@@ -3602,29 +3793,19 @@
 
 
                         if (
-                            text.includes(searchTerm)
+                            text.includes(
+                                searchTerm
+                            )
                         ) {
 
-                            if (
-                                publication.classList.contains(
-                                    "hidden-publication"
-                                ) &&
-                                searchTerm === ""
-                            ) {
+                            publication.style.display =
+                                "grid";
 
-                                publication.style.display =
-                                    "none";
+                            count++;
 
-                            } else {
+                        }
 
-                                publication.style.display =
-                                    "grid";
-
-                                count++;
-
-                            }
-
-                        } else {
+                        else {
 
                             publication.style.display =
                                 "none";
@@ -3639,10 +3820,19 @@
                     count;
 
 
-                noResults.style.display =
-                    count === 0
-                    ? "block"
-                    : "none";
+                if (count === 0) {
+
+                    noResults.style.display =
+                        "block";
+
+                }
+
+                else {
+
+                    noResults.style.display =
+                        "none";
+
+                }
 
             }
         );
@@ -3673,7 +3863,9 @@
                     );
 
 
-                if (!publicationsExpanded) {
+                if (
+                    !publicationsExpanded
+                ) {
 
                     hiddenPublications.forEach(
                         function(publication) {
@@ -3706,14 +3898,11 @@
 
                 else {
 
-                    const allPublications =
-                        document.querySelectorAll(
-                            ".publication"
-                        );
-
-
-                    allPublications.forEach(
-                        function(publication,index) {
+                    publicationItems.forEach(
+                        function(
+                            publication,
+                            index
+                        ) {
 
                             if (index >= 10) {
 
@@ -3743,7 +3932,9 @@
 
 
                     document
-                        .getElementById("publications")
+                        .getElementById(
+                            "publications"
+                        )
                         .scrollIntoView({
                             behavior: "smooth"
                         });
@@ -3764,7 +3955,6 @@
                 "section"
             );
 
-
         const navigationLinks =
             document.querySelectorAll(
                 ".nav-links a"
@@ -3782,7 +3972,7 @@
                     function(section) {
 
                         const sectionTop =
-                            section.offsetTop - 180;
+                            section.offsetTop - 220;
 
 
                         if (
@@ -3804,17 +3994,21 @@
                 navigationLinks.forEach(
                     function(link) {
 
-                        link.style.color =
-                            "#aaa9b8";
+                        link.classList.remove(
+                            "active"
+                        );
 
 
                         if (
-                            link.getAttribute("href") ===
+                            link.getAttribute(
+                                "href"
+                            ) ===
                             "#" + currentSection
                         ) {
 
-                            link.style.color =
-                                "#ffffff";
+                            link.classList.add(
+                                "active"
+                            );
 
                         }
 
@@ -3827,7 +4021,60 @@
 
 
         /* =====================================================
-           CONTACT FORM
+           BACK TO TOP
+        ====================================================== */
+
+        const backToTop =
+            document.getElementById(
+                "backToTop"
+            );
+
+
+        window.addEventListener(
+            "scroll",
+            function() {
+
+                if (
+                    window.scrollY > 500
+                ) {
+
+                    backToTop.classList.add(
+                        "show"
+                    );
+
+                }
+
+                else {
+
+                    backToTop.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+        backToTop.addEventListener(
+            "click",
+            function() {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+
+
+        /* =====================================================
+           CONTACT FORM VALIDATION
         ====================================================== */
 
         const contactForm =
@@ -3835,10 +4082,14 @@
                 "contactForm"
             );
 
-
-        const formStatus =
+        const formMessage =
             document.getElementById(
-                "formStatus"
+                "formMessage"
+            );
+
+        const formMessageText =
+            document.getElementById(
+                "formMessageText"
             );
 
 
@@ -3846,22 +4097,17 @@
             "submit",
             function(event) {
 
-                event.preventDefault();
-
-
                 const name =
                     document
                         .getElementById("name")
                         .value
                         .trim();
 
-
                 const email =
                     document
                         .getElementById("email")
                         .value
                         .trim();
-
 
                 const message =
                     document
@@ -3876,17 +4122,21 @@
                     !message
                 ) {
 
-                    formStatus
-                        .classList
-                        .remove("success");
+                    event.preventDefault();
 
 
-                    formStatus.style.display =
-                        "block";
+                    formMessage.classList.remove(
+                        "success"
+                    );
+
+                    formMessage.classList.add(
+                        "show"
+                    );
 
 
-                    formStatus.innerText =
+                    formMessageText.innerText =
                         "Please fill out all fields before sending.";
+
 
                     return;
 
@@ -3894,58 +4144,25 @@
 
 
                 /*
-                    Replace this email with your
-                    actual email address.
+                    FormSubmit handles the actual email delivery.
+                    Replace your@email.com in the form action
+                    with your real email address.
                 */
-
-                const recipient =
-                    "your@email.com";
-
-
-                const subject =
-                    encodeURIComponent(
-                        "Academic Website Contact from " +
-                        name
-                    );
-
-
-                const body =
-                    encodeURIComponent(
-                        "Name: " +
-                        name +
-                        "\n\nEmail: " +
-                        email +
-                        "\n\nMessage:\n" +
-                        message
-                    );
-
-
-                window.location.href =
-                    "mailto:" +
-                    recipient +
-                    "?subject=" +
-                    subject +
-                    "&body=" +
-                    body;
-
-
-                formStatus
-                    .classList
-                    .add("success");
-
-
-                formStatus.style.display =
-                    "block";
-
-
-                formStatus.innerText =
-                    "Opening your email application...";
 
             }
         );
 
-    </script>
 
+
+        /* =====================================================
+           INITIALIZE
+        ====================================================== */
+
+        window.dispatchEvent(
+            new Event("scroll")
+        );
+
+    </script>
 
 </body>
 
