@@ -2,19 +2,20 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Academic portfolio of Your Name — researcher, writer and student specializing in language, literature, linguistics and interdisciplinary research.">
+          content="Academic portfolio of Your Name — researcher, writer and student specializing in language, literature, linguistics and interdisciplinary research.">
 
     <meta name="keywords"
-        content="researcher, academic writer, English literature, linguistics, research, publications, academic portfolio">
+          content="researcher, academic writer, English literature, linguistics, research, publications, academic portfolio">
 
     <meta name="author"
-        content="Your Name">
+          content="Your Name">
 
     <title>Your Name | Academic Portfolio</title>
 
@@ -57,6 +58,7 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
@@ -93,8 +95,13 @@
         }
 
         button,
-        input {
+        input,
+        textarea {
             font: inherit;
+        }
+
+        button {
+            cursor: pointer;
         }
 
         .container {
@@ -113,11 +120,8 @@
 
         header {
             position: sticky;
-
             top: 18px;
-
             z-index: 1000;
-
             padding-top: 18px;
         }
 
@@ -164,7 +168,8 @@
 
             gap: 4px;
 
-            background: rgba(255,255,255,0.035);
+            background:
+                rgba(255,255,255,0.035);
 
             border-radius: 35px;
 
@@ -184,7 +189,8 @@
         }
 
         .nav-links a:hover {
-            background: rgba(255,255,255,0.08);
+            background:
+                rgba(255,255,255,0.08);
 
             color: white;
         }
@@ -357,11 +363,13 @@
         }
 
         .btn-secondary {
-            background: rgba(255,255,255,0.025);
+            background:
+                rgba(255,255,255,0.025);
         }
 
         .btn-secondary:hover {
-            background: rgba(255,255,255,0.08);
+            background:
+                rgba(255,255,255,0.08);
         }
 
 
@@ -442,11 +450,6 @@
 
             justify-content: space-between;
         }
-
-        /*
-            IMAGE IS FIXED INSIDE THE RIGHT-SIDE CARD.
-            Replace profile.jpg with your actual image filename.
-        */
 
         .profile-photo {
             width: 100%;
@@ -766,11 +769,6 @@
             white-space: nowrap;
         }
 
-        /*
-            First 10 publications are visible.
-            Everything after number 10 is hidden initially.
-        */
-
         .publication.hidden-publication {
             display: none;
         }
@@ -983,9 +981,9 @@
             display: grid;
 
             grid-template-columns:
-                1fr 1fr;
+                0.9fr 1.1fr;
 
-            gap: 30px;
+            gap: 35px;
 
             padding: 45px;
 
@@ -1011,20 +1009,25 @@
             margin-bottom: 20px;
         }
 
-        .contact-box p {
+        .contact-box > div:first-child p {
             color: var(--muted);
 
             max-width: 550px;
+
+            margin-bottom: 30px;
         }
+
+
+        /* =====================================================
+           CONTACT DETAILS
+        ====================================================== */
 
         .contact-details {
             display: flex;
 
             flex-direction: column;
 
-            gap: 15px;
-
-            justify-content: center;
+            gap: 12px;
         }
 
         .contact-item {
@@ -1034,7 +1037,7 @@
 
             gap: 15px;
 
-            padding: 16px;
+            padding: 14px;
 
             border: 1px solid var(--border);
 
@@ -1042,12 +1045,26 @@
 
             background:
                 rgba(255,255,255,0.025);
+
+            transition: 0.25s ease;
+        }
+
+        .contact-item:hover {
+            border-color:
+                rgba(130,116,255,0.45);
+
+            background:
+                rgba(255,255,255,0.05);
+
+            transform: translateY(-2px);
         }
 
         .contact-icon {
-            width: 40px;
+            width: 42px;
 
-            height: 40px;
+            height: 42px;
+
+            flex-shrink: 0;
 
             border-radius: 50%;
 
@@ -1059,7 +1076,7 @@
 
             justify-content: center;
 
-            font-size: 13px;
+            font-size: 12px;
 
             font-weight: 800;
         }
@@ -1074,6 +1091,116 @@
             text-transform: uppercase;
 
             letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           CONTACT FORM
+        ====================================================== */
+
+        .contact-form {
+            margin-top: 30px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 14px;
+        }
+
+        .form-group {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+        .form-group label {
+            color: #aaa9b8;
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            border: 1px solid var(--border);
+
+            border-radius: 13px;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            color: white;
+
+            outline: none;
+
+            padding: 14px 16px;
+
+            transition: 0.25s ease;
+        }
+
+        .form-group input {
+            height: 50px;
+        }
+
+        .form-group textarea {
+            min-height: 125px;
+
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--purple);
+
+            background:
+                rgba(255,255,255,0.05);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #666576;
+        }
+
+        .form-submit {
+            width: 100%;
+
+            border: none;
+
+            margin-top: 5px;
+        }
+
+        .form-note {
+            color: #777686;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+            margin-top: 3px;
+        }
+
+        .form-status {
+            display: none;
+
+            padding: 12px 15px;
+
+            border-radius: 12px;
+
+            border: 1px solid
+                rgba(32,217,161,0.25);
+
+            background:
+                rgba(32,217,161,0.06);
+
+            color: #7ce8c5;
+
+            font-size: 13px;
         }
 
 
@@ -1146,6 +1273,7 @@
             .hero h1 {
                 font-size: 75px;
             }
+
         }
 
 
@@ -1233,6 +1361,7 @@
             .publication-count {
                 white-space: normal;
             }
+
         }
 
 
@@ -1310,6 +1439,7 @@
 
                 align-items: flex-start;
             }
+
         }
 
     </style>
@@ -1320,1380 +1450,1390 @@
 <body>
 
 
-    <!-- =====================================================
-         NAVIGATION
-    ====================================================== -->
+<!-- =====================================================
+     NAVIGATION
+====================================================== -->
 
-    <header>
+<header>
+
+    <div class="container">
+
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                YOUR<span>NAME.</span>
+            </a>
+
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="#about">About</a>
+
+                <a href="#research">Research</a>
+
+                <a href="#publications">Publications</a>
+
+                <a href="#education">Education</a>
+
+                <a href="#experience">Experience</a>
+
+                <a href="#testimonials">Testimonials</a>
+
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <a
+                href="resume.pdf"
+                class="resume-btn"
+                target="_blank">
+
+                Resume ↗
+
+            </a>
+
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu">
+
+                ☰
+
+            </button>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main>
+
+
+    <!-- =================================================
+         HOME
+    ================================================== -->
+
+    <section id="home" class="hero">
 
         <div class="container">
 
-            <nav class="navbar">
-
-                <a href="#home" class="logo">
-                    YOUR<span>NAME.</span>
-                </a>
+            <div class="hero-grid">
 
 
-                <div class="nav-links" id="navLinks">
+                <!-- LEFT SIDE -->
 
-                    <a href="#about">About</a>
+                <div>
 
-                    <a href="#research">Research</a>
+                    <div class="availability">
 
-                    <a href="#publications">Publications</a>
+                        <span class="availability-dot"></span>
 
-                    <a href="#education">Education</a>
+                        Open to Research & Academic Collaboration
 
-                    <a href="#experience">Experience</a>
+                    </div>
 
-                    <a href="#testimonials">Testimonials</a>
 
-                    <a href="#contact">Contact</a>
+                    <h1>
+
+                        Hi, I'm
+
+                        <br>
+
+                        <span>
+                            Your Name.
+                        </span>
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        Researcher, academic and writer working
+                        at the intersection of language, literature,
+                        education and interdisciplinary research.
+                        I am passionate about producing meaningful
+                        research and contributing to academic
+                        knowledge.
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#publications"
+                            class="btn btn-primary">
+
+                            View Publications ↗
+
+                        </a>
+
+
+                        <a
+                            href="#contact"
+                            class="btn btn-secondary">
+
+                            Let's Connect
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- SOCIAL MEDIA -->
+
+                    <div class="socials">
+
+
+                        <a
+                            href="#"
+                            class="social"
+                            target="_blank"
+                            title="LinkedIn">
+
+                            in
+
+                        </a>
+
+
+                        <a
+                            href="#"
+                            class="social"
+                            target="_blank"
+                            title="Google Scholar">
+
+                            GS
+
+                        </a>
+
+
+                        <a
+                            href="#"
+                            class="social"
+                            target="_blank"
+                            title="ResearchGate">
+
+                            RG
+
+                        </a>
+
+
+                        <a
+                            href="#"
+                            class="social"
+                            target="_blank"
+                            title="ORCID">
+
+                            iD
+
+                        </a>
+
+
+                        <a
+                            href="#"
+                            class="social"
+                            target="_blank"
+                            title="GitHub">
+
+                            GH
+
+                        </a>
+
+                    </div>
 
                 </div>
 
 
-                <a href="resume.pdf"
-                   class="resume-btn"
-                   target="_blank">
 
-                    Resume ↗
+                <!-- RIGHT SIDE — PHOTO -->
 
-                </a>
+                <div class="hero-card">
+
+                    <img
+                        src="profile.jpg"
+                        alt="Your Name"
+                        class="profile-photo">
 
 
-                <button
-                    class="menu-button"
-                    id="menuButton">
+                    <div class="research-card">
 
-                    ☰
+                        <small>
+                            Currently Researching
+                        </small>
 
-                </button>
+                        <strong>
+                            Language, Literature &
+                            Interdisciplinary Studies
+                        </strong>
 
-            </nav>
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </header>
+    </section>
 
 
 
-    <!-- =====================================================
-         HOME
-    ====================================================== -->
+    <!-- =================================================
+         ABOUT
+    ================================================== -->
 
-    <main>
+    <section id="about">
 
-        <section id="home" class="hero">
+        <div class="container">
 
-            <div class="container">
+            <div class="section-heading">
 
-                <div class="hero-grid">
-
-
-                    <!-- LEFT SIDE -->
-
-                    <div>
-
-                        <div class="availability">
-
-                            <span class="availability-dot"></span>
-
-                            Open to Research & Academic Collaboration
-
-                        </div>
-
-
-                        <h1>
-
-                            Hi, I'm
-
-                            <br>
-
-                            <span>
-                                Your Name.
-                            </span>
-
-                        </h1>
-
-
-                        <p class="hero-description">
-
-                            Researcher, academic and writer working
-                            at the intersection of language, literature,
-                            education and interdisciplinary research.
-                            I am passionate about producing meaningful
-                            research and contributing to academic
-                            knowledge.
-
-                        </p>
-
-
-                        <div class="hero-buttons">
-
-                            <a
-                                href="#publications"
-                                class="btn btn-primary">
-
-                                View Publications ↗
-
-                            </a>
-
-
-                            <a
-                                href="#contact"
-                                class="btn btn-secondary">
-
-                                Let's Connect
-
-                            </a>
-
-                        </div>
-
-
-                        <!-- SOCIAL MEDIA -->
-
-                        <div class="socials">
-
-                            <!-- Replace # with your actual links -->
-
-                            <a
-                                href="#"
-                                class="social"
-                                target="_blank"
-                                title="LinkedIn">
-
-                                in
-
-                            </a>
-
-
-                            <a
-                                href="#"
-                                class="social"
-                                target="_blank"
-                                title="Google Scholar">
-
-                                GS
-
-                            </a>
-
-
-                            <a
-                                href="#"
-                                class="social"
-                                target="_blank"
-                                title="ResearchGate">
-
-                                RG
-
-                            </a>
-
-
-                            <a
-                                href="#"
-                                class="social"
-                                target="_blank"
-                                title="ORCID">
-
-                                iD
-
-                            </a>
-
-
-                            <a
-                                href="#"
-                                class="social"
-                                target="_blank"
-                                title="GitHub">
-
-                                GH
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- RIGHT SIDE — PHOTO -->
-
-                    <div class="hero-card">
-
-                        <!--
-                            =================================================
-                            YOUR PHOTO GOES HERE
-                            =================================================
-
-                            Put your image in the same folder as this HTML
-                            file and name it:
-
-                            profile.jpg
-
-                            OR change "profile.jpg" below to your filename.
-                        -->
-
-                        <img
-                            src="profile.jpg"
-                            alt="Your Name"
-                            class="profile-photo">
-
-
-                        <div class="research-card">
-
-                            <small>
-                                Currently Researching
-                            </small>
-
-                            <strong>
-                                Language, Literature &
-                                Interdisciplinary Studies
-                            </strong>
-
-                        </div>
-
-                    </div>
-
+                <div class="section-label">
+                    About Me
                 </div>
+
+                <h2>
+                    Research with purpose.
+                </h2>
+
+                <p>
+                    A concise overview of my academic interests,
+                    intellectual background and approach to research.
+                </p>
 
             </div>
 
-        </section>
 
+            <div class="about-grid">
 
+                <div class="about-card">
 
-        <!-- =====================================================
-             ABOUT
-        ====================================================== -->
-
-        <section id="about">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-label">
-                        About Me
-                    </div>
-
-                    <h2>
-                        Research with purpose.
-                    </h2>
+                    <h3>
+                        Who I Am
+                    </h3>
 
                     <p>
-                        A concise overview of my academic interests,
-                        intellectual background and approach to research.
+
+                        I am an academic researcher and writer
+                        interested in language, literature,
+                        linguistics, education and interdisciplinary
+                        studies.
+
                     </p>
 
                 </div>
 
 
-                <div class="about-grid">
+                <div class="about-card">
 
-                    <div class="about-card">
+                    <h3>
+                        What I Do
+                    </h3>
 
-                        <h3>
-                            Who I Am
-                        </h3>
+                    <p>
 
-                        <p>
+                        My work focuses on developing research,
+                        academic writing, critical analysis and
+                        interdisciplinary perspectives that connect
+                        language and society.
 
-                            I am an academic researcher and writer
-                            interested in language, literature,
-                            linguistics, education and interdisciplinary
-                            studies.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="about-card">
-
-                        <h3>
-                            What I Do
-                        </h3>
-
-                        <p>
-
-                            My work focuses on developing research,
-                            academic writing, critical analysis and
-                            interdisciplinary perspectives that connect
-                            language and society.
-
-                        </p>
-
-                    </div>
+                    </p>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
 
-        <!-- =====================================================
-             RESEARCH
-        ====================================================== -->
+    <!-- =================================================
+         RESEARCH
+    ================================================== -->
 
-        <section id="research">
+    <section id="research">
 
-            <div class="container">
+        <div class="container">
 
-                <div class="section-heading">
+            <div class="section-heading">
 
-                    <div class="section-label">
-                        Research
+                <div class="section-label">
+                    Research
+                </div>
+
+                <h2>
+                    Areas of interest.
+                </h2>
+
+                <p>
+                    Key areas where I explore questions,
+                    develop ideas and conduct research.
+                </p>
+
+            </div>
+
+
+            <div class="research-grid">
+
+
+                <div class="research-item">
+
+                    <div class="research-number">
+                        01
                     </div>
 
-                    <h2>
-                        Areas of interest.
-                    </h2>
+                    <h3>
+                        Linguistics
+                    </h3>
 
                     <p>
-                        Key areas where I explore questions,
-                        develop ideas and conduct research.
+                        Syntax, sociolinguistics, discourse,
+                        morphology, semantics and language variation.
                     </p>
 
                 </div>
 
 
-                <div class="research-grid">
+                <div class="research-item">
 
-
-                    <div class="research-item">
-
-                        <div class="research-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Linguistics
-                        </h3>
-
-                        <p>
-                            Syntax, sociolinguistics, discourse,
-                            morphology, semantics and language variation.
-                        </p>
-
+                    <div class="research-number">
+                        02
                     </div>
 
-
-                    <div class="research-item">
-
-                        <div class="research-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Literature
-                        </h3>
-
-                        <p>
-                            Literary criticism, theory, close reading,
-                            comparative literature and cultural studies.
-                        </p>
-
-                    </div>
-
-
-                    <div class="research-item">
-
-                        <div class="research-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Education
-                        </h3>
-
-                        <p>
-                            English language teaching, academic writing,
-                            learning and educational research.
-                        </p>
-
-                    </div>
-
-
-                    <div class="research-item">
-
-                        <div class="research-number">
-                            04
-                        </div>
-
-                        <h3>
-                            Discourse Studies
-                        </h3>
-
-                        <p>
-                            Language, identity, society, communication
-                            and critical discourse analysis.
-                        </p>
-
-                    </div>
-
-
-                    <div class="research-item">
-
-                        <div class="research-number">
-                            05
-                        </div>
-
-                        <h3>
-                            Corpus Linguistics
-                        </h3>
-
-                        <p>
-                            Corpus-based approaches to language,
-                            patterns, variation and textual analysis.
-                        </p>
-
-                    </div>
-
-
-                    <div class="research-item">
-
-                        <div class="research-number">
-                            06
-                        </div>
-
-                        <h3>
-                            Interdisciplinary Research
-                        </h3>
-
-                        <p>
-                            Connecting language, literature, education
-                            and social research.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             PUBLICATIONS
-        ====================================================== -->
-
-        <section id="publications">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-label">
-                        Publications
-                    </div>
-
-                    <h2>
-                        Selected research.
-                    </h2>
+                    <h3>
+                        Literature
+                    </h3>
 
                     <p>
-                        Explore my academic publications, papers,
-                        research projects and scholarly work.
+                        Literary criticism, theory, close reading,
+                        comparative literature and cultural studies.
                     </p>
 
                 </div>
 
 
-                <div class="publication-controls">
+                <div class="research-item">
 
-                    <div class="search-box">
-
-                        <input
-                            type="text"
-                            id="publicationSearch"
-                            placeholder="Search publications...">
-
+                    <div class="research-number">
+                        03
                     </div>
 
-
-                    <div class="publication-count">
-
-                        Showing
-                        <strong id="visibleCount">
-                            10
-                        </strong>
-                        publications
-
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="publications-list"
-                    id="publicationsList">
-
-
-                    <!-- PUBLICATION 01 -->
-
-                    <article class="publication">
-
-                        <div class="publication-number">
-                            01
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Parametric Variation Across
-                                Pashto, Urdu and English
-                            </h3>
-
-                            <p>
-                                Comparative study of linguistic
-                                structures and syntactic variation.
-                            </p>
-
-                        </div>
-
-                        <a
-                            href="#"
-                            class="publication-link">
-
-                            View ↗
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- PUBLICATION 02 -->
-
-                    <article class="publication">
-
-                        <div class="publication-number">
-                            02
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Code-Switching Practices Among
-                                University Students
-                            </h3>
-
-                            <p>
-                                A sociolinguistic investigation of
-                                multilingual communication.
-                            </p>
-
-                        </div>
-
-                        <a
-                            href="#"
-                            class="publication-link">
-
-                            View ↗
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- PUBLICATION 03 -->
-
-                    <article class="publication">
-
-                        <div class="publication-number">
-                            03
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Language, Identity and Society
-                            </h3>
-
-                            <p>
-                                Exploring the relationship between
-                                linguistic practices and identity.
-                            </p>
-
-                        </div>
-
-                        <a
-                            href="#"
-                            class="publication-link">
-
-                            View ↗
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- PUBLICATION 04 -->
-
-                    <article class="publication">
-
-                        <div class="publication-number">
-                            04
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                English-Urdu Code-Switching
-                                in Pakistani Novels
-                            </h3>
-
-                            <p>
-                                A comparative study of linguistic
-                                practices in contemporary fiction.
-                            </p>
-
-                        </div>
-
-                        <a
-                            href="#"
-                            class="publication-link">
-
-                            View ↗
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- PUBLICATION 05 -->
-
-                    <article class="publication">
-
-                        <div class="publication-number">
-                            05
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Critical Discourse and Representation
-                            </h3>
-
-                            <p>
-                                An analysis of discourse,
-                                representation and power.
-                            </p>
-
-                        </div>
-
-                        <a
-                            href="#"
-                            class="publication-link">
-
-                            View ↗
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- PUBLICATION 06 -->
-
-                    <article class="publication">
-
-                        <div class="publication-number">
-                            06
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Reader Response and Literary Meaning
-                            </h3>
-
-                            <p>
-                                Exploring the relationship between
-                                readers, texts and interpretation.
-                            </p>
-
-                        </div>
-
-                        <a
-                            href="#"
-                            class="publication-link">
-
-                            View ↗
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- PUBLICATION 07 -->
-
-                    <article class="publication">
-
-                        <div class="publication-number">
-                            07
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Marxism and Literary Criticism
-                            </h3>
-
-                            <p>
-                                Literature, ideology, class and
-                                social structures.
-                            </p>
-
-                        </div>
-
-                        <a
-                            href="#"
-                            class="publication-link">
-
-                            View ↗
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- PUBLICATION 08 -->
-
-                    <article class="publication">
-
-                        <div class="publication-number">
-                            08
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Morphology and Word Formation
-                            </h3>
-
-                            <p>
-                                An examination of morphological
-                                structures and lexical processes.
-                            </p>
-
-                        </div>
-
-                        <a
-                            href="#"
-                            class="publication-link">
-
-                            View ↗
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- PUBLICATION 09 -->
-
-                    <article class="publication">
-
-                        <div class="publication-number">
-                            09
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Semantics and Meaning
-                            </h3>
-
-                            <p>
-                                A study of meaning, interpretation
-                                and linguistic relationships.
-                            </p>
-
-                        </div>
-
-                        <a
-                            href="#"
-                            class="publication-link">
-
-                            View ↗
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- PUBLICATION 10 -->
-
-                    <article class="publication">
-
-                        <div class="publication-number">
-                            10
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Academic Writing and Research Methods
-                            </h3>
-
-                            <p>
-                                Approaches to academic research,
-                                argumentation and scholarly writing.
-                            </p>
-
-                        </div>
-
-                        <a
-                            href="#"
-                            class="publication-link">
-
-                            View ↗
-
-                        </a>
-
-                    </article>
-
-
-
-                    <!-- =================================================
-                         PUBLICATIONS 11+
-                         HIDDEN INITIALLY
-                    ================================================== -->
-
-
-                    <article class="publication hidden-publication">
-
-                        <div class="publication-number">
-                            11
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Corpus Linguistics and Language Patterns
-                            </h3>
-
-                            <p>
-                                Corpus-based analysis of linguistic data.
-                            </p>
-
-                        </div>
-
-                        <a href="#" class="publication-link">
-                            View ↗
-                        </a>
-
-                    </article>
-
-
-                    <article class="publication hidden-publication">
-
-                        <div class="publication-number">
-                            12
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Psycholinguistics and Language Processing
-                            </h3>
-
-                            <p>
-                                Language processing and cognitive approaches.
-                            </p>
-
-                        </div>
-
-                        <a href="#" class="publication-link">
-                            View ↗
-                        </a>
-
-                    </article>
-
-
-                    <article class="publication hidden-publication">
-
-                        <div class="publication-number">
-                            13
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Computational Approaches to Linguistics
-                            </h3>
-
-                            <p>
-                                Digital methods and computational
-                                approaches to language research.
-                            </p>
-
-                        </div>
-
-                        <a href="#" class="publication-link">
-                            View ↗
-                        </a>
-
-                    </article>
-
-
-                    <article class="publication hidden-publication">
-
-                        <div class="publication-number">
-                            14
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Language Variation in Multilingual Communities
-                            </h3>
-
-                            <p>
-                                Linguistic variation across multilingual
-                                communities.
-                            </p>
-
-                        </div>
-
-                        <a href="#" class="publication-link">
-                            View ↗
-                        </a>
-
-                    </article>
-
-
-                    <article class="publication hidden-publication">
-
-                        <div class="publication-number">
-                            15
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Literature and Cultural Identity
-                            </h3>
-
-                            <p>
-                                Literature as a site for cultural
-                                representation and identity.
-                            </p>
-
-                        </div>
-
-                        <a href="#" class="publication-link">
-                            View ↗
-                        </a>
-
-                    </article>
-
-
-                    <article class="publication hidden-publication">
-
-                        <div class="publication-number">
-                            16
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Contemporary Approaches to Literary Theory
-                            </h3>
-
-                            <p>
-                                An overview of modern approaches
-                                to literary interpretation.
-                            </p>
-
-                        </div>
-
-                        <a href="#" class="publication-link">
-                            View ↗
-                        </a>
-
-                    </article>
-
-
-                </div>
-
-
-                <div
-                    class="no-results"
-                    id="noResults">
-
-                    No publications found.
-
-                </div>
-
-
-                <div class="publication-actions">
-
-                    <button
-                        class="btn btn-primary"
-                        id="viewMoreBtn">
-
-                        View All Publications
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             EDUCATION
-        ====================================================== -->
-
-        <section id="education">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-label">
+                    <h3>
                         Education
-                    </div>
-
-                    <h2>
-                        Academic journey.
-                    </h2>
+                    </h3>
 
                     <p>
-                        My educational background and academic development.
+                        English language teaching, academic writing,
+                        learning and educational research.
                     </p>
 
                 </div>
 
 
-                <div class="timeline">
+                <div class="research-item">
 
-
-                    <div class="timeline-item">
-
-                        <div class="timeline-dot"></div>
-
-                        <span>
-                            PRESENT
-                        </span>
-
-                        <h3>
-                            BS English
-                        </h3>
-
-                        <p>
-                            English Literature & Linguistics
-                            — Iqra University.
-                        </p>
-
+                    <div class="research-number">
+                        04
                     </div>
 
-
-                    <div class="timeline-item">
-
-                        <div class="timeline-dot"></div>
-
-                        <span>
-                            PREVIOUS
-                        </span>
-
-                        <h3>
-                            FSc Pre-Medical
-                        </h3>
-
-                        <p>
-                            Academic foundation in science
-                            and general education.
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             EXPERIENCE
-        ====================================================== -->
-
-        <section id="experience">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-label">
-                        Experience
-                    </div>
-
-                    <h2>
-                        Work & experience.
-                    </h2>
+                    <h3>
+                        Discourse Studies
+                    </h3>
 
                     <p>
-                        Professional experience in education,
-                        communication and academic work.
+                        Language, identity, society, communication
+                        and critical discourse analysis.
                     </p>
 
                 </div>
 
 
-                <div class="experience-grid">
+                <div class="research-item">
 
-
-                    <div class="experience-card">
-
-                        <div class="date">
-                            EXPERIENCE
-                        </div>
-
-                        <h3>
-                            Academic / Home Tutor
-                        </h3>
-
-                        <h4>
-                            Education & English
-                        </h4>
-
-                        <p>
-                            Supporting students through tutoring,
-                            academic writing, English language learning
-                            and educational guidance.
-                        </p>
-
+                    <div class="research-number">
+                        05
                     </div>
 
-
-                    <div class="experience-card">
-
-                        <div class="date">
-                            EXPERIENCE
-                        </div>
-
-                        <h3>
-                            Customer Support Executive
-                        </h3>
-
-                        <h4>
-                            Professional Communication
-                        </h4>
-
-                        <p>
-                            Experience in professional communication,
-                            customer interaction, problem solving and
-                            service delivery.
-                        </p>
-
-                    </div>
-
-
-                    <div class="experience-card">
-
-                        <div class="date">
-                            FREELANCE
-                        </div>
-
-                        <h3>
-                            Academic & Content Writer
-                        </h3>
-
-                        <h4>
-                            Writing & Research
-                        </h4>
-
-                        <p>
-                            Academic writing, research assistance,
-                            content development and structured writing.
-                        </p>
-
-                    </div>
-
-
-                    <div class="experience-card">
-
-                        <div class="date">
-                            RESEARCH
-                        </div>
-
-                        <h3>
-                            Research Projects
-                        </h3>
-
-                        <h4>
-                            Linguistics & Literature
-                        </h4>
-
-                        <p>
-                            Developing research ideas, proposals,
-                            literature reviews and analytical projects.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             TESTIMONIALS
-             THIS SECTION IS DIRECTLY BEFORE CONTACT
-        ====================================================== -->
-
-        <section id="testimonials">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-label">
-                        Testimonials
-                    </div>
-
-                    <h2>
-                        What people say.
-                    </h2>
+                    <h3>
+                        Corpus Linguistics
+                    </h3>
 
                     <p>
-                        Feedback from students, colleagues and
-                        academic collaborators.
+                        Corpus-based approaches to language,
+                        patterns, variation and textual analysis.
                     </p>
 
                 </div>
 
 
-                <div class="testimonials">
+                <div class="research-item">
 
-
-                    <div class="testimonial">
-
-                        <div class="stars">
-                            ★★★★★
-                        </div>
-
-                        <p>
-                            “A highly dedicated and thoughtful
-                            academic professional with strong
-                            communication and research skills.”
-                        </p>
-
-                        <strong>
-                            Academic Colleague
-                        </strong>
-
-                        <span>
-                            Research Collaboration
-                        </span>
-
+                    <div class="research-number">
+                        06
                     </div>
 
+                    <h3>
+                        Interdisciplinary Research
+                    </h3>
 
-                    <div class="testimonial">
-
-                        <div class="stars">
-                            ★★★★★
-                        </div>
-
-                        <p>
-                            “Excellent at explaining complex ideas
-                            clearly and helping students approach
-                            academic work with confidence.”
-                        </p>
-
-                        <strong>
-                            Student
-                        </strong>
-
-                        <span>
-                            Academic Support
-                        </span>
-
-                    </div>
-
-
-                    <div class="testimonial">
-
-                        <div class="stars">
-                            ★★★★★
-                        </div>
-
-                        <p>
-                            “Professional, reliable and committed
-                            to producing high-quality academic work.”
-                        </p>
-
-                        <strong>
-                            Research Collaborator
-                        </strong>
-
-                        <span>
-                            Academic Project
-                        </span>
-
-                    </div>
+                    <p>
+                        Connecting language, literature, education
+                        and social research.
+                    </p>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
 
-        <!-- =====================================================
-             CONTACT
-        ====================================================== -->
+    <!-- =================================================
+         PUBLICATIONS
+    ================================================== -->
 
-        <section id="contact">
+    <section id="publications">
 
-            <div class="container">
+        <div class="container">
 
-                <div class="contact-box">
+            <div class="section-heading">
 
+                <div class="section-label">
+                    Publications
+                </div>
+
+                <h2>
+                    Selected research.
+                </h2>
+
+                <p>
+                    Explore my academic publications, papers,
+                    research projects and scholarly work.
+                </p>
+
+            </div>
+
+
+            <div class="publication-controls">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="publicationSearch"
+                        placeholder="Search publications..."
+                        aria-label="Search publications">
+
+                </div>
+
+
+                <div class="publication-count">
+
+                    Showing
+                    <strong id="visibleCount">
+                        10
+                    </strong>
+                    publications
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="publications-list"
+                id="publicationsList">
+
+
+                <!-- PUBLICATION 01 -->
+
+                <article class="publication">
+
+                    <div class="publication-number">
+                        01
+                    </div>
 
                     <div>
 
-                        <div class="section-label">
-                            Contact
-                        </div>
-
-                        <h2>
-                            Let's work together.
-                        </h2>
+                        <h3>
+                            Parametric Variation Across
+                            Pashto, Urdu and English
+                        </h3>
 
                         <p>
-
-                            I am open to academic collaboration,
-                            research opportunities, writing projects,
-                            educational work and meaningful
-                            professional conversations.
-
+                            Comparative study of linguistic
+                            structures and syntactic variation.
                         </p>
 
                     </div>
 
+                    <a
+                        href="#"
+                        class="publication-link">
+
+                        View ↗
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- PUBLICATION 02 -->
+
+                <article class="publication">
+
+                    <div class="publication-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Code-Switching Practices Among
+                            University Students
+                        </h3>
+
+                        <p>
+                            A sociolinguistic investigation of
+                            multilingual communication.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="publication-link">
+
+                        View ↗
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- PUBLICATION 03 -->
+
+                <article class="publication">
+
+                    <div class="publication-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Language, Identity and Society
+                        </h3>
+
+                        <p>
+                            Exploring the relationship between
+                            linguistic practices and identity.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="publication-link">
+
+                        View ↗
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- PUBLICATION 04 -->
+
+                <article class="publication">
+
+                    <div class="publication-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            English-Urdu Code-Switching
+                            in Pakistani Novels
+                        </h3>
+
+                        <p>
+                            A comparative study of linguistic
+                            practices in contemporary fiction.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="publication-link">
+
+                        View ↗
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- PUBLICATION 05 -->
+
+                <article class="publication">
+
+                    <div class="publication-number">
+                        05
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Critical Discourse and Representation
+                        </h3>
+
+                        <p>
+                            An analysis of discourse,
+                            representation and power.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="publication-link">
+
+                        View ↗
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- PUBLICATION 06 -->
+
+                <article class="publication">
+
+                    <div class="publication-number">
+                        06
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Reader Response and Literary Meaning
+                        </h3>
+
+                        <p>
+                            Exploring the relationship between
+                            readers, texts and interpretation.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="publication-link">
+
+                        View ↗
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- PUBLICATION 07 -->
+
+                <article class="publication">
+
+                    <div class="publication-number">
+                        07
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Marxism and Literary Criticism
+                        </h3>
+
+                        <p>
+                            Literature, ideology, class and
+                            social structures.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="publication-link">
+
+                        View ↗
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- PUBLICATION 08 -->
+
+                <article class="publication">
+
+                    <div class="publication-number">
+                        08
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Morphology and Word Formation
+                        </h3>
+
+                        <p>
+                            An examination of morphological
+                            structures and lexical processes.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="publication-link">
+
+                        View ↗
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- PUBLICATION 09 -->
+
+                <article class="publication">
+
+                    <div class="publication-number">
+                        09
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Semantics and Meaning
+                        </h3>
+
+                        <p>
+                            A study of meaning, interpretation
+                            and linguistic relationships.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="publication-link">
+
+                        View ↗
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- PUBLICATION 10 -->
+
+                <article class="publication">
+
+                    <div class="publication-number">
+                        10
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Academic Writing and Research Methods
+                        </h3>
+
+                        <p>
+                            Approaches to academic research,
+                            argumentation and scholarly writing.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="publication-link">
+
+                        View ↗
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     PUBLICATIONS 11+
+                ================================================== -->
+
+                <article class="publication hidden-publication">
+
+                    <div class="publication-number">
+                        11
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Corpus Linguistics and Language Patterns
+                        </h3>
+
+                        <p>
+                            Corpus-based analysis of linguistic data.
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="publication-link">
+                        View ↗
+                    </a>
+
+                </article>
+
+
+
+                <article class="publication hidden-publication">
+
+                    <div class="publication-number">
+                        12
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Psycholinguistics and Language Processing
+                        </h3>
+
+                        <p>
+                            Language processing and cognitive approaches.
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="publication-link">
+                        View ↗
+                    </a>
+
+                </article>
+
+
+
+                <article class="publication hidden-publication">
+
+                    <div class="publication-number">
+                        13
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Computational Approaches to Linguistics
+                        </h3>
+
+                        <p>
+                            Digital methods and computational
+                            approaches to language research.
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="publication-link">
+                        View ↗
+                    </a>
+
+                </article>
+
+
+
+                <article class="publication hidden-publication">
+
+                    <div class="publication-number">
+                        14
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Language Variation in Multilingual Communities
+                        </h3>
+
+                        <p>
+                            Linguistic variation across multilingual
+                            communities.
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="publication-link">
+                        View ↗
+                    </a>
+
+                </article>
+
+
+
+                <article class="publication hidden-publication">
+
+                    <div class="publication-number">
+                        15
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Literature and Cultural Identity
+                        </h3>
+
+                        <p>
+                            Literature as a site for cultural
+                            representation and identity.
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="publication-link">
+                        View ↗
+                    </a>
+
+                </article>
+
+
+
+                <article class="publication hidden-publication">
+
+                    <div class="publication-number">
+                        16
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Contemporary Approaches to Literary Theory
+                        </h3>
+
+                        <p>
+                            An overview of modern approaches
+                            to literary interpretation.
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="publication-link">
+                        View ↗
+                    </a>
+
+                </article>
+
+
+            </div>
+
+
+            <div
+                class="no-results"
+                id="noResults">
+
+                No publications found.
+
+            </div>
+
+
+            <div class="publication-actions">
+
+                <button
+                    class="btn btn-primary"
+                    id="viewMoreBtn">
+
+                    View All Publications
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         EDUCATION
+    ================================================== -->
+
+    <section id="education">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="section-label">
+                    Education
+                </div>
+
+                <h2>
+                    Academic journey.
+                </h2>
+
+                <p>
+                    My educational background and academic development.
+                </p>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <span>
+                        PRESENT
+                    </span>
+
+                    <h3>
+                        BS English
+                    </h3>
+
+                    <p>
+                        English Literature & Linguistics
+                        — Iqra University.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <span>
+                        PREVIOUS
+                    </span>
+
+                    <h3>
+                        FSc Pre-Medical
+                    </h3>
+
+                    <p>
+                        Academic foundation in science
+                        and general education.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         EXPERIENCE
+    ================================================== -->
+
+    <section id="experience">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="section-label">
+                    Experience
+                </div>
+
+                <h2>
+                    Work & experience.
+                </h2>
+
+                <p>
+                    Professional experience in education,
+                    communication and academic work.
+                </p>
+
+            </div>
+
+
+            <div class="experience-grid">
+
+
+                <div class="experience-card">
+
+                    <div class="date">
+                        EXPERIENCE
+                    </div>
+
+                    <h3>
+                        Academic / Home Tutor
+                    </h3>
+
+                    <h4>
+                        Education & English
+                    </h4>
+
+                    <p>
+                        Supporting students through tutoring,
+                        academic writing, English language learning
+                        and educational guidance.
+                    </p>
+
+                </div>
+
+
+                <div class="experience-card">
+
+                    <div class="date">
+                        EXPERIENCE
+                    </div>
+
+                    <h3>
+                        Customer Support Executive
+                    </h3>
+
+                    <h4>
+                        Professional Communication
+                    </h4>
+
+                    <p>
+                        Experience in professional communication,
+                        customer interaction, problem solving and
+                        service delivery.
+                    </p>
+
+                </div>
+
+
+                <div class="experience-card">
+
+                    <div class="date">
+                        FREELANCE
+                    </div>
+
+                    <h3>
+                        Academic & Content Writer
+                    </h3>
+
+                    <h4>
+                        Writing & Research
+                    </h4>
+
+                    <p>
+                        Academic writing, research assistance,
+                        content development and structured writing.
+                    </p>
+
+                </div>
+
+
+                <div class="experience-card">
+
+                    <div class="date">
+                        RESEARCH
+                    </div>
+
+                    <h3>
+                        Research Projects
+                    </h3>
+
+                    <h4>
+                        Linguistics & Literature
+                    </h4>
+
+                    <p>
+                        Developing research ideas, proposals,
+                        literature reviews and analytical projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         TESTIMONIALS
+         DIRECTLY BEFORE CONTACT
+    ================================================== -->
+
+    <section id="testimonials">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="section-label">
+                    Testimonials
+                </div>
+
+                <h2>
+                    What people say.
+                </h2>
+
+                <p>
+                    Feedback from students, colleagues and
+                    academic collaborators.
+                </p>
+
+            </div>
+
+
+            <div class="testimonials">
+
+
+                <div class="testimonial">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        “A highly dedicated and thoughtful
+                        academic professional with strong
+                        communication and research skills.”
+                    </p>
+
+                    <strong>
+                        Academic Colleague
+                    </strong>
+
+                    <span>
+                        Research Collaboration
+                    </span>
+
+                </div>
+
+
+                <div class="testimonial">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        “Excellent at explaining complex ideas
+                        clearly and helping students approach
+                        academic work with confidence.”
+                    </p>
+
+                    <strong>
+                        Student
+                    </strong>
+
+                    <span>
+                        Academic Support
+                    </span>
+
+                </div>
+
+
+                <div class="testimonial">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        “Professional, reliable and committed
+                        to producing high-quality academic work.”
+                    </p>
+
+                    <strong>
+                        Research Collaborator
+                    </strong>
+
+                    <span>
+                        Academic Project
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CONTACT
+    ================================================== -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+
+                <!-- LEFT SIDE -->
+
+                <div>
+
+                    <div class="section-label">
+                        Contact
+                    </div>
+
+                    <h2>
+                        Let's work together.
+                    </h2>
+
+                    <p>
+
+                        I am open to academic collaboration,
+                        research opportunities, writing projects,
+                        educational work and meaningful
+                        professional conversations.
+
+                    </p>
+
+
+                    <!-- CONTACT DETAILS -->
 
                     <div class="contact-details">
 
 
+                        <!-- EMAIL -->
+
                         <a
-                            href="mailto:your@email.com"
+                            href="mailto:janiiazaz@gmail.com"
                             class="contact-item">
 
                             <div class="contact-icon">
@@ -2706,16 +2846,68 @@
                                     Email
                                 </small>
 
-                                your@email.com
+                                janiiazaz@gmail.com
 
                             </div>
 
                         </a>
 
 
+                        <!-- WHATSAPP -->
+
+                        <a
+                            href="https://wa.me/966508895356"
+                            class="contact-item"
+                            target="_blank"
+                            rel="noopener">
+
+                            <div class="contact-icon">
+                                WA
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    WhatsApp
+                                </small>
+
+                                +966 50 889 5356
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- PHONE -->
+
+                        <a
+                            href="tel:+966508895356"
+                            class="contact-item">
+
+                            <div class="contact-icon">
+                                ☎
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    Phone
+                                </small>
+
+                                +966 50 889 5356
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- LINKEDIN -->
+
                         <a
                             href="#"
-                            class="contact-item">
+                            class="contact-item"
+                            target="_blank"
+                            rel="noopener">
 
                             <div class="contact-icon">
                                 in
@@ -2734,171 +2926,304 @@
                         </a>
 
 
-                        <a
-                            href="#"
-                            class="contact-item">
-
-                            <div class="contact-icon">
-                                RG
-                            </div>
-
-                            <div>
-
-                                <small>
-                                    ResearchGate
-                                </small>
-
-                                Academic Profile
-
-                            </div>
-
-                        </a>
-
-
-                        <a
-                            href="#"
-                            class="contact-item">
-
-                            <div class="contact-icon">
-                                iD
-                            </div>
-
-                            <div>
-
-                                <small>
-                                    ORCID
-                                </small>
-
-                                Research Identity
-
-                            </div>
-
-                        </a>
-
-
                     </div>
 
                 </div>
 
-            </div>
-
-        </section>
-
-    </main>
 
 
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <footer>
-
-        <div class="container">
-
-            <div class="footer-content">
+                <!-- RIGHT SIDE — CONTACT FORM -->
 
                 <div>
-                    © 2026 Your Name. All rights reserved.
-                </div>
 
-                <div>
-                    Academic Portfolio
+                    <form
+                        class="contact-form"
+                        id="contactForm">
+
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Your Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Your Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="subject">
+                                Subject
+                            </label>
+
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="What would you like to discuss?"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="message">
+                                Message
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Write your message..."
+                                required></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary form-submit">
+
+                            Send Message ↗
+
+                        </button>
+
+
+                        <div
+                            class="form-status"
+                            id="formStatus">
+
+                            Your email application is opening.
+                            Please send the message from your email client.
+
+                        </div>
+
+
+                        <p class="form-note">
+
+                            Your message will be prepared and
+                            sent to <strong>janiiazaz@gmail.com</strong>
+                            through your default email application.
+
+                        </p>
+
+                    </form>
+
                 </div>
 
             </div>
 
         </div>
 
-    </footer>
+    </section>
+
+</main>
 
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
-    <script>
+<footer>
 
-        /* =====================================================
-           MOBILE MENU
-        ====================================================== */
+    <div class="container">
 
-        const menuButton =
-            document.getElementById("menuButton");
+        <div class="footer-content">
 
-        const navLinks =
-            document.getElementById("navLinks");
+            <div>
+                © 2026 Your Name. All rights reserved.
+            </div>
+
+            <div>
+                Academic Portfolio
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
 
 
-        menuButton.addEventListener(
-            "click",
-            function () {
 
-                navLinks.classList.toggle("active");
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
 
-            }
+<script>
+
+
+    /* =====================================================
+       MOBILE MENU
+    ====================================================== */
+
+    const menuButton =
+        document.getElementById("menuButton");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    menuButton.addEventListener(
+        "click",
+        function () {
+
+            navLinks.classList.toggle("active");
+
+        }
+    );
+
+
+    /*
+        Close mobile menu after clicking a link.
+    */
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(function(link) {
+
+            link.addEventListener(
+                "click",
+                function() {
+
+                    navLinks.classList.remove("active");
+
+                }
+            );
+
+        });
+
+
+
+    /* =====================================================
+       PUBLICATION SEARCH
+    ====================================================== */
+
+    const searchInput =
+        document.getElementById(
+            "publicationSearch"
+        );
+
+    const publicationItems =
+        document.querySelectorAll(
+            ".publication"
+        );
+
+    const noResults =
+        document.getElementById(
+            "noResults"
+        );
+
+    const visibleCount =
+        document.getElementById(
+            "visibleCount"
+        );
+
+    const viewMoreBtn =
+        document.getElementById(
+            "viewMoreBtn"
         );
 
 
-        /*
-            Close mobile menu after clicking a link.
-        */
+    let publicationsExpanded = false;
 
-        document
-            .querySelectorAll(".nav-links a")
-            .forEach(function(link) {
 
-                link.addEventListener(
-                    "click",
-                    function() {
+    searchInput.addEventListener(
+        "input",
+        function() {
 
-                        navLinks.classList.remove("active");
+            const searchTerm =
+                this.value
+                    .toLowerCase()
+                    .trim();
+
+
+            let count = 0;
+
+
+            publicationItems.forEach(
+                function(publication, index) {
+
+                    const text =
+                        publication
+                            .innerText
+                            .toLowerCase();
+
+
+                    if (
+                        text.includes(searchTerm)
+                    ) {
+
+                        /*
+                            If there is no search term,
+                            return to the normal 10-publication
+                            initial view.
+                        */
+
+                        if (
+                            searchTerm === "" &&
+                            index >= 10 &&
+                            !publicationsExpanded
+                        ) {
+
+                            publication.style.display =
+                                "none";
+
+                        }
+
+                        else {
+
+                            publication.style.display =
+                                "grid";
+
+                            count++;
+
+                        }
 
                     }
-                );
 
-            });
+                    else {
 
+                        publication.style.display =
+                            "none";
 
+                    }
 
-        /* =====================================================
-           PUBLICATION SEARCH
-        ====================================================== */
-
-        const searchInput =
-            document.getElementById(
-                "publicationSearch"
-            );
-
-        const publicationItems =
-            document.querySelectorAll(
-                ".publication"
-            );
-
-        const noResults =
-            document.getElementById(
-                "noResults"
-            );
-
-        const visibleCount =
-            document.getElementById(
-                "visibleCount"
+                }
             );
 
 
-        searchInput.addEventListener(
-            "input",
-            function() {
+            /*
+                When searching, show matching publications
+                even if they are normally hidden.
+            */
 
-                const searchTerm =
-                    this.value
-                        .toLowerCase()
-                        .trim();
-
-
-                let count = 0;
-
+            if (searchTerm !== "") {
 
                 publicationItems.forEach(
                     function(publication) {
@@ -2908,7 +3233,6 @@
                                 .innerText
                                 .toLowerCase();
 
-
                         if (
                             text.includes(searchTerm)
                         ) {
@@ -2916,9 +3240,111 @@
                             publication.style.display =
                                 "grid";
 
-                            count++;
+                        }
 
-                        } else {
+                    }
+                );
+
+            }
+
+
+            let actualVisible = 0;
+
+
+            publicationItems.forEach(
+                function(publication) {
+
+                    if (
+                        publication.style.display !==
+                        "none"
+                    ) {
+
+                        actualVisible++;
+
+                    }
+
+                }
+            );
+
+
+            visibleCount.innerText =
+                actualVisible;
+
+
+            if (actualVisible === 0) {
+
+                noResults.style.display =
+                    "block";
+
+            }
+
+            else {
+
+                noResults.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+
+
+    /* =====================================================
+       VIEW ALL PUBLICATIONS
+    ====================================================== */
+
+    viewMoreBtn.addEventListener(
+        "click",
+        function() {
+
+            const hiddenPublications =
+                document.querySelectorAll(
+                    ".hidden-publication"
+                );
+
+
+            if (!publicationsExpanded) {
+
+
+                hiddenPublications.forEach(
+                    function(publication) {
+
+                        publication.classList.remove(
+                            "hidden-publication"
+                        );
+
+                        publication.style.display =
+                            "grid";
+
+                    }
+                );
+
+
+                publicationsExpanded = true;
+
+
+                viewMoreBtn.innerText =
+                    "Show Fewer Publications";
+
+
+                visibleCount.innerText =
+                    publicationItems.length;
+
+
+            }
+
+            else {
+
+
+                publicationItems.forEach(
+                    function(publication, index) {
+
+                        if (index >= 10) {
+
+                            publication.classList.add(
+                                "hidden-publication"
+                            );
 
                             publication.style.display =
                                 "none";
@@ -2929,202 +3355,193 @@
                 );
 
 
+                publicationsExpanded = false;
+
+
+                viewMoreBtn.innerText =
+                    "View All Publications";
+
+
                 visibleCount.innerText =
-                    count;
+                    "10";
 
 
-                if (count === 0) {
-
-                    noResults.style.display =
-                        "block";
-
-                } else {
-
-                    noResults.style.display =
-                        "none";
-
-                }
+                document
+                    .getElementById("publications")
+                    .scrollIntoView({
+                        behavior: "smooth"
+                    });
 
             }
+
+        }
+    );
+
+
+
+    /* =====================================================
+       CONTACT FORM
+    ====================================================== */
+
+    const contactForm =
+        document.getElementById(
+            "contactForm"
+        );
+
+    const formStatus =
+        document.getElementById(
+            "formStatus"
         );
 
 
+    contactForm.addEventListener(
+        "submit",
+        function(event) {
 
-        /* =====================================================
-           VIEW ALL PUBLICATIONS
-        ====================================================== */
-
-        const viewMoreBtn =
-            document.getElementById(
-                "viewMoreBtn"
-            );
+            event.preventDefault();
 
 
-        let publicationsExpanded = false;
+            const name =
+                document
+                    .getElementById("name")
+                    .value
+                    .trim();
 
 
-        viewMoreBtn.addEventListener(
-            "click",
-            function() {
-
-                const hiddenPublications =
-                    document.querySelectorAll(
-                        ".hidden-publication"
-                    );
+            const email =
+                document
+                    .getElementById("email")
+                    .value
+                    .trim();
 
 
-                if (!publicationsExpanded) {
+            const subject =
+                document
+                    .getElementById("subject")
+                    .value
+                    .trim();
 
-                    hiddenPublications.forEach(
-                        function(publication) {
 
-                            publication.classList.remove(
-                                "hidden-publication"
+            const message =
+                document
+                    .getElementById("message")
+                    .value
+                    .trim();
+
+
+            const emailSubject =
+                encodeURIComponent(
+                    subject
+                );
+
+
+            const emailBody =
+                encodeURIComponent(
+                    "Name: " +
+                    name +
+                    "\n\n" +
+
+                    "Email: " +
+                    email +
+                    "\n\n" +
+
+                    "Message:\n" +
+                    message
+                );
+
+
+            const mailtoLink =
+                "mailto:janiiazaz@gmail.com" +
+                "?subject=" +
+                emailSubject +
+                "&body=" +
+                emailBody;
+
+
+            formStatus.style.display =
+                "block";
+
+
+            window.location.href =
+                mailtoLink;
+
+        }
+    );
+
+
+
+    /* =====================================================
+       NAVIGATION ACTIVE STATE
+    ====================================================== */
+
+    const sections =
+        document.querySelectorAll(
+            "section"
+        );
+
+    const navigationLinks =
+        document.querySelectorAll(
+            ".nav-links a"
+        );
+
+
+    window.addEventListener(
+        "scroll",
+        function() {
+
+            let currentSection = "";
+
+
+            sections.forEach(
+                function(section) {
+
+                    const sectionTop =
+                        section.offsetTop - 180;
+
+
+                    if (
+                        window.scrollY >=
+                        sectionTop
+                    ) {
+
+                        currentSection =
+                            section.getAttribute(
+                                "id"
                             );
 
-                            publication.style.display =
-                                "grid";
-
-                        }
-                    );
-
-
-                    publicationsExpanded = true;
-
-
-                    viewMoreBtn.innerText =
-                        "Show Fewer Publications";
-
-
-                    visibleCount.innerText =
-                        document.querySelectorAll(
-                            ".publication"
-                        ).length;
-
-                }
-
-                else {
-
-                    publicationItems.forEach(
-                        function(publication, index) {
-
-                            if (index >= 10) {
-
-                                publication.classList.add(
-                                    "hidden-publication"
-                                );
-
-                                publication.style.display =
-                                    "none";
-
-                            }
-
-                        }
-                    );
-
-
-                    publicationsExpanded = false;
-
-
-                    viewMoreBtn.innerText =
-                        "View All Publications";
-
-
-                    visibleCount.innerText =
-                        "10";
-
-
-                    /*
-                        Return the reader to the
-                        beginning of the publications
-                        section.
-                    */
-
-                    document
-                        .getElementById("publications")
-                        .scrollIntoView({
-                            behavior: "smooth"
-                        });
-
-                }
-
-            }
-        );
-
-
-
-        /* =====================================================
-           NAVIGATION ACTIVE STATE
-        ====================================================== */
-
-        const sections =
-            document.querySelectorAll(
-                "section"
-            );
-
-        const navigationLinks =
-            document.querySelectorAll(
-                ".nav-links a"
-            );
-
-
-        window.addEventListener(
-            "scroll",
-            function() {
-
-                let currentSection = "";
-
-
-                sections.forEach(
-                    function(section) {
-
-                        const sectionTop =
-                            section.offsetTop - 180;
-
-
-                        if (
-                            window.scrollY >=
-                            sectionTop
-                        ) {
-
-                            currentSection =
-                                section.getAttribute(
-                                    "id"
-                                );
-
-                        }
-
                     }
-                );
+
+                }
+            );
 
 
-                navigationLinks.forEach(
-                    function(link) {
+            navigationLinks.forEach(
+                function(link) {
+
+                    link.style.color =
+                        "#aaa9b8";
+
+
+                    if (
+                        link.getAttribute(
+                            "href"
+                        ) ===
+                        "#" + currentSection
+                    ) {
 
                         link.style.color =
-                            "#aaa9b8";
-
-
-                        if (
-                            link.getAttribute(
-                                "href"
-                            ) ===
-                            "#" + currentSection
-                        ) {
-
-                            link.style.color =
-                                "#ffffff";
-
-                        }
+                            "#ffffff";
 
                     }
-                );
 
-            }
-        );
+                }
+            );
+
+        }
+    );
 
 
-    </script>
+</script>
 
 
 </body>
