@@ -1,0 +1,35 @@
+:root {
+  --primary: #1e3a8a;
+  --secondary: #0f172a;
+  --accent: #3b82f6;
+  --bg-light: #f8fafc;
+  --text-main: #334155;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+}
+container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
