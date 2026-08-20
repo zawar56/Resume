@@ -163,6 +163,8 @@
 
         .navbar {
 
+            position: relative;
+
             min-height: 78px;
 
             border: 1px solid var(--border);
@@ -178,10 +180,10 @@
 
             align-items: center;
 
-            justify-content: space-between;
+            justify-content: center;
 
             padding:
-                0 20px 0 28px;
+                0 120px;
 
             box-shadow:
                 0 20px 50px rgba(0,0,0,0.30);
@@ -191,6 +193,10 @@
 
 
         .logo {
+
+            position: absolute;
+
+            left: 28px;
 
             font-size: 19px;
 
@@ -211,9 +217,11 @@
 
             display: flex;
 
+            justify-content: center;
+
             align-items: center;
 
-            gap: 4px;
+            gap: 2px;
 
             background:
                 rgba(255,255,255,0.035);
@@ -228,11 +236,13 @@
 
             color: #aaa9b8;
 
-            padding: 10px 13px;
+            padding: 10px 11px;
 
             border-radius: 25px;
 
-            font-size: 13px;
+            font-size: 12px;
+
+            white-space: nowrap;
 
             transition: 0.25s ease;
         }
@@ -697,10 +707,11 @@
 
             display: grid;
 
-            grid-template-columns:
-                1fr 1fr;
+            grid-template-columns: 1fr;
 
             gap: 24px;
+
+            max-width: 100%;
         }
 
 
@@ -731,6 +742,16 @@
             color: var(--muted);
 
             line-height: 1.9;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .about-card p:last-child {
+
+            margin-bottom: 0;
+
         }
 
 
@@ -1098,7 +1119,72 @@
         }
 
 
-        /* ================= SERVICES ================= */
+        /* ================= SKILLS ================= */
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .skill-card {
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 22px;
+
+            padding: 28px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            transition: .25s ease;
+
+        }
+
+
+        .skill-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                rgba(130,116,255,0.4);
+
+            background:
+                rgba(130,116,255,0.06);
+
+        }
+
+
+        .skill-card h3 {
+
+            font-size: 19px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .skill-card p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+        }
+
+
+                /* ================= SERVICES ================= */
 
         .services-grid {
 
@@ -1548,6 +1634,15 @@
 
         @media (max-width: 900px) {
 
+            .navbar {
+                padding: 0 18px;
+                justify-content: space-between;
+            }
+
+            .logo {
+                position: static;
+            }
+
             header {
                 top: 8px;
             }
@@ -1640,7 +1735,8 @@
             }
 
 
-            .services-grid {
+            .services-grid,
+            .skills-grid {
                 grid-template-columns: repeat(2,1fr);
             }
         }
@@ -1704,7 +1800,8 @@
 
 
             .research-grid,
-            .services-grid {
+            .services-grid,
+            .skills-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1823,6 +1920,12 @@
                     <a href="#education">Education</a>
 
                     <a href="#experience">Experience</a>
+
+                    <a href="#skills">Skills</a>
+
+                    <a href="#services">Services</a>
+
+                    <a href="#activities">Leadership & Activities</a>
 
                     <a href="#testimonials">Testimonials</a>
 
@@ -3476,7 +3579,89 @@
         </section>
 
 
-        <!-- ================= SERVICES ================= -->
+        <!-- ================= SKILLS ================= -->
+
+        <section id="skills">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        Skills
+                    </div>
+
+                    <h2>
+                        Research, analysis & communication.
+                    </h2>
+
+                    <p>
+                        A combination of research, analytical, communication and
+                        professional skills developed through academic work,
+                        policy research and institutional engagement.
+                    </p>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+                    <div class="skill-card">
+                        <h3>Strategic Research</h3>
+                        <p>
+                            Research on nuclear deterrence, strategic stability,
+                            South Asian security and contemporary security challenges.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Policy Analysis</h3>
+                        <p>
+                            Evidence-based analysis of foreign policy, defence,
+                            governance and regional geopolitical developments.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Academic & Policy Writing</h3>
+                        <p>
+                            Clear, structured writing for research articles, policy
+                            briefs, analytical pieces and professional documents.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>OSINT & Strategic Analysis</h3>
+                        <p>
+                            Open-source research, evidence gathering and assessment
+                            of information relevant to strategic and geopolitical issues.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Public Speaking</h3>
+                        <p>
+                            Confident communication, presentations, policy discussions
+                            and participation in academic and professional forums.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Leadership & Teamwork</h3>
+                        <p>
+                            Team coordination, research supervision, mentoring and
+                            collaborative work across academic and policy settings.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+                <!-- ================= SERVICES ================= -->
 
         <section id="services">
 
