@@ -8,7 +8,7 @@
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Samra Khaksar — Strategic Studies Researcher, Policy Writer and Strategic Affairs Researcher specializing in nuclear deterrence, strategic stability, South Asian security, geopolitics, foreign policy and OSINT.">
+          content="Samra Khaksar — Strategic Studies Researcher, Policy Writer and Strategic Affairs Researcher specializing in nuclear deterrence, strategic stability, South Asian security, geopolitics, foreign policy, defence policy and OSINT.">
 
     <meta name="keywords"
           content="Samra Khaksar, Strategic Studies Researcher, Nuclear Deterrence, Strategic Stability, South Asian Security, Geopolitics, Foreign Policy, Defence Policy, OSINT, Policy Writer">
@@ -423,6 +423,8 @@
             font-size: 28px;
 
             cursor: pointer;
+
+            border: none;
         }
 
 
@@ -1475,6 +1477,9 @@
 
             margin-top:
                 50px;
+
+            align-items:
+                stretch;
         }
 
 
@@ -1495,6 +1500,15 @@
 
             border-radius:
                 20px;
+
+            height:
+                100%;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
         }
 
 
@@ -1523,10 +1537,10 @@
                 14px;
 
             line-height:
-                1.8;
+                1.85;
 
             margin-bottom:
-                22px;
+                25px;
         }
 
 
@@ -1538,6 +1552,9 @@
             border-top:
                 1px solid
                 var(--border);
+
+            margin-top:
+                auto;
         }
 
 
@@ -1553,7 +1570,24 @@
                 15px;
 
             margin-bottom:
-                3px;
+                5px;
+        }
+
+
+        .testimonial-author strong a {
+
+            color:
+                white;
+
+            transition:
+                .3s ease;
+        }
+
+
+        .testimonial-author strong a:hover {
+
+            color:
+                var(--purple-light);
         }
 
 
@@ -1564,6 +1598,12 @@
 
             font-size:
                 11px;
+
+            line-height:
+                1.6;
+
+            display:
+                block;
         }
 
 
@@ -2186,6 +2226,23 @@
 
                 text-align:
                     center;
+            }
+
+
+            .testimonial {
+
+                padding:
+                    24px;
+            }
+
+
+            .testimonial p {
+
+                font-size:
+                    13px;
+
+                line-height:
+                    1.8;
             }
         }
 
@@ -3024,7 +3081,6 @@
 
         <div class="publication">
 
-
             <div class="publication-number">
                 01
             </div>
@@ -3045,6 +3101,7 @@
             <a
                 href="https://india.shafaqna.com/EN/impact-of-indian-hybrid-warfare-on-human-security-in-pakistan/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="publication-link">
 
                 Read ↗
@@ -3200,11 +3257,16 @@
         <div class="testimonial-grid">
 
 
+            <!-- =================================================
+                 MUHAMMAD NOUMAN
+            ================================================= -->
+
             <article class="testimonial">
 
                 <div class="quote-mark">
                     “
                 </div>
+
 
                 <p>
 
@@ -3216,8 +3278,10 @@
                     well-structured writing and insightful analysis.
 
                     Samra approaches her work with professionalism
-                    and sincerity, consistently delivering
-                    high-quality results.
+                    and sincerity, consistently delivering high-quality
+                    results. I would highly recommend her to any
+                    organisation seeking a capable and reliable
+                    professional.
 
                 </p>
 
@@ -3225,12 +3289,21 @@
                 <div class="testimonial-author">
 
                     <strong>
-                        Muhammad Nouman
+
+                        <a
+                            href="https://www.linkedin.com/in/nouman081/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            Muhammad Nouman ↗
+
+                        </a>
+
                     </strong>
 
+
                     <span>
-                        LLM Candidate in Mediation and ADR at The
-                        University of Law
+                        March 27, 2026, Muhammad managed SAMRA directly
                     </span>
 
                 </div>
@@ -3239,11 +3312,16 @@
 
 
 
+            <!-- =================================================
+                 SHEHROZ HUSSAIN
+            ================================================= -->
+
             <article class="testimonial">
 
                 <div class="quote-mark">
                     “
                 </div>
+
 
                 <p>
 
@@ -3257,9 +3335,22 @@
                     geopolitical issues, particularly relating to
                     South Asia and the Kashmir dispute.
 
+                    <br><br>
+
                     Her writing reflects not only academic rigor but
                     also a nuanced understanding of policy dynamics,
                     making her work both insightful and relevant.
+
+                    Samra is highly dedicated, articulate, and
+                    proactive in academic and professional settings,
+                    and she brings a thoughtful perspective to every
+                    discussion she is part of.
+
+                    <br><br>
+
+                    I am confident that she will continue to make
+                    meaningful contributions in the field of Social
+                    Sciences.
 
                 </p>
 
@@ -3267,12 +3358,22 @@
                 <div class="testimonial-author">
 
                     <strong>
-                        Shehroz Hussain
+
+                        <a
+                            href="https://www.linkedin.com/in/shehroz-hussain-b692a5378/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            Shehroz Hussain ↗
+
+                        </a>
+
                     </strong>
 
+
                     <span>
-                        Student at National Defence University
-                        Islamabad
+                        Strategic Studies Student at National Defence
+                        University Islamabad
                     </span>
 
                 </div>
@@ -3627,7 +3728,9 @@
 
 <script>
 
-    /* Mobile Navigation */
+    /* =========================================================
+       MOBILE NAVIGATION
+    ========================================================= */
 
     const mobileMenu =
         document.getElementById("mobileMenu");
@@ -3648,7 +3751,9 @@
     );
 
 
-    /* Close mobile menu after clicking */
+    /* =========================================================
+       CLOSE MOBILE MENU AFTER CLICKING
+    ========================================================= */
 
     document
         .querySelectorAll(".nav-links a")
@@ -3668,7 +3773,9 @@
         });
 
 
-    /* Active navigation */
+    /* =========================================================
+       ACTIVE NAVIGATION
+    ========================================================= */
 
     const sections =
         document.querySelectorAll(
