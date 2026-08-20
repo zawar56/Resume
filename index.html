@@ -1,9 +1,86 @@
-<div id="skills-container"></div>
-<div id="services-container"></div>
-<div id="publications-container"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samra Khaksar | Strategic Studies Researcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<script>
-    fetch('skills.html').then(r => r.text()).then(d => document.getElementById('skills-container').innerHTML = d);
-    fetch('services.html').then(r => r.text()).then(d => document.getElementById('services-container').innerHTML = d);
-    fetch('publications.html').then(r => r.text()).then(d => document.getElementById('publications-container').innerHTML = d);
-</script>
+    <!-- Header & Hero -->
+    <div id="header-container"></div>
+    <div id="hero-container"></div>
+
+    <div class="container">
+        <!-- Core Profile Sections -->
+        <div id="about-container"></div>
+        <div id="education-container"></div>
+        
+        <!-- Experience & Skills -->
+        <div id="experience-container"></div>
+        <div id="skills-container"></div>
+        <div id="leadership-container"></div>
+
+        <!-- Services Section -->
+        <section style="padding: 2rem 0;">
+            <h2>Services</h2>
+            <div id="service-1"></div>
+            <div id="service-2"></div>
+            <div id="service-3"></div>
+            <div id="service-4"></div>
+            <div id="service-5"></div>
+            <div id="service-6"></div>
+            <div id="service-7"></div>
+            <div id="service-8"></div>
+            <div id="service-9"></div>
+            <div id="service-10"></div>
+        </section>
+
+        <!-- Publications Section (1 to 34) -->
+        <section id="publications" style="padding: 2rem 0;">
+            <h2>Publications</h2>
+            <div id="pub-1"></div>
+            <div id="pub-2"></div>
+            <!-- Repeat for pub-3 through pub-34 as needed -->
+        </section>
+
+        <!-- Testimonials -->
+        <div id="testimonials-container"></div>
+    </div>
+
+    <!-- Script to load modular HTML files easily -->
+    <script>
+        function loadComponent(file, targetId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => document.getElementById(targetId).innerHTML = data);
+        }
+
+        // Load Main Sections
+        loadComponent('header.html', 'header-container');
+        loadComponent('hero.html', 'hero-container');
+        loadComponent('about.html', 'about-container');
+        loadComponent('education.html', 'education-container');
+        loadComponent('experience.html', 'experience-container');
+        loadComponent('skills.html', 'skills-container');
+        loadComponent('leadership.html', 'leadership-container');
+        loadComponent('testimonials.html', 'testimonials-container');
+
+        // Load Services
+        const services = [
+            'leadership-development', 'public-speaking', 'writing', 
+            'interview-preparation', 'data-entry', 'typing', 
+            'transcription', 'blogging', 'translation', 'content-strategy'
+        ];
+        services.forEach((service, index) => {
+            loadComponent(`services/${service}.html`, `service-${index + 1}`);
+        });
+
+        // Load Publications (1-34)
+        for(let i = 1; i <= 34; i++) {
+            loadComponent(`publications/pub-${i}.html`, `pub-${i}`);
+        }
+    </script>
+</body>
+</html>
