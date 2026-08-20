@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -7,254 +8,162 @@
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Portfolio of Samra Khaksar - Strategic Studies Researcher and Policy Writer">
+          content="Samra Khaksar — Strategic Studies Researcher specializing in nuclear deterrence, strategic stability, South Asian security, geopolitics, foreign and defence policy, and OSINT.">
+
+    <meta name="keywords"
+          content="Samra Khaksar, Strategic Studies Researcher, Nuclear Deterrence, Strategic Stability, South Asian Security, Geopolitics, Foreign Policy, Defence Policy, OSINT">
+
+    <meta name="author"
+          content="Samra Khaksar">
 
     <title>Samra Khaksar | Strategic Studies Researcher</title>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-          rel="stylesheet">
+    <link rel="icon"
+          type="image/jpeg"
+          href="samra.jpg">
 
     <style>
-
-        /* =====================================================
-           ROOT
-        ===================================================== */
-
-        :root {
-
-            --bg: #0d0d12;
-
-            --bg-soft: #15151d;
-
-            --card: rgba(255,255,255,0.045);
-
-            --text: #f5f3ff;
-
-            --muted: #aaa8b7;
-
-            --purple: #756cff;
-
-            --purple-light: #a99fff;
-
-            --border: rgba(255,255,255,0.10);
-
-            --shadow: 0 20px 60px rgba(0,0,0,0.30);
-
-        }
-
 
         /* =====================================================
            RESET
         ===================================================== */
 
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
         }
-
 
         html {
-
             scroll-behavior: smooth;
-
         }
 
-
         body {
-
-            background:
-                radial-gradient(
-                    circle at top right,
-                    rgba(117,108,255,0.12),
-                    transparent 30%
-                ),
-                var(--bg);
-
-            color: var(--text);
-
             font-family:
                 Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
                 Arial,
                 sans-serif;
 
-            line-height: 1.7;
+            background: #05050a;
+            color: #f5f5f7;
 
+            line-height: 1.6;
             overflow-x: hidden;
-
         }
 
+        body::selection {
+            background: #7068ff;
+            color: white;
+        }
 
         a {
-
-            color: inherit;
-
             text-decoration: none;
-
+            color: inherit;
         }
 
+        button {
+            font-family: inherit;
+        }
 
         img {
-
-            max-width: 100%;
-
             display: block;
-
+            max-width: 100%;
         }
 
 
         /* =====================================================
-           SCROLLBAR
+           VARIABLES
         ===================================================== */
 
-        ::-webkit-scrollbar {
+        :root {
 
-            width: 8px;
+            --bg: #05050a;
+            --bg2: #080812;
 
-        }
+            --card: rgba(20,20,32,.75);
 
+            --border:
+                rgba(255,255,255,.10);
 
-        ::-webkit-scrollbar-track {
+            --text: #f5f5f7;
+            --muted: #98a0b7;
 
-            background: var(--bg);
+            --purple: #6c63ff;
+            --purple-light: #938cff;
 
-        }
-
-
-        ::-webkit-scrollbar-thumb {
-
-            background: var(--purple);
-
-            border-radius: 20px;
-
+            --green: #16d58e;
         }
 
 
         /* =====================================================
-           GENERAL
+           BACKGROUND
+        ===================================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            width: 650px;
+            height: 650px;
+
+            top: -280px;
+            right: 5%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(76,67,255,.28),
+                    transparent 65%
+                );
+
+            filter: blur(50px);
+
+            pointer-events: none;
+
+            z-index: -2;
+        }
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 600px;
+            height: 600px;
+
+            left: -250px;
+            bottom: -300px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(81,62,255,.20),
+                    transparent 65%
+                );
+
+            filter: blur(60px);
+
+            pointer-events: none;
+
+            z-index: -2;
+        }
+
+
+        /* =====================================================
+           CONTAINER
         ===================================================== */
 
         .container {
 
-            width: min(90%, 1100px);
+            width: min(1180px, 90%);
 
             margin: auto;
-
-        }
-
-
-        section {
-
-            padding: 110px 0;
-
-        }
-
-
-        .section-label {
-
-            color: var(--purple-light);
-
-            font-size: 12px;
-
-            font-weight: 800;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 18px;
-
-        }
-
-
-        .section-title {
-
-            font-family:
-                "Playfair Display",
-                Georgia,
-                serif;
-
-            font-size: clamp(42px, 6vw, 68px);
-
-            line-height: 1.1;
-
-            margin-bottom: 20px;
-
-        }
-
-
-        .section-description {
-
-            color: var(--muted);
-
-            max-width: 750px;
-
-            margin-bottom: 45px;
-
-        }
-
-
-        .card {
-
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            border-radius: 24px;
-
-            padding: 30px;
-
-            backdrop-filter: blur(15px);
-
-            transition:
-                transform 0.3s ease,
-                border-color 0.3s ease;
-
-        }
-
-
-        .card:hover {
-
-            transform: translateY(-5px);
-
-            border-color:
-                rgba(117,108,255,0.45);
-
-        }
-
-
-        .two-column {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 25px;
-
-        }
-
-
-        .three-column {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 22px;
-
         }
 
 
@@ -266,36 +175,36 @@
 
             position: fixed;
 
-            top: 18px;
-
+            top: 12px;
             left: 50%;
 
             transform: translateX(-50%);
 
-            width: min(92%, 1120px);
+            width: calc(100% - 80px);
+            max-width: 1450px;
 
             z-index: 1000;
 
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            border-radius: 55px;
+
             background:
-                rgba(13,13,18,0.82);
+                rgba(15,15,24,.76);
 
             backdrop-filter:
-                blur(20px);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 22px;
+                blur(25px);
 
             box-shadow:
-                0 10px 40px rgba(0,0,0,0.30);
-
+                0 15px 50px
+                rgba(0,0,0,.30);
         }
-
 
         .nav-inner {
 
-            min-height: 72px;
+            height: 80px;
 
             display: flex;
 
@@ -303,12 +212,15 @@
 
             justify-content: space-between;
 
-            padding: 0 24px;
+            padding: 0 28px;
 
             gap: 20px;
-
         }
 
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
 
         .logo {
 
@@ -316,44 +228,55 @@
 
             align-items: center;
 
-            gap: 10px;
+            gap: 9px;
+
+            font-size: 27px;
 
             font-weight: 800;
 
-            white-space: nowrap;
+            letter-spacing: -1.5px;
 
+            white-space: nowrap;
         }
 
+        .logo-icon {
 
-        .logo-mark {
+            width: 30px;
+            height: 30px;
 
-            width: 38px;
+            border-radius: 6px;
 
-            height: 38px;
+            display: flex;
 
-            display: grid;
-
-            place-items: center;
-
-            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
 
             background:
                 linear-gradient(
                     135deg,
-                    #756cff,
-                    #9b7cff
+                    #6e66ff,
+                    #8e7cff
                 );
 
-            font-size: 22px;
+            color: white;
+
+            font-size: 18px;
 
             font-weight: 900;
 
             box-shadow:
-                0 8px 25px
-                rgba(117,108,255,0.35);
-
+                0 0 20px
+                rgba(108,99,255,.35);
         }
 
+        .logo-name span {
+            color: var(--purple-light);
+        }
+
+
+        /* =====================================================
+           NAV LINKS
+        ===================================================== */
 
         .nav-links {
 
@@ -361,69 +284,119 @@
 
             align-items: center;
 
-            gap: 20px;
+            gap: 3px;
 
+            list-style: none;
+
+            padding: 5px 8px;
+
+            border-radius: 40px;
+
+            background:
+                rgba(255,255,255,.025);
         }
-
 
         .nav-links a {
 
-            color: var(--muted);
+            display: block;
 
-            font-size: 13px;
+            padding: 12px 17px;
 
-            transition: 0.25s;
+            border-radius: 30px;
 
+            color: #98a0b7;
+
+            font-size: 15px;
+
+            font-weight: 550;
+
+            transition: .3s ease;
         }
 
+        .nav-links a:hover,
+        .nav-links a.active {
 
-        .nav-links a:hover {
+            color: white;
 
-            color: var(--text);
-
+            background:
+                rgba(255,255,255,.055);
         }
 
+        .nav-links a.active::after {
 
-        .resume-button {
+            content: "";
+
+            display: block;
+
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
 
             background: var(--purple);
 
-            padding: 10px 18px;
-
-            border-radius: 12px;
-
-            font-size: 13px;
-
-            font-weight: 700;
-
-            transition: 0.3s;
-
+            margin: 2px auto -7px;
         }
 
+
+        /* =====================================================
+           CV BUTTON
+        ===================================================== */
+
+        .resume-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 14px 25px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.15);
+
+            border-radius: 35px;
+
+            font-size: 15px;
+
+            font-weight: 650;
+
+            color: #eeeef3;
+
+            transition: .3s ease;
+
+            white-space: nowrap;
+        }
 
         .resume-button:hover {
 
+            background: white;
+
+            color: #08080d;
+
             transform: translateY(-2px);
-
-            background: var(--purple-light);
-
         }
 
+
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
 
         .mobile-menu {
 
             display: none;
 
+            border: 0;
+
             background: transparent;
 
             color: white;
 
-            border: none;
-
-            font-size: 24px;
+            font-size: 28px;
 
             cursor: pointer;
-
         }
 
 
@@ -431,7 +404,7 @@
            HERO
         ===================================================== */
 
-        #home {
+        .hero {
 
             min-height: 100vh;
 
@@ -439,226 +412,306 @@
 
             align-items: center;
 
-            padding-top: 120px;
-
+            padding:
+                115px 0
+                55px;
         }
-
 
         .hero-grid {
 
             display: grid;
 
             grid-template-columns:
-                1.15fr 0.85fr;
-
-            gap: 70px;
-
-            align-items: center;
-
-        }
-
-
-        .hero-tag {
-
-            display: inline-flex;
+                1.12fr
+                .88fr;
 
             align-items: center;
 
-            gap: 8px;
-
-            color: var(--purple-light);
-
-            font-size: 13px;
-
-            font-weight: 700;
-
-            margin-bottom: 22px;
-
+            gap: 60px;
         }
 
 
-        .hero-tag::before {
+        /* =====================================================
+           HERO CONTENT
+        ===================================================== */
 
-            content: "";
+        .hero-content {
 
-            width: 9px;
-
-            height: 9px;
-
-            background: #8fffbc;
-
-            border-radius: 50%;
-
-            box-shadow:
-                0 0 15px #8fffbc;
-
+            padding-top: 10px;
         }
-
 
         .hero h1 {
 
-            font-family:
-                "Playfair Display",
-                Georgia,
-                serif;
-
             font-size:
-                clamp(55px, 8vw, 95px);
+                clamp(60px, 7vw, 108px);
 
-            line-height: 0.98;
+            line-height: .93;
 
-            letter-spacing: -3px;
+            letter-spacing: -6px;
 
-            margin-bottom: 25px;
+            font-weight: 780;
 
+            margin-bottom: 27px;
         }
-
 
         .hero h1 span {
 
-            color: var(--purple-light);
+            display: block;
 
+            color: #f1f1f5;
         }
 
+        .hero h1 .purple {
+
+            color:
+                var(--purple-light);
+        }
+
+        .hero-subtitle {
+
+            font-size:
+                clamp(30px, 3.1vw, 48px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2.5px;
+
+            font-weight: 400;
+
+            margin-top: 3px;
+
+            margin-bottom: 40px;
+        }
 
         .hero-description {
 
+            max-width: 760px;
+
             color: var(--muted);
 
-            font-size: 17px;
+            font-size: 19px;
 
-            max-width: 650px;
+            line-height: 1.8;
 
-            margin-bottom: 30px;
-
+            margin-bottom: 38px;
         }
 
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
 
         .hero-buttons {
 
             display: flex;
 
+            gap: 16px;
+
             flex-wrap: wrap;
+
+            margin-bottom: 50px;
+        }
+
+        .button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
 
             gap: 14px;
 
-            margin-bottom: 28px;
-
-        }
-
-
-        .primary-button {
-
-            background: var(--purple);
-
-            padding: 14px 22px;
-
-            border-radius: 13px;
-
-            font-weight: 700;
-
-            transition: 0.3s;
-
-        }
-
-
-        .secondary-button {
-
-            border: 1px solid var(--border);
-
-            padding: 14px 22px;
-
-            border-radius: 13px;
-
-            font-weight: 700;
-
-            transition: 0.3s;
-
-        }
-
-
-        .primary-button:hover,
-        .secondary-button:hover {
-
-            transform: translateY(-3px);
-
-        }
-
-
-        .social-icons {
-
-            display: flex;
-
-            gap: 12px;
-
-        }
-
-
-        .social-icon {
-
-            width: 52px;
-
-            height: 52px;
-
-            display: grid;
-
-            place-items: center;
-
-            border: 1px solid var(--border);
-
-            border-radius: 50%;
-
-            color: var(--text);
-
-            font-size: 20px;
-
-            transition: 0.3s;
-
-        }
-
-
-        .social-icon:hover {
-
-            background: var(--purple);
-
-            border-color: var(--purple);
-
-            transform: translateY(-4px);
-
-        }
-
-
-        .profile-card {
-
-            position: relative;
-
-            height: 570px;
+            padding: 17px 30px;
 
             border-radius: 35px;
 
-            overflow: hidden;
+            font-size: 16px;
 
-            border: 1px solid var(--border);
+            font-weight: 700;
 
-            box-shadow: var(--shadow);
+            transition: .3s ease;
+        }
 
+        .button-primary {
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6d65ff,
+                    #6259ed
+                );
+
+            box-shadow:
+                0 12px 35px
+                rgba(105,96,255,.28);
+        }
+
+        .button-primary:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 18px 45px
+                rgba(105,96,255,.42);
+        }
+
+        .button-secondary {
+
+            background:
+                rgba(255,255,255,.035);
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+        }
+
+        .button-secondary:hover {
+
+            background:
+                rgba(255,255,255,.08);
+
+            transform:
+                translateY(-4px);
         }
 
 
-        .profile-card img {
+        /* =====================================================
+           SOCIALS
+        ===================================================== */
+
+        .socials {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+        }
+
+        .social {
+
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+
+            border-radius: 50%;
+
+            color: #a3abc0;
+
+            background:
+                rgba(255,255,255,.015);
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+            transition: .3s ease;
+        }
+
+        .social:hover {
+
+            color: white;
+
+            background:
+                rgba(108,99,255,.12);
+
+            border-color:
+                rgba(108,99,255,.4);
+
+            transform:
+                translateY(-5px);
+        }
+
+
+        /* =====================================================
+           HERO IMAGE
+        ===================================================== */
+
+        .hero-image-area {
+
+            position: relative;
+
+            min-height: 650px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+        .hero-image-glow {
+
+            position: absolute;
+
+            width: 480px;
+            height: 480px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(92,84,255,.55),
+                    rgba(92,84,255,.13) 45%,
+                    transparent 72%
+                );
+
+            filter: blur(10px);
+        }
+
+        .hero-image-frame {
+
+            position: relative;
+
+            width: 500px;
+            height: 650px;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(30,30,53,.35),
+                    rgba(10,10,17,.65)
+                );
+
+            box-shadow:
+                0 30px 80px
+                rgba(0,0,0,.45);
+
+            z-index: 2;
+        }
+
+        .hero-image-frame img {
 
             width: 100%;
-
             height: 100%;
 
             object-fit: cover;
 
-            object-position: center;
-
+            object-position: center top;
         }
 
+        .hero-image-frame::after {
 
-        .profile-overlay {
+            content: "";
 
             position: absolute;
 
@@ -666,39 +719,228 @@
 
             background:
                 linear-gradient(
+                    to bottom,
                     transparent 50%,
-                    rgba(10,10,15,0.92)
+                    rgba(5,5,10,.35)
                 );
 
+            pointer-events: none;
         }
 
 
-        .profile-info {
+        /* =====================================================
+           FLOATING IMAGE CARD
+        ===================================================== */
+
+        .floating-card {
 
             position: absolute;
 
-            bottom: 28px;
+            z-index: 5;
 
-            left: 28px;
+            left: -40px;
 
-            right: 28px;
+            bottom: 50px;
 
+            min-width: 300px;
+
+            padding: 22px 26px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            border-radius: 20px;
+
+            background:
+                rgba(14,14,23,.88);
+
+            backdrop-filter:
+                blur(20px);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,.35);
+        }
+
+        .floating-small {
+
+            color: #7783a4;
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 8px;
+        }
+
+        .floating-title {
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            color: white;
         }
 
 
-        .profile-info h3 {
+        /* =====================================================
+           EXPERIENCE FLOAT
+        ===================================================== */
 
-            font-size: 26px;
+        .experience-float {
 
+            position: absolute;
+
+            z-index: 6;
+
+            left: -80px;
+
+            bottom: 5px;
+
+            padding: 25px 28px;
+
+            min-width: 230px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.13);
+
+            border-radius: 22px;
+
+            background:
+                rgba(18,18,30,.92);
+
+            backdrop-filter:
+                blur(20px);
+
+            box-shadow:
+                0 25px 60px
+                rgba(0,0,0,.45);
+        }
+
+        .experience-float strong {
+
+            display: block;
+
+            font-size: 39px;
+
+            line-height: 1;
+
+            margin-bottom: 7px;
+        }
+
+        .experience-float span {
+
+            color: #727d9c;
+
+            font-size: 12px;
+
+            letter-spacing: 1.4px;
+
+            text-transform: uppercase;
         }
 
 
-        .profile-info p {
+        /* =====================================================
+           SCROLL INDICATOR
+        ===================================================== */
 
-            color: #d4d1df;
+        .scroll-indicator {
 
-            font-size: 13px;
+            position: absolute;
 
+            bottom: 15px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 6px;
+
+            color: #6e7894;
+
+            font-size: 10px;
+
+            letter-spacing: 5px;
+        }
+
+        .scroll-arrow {
+
+            font-size: 25px;
+
+            animation:
+                scrollDown 1.8s
+                ease-in-out
+                infinite;
+        }
+
+        @keyframes scrollDown {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(6px);
+            }
+        }
+
+
+        /* =====================================================
+           GENERAL SECTIONS
+        ===================================================== */
+
+        section {
+
+            padding:
+                120px 0;
+        }
+
+        .section-label {
+
+            color:
+                var(--purple-light);
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+
+            font-size:
+                clamp(45px, 5vw, 72px);
+
+            line-height: 1;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 24px;
+        }
+
+        .section-description {
+
+            max-width: 800px;
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            line-height: 1.8;
         }
 
 
@@ -706,21 +948,116 @@
            ABOUT
         ===================================================== */
 
-        .about-content {
+        #about {
 
-            max-width: 900px;
+            background:
+                #080810;
 
+            border-top:
+                1px solid
+                rgba(255,255,255,.035);
         }
 
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                .75fr
+                1.25fr;
+
+            gap: 70px;
+
+            align-items: start;
+        }
+
+        .about-photo {
+
+            position: sticky;
+
+            top: 120px;
+        }
+
+        .about-photo-card {
+
+            padding: 10px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.10);
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,.025);
+        }
+
+        .about-photo-card img {
+
+            width: 100%;
+
+            height: 500px;
+
+            object-fit: cover;
+
+            border-radius: 18px;
+        }
+
+        .about-photo-badge {
+
+            margin-top: 15px;
+
+            padding: 18px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,.025);
+        }
+
+        .about-photo-badge strong {
+
+            display: block;
+
+            color: var(--purple-light);
+
+            margin-bottom: 7px;
+        }
+
+        .about-photo-badge span {
+
+            display: block;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+        }
+
+        .about-content h2 {
+
+            font-size:
+                clamp(35px,4vw,55px);
+
+            letter-spacing: -2px;
+
+            margin-bottom: 25px;
+        }
 
         .about-content p {
 
-            color: #d3d0dc;
-
-            margin-bottom: 22px;
+            color: var(--muted);
 
             font-size: 16px;
 
+            line-height: 1.9;
+
+            margin-bottom: 19px;
         }
 
 
@@ -728,41 +1065,72 @@
            RESEARCH
         ===================================================== */
 
+        #research,
+        #experience,
+        #testimonials,
+        #contact {
+
+            background:
+                #05050b;
+        }
+
         .research-grid {
 
             display: grid;
 
             grid-template-columns:
-                repeat(3, 1fr);
+                repeat(3,1fr);
 
-            gap: 20px;
+            gap: 18px;
 
+            margin-top: 55px;
         }
 
+        .research-card {
+
+            padding: 32px 27px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,.025);
+
+            transition: .35s ease;
+        }
+
+        .research-card:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(108,99,255,.40);
+
+            background:
+                rgba(108,99,255,.035);
+        }
 
         .research-number {
 
             color: var(--purple-light);
 
-            font-size: 12px;
-
-            font-weight: 800;
+            font-size: 11px;
 
             letter-spacing: 2px;
 
             margin-bottom: 18px;
-
         }
-
 
         .research-card h3 {
 
-            font-size: 22px;
+            font-size: 21px;
 
             margin-bottom: 12px;
-
         }
-
 
         .research-card p {
 
@@ -770,6 +1138,34 @@
 
             font-size: 14px;
 
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+        }
+
+        .tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+        }
+
+        .tag {
+
+            padding:
+                6px 10px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(108,99,255,.09);
+
+            color:
+                #aaa5ff;
+
+            font-size: 10px;
         }
 
 
@@ -777,71 +1173,69 @@
            EDUCATION
         ===================================================== */
 
-        .timeline {
+        #education,
+        #publications,
+        #skills {
 
-            display: grid;
-
-            gap: 22px;
-
+            background:
+                #080810;
         }
 
+        .education-card {
 
-        .timeline-item {
+            margin-top: 50px;
 
-            position: relative;
+            padding: 38px;
 
-            padding: 30px;
+            border:
+                1px solid
+                rgba(255,255,255,.08);
 
-            background: var(--card);
+            border-radius: 23px;
 
-            border: 1px solid var(--border);
-
-            border-radius: 24px;
-
+            background:
+                rgba(255,255,255,.025);
         }
 
+        .education-card h3 {
 
-        .timeline-date {
+            font-size: 26px;
+
+            margin-bottom: 8px;
+        }
+
+        .degree {
 
             color: var(--purple-light);
 
-            font-size: 12px;
-
-            font-weight: 800;
-
-            letter-spacing: 1.5px;
-
-            margin-bottom: 10px;
-
+            margin-bottom: 8px;
         }
 
-
-        .timeline-item h3 {
-
-            font-size: 24px;
-
-            margin-bottom: 7px;
-
-        }
-
-
-        .timeline-item h4 {
-
-            color: #d8d4e3;
-
-            font-weight: 600;
-
-            margin-bottom: 12px;
-
-        }
-
-
-        .timeline-item p {
+        .date {
 
             color: var(--muted);
 
-            margin-top: 8px;
+            font-size: 13px;
 
+            margin-bottom: 20px;
+        }
+
+        .gpa {
+
+            display: inline-block;
+
+            padding: 7px 13px;
+
+            border-radius: 30px;
+
+            color: var(--green);
+
+            background:
+                rgba(22,213,142,.08);
+
+            font-size: 12px;
+
+            font-weight: 700;
         }
 
 
@@ -851,77 +1245,60 @@
 
         .experience-list {
 
-            display: grid;
-
-            gap: 20px;
-
+            margin-top: 50px;
         }
-
 
         .experience-card {
 
             display: grid;
 
             grid-template-columns:
-                180px 1fr;
+                190px
+                1fr;
 
-            gap: 35px;
+            gap: 40px;
 
-            padding: 30px;
+            padding: 31px 0;
 
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            border-radius: 24px;
-
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.08);
         }
-
 
         .experience-date {
 
             color: var(--purple-light);
 
-            font-size: 13px;
+            font-size: 12px;
 
-            font-weight: 700;
-
+            line-height: 1.7;
         }
 
+        .experience-card h3 {
 
-        .experience-content h3 {
+            font-size: 22px;
 
-            font-size: 23px;
-
-            margin-bottom: 7px;
-
+            margin-bottom: 5px;
         }
 
+        .experience-company {
 
-        .experience-content h4 {
+            color: #b2b6c7;
 
-            color: #d9d6e2;
+            font-size: 14px;
 
-            font-size: 15px;
-
-            margin-bottom: 15px;
-
+            margin-bottom: 14px;
         }
 
-
-        .experience-content ul {
+        .experience-card ul {
 
             padding-left: 18px;
 
             color: var(--muted);
 
-        }
+            font-size: 14px;
 
-
-        .experience-content li {
-
-            margin-bottom: 8px;
-
+            line-height: 1.85;
         }
 
 
@@ -929,86 +1306,97 @@
            PUBLICATIONS
         ===================================================== */
 
-        .publication-list {
+        .publication-header {
 
-            display: grid;
+            display: flex;
 
-            gap: 14px;
+            justify-content: space-between;
 
+            align-items: end;
+
+            gap: 30px;
+
+            margin-bottom: 45px;
         }
 
+        .publication-count {
+
+            font-size: 100px;
+
+            line-height: .8;
+
+            font-weight: 800;
+
+            color:
+                rgba(108,99,255,.16);
+        }
 
         .publication {
 
             display: grid;
 
             grid-template-columns:
-                60px 1fr auto;
+                55px
+                1fr
+                auto;
 
             align-items: center;
 
             gap: 20px;
 
-            padding: 22px;
+            padding: 25px 0;
 
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            border-radius: 20px;
-
-            transition: 0.3s;
-
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.08);
         }
-
-
-        .publication:hover {
-
-            border-color:
-                rgba(117,108,255,0.5);
-
-        }
-
 
         .publication-number {
 
             color: var(--purple-light);
 
-            font-size: 13px;
-
-            font-weight: 800;
-
+            font-size: 12px;
         }
-
 
         .publication h3 {
 
             font-size: 17px;
 
             margin-bottom: 5px;
-
         }
-
 
         .publication p {
 
             color: var(--muted);
 
-            font-size: 13px;
-
+            font-size: 12px;
         }
-
 
         .publication-link {
 
-            color: var(--purple-light);
+            padding:
+                9px 15px;
 
-            font-size: 13px;
+            border:
+                1px solid
+                rgba(255,255,255,.10);
 
-            font-weight: 700;
+            border-radius: 30px;
 
-            white-space: nowrap;
+            color: #aaa5ff;
 
+            font-size: 12px;
+
+            transition: .3s ease;
+        }
+
+        .publication-link:hover {
+
+            color: white;
+
+            background: var(--purple);
+
+            border-color: var(--purple);
         }
 
 
@@ -1016,43 +1404,86 @@
            TESTIMONIALS
         ===================================================== */
 
-        .quote {
+        .testimonial-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap: 20px;
+
+            margin-top: 55px;
+        }
+
+        .testimonial {
+
+            padding: 32px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,.025);
+        }
+
+        .quote-mark {
 
             color: var(--purple-light);
 
-            font-size: 55px;
+            font-size: 50px;
 
-            line-height: 0.8;
+            line-height: .8;
 
-            margin-bottom: 15px;
-
+            margin-bottom: 22px;
         }
 
+        .testimonial p {
 
-        .review-text {
+            color: #b0b5c7;
 
-            color: #d4d1dc;
+            font-size: 14px;
 
-            margin-bottom: 24px;
+            line-height: 1.9;
 
+            margin-bottom: 25px;
         }
 
+        .testimonial-author {
 
-        .review-person h3 {
+            border-top:
+                1px solid
+                rgba(255,255,255,.08);
+
+            padding-top: 18px;
+        }
+
+        .testimonial-author strong {
+
+            display: block;
 
             font-size: 16px;
 
+            margin-bottom: 5px;
         }
 
+        .testimonial-author a {
 
-        .review-person p {
+            color: var(--purple-light);
+
+            font-size: 12px;
+        }
+
+        .testimonial-meta {
 
             color: var(--muted);
 
-            font-size: 12px;
+            font-size: 11px;
 
-            margin-top: 4px;
-
+            margin-top: 5px;
         }
 
 
@@ -1062,29 +1493,46 @@
 
         .skills-grid {
 
-            display: flex;
+            display: grid;
 
-            flex-wrap: wrap;
+            grid-template-columns:
+                repeat(3,1fr);
 
-            gap: 12px;
+            gap: 18px;
 
+            margin-top: 50px;
         }
 
+        .skill-card {
 
-        .skill {
+            padding: 27px;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid
+                rgba(255,255,255,.08);
 
-            background: var(--card);
+            border-radius: 20px;
 
-            padding: 12px 17px;
+            background:
+                rgba(255,255,255,.025);
+        }
 
-            border-radius: 100px;
+        .skill-card h3 {
 
-            color: #d8d5e1;
+            color: var(--purple-light);
 
-            font-size: 14px;
+            font-size: 17px;
 
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.8;
         }
 
 
@@ -1097,68 +1545,160 @@
             display: grid;
 
             grid-template-columns:
-                1.1fr 0.9fr;
+                1fr
+                1fr;
 
-            gap: 25px;
+            gap: 20px;
 
+            margin-top: 50px;
         }
-
 
         .contact-card {
 
-            padding: 40px;
+            padding: 35px;
 
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            border-radius: 23px;
+
+            background:
+                rgba(255,255,255,.025);
         }
-
 
         .contact-card h3 {
 
-            font-size: 28px;
+            font-size: 25px;
 
-            margin-bottom: 15px;
-
+            margin-bottom: 14px;
         }
 
-
-        .contact-card p {
+        .contact-card > p {
 
             color: var(--muted);
 
-            margin-bottom: 25px;
+            font-size: 14px;
 
+            line-height: 1.8;
+
+            margin-bottom: 20px;
         }
 
+        .contact-item {
 
-        .contact-links {
+            display: flex;
 
-            display: grid;
+            align-items: center;
 
             gap: 14px;
 
+            padding: 14px 0;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.07);
+        }
+
+        .contact-icon {
+
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(108,99,255,.10);
+
+            color:
+                var(--purple-light);
+
+            font-size: 17px;
+        }
+
+        .contact-item strong {
+
+            display: block;
+
+            font-size: 12px;
+        }
+
+        .contact-item span,
+        .contact-item a {
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+        .contact-button {
+
+            display: inline-flex;
+
+            margin-top: 25px;
+
+            padding:
+                14px 22px;
+
+            border-radius: 30px;
+
+            background:
+                var(--purple);
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 700;
         }
 
 
-        .contact-link {
+        /* =====================================================
+           WHATSAPP
+        ===================================================== */
 
-            padding: 15px;
+        .whatsapp {
 
-            border: 1px solid var(--border);
+            position: fixed;
 
-            border-radius: 14px;
+            right: 28px;
+            bottom: 25px;
 
-            color: #ddd9e6;
+            width: 62px;
+            height: 62px;
 
-            transition: 0.3s;
+            display: flex;
 
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #20d76c;
+
+            color: white;
+
+            font-size: 30px;
+
+            box-shadow:
+                0 12px 35px
+                rgba(32,215,108,.30);
+
+            z-index: 999;
+
+            transition: .3s ease;
         }
 
+        .whatsapp:hover {
 
-        .contact-link:hover {
-
-            background: rgba(117,108,255,0.10);
-
-            border-color: var(--purple);
-
+            transform:
+                translateY(-5px)
+                scale(1.05);
         }
 
 
@@ -1168,27 +1708,49 @@
 
         footer {
 
-            border-top: 1px solid var(--border);
+            padding:
+                45px 0 25px;
 
-            padding: 35px 0;
+            background:
+                #030308;
 
+            border-top:
+                1px solid
+                rgba(255,255,255,.07);
         }
-
 
         .footer-inner {
 
             display: flex;
 
-            justify-content: space-between;
-
             align-items: center;
 
+            justify-content: space-between;
+
             gap: 20px;
+        }
+
+        .footer-name {
+
+            font-size: 20px;
+
+            font-weight: 800;
+        }
+
+        .footer-name span {
+
+            color: var(--purple-light);
+        }
+
+        .footer-text {
 
             color: var(--muted);
 
-            font-size: 13px;
+            text-align: right;
 
+            font-size: 11px;
+
+            line-height: 1.7;
         }
 
 
@@ -1196,144 +1758,273 @@
            RESPONSIVE
         ===================================================== */
 
-        @media (max-width: 900px) {
+        @media (max-width: 1150px) {
 
-            .hero-grid,
-            .contact-grid {
-
-                grid-template-columns: 1fr;
-
+            nav {
+                width: calc(100% - 35px);
             }
 
-
-            .research-grid {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-
+            .nav-links a {
+                padding: 11px 11px;
+                font-size: 13px;
             }
 
-
-            .three-column {
-
-                grid-template-columns: 1fr;
-
+            .hero-grid {
+                grid-template-columns: 1fr .8fr;
+                gap: 35px;
             }
 
+            .hero-image-frame {
+                width: 420px;
+                height: 580px;
+            }
+
+            .floating-card {
+                left: -20px;
+            }
+
+            .experience-float {
+                left: -40px;
+            }
+        }
+
+
+        @media (max-width: 950px) {
 
             .nav-links {
-
                 display: none;
 
                 position: absolute;
 
-                top: 78px;
-
+                top: 75px;
                 left: 0;
-
                 right: 0;
 
                 flex-direction: column;
 
-                background: #15151d;
+                padding: 10px;
 
-                border: 1px solid var(--border);
-
-                padding: 20px;
+                border:
+                    1px solid
+                    rgba(255,255,255,.10);
 
                 border-radius: 20px;
 
+                background:
+                    rgba(12,12,20,.97);
             }
-
 
             .nav-links.mobile-open {
-
                 display: flex;
-
             }
 
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 13px;
+            }
 
             .mobile-menu {
-
                 display: block;
-
             }
-
 
             .resume-button {
-
                 display: none;
-
             }
 
+            .hero {
+                padding-top: 130px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons,
+            .socials {
+                justify-content: center;
+            }
+
+            .hero-image-area {
+                min-height: 620px;
+                margin-top: 30px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-photo {
+                position: static;
+                max-width: 520px;
+                margin: auto;
+            }
+
+            .research-grid,
+            .skills-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
         }
 
 
-        @media (max-width: 650px) {
+        @media (max-width: 700px) {
 
-            section {
-
-                padding: 80px 0;
-
+            nav {
+                top: 10px;
             }
 
+            .nav-inner {
+                height: 67px;
+                padding: 0 18px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .logo-icon {
+                width: 27px;
+                height: 27px;
+            }
 
             .hero h1 {
-
                 font-size: 58px;
-
-                letter-spacing: -2px;
-
+                letter-spacing: -4px;
             }
 
-
-            .profile-card {
-
-                height: 460px;
-
+            .hero-subtitle {
+                font-size: 29px;
+                letter-spacing: -1.5px;
             }
 
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-image-area {
+                min-height: 520px;
+            }
+
+            .hero-image-frame {
+                width: min(390px, 90vw);
+                height: 510px;
+            }
+
+            .floating-card {
+                left: 5px;
+                bottom: 40px;
+                min-width: 240px;
+                padding: 17px;
+            }
+
+            .experience-float {
+                left: 5px;
+                bottom: -15px;
+                min-width: 190px;
+                padding: 18px;
+            }
+
+            .experience-float strong {
+                font-size: 30px;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            section {
+                padding: 90px 0;
+            }
+
+            .section-title {
+                font-size: 45px;
+                letter-spacing: -2.5px;
+            }
 
             .research-grid,
-            .two-column {
-
+            .skills-grid,
+            .testimonial-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
-
             }
-
 
             .experience-card {
-
                 grid-template-columns: 1fr;
-
-                gap: 10px;
-
+                gap: 8px;
             }
 
+            .publication-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .publication-count {
+                font-size: 65px;
+            }
 
             .publication {
-
-                grid-template-columns:
-                    40px 1fr;
-
+                grid-template-columns: 40px 1fr;
             }
-
 
             .publication-link {
-
                 grid-column: 2;
-
+                width: fit-content;
             }
-
 
             .footer-inner {
-
                 flex-direction: column;
-
                 text-align: center;
-
             }
 
+            .footer-text {
+                text-align: center;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .hero h1 {
+                font-size: 47px;
+            }
+
+            .hero-subtitle {
+                font-size: 25px;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .social {
+                width: 55px;
+                height: 55px;
+            }
+
+            .about-photo-card img {
+                height: 430px;
+            }
+
+            .testimonial {
+                padding: 25px;
+            }
+
+            .whatsapp {
+                width: 56px;
+                height: 56px;
+                right: 18px;
+                bottom: 18px;
+            }
         }
 
     </style>
@@ -1343,235 +2034,368 @@
 <body>
 
 
-    <!-- =====================================================
-         NAVIGATION
-    ===================================================== -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-    <nav>
+<nav>
 
-        <div class="nav-inner">
+    <div class="nav-inner">
 
-            <a href="#home"
-               class="logo">
+        <a href="#home" class="logo">
 
-                <span class="logo-mark">
-                    S
-                </span>
+            <div class="logo-icon">
+                S
+            </div>
 
-                <span>
-                    Samra Khaksar
-                </span>
+            <div class="logo-name">
+                Samra<span>.</span>
+            </div>
 
-            </a>
+        </a>
 
 
-            <div class="nav-links"
-                 id="navLinks">
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open navigation">
 
+            ☰
+
+        </button>
+
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="#home" class="active">
+                    Home
+                </a>
+            </li>
+
+            <li>
                 <a href="#about">
                     About
                 </a>
+            </li>
 
+            <li>
                 <a href="#research">
                     Research
                 </a>
+            </li>
 
+            <li>
                 <a href="#education">
                     Education
                 </a>
+            </li>
 
+            <li>
                 <a href="#experience">
                     Experience
                 </a>
+            </li>
 
+            <li>
                 <a href="#publications">
                     Publications
                 </a>
+            </li>
 
+            <li>
                 <a href="#testimonials">
                     Testimonials
                 </a>
+            </li>
 
+            <li>
                 <a href="#contact">
                     Contact
                 </a>
+            </li>
 
-            </div>
-
-
-            <a href="Curriculum Vitae.pdf"
-               target="_blank"
-               class="resume-button">
-
-                View CV ↗
-
-            </a>
+        </ul>
 
 
-            <button class="mobile-menu"
-                    id="mobileMenu"
-                    aria-label="Open Menu">
+        <!-- EXACT CV FILE NAME -->
 
-                ☰
+        <a
+            href="Curriculum%20Vitae.pdf"
+            class="resume-button"
+            target="_blank">
 
-            </button>
+            Resume
+            ↗
 
-        </div>
+        </a>
 
-    </nav>
+    </div>
 
-
-    <!-- =====================================================
-         HOME
-    ===================================================== -->
-
-    <section id="home">
-
-        <div class="container">
-
-            <div class="hero-grid">
+</nav>
 
 
-                <div class="hero-content">
 
-                    <div class="hero-tag">
-                        STRATEGIC STUDIES RESEARCHER
-                    </div>
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<main id="home">
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-grid">
 
 
-                    <h1>
+            <div class="hero-content">
 
+                <h1>
+
+                    Hi, I'm
+                    <span>
                         Samra
-                        <br>
+                    </span>
 
-                        <span>
-                            Khaksar
-                        </span>
+                    <span class="purple">
+                        Khaksar.
+                    </span>
 
-                    </h1>
-
-
-                    <p class="hero-description">
-
-                        Strategic Studies Researcher, Policy Writer,
-                        and emerging scholar working on nuclear
-                        deterrence, strategic stability, South Asian
-                        security, geopolitics, foreign policy, and
-                        international relations.
-
-                    </p>
+                </h1>
 
 
-                    <div class="hero-buttons">
+                <div class="hero-subtitle">
 
-                        <a href="#about"
-                           class="primary-button">
-
-                            Explore My Work
-
-                        </a>
-
-
-                        <a href="Curriculum Vitae.pdf"
-                           target="_blank"
-                           class="secondary-button">
-
-                            Download CV
-
-                        </a>
-
-                    </div>
-
-
-                    <!-- ONLY LINKEDIN AND WHATSAPP ON HOME PAGE -->
-
-                    <div class="social-icons">
-
-                        <a href="https://www.linkedin.com/in/samra-khaksar-b098bb334/"
-                           target="_blank"
-                           class="social-icon"
-                           aria-label="LinkedIn">
-
-                            in
-
-                        </a>
-
-
-                        <a href="https://wa.me/923408996152"
-                           target="_blank"
-                           class="social-icon"
-                           aria-label="WhatsApp">
-
-                            ☏
-
-                        </a>
-
-                    </div>
+                    Strategic Studies
+                    Researcher.
 
                 </div>
 
 
-                <div class="profile-card">
+                <p class="hero-description">
 
-                    <img src="samra.jpg"
-                         alt="Samra Khaksar">
+                    I conduct research and policy analysis on
+                    nuclear deterrence, strategic stability,
+                    South Asian security, geopolitics, foreign
+                    and defence policy, and OSINT.
 
-                    <div class="profile-overlay"></div>
+                </p>
 
 
-                    <div class="profile-info">
+                <div class="hero-buttons">
 
-                        <h3>
-                            Samra Khaksar
-                        </h3>
+                    <a
+                        href="#research"
+                        class="button button-primary">
 
-                        <p>
-                            Strategic Studies Researcher & Policy Writer
-                        </p>
+                        View my work
+                        ↗
 
-                    </div>
+                    </a>
+
+
+                    <a
+                        href="#contact"
+                        class="button button-secondary">
+
+                        Let's Connect
+
+                    </a>
 
                 </div>
 
+
+                <div class="socials">
+
+                    <a
+                        href="https://www.linkedin.com/"
+                        target="_blank"
+                        class="social"
+                        aria-label="LinkedIn">
+
+                        in
+
+                    </a>
+
+                    <a
+                        href="#"
+                        class="social"
+                        aria-label="Research">
+
+                        R
+
+                    </a>
+
+                    <a
+                        href="#"
+                        class="social"
+                        aria-label="Publications">
+
+                        P
+
+                    </a>
+
+                    <a
+                        href="#"
+                        class="social"
+                        aria-label="OSINT">
+
+                        O
+
+                    </a>
+
+                </div>
 
             </div>
+
+
+
+            <!-- =================================================
+                 HERO IMAGE
+            ================================================== -->
+
+            <div class="hero-image-area">
+
+                <div class="hero-image-glow"></div>
+
+
+                <div class="hero-image-frame">
+
+                    <img
+                        src="samra.jpg"
+                        alt="Samra Khaksar — Strategic Studies Researcher">
+
+                </div>
+
+
+                <div class="floating-card">
+
+                    <div class="floating-small">
+
+                        Currently Researching
+
+                    </div>
+
+                    <div class="floating-title">
+
+                        Nuclear Deterrence &
+                        Strategic Stability
+
+                    </div>
+
+                </div>
+
+
+                <div class="experience-float">
+
+                    <strong>
+                        30+
+                    </strong>
+
+                    <span>
+                        Research & Publications
+                    </span>
+
+                </div>
+
+            </div>
+
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- =====================================================
-         ABOUT
-    ===================================================== -->
+    <div class="scroll-indicator">
 
-    <section id="about">
+        <span>
+            SCROLL
+        </span>
 
-        <div class="container">
+        <div class="scroll-arrow">
+            ↓
+        </div>
 
-            <div class="section-label">
-                01 — ABOUT
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+
+            <div class="about-photo">
+
+                <div class="about-photo-card">
+
+                    <img
+                        src="samra.jpg"
+                        alt="Portrait of Samra Khaksar">
+
+                </div>
+
+
+                <div class="about-photo-badge">
+
+                    <strong>
+                        Strategic Studies Researcher
+                    </strong>
+
+                    <span>
+
+                        Strategic Studies Researcher |
+                        Nuclear Deterrence & Strategic Stability |
+                        South Asian Security | Geopolitics |
+                        Foreign & Defence Policy | OSINT
+
+                    </span>
+
+                </div>
+
             </div>
 
-
-            <h2 class="section-title">
-                About
-            </h2>
 
 
             <div class="about-content">
 
+                <div class="section-label">
+                    About
+                </div>
+
+
+                <h2>
+                    About
+                </h2>
+
+
                 <p>
 
-                    I am a Strategic Studies scholar at the National
-                    Defence University, Islamabad, with a research focus
-                    on nuclear deterrence, strategic stability, South
-                    Asian security, foreign policy, and international
-                    relations. I am particularly interested in
-                    understanding how security challenges evolve in an
-                    increasingly complex geopolitical landscape and how
-                    evidence-based research can contribute to effective
-                    policymaking.
+                    I am a Strategic Studies scholar at the
+                    National Defence University, Islamabad,
+                    with a research focus on nuclear deterrence,
+                    strategic stability, South Asian security,
+                    foreign policy, and international relations.
+
+                </p>
+
+
+                <p>
+
+                    I am particularly interested in understanding
+                    how security challenges evolve in an increasingly
+                    complex geopolitical landscape and how
+                    evidence-based research can contribute to
+                    effective policymaking.
 
                 </p>
 
@@ -1581,27 +2405,32 @@
                     My work explores both traditional and emerging
                     security challenges, including nuclear strategy,
                     India–Pakistan relations, the Kashmir dispute,
-                    narrative and hybrid warfare, regional geopolitics,
-                    human security, and governance. My research and
-                    policy analyses have been published across national
-                    and international platforms, contributing to
-                    conversations on strategic affairs, regional
-                    security, and public policy.
+                    narrative and hybrid warfare, regional
+                    geopolitics, human security, and governance.
 
                 </p>
 
 
                 <p>
 
-                    To complement my academic research with practical
-                    policy experience, I have interned with the Senate
-                    of Pakistan, the Ministry of Law and Justice, the
-                    Ministry of Planning, Development and Special
-                    Initiatives, the Ministry of Finance, as well as
-                    leading policy research institutions. These
-                    experiences have strengthened my understanding of
-                    legislative processes, governance, and the realities
-                    of policymaking beyond the classroom.
+                    My research and policy analyses have been
+                    published across national and international
+                    platforms, contributing to conversations on
+                    strategic affairs, regional security, and
+                    public policy.
+
+                </p>
+
+
+                <p>
+
+                    To complement my academic research with
+                    practical policy experience, I have gained
+                    experience with government institutions and
+                    leading policy research organisations. These
+                    experiences have strengthened my understanding
+                    of legislative processes, governance, and the
+                    realities of policymaking beyond the classroom.
 
                 </p>
 
@@ -1609,24 +2438,23 @@
                 <p>
 
                     Beyond research, I have had the privilege of
-                    delivering a statement at the 61st Session of the
-                    United Nations Human Rights Council, representing
-                    youth perspectives at the World Bank Group Youth
-                    Summit, and securing 3rd Place in a National Research
-                    Poster Competition as the only undergraduate
-                    competing alongside postgraduate researchers.
+                    delivering a statement at the 61st Session of
+                    the United Nations Human Rights Council,
+                    representing youth perspectives at the World
+                    Bank Group Youth Summit, and securing 3rd Place
+                    in a National Research Poster Competition as
+                    the only undergraduate competing alongside
+                    postgraduate researchers.
 
                 </p>
 
 
                 <p>
 
-                    My long-term goal is to contribute to policy research
-                    and strategic analysis that informs decision-making
-                    on security, defence, and governance in South Asia.
-                    I am committed to producing rigorous, policy-oriented
-                    research that bridges the gap between academia and
-                    practice.
+                    My long-term goal is to contribute to policy
+                    research and strategic analysis that informs
+                    decision-making on security, defence, and
+                    governance in South Asia.
 
                 </p>
 
@@ -1634,10 +2462,11 @@
                 <p>
 
                     I welcome opportunities to collaborate with
-                    researchers, policymakers, think tanks, government
-                    institutions, and international organizations working
-                    in strategic studies, defence and security, foreign
-                    policy, international relations, and governance.
+                    researchers, policymakers, think tanks,
+                    government institutions, and international
+                    organisations working in strategic studies,
+                    defence and security, foreign policy,
+                    international relations, and governance.
 
                 </p>
 
@@ -1645,1073 +2474,1021 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =====================================================
-         RESEARCH
-    ===================================================== -->
 
-    <section id="research">
+<!-- =====================================================
+     RESEARCH
+===================================================== -->
 
-        <div class="container">
+<section id="research">
 
-            <div class="section-label">
-                02 — RESEARCH
-            </div>
+    <div class="container">
 
-
-            <h2 class="section-title">
-                Research Areas
-            </h2>
-
-
-            <p class="section-description">
-
-                My research interests focus on strategic affairs,
-                security studies, geopolitics, and contemporary policy
-                challenges.
-
-            </p>
-
-
-            <div class="research-grid">
-
-
-                <div class="card research-card">
-
-                    <div class="research-number">
-                        AREA 01
-                    </div>
-
-                    <h3>
-                        Nuclear Deterrence
-                    </h3>
-
-                    <p>
-                        Nuclear strategy, deterrence theory,
-                        escalation dynamics, and strategic stability.
-                    </p>
-
-                </div>
-
-
-                <div class="card research-card">
-
-                    <div class="research-number">
-                        AREA 02
-                    </div>
-
-                    <h3>
-                        South Asian Security
-                    </h3>
-
-                    <p>
-                        Regional security challenges, India–Pakistan
-                        relations, Kashmir, and evolving geopolitical
-                        dynamics.
-                    </p>
-
-                </div>
-
-
-                <div class="card research-card">
-
-                    <div class="research-number">
-                        AREA 03
-                    </div>
-
-                    <h3>
-                        Foreign & Defence Policy
-                    </h3>
-
-                    <p>
-                        Foreign policy decision-making, defence policy,
-                        diplomacy, and strategic interests.
-                    </p>
-
-                </div>
-
-
-                <div class="card research-card">
-
-                    <div class="research-number">
-                        AREA 04
-                    </div>
-
-                    <h3>
-                        Hybrid Warfare
-                    </h3>
-
-                    <p>
-                        Narrative warfare, information operations,
-                        strategic communication, and emerging forms
-                        of conflict.
-                    </p>
-
-                </div>
-
-
-                <div class="card research-card">
-
-                    <div class="research-number">
-                        AREA 05
-                    </div>
-
-                    <h3>
-                        Human Security
-                    </h3>
-
-                    <p>
-                        The relationship between conflict, governance,
-                        society, development, and human security.
-                    </p>
-
-                </div>
-
-
-                <div class="card research-card">
-
-                    <div class="research-number">
-                        AREA 06
-                    </div>
-
-                    <h3>
-                        Geopolitics & Governance
-                    </h3>
-
-                    <p>
-                        Regional geopolitics, public policy, governance,
-                        and the strategic implications of global change.
-                    </p>
-
-                </div>
-
-
-            </div>
-
+        <div class="section-label">
+            01 — Research
         </div>
 
-    </section>
+        <h2 class="section-title">
+            Research Interests
+        </h2>
+
+        <p class="section-description">
+
+            My research interests centre on strategic affairs,
+            security studies, South Asian geopolitics and
+            evidence-based policy analysis.
+
+        </p>
 
 
-    <!-- =====================================================
-         EDUCATION
-    ===================================================== -->
-
-    <section id="education">
-
-        <div class="container">
-
-            <div class="section-label">
-                03 — EDUCATION
-            </div>
+        <div class="research-grid">
 
 
-            <h2 class="section-title">
-                Academic Journey
-            </h2>
+            <article class="research-card">
 
-
-            <div class="timeline">
-
-
-                <div class="timeline-item">
-
-                    <div class="timeline-date">
-                        MAR 2025 — JUN 2029
-                    </div>
-
-                    <h3>
-                        Bachelor of Social Sciences
-                    </h3>
-
-                    <h4>
-                        Strategic Studies
-                    </h4>
-
-                    <p>
-                        National Defence University Islamabad
-                    </p>
-
-                    <p>
-                        <strong>
-                            Current GPA: 4.00 / 4.00
-                        </strong>
-                    </p>
-
+                <div class="research-number">
+                    RESEARCH 01
                 </div>
 
-
-                <div class="timeline-item">
-
-                    <div class="timeline-date">
-                        2023 — 2024
-                    </div>
-
-                    <h3>
-                        HCCS Educational System
-                    </h3>
-
-                    <h4>
-                        FSc, Pre-Medicine / Pre-Medical Studies
-                    </h4>
-
-                    <p>
-                        <strong>
-                            Grade: A+
-                        </strong>
-                    </p>
-
-                    <p>
-
-                        Actively participated in debating and vocal
-                        performances, along with various co-curricular
-                        activities. Demonstrated strong communication,
-                        creativity, and confidence, while maintaining
-                        consistent academic excellence.
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         EXPERIENCE
-    ===================================================== -->
-
-    <section id="experience">
-
-        <div class="container">
-
-            <div class="section-label">
-                04 — EXPERIENCE
-            </div>
-
-
-            <h2 class="section-title">
-                Professional Experience
-            </h2>
-
-
-            <div class="experience-list">
-
-
-                <div class="experience-card">
-
-                    <div class="experience-date">
-                        2025 — CURRENT
-                    </div>
-
-
-                    <div class="experience-content">
-
-                        <h3>
-                            Author & Policy Writer
-                        </h3>
-
-                        <h4>
-                            Independent / National & International Platforms
-                        </h4>
-
-                        <ul>
-
-                            <li>
-                                Published articles on geopolitics,
-                                security, and human rights across
-                                national and international platforms.
-                            </li>
-
-                            <li>
-                                Covered topics including Kashmir,
-                                global security, and climate challenges.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-
-                <div class="experience-card">
-
-                    <div class="experience-date">
-                        07/2025 — 08/2025
-                    </div>
-
-
-                    <div class="experience-content">
-
-                        <h3>
-                            Research Intern
-                        </h3>
-
-                        <h4>
-                            Kashmir Institute of International Relations
-                        </h4>
-
-                        <ul>
-
-                            <li>
-                                Conducted research on narrative warfare
-                                in Kashmir, focusing on the Pahalgam
-                                incident.
-                            </li>
-
-                            <li>
-                                Produced analytical articles using
-                                primary and secondary sources.
-                            </li>
-
-                            <li>
-                                Engaged in institutional dialogues and
-                                expert-led sessions.
-                            </li>
-
-                            <li>
-                                Strengthened research, writing, and
-                                critical analysis skills.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-
-                <div class="experience-card">
-
-                    <div class="experience-date">
-                        06/2025 — 08/2025
-                    </div>
-
-
-                    <div class="experience-content">
-
-                        <h3>
-                            Leadership & Research Supervisor
-                        </h3>
-
-                        <h4>
-                            HEAL Pakistan & The Global Paradox
-                        </h4>
-
-                        <ul>
-
-                            <li>
-                                Supervised and mentored a team of
-                                10+ interns in policy research and writing.
-                            </li>
-
-                            <li>
-                                Reviewed and provided feedback on
-                                research papers and policy briefs.
-                            </li>
-
-                            <li>
-                                Coordinated research activities on
-                                international relations and conflict studies.
-                            </li>
-
-                            <li>
-                                Contributed to youth development and
-                                community engagement initiatives.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-
-                <div class="experience-card">
-
-                    <div class="experience-date">
-                        08/2025 — 10/2026
-                    </div>
-
-
-                    <div class="experience-content">
-
-                        <h3>
-                            Research Intern
-                        </h3>
-
-                        <h4>
-                            Institute of Strategic Studies Islamabad
-                        </h4>
-
-                        <ul>
-
-                            <li>
-                                Conducted research on regional and
-                                global security issues.
-                            </li>
-
-                            <li>
-                                Published analytical briefs and
-                                research notes for institutional use.
-                            </li>
-
-                            <li>
-                                Participated in high-level seminars
-                                and discussions with international experts.
-                            </li>
-
-                            <li>
-                                Developed expertise in policy analysis
-                                and strategic affairs.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         PUBLICATIONS
-    ===================================================== -->
-
-    <section id="publications">
-
-        <div class="container">
-
-            <div class="section-label">
-                05 — PUBLICATIONS
-            </div>
-
-
-            <h2 class="section-title">
-                Selected Publications
-            </h2>
-
-
-            <p class="section-description">
-
-                Selected research and policy analyses published across
-                national and international platforms.
-
-            </p>
-
-
-            <div class="publication-list">
-
-
-                <div class="publication">
-
-                    <div class="publication-number">01</div>
-
-                    <div>
-
-                        <h3>
-                            Impact of Indian Hybrid Warfare on Human Security in Pakistan
-                        </h3>
-
-                        <p>
-                            Shafaqna India · June 10, 2026
-                        </p>
-
-                    </div>
-
-                    <a href="https://india.shafaqna.com/EN/impact-of-indian-hybrid-warfare-on-human-security-in-pakistan/"
-                       target="_blank"
-                       class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-                <div class="publication">
-
-                    <div class="publication-number">02</div>
-
-                    <div>
-
-                        <h3>
-                            Impact of Indian Hybrid Warfare on Human Security in Pakistan
-                        </h3>
-
-                        <p>
-                            Pakistan Today · June 9, 2026
-                        </p>
-
-                    </div>
-
-                    <a href="https://www.pakistantoday.com.pk/2026/06/09/impact-of-indian-hybrid-warfare-on-human-security-in-pakistan"
-                       target="_blank"
-                       class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-                <div class="publication">
-
-                    <div class="publication-number">03</div>
-
-                    <div>
-
-                        <h3>
-                            The Geography of Escalation
-                        </h3>
-
-                        <p>
-                            Pakistan Today · May 26, 2026
-                        </p>
-
-                    </div>
-
-                    <a href="https://www.pakistantoday.com.pk/2026/05/26/the-geography-of-escalation"
-                       target="_blank"
-                       class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-                <div class="publication">
-
-                    <div class="publication-number">04</div>
-
-                    <div>
-
-                        <h3>
-                            From Escalation Ladders to Escalation Wormholes in Nuclear Deterrence
-                        </h3>
-
-                        <p>
-                            Centre for Strategic and Contemporary Research · May 19, 2026
-                        </p>
-
-                    </div>
-
-                    <a href="https://cscr.pk/explore/themes/defense-security/from-escalation-ladders-to-escalation-wormholes-in-nuclear-deterrence/"
-                       target="_blank"
-                       class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-                <div class="publication">
-
-                    <div class="publication-number">05</div>
-
-                    <div>
-
-                        <h3>
-                            Operation Bunyan-un-Marsoos: Strategic Signalling and Pakistan’s Calculated Response After Pahalgam
-                        </h3>
-
-                        <p>
-                            Kashmir Media Service · May 3, 2026
-                        </p>
-
-                    </div>
-
-                    <a href="https://kmsnews.org/kms/2026/05/03/operation-bunyan-un-marsoos-strategic-signalling-and-pakistans-calculated-response-after-pahalgam.html"
-                       target="_blank"
-                       class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-                <div class="publication">
-
-                    <div class="publication-number">06</div>
-
-                    <div>
-
-                        <h3>
-                            Mediating the Unmediable: Pakistan’s High-Stakes Diplomacy in the US-Iran Shadow War
-                        </h3>
-
-                        <p>
-                            Medium · April 22, 2026
-                        </p>
-
-                    </div>
-
-                    <a href="https://medium.com/@samrakhaksar14/mediating-the-unmediable-pakistans-high-stakes-diplomacy-in-the-us-iran-shadow-war-0d0ad8af4f71"
-                       target="_blank"
-                       class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-                <div class="publication">
-
-                    <div class="publication-number">07</div>
-
-                    <div>
-
-                        <h3>
-                            Critical Minerals in Pakistan: Resource Potential, Strategic Significance, and Policy Challenges
-                        </h3>
-
-                        <p>
-                            The National Frontier · April 3, 2026
-                        </p>
-
-                    </div>
-
-                    <a href="https://thenationalfrontier.com/featured/critical-minerals-in-pakistan-resource-potential-strategic-significance-and-policy-challenges/"
-                       target="_blank"
-                       class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-                <div class="publication">
-
-                    <div class="publication-number">08</div>
-
-                    <div>
-
-                        <h3>
-                            Pakistan's Iran Gamble: A Litmus Test
-                        </h3>
-
-                        <p>
-                            The National Frontier · March 27, 2026
-                        </p>
-
-                    </div>
-
-                    <a href="https://thenationalfrontier.com/opinion/pakistans-iran-gamble-a-litmus-test/"
-                       target="_blank"
-                       class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-                <div class="publication">
-
-                    <div class="publication-number">09</div>
-
-                    <div>
-
-                        <h3>
-                            Chokepoint Wars: How the Strait of Hormuz Crisis Is Reshaping Global Energy Security
-                        </h3>
-
-                        <p>
-                            Modern Diplomacy · March 21, 2026
-                        </p>
-
-                    </div>
-
-                    <a href="https://moderndiplomacy.eu/2026/03/21/chokepoint-wars-how-the-strait-of-hormuz-crisis-is-reshaping-global-energy-security/"
-                       target="_blank"
-                       class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-                <div class="publication">
-
-                    <div class="publication-number">10</div>
-
-                    <div>
-
-                        <h3>
-                            When Hormuz Falls Silent: A Global Oil Shock and Vulnerability
-                        </h3>
-
-                        <p>
-                            The National Frontier · March 17, 2026
-                        </p>
-
-                    </div>
-
-                    <a href="https://thenationalfrontier.com/world/when-hormuz-falls-silent-a-global-oil-shock-and-vulnerability/"
-                       target="_blank"
-                       class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-                <div class="publication">
-
-                    <div class="publication-number">11</div>
-
-                    <div>
-
-                        <h3>
-                            The Geography of Escalation: Living in an Age of Permanent Crisis
-                        </h3>
-
-                        <p>
-                            Islamabad Centre for Education and Peace · March 14, 2026
-                        </p>
-
-                    </div>
-
-                    <a href="https://icep.org.pk/read?Id=124"
-                       target="_blank"
-                       class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-                <div class="publication">
-
-                    <div class="publication-number">12</div>
-
-                    <div>
-
-                        <h3>
-                            What Pakistan’s Entry into the Board of Peace Really Means?
-                        </h3>
-
-                        <p>
-                            The National Frontier · March 10, 2026
-                        </p>
-
-                    </div>
-
-                    <a href="https://thenationalfrontier.com/national/what-pakistans-entry-into-the-board-of-peace-really-means/"
-                       target="_blank"
-                       class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         TESTIMONIALS
-    ===================================================== -->
-
-    <section id="testimonials">
-
-        <div class="container">
-
-            <div class="section-label">
-                06 — TESTIMONIALS
-            </div>
-
-
-            <h2 class="section-title">
-                What People Say
-            </h2>
-
-
-            <div class="two-column">
-
-
-                <div class="card review-card">
-
-                    <div class="quote">
-                        “
-                    </div>
-
-
-                    <p class="review-text">
-
-                        I have had the pleasure of knowing Samra Khaksar
-                        and can confidently say she is a thoughtful and
-                        dedicated researcher. She has a strong
-                        understanding of geopolitics and South Asian
-                        security, which is reflected in her clear,
-                        well-structured writing and insightful analysis.
-                        Samra approaches her work with professionalism
-                        and sincerity, consistently delivering
-                        high-quality results. I would highly recommend
-                        her to any organisation seeking a capable and
-                        reliable professional.
-
-                    </p>
-
-
-                    <div class="review-person">
-
-                        <h3>
-                            Muhammad Nouman
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-                <div class="card review-card">
-
-                    <div class="quote">
-                        “
-                    </div>
-
-
-                    <p class="review-text">
-
-                        I have had the opportunity to work with Samra
-                        Khaksar and have consistently been impressed by
-                        her analytical depth and clarity of thought. As a
-                        Strategic Studies student and emerging policy
-                        researcher, she demonstrates a strong ability to
-                        critically engage with complex geopolitical
-                        issues, particularly relating to South Asia and
-                        the Kashmir dispute.
-
-                        Her writing reflects not only academic rigor but
-                        also a nuanced understanding of policy dynamics,
-                        making her work both insightful and relevant.
-                        Samra is highly dedicated, articulate, and
-                        proactive in academic and professional settings.
-
-                    </p>
-
-
-                    <div class="review-person">
-
-                        <h3>
-                            Shehroz Hussain
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SKILLS
-    ===================================================== -->
-
-    <section id="skills">
-
-        <div class="container">
-
-            <div class="section-label">
-                07 — SKILLS
-            </div>
-
-
-            <h2 class="section-title">
-                Expertise & Skills
-            </h2>
-
-
-            <div class="skills-grid">
-
-                <span class="skill">
-                    Policy Research & Analysis
-                </span>
-
-                <span class="skill">
-                    Strategic & Academic Writing
-                </span>
-
-                <span class="skill">
-                    Narrative Analysis
-                </span>
-
-                <span class="skill">
-                    Discourse Analysis
-                </span>
-
-                <span class="skill">
-                    Public Speaking & Advocacy
-                </span>
-
-                <span class="skill">
-                    Leadership & Team Management
-                </span>
-
-                <span class="skill">
+                <h3>
                     Nuclear Deterrence
-                </span>
+                </h3>
 
-                <span class="skill">
-                    Strategic Stability
-                </span>
+                <p>
 
-                <span class="skill">
+                    Research on nuclear strategy, deterrence
+                    relationships, escalation dynamics and
+                    strategic stability.
+
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Nuclear Strategy
+                    </span>
+
+                    <span class="tag">
+                        Deterrence
+                    </span>
+
+                    <span class="tag">
+                        Stability
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <article class="research-card">
+
+                <div class="research-number">
+                    RESEARCH 02
+                </div>
+
+                <h3>
                     South Asian Security
-                </span>
+                </h3>
 
-                <span class="skill">
-                    Foreign Policy Analysis
-                </span>
+                <p>
 
-                <span class="skill">
-                    Geopolitical Analysis
-                </span>
+                    Analysis of security dynamics, India–Pakistan
+                    relations, Kashmir and regional strategic
+                    developments.
 
-                <span class="skill">
-                    OSINT
-                </span>
+                </p>
 
+                <div class="tags">
+
+                    <span class="tag">
+                        South Asia
+                    </span>
+
+                    <span class="tag">
+                        Kashmir
+                    </span>
+
+                    <span class="tag">
+                        India–Pakistan
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <article class="research-card">
+
+                <div class="research-number">
+                    RESEARCH 03
+                </div>
+
+                <h3>
+                    Geopolitics
+                </h3>
+
+                <p>
+
+                    Examination of regional and global geopolitical
+                    competition and its implications for security
+                    and foreign policy.
+
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Geopolitics
+                    </span>
+
+                    <span class="tag">
+                        Foreign Policy
+                    </span>
+
+                    <span class="tag">
+                        IR
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <article class="research-card">
+
+                <div class="research-number">
+                    RESEARCH 04
+                </div>
+
+                <h3>
+                    Hybrid & Narrative Warfare
+                </h3>
+
+                <p>
+
+                    Study of information operations, narrative
+                    competition, hybrid warfare and strategic
+                    communication.
+
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Hybrid Warfare
+                    </span>
+
+                    <span class="tag">
+                        Narratives
+                    </span>
+
+                    <span class="tag">
+                        Information
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <article class="research-card">
+
+                <div class="research-number">
+                    RESEARCH 05
+                </div>
+
+                <h3>
+                    Defence & Foreign Policy
+                </h3>
+
+                <p>
+
+                    Research into defence policy, foreign policy
+                    decision-making and strategic affairs.
+
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Defence Policy
+                    </span>
+
+                    <span class="tag">
+                        Foreign Policy
+                    </span>
+
+                    <span class="tag">
+                        Strategy
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <article class="research-card">
+
+                <div class="research-number">
+                    RESEARCH 06
+                </div>
+
+                <h3>
+                    OSINT & Policy Analysis
+                </h3>
+
+                <p>
+
+                    Open-source intelligence, evidence-based
+                    analysis, research methodology and
+                    policy-oriented writing.
+
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        OSINT
+                    </span>
+
+                    <span class="tag">
+                        Research
+                    </span>
+
+                    <span class="tag">
+                        Policy
+                    </span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-label">
+            02 — Education
+        </div>
+
+        <h2 class="section-title">
+            Academic Background
+        </h2>
+
+
+        <div class="education-card">
+
+            <h3>
+                National Defence University Islamabad
+            </h3>
+
+            <div class="degree">
+                Bachelor of Social Sciences — Strategic Studies
+            </div>
+
+            <div class="date">
+                March 2025 – June 2029
+            </div>
+
+            <span class="gpa">
+                Current GPA: 4.00 / 4.00
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-label">
+            03 — Experience
+        </div>
+
+        <h2 class="section-title">
+            Experience
+        </h2>
+
+        <p class="section-description">
+
+            Research, policy writing, institutional experience and
+            leadership activities across strategic affairs and
+            public policy.
+
+        </p>
+
+
+        <div class="experience-list">
+
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    2025 – Current
+                </div>
+
+                <div>
+
+                    <h3>
+                        Author & Policy Writer
+                    </h3>
+
+                    <div class="experience-company">
+                        Kashmir Institute of International Relations
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Published articles on geopolitics,
+                            security and human rights.
+                        </li>
+
+                        <li>
+                            Covered Kashmir, global security and
+                            climate challenges.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    July 2025 – August 2025
+                </div>
+
+                <div>
+
+                    <h3>
+                        Research Intern
+                    </h3>
+
+                    <div class="experience-company">
+                        HEAL Pakistan & The Global Paradox
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Conducted research on narrative warfare
+                            in Kashmir.
+                        </li>
+
+                        <li>
+                            Produced analytical articles using
+                            primary and secondary sources.
+                        </li>
+
+                        <li>
+                            Participated in institutional dialogues
+                            and expert-led sessions.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    June 2025 – August 2025
+                </div>
+
+                <div>
+
+                    <h3>
+                        Leadership & Research Supervisor
+                    </h3>
+
+                    <div class="experience-company">
+                        HEAL Pakistan & The Global Paradox
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Supervised and mentored a team of
+                            10+ interns.
+                        </li>
+
+                        <li>
+                            Reviewed research papers and
+                            policy briefs.
+                        </li>
+
+                        <li>
+                            Coordinated research activities on
+                            international relations and
+                            conflict studies.
+                        </li>
+
+                        <li>
+                            Contributed to youth development and
+                            community engagement initiatives.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <div class="experience-date">
+                    August 2025 – October 2026
+                </div>
+
+                <div>
+
+                    <h3>
+                        Research Intern
+                    </h3>
+
+                    <div class="experience-company">
+                        Institute of Strategic Studies Islamabad
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            Conducted research on regional and
+                            global security issues.
+                        </li>
+
+                        <li>
+                            Published analytical briefs and
+                            research notes.
+                        </li>
+
+                        <li>
+                            Participated in seminars and discussions
+                            with international experts.
+                        </li>
+
+                        <li>
+                            Developed expertise in policy analysis
+                            and strategic affairs.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PUBLICATIONS
+===================================================== -->
+
+<section id="publications">
+
+    <div class="container">
+
+        <div class="publication-header">
+
+            <div>
+
+                <div class="section-label">
+                    04 — Publications
+                </div>
+
+                <h2 class="section-title">
+                    Publications
+                </h2>
+
+                <p class="section-description">
+
+                    Selected research articles, analytical pieces
+                    and scholarly work.
+
+                </p>
+
+            </div>
+
+
+            <div class="publication-count">
+                30+
             </div>
 
         </div>
 
-    </section>
 
+        <div class="publication">
 
-    <!-- =====================================================
-         CONTACT
-    ===================================================== -->
-
-    <section id="contact">
-
-        <div class="container">
-
-            <div class="section-label">
-                08 — CONTACT
+            <div class="publication-number">
+                01
             </div>
 
+            <div>
 
-            <h2 class="section-title">
-                Let’s Connect
-            </h2>
+                <h3>
+                    Impact of Indian Hybrid Warfare on Human Security
+                    in Pakistan
+                </h3>
 
+                <p>
+                    Shafaqna India • June 10, 2026
+                </p>
 
-            <div class="contact-grid">
+            </div>
 
+            <a
+                href="https://india.shafaqna.com/EN/impact-of-indian-hybrid-warfare-on-human-security-in-pakistan/"
+                target="_blank"
+                class="publication-link">
 
-                <div class="card contact-card">
+                Read ↗
 
-                    <h3>
-                        Open to meaningful collaboration.
-                    </h3>
+            </a>
 
-
-                    <p>
-
-                        I welcome opportunities to collaborate with
-                        researchers, policymakers, think tanks,
-                        government institutions, and international
-                        organizations working in strategic studies,
-                        defence and security, foreign policy,
-                        international relations, and governance.
-
-                    </p>
+        </div>
 
 
-                    <a href="mailto:samrakhaksar14@gmail.com"
-                       class="primary-button">
+        <div class="publication">
 
-                        Send an Email
+            <div class="publication-number">
+                02
+            </div>
+
+            <div>
+
+                <h3>
+                    Impact of Indian Hybrid Warfare on Human Security
+                    in Pakistan
+                </h3>
+
+                <p>
+                    Pakistan Today • June 9, 2026
+                </p>
+
+            </div>
+
+            <a
+                href="#"
+                class="publication-link">
+
+                View ↗
+
+            </a>
+
+        </div>
+
+
+        <div class="publication">
+
+            <div class="publication-number">
+                03
+            </div>
+
+            <div>
+
+                <h3>
+                    Research & Policy Analysis
+                </h3>
+
+                <p>
+                    Strategic Affairs • 2026
+                </p>
+
+            </div>
+
+            <a
+                href="#"
+                class="publication-link">
+
+                View ↗
+
+            </a>
+
+        </div>
+
+
+        <div class="publication">
+
+            <div class="publication-number">
+                04
+            </div>
+
+            <div>
+
+                <h3>
+                    South Asian Security & Strategic Stability
+                </h3>
+
+                <p>
+                    Research Article • 2026
+                </p>
+
+            </div>
+
+            <a
+                href="#"
+                class="publication-link">
+
+                View ↗
+
+            </a>
+
+        </div>
+
+
+        <div class="publication">
+
+            <div class="publication-number">
+                05
+            </div>
+
+            <div>
+
+                <h3>
+                    Kashmir, Narrative Warfare & Geopolitics
+                </h3>
+
+                <p>
+                    Policy Analysis • 2026
+                </p>
+
+            </div>
+
+            <a
+                href="#"
+                class="publication-link">
+
+                View ↗
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TESTIMONIALS
+===================================================== -->
+
+<section id="testimonials">
+
+    <div class="container">
+
+        <div class="section-label">
+            05 — Testimonials
+        </div>
+
+        <h2 class="section-title">
+            What People Say
+        </h2>
+
+
+        <div class="testimonial-grid">
+
+
+            <!-- MUHAMMAD NOUMAN -->
+
+            <article class="testimonial">
+
+                <div class="quote-mark">
+                    “
+                </div>
+
+                <p>
+
+                    I have had the pleasure of knowing Samra Khaksar
+                    and can confidently say she is a thoughtful and
+                    dedicated researcher. She has a strong
+                    understanding of geopolitics and South Asian
+                    security, which is reflected in her clear,
+                    well-structured writing and insightful analysis.
+
+                    Samra approaches her work with professionalism
+                    and sincerity, consistently delivering
+                    high-quality results. I would highly recommend
+                    her to any organisation seeking a capable and
+                    reliable professional.
+
+                </p>
+
+
+                <div class="testimonial-author">
+
+                    <strong>
+                        Muhammad Nouman
+                    </strong>
+
+                    <a
+                        href="https://www.linkedin.com/in/nouman081/"
+                        target="_blank">
+
+                        LinkedIn Profile ↗
+
+                    </a>
+
+                    <div class="testimonial-meta">
+
+                        March 27, 2026, Muhammad managed SAMRA directly
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- SHEHROZ HUSSAIN -->
+
+            <article class="testimonial">
+
+                <div class="quote-mark">
+                    “
+                </div>
+
+                <p>
+
+                    I have had the opportunity to work with Samra
+                    Khaksar and have consistently been impressed by
+                    her analytical depth and clarity of thought.
+
+                    As a Strategic Studies student and emerging
+                    policy researcher, she demonstrates a strong
+                    ability to critically engage with complex
+                    geopolitical issues, particularly relating to
+                    South Asia and the Kashmir dispute.
+
+                    Her writing reflects not only academic rigor but
+                    also a nuanced understanding of policy dynamics,
+                    making her work both insightful and relevant.
+                    Samra is highly dedicated, articulate, and
+                    proactive in academic and professional settings,
+                    and she brings a thoughtful perspective to every
+                    discussion she is part of.
+
+                    I am confident that she will continue to make
+                    meaningful contributions in the field of Social
+                    Sciences.
+
+                </p>
+
+
+                <div class="testimonial-author">
+
+                    <strong>
+                        Shehroz Hussain
+                    </strong>
+
+                    <a
+                        href="https://www.linkedin.com/in/shehroz-hussain-b692a5378/"
+                        target="_blank">
+
+                        LinkedIn Profile ↗
 
                     </a>
 
                 </div>
 
-
-                <div class="card contact-card">
-
-                    <h3>
-                        Get in Touch
-                    </h3>
+            </article>
 
 
-                    <div class="contact-links">
+        </div>
 
-                        <a href="mailto:samrakhaksar14@gmail.com"
-                           class="contact-link">
+    </div>
 
-                            Email: samrakhaksar14@gmail.com
-
-                        </a>
+</section>
 
 
-                        <a href="tel:+923408996152"
-                           class="contact-link">
 
-                            Phone: +92 340 8996152
+<!-- =====================================================
+     SKILLS
+===================================================== -->
 
-                        </a>
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-label">
+            06 — Skills
+        </div>
+
+        <h2 class="section-title">
+            Skills & Expertise
+        </h2>
 
 
-                        <a href="https://www.linkedin.com/in/samra-khaksar-b098bb334/"
-                           target="_blank"
-                           class="contact-link">
-
-                            LinkedIn Profile ↗
-
-                        </a>
+        <div class="skills-grid">
 
 
-                        <a href="https://wa.me/923408996152"
-                           target="_blank"
-                           class="contact-link">
+            <div class="skill-card">
 
-                            WhatsApp ↗
+                <h3>
+                    Policy Research & Analysis
+                </h3>
+
+                <p>
+
+                    Strategic research, policy analysis,
+                    geopolitical assessment and evidence-based
+                    research.
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Strategic & Academic Writing
+                </h3>
+
+                <p>
+
+                    Policy briefs, research articles,
+                    analytical writing and academic research.
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Narrative & Discourse Analysis
+                </h3>
+
+                <p>
+
+                    Analysis of narratives, strategic communication,
+                    discourse and information environments.
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Public Speaking & Advocacy
+                </h3>
+
+                <p>
+
+                    Public speaking, youth advocacy, policy dialogue
+                    and academic presentations.
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Leadership & Team Management
+                </h3>
+
+                <p>
+
+                    Research supervision, mentoring, team
+                    coordination and collaborative project
+                    management.
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Open-Source Intelligence
+                </h3>
+
+                <p>
+
+                    OSINT research, information verification and
+                    open-source strategic analysis.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-label">
+            07 — Contact
+        </div>
+
+        <h2 class="section-title">
+            Let's Connect
+        </h2>
+
+        <p class="section-description">
+
+            I welcome opportunities for research collaboration,
+            policy research, academic projects, strategic studies,
+            writing and professional discussions.
+
+        </p>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card">
+
+                <h3>
+                    Get in Touch
+                </h3>
+
+                <p>
+
+                    For research collaboration, academic discussions,
+                    policy research or professional opportunities,
+                    feel free to reach out.
+
+                </p>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ✉
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Email
+                        </strong>
+
+                        <a href="mailto:samrakhaksar14@gmail.com">
+
+                            samrakhaksar14@gmail.com
 
                         </a>
 
@@ -2720,87 +3497,303 @@
                 </div>
 
 
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ☎
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Phone
+                        </strong>
+
+                        <a href="tel:+923408996152">
+
+                            +92 340 8996152
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        in
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            LinkedIn
+                        </strong>
+
+                        <a
+                            href="https://www.linkedin.com/"
+                            target="_blank">
+
+                            Samra Khaksar ↗
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="mailto:samrakhaksar14@gmail.com"
+                    class="contact-button">
+
+                    Contact Me →
+
+                </a>
+
+            </div>
+
+
+
+            <div class="contact-card">
+
+                <h3>
+                    Areas for Collaboration
+                </h3>
+
+                <p>
+
+                    I am particularly interested in collaborative
+                    work involving:
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Strategic Studies
+                    </span>
+
+                    <span class="tag">
+                        Nuclear Deterrence
+                    </span>
+
+                    <span class="tag">
+                        South Asian Security
+                    </span>
+
+                    <span class="tag">
+                        Geopolitics
+                    </span>
+
+                    <span class="tag">
+                        Foreign Policy
+                    </span>
+
+                    <span class="tag">
+                        Defence Policy
+                    </span>
+
+                    <span class="tag">
+                        OSINT
+                    </span>
+
+                    <span class="tag">
+                        Policy Research
+                    </span>
+
+                    <span class="tag">
+                        Academic Research
+                    </span>
+
+                    <span class="tag">
+                        Strategic Communication
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-inner">
+
+            <div class="footer-name">
+
+                Samra
+                <span>Khaksar.</span>
+
+            </div>
+
+
+            <div class="footer-text">
+
+                Strategic Studies Researcher • Policy Writer
+
+                <br>
+
+                © 2026 Samra Khaksar.
+                All Rights Reserved.
+
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</footer>
 
 
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
 
-    <footer>
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
 
-        <div class="container">
+<a
+    href="https://wa.me/923408996152"
+    target="_blank"
+    class="whatsapp"
+    aria-label="WhatsApp">
 
-            <div class="footer-inner">
+    ☎
 
-                <p>
-                    © 2026 Samra Khaksar. All Rights Reserved.
-                </p>
-
-
-                <p>
-                    Strategic Studies Researcher & Policy Writer
-                </p>
-
-            </div>
-
-        </div>
-
-    </footer>
+</a>
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ===================================================== -->
 
-    <script>
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
-        const mobileMenu =
-            document.getElementById("mobileMenu");
+<script>
 
-        const navLinks =
-            document.getElementById("navLinks");
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const navLinks =
+        document.getElementById("navLinks");
 
 
-        mobileMenu.addEventListener(
-            "click",
-            function () {
+    mobileMenu.addEventListener(
+        "click",
+        () => {
 
-                navLinks.classList.toggle(
-                    "mobile-open"
-                );
+            navLinks.classList.toggle(
+                "mobile-open"
+            );
 
-            }
+        }
+    );
+
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    navLinks.classList.remove(
+                        "mobile-open"
+                    );
+
+                }
+            );
+
+        });
+
+
+
+    /* =====================================================
+       ACTIVE NAVIGATION
+    ===================================================== */
+
+    const sections =
+        document.querySelectorAll(
+            "main section[id]"
         );
 
-
+    const links =
         document.querySelectorAll(
             ".nav-links a"
-        ).forEach(
-
-            function (link) {
-
-                link.addEventListener(
-                    "click",
-                    function () {
-
-                        navLinks.classList.remove(
-                            "mobile-open"
-                        );
-
-                    }
-                );
-
-            }
-
         );
 
-    </script>
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            let current = "home";
+
+            sections.forEach(section => {
+
+                const sectionTop =
+                    section.offsetTop - 180;
+
+                if (
+                    window.scrollY >=
+                    sectionTop
+                ) {
+
+                    current =
+                        section.getAttribute("id");
+
+                }
+
+            });
+
+
+            links.forEach(link => {
+
+                link.classList.remove(
+                    "active"
+                );
+
+
+                if (
+                    link.getAttribute("href") ===
+                    "#" + current
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
+            });
+
+        }
+    );
+
+</script>
 
 
 </body>
+
 </html>
