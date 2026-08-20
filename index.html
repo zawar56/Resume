@@ -1,60 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Samra Khaksar - Strategic Studies Researcher, Policy Writer and Emerging Scholar">
-
-    <meta name="author" content="Samra Khaksar">
+          content="Portfolio of Samra Khaksar - Strategic Studies Researcher and Policy Writer">
 
     <title>Samra Khaksar | Strategic Studies Researcher</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
+          rel="stylesheet">
 
     <style>
 
-        /* =========================================================
+        /* =====================================================
            ROOT
-        ========================================================= */
+        ===================================================== */
 
         :root {
+
             --bg: #0d0d12;
+
             --bg-soft: #15151d;
+
             --card: rgba(255,255,255,0.045);
+
             --text: #f5f3ff;
+
             --muted: #aaa8b7;
+
             --purple: #756cff;
+
             --purple-light: #a99fff;
+
             --border: rgba(255,255,255,0.10);
-            --green: #8fffbc;
+
             --shadow: 0 20px 60px rgba(0,0,0,0.30);
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            RESET
-        ========================================================= */
+        ===================================================== */
 
         * {
+
             margin: 0;
+
             padding: 0;
+
             box-sizing: border-box;
+
         }
+
 
         html {
+
             scroll-behavior: smooth;
-            scroll-padding-top: 110px;
+
         }
 
+
         body {
+
             background:
                 radial-gradient(
                     circle at top right,
@@ -64,933 +83,1187 @@
                 var(--bg);
 
             color: var(--text);
-            font-family: Inter, Arial, sans-serif;
+
+            font-family:
+                Inter,
+                Arial,
+                sans-serif;
+
             line-height: 1.7;
+
             overflow-x: hidden;
+
         }
+
 
         a {
+
             color: inherit;
+
             text-decoration: none;
+
         }
+
 
         img {
+
             max-width: 100%;
+
             display: block;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            SCROLLBAR
-        ========================================================= */
+        ===================================================== */
 
         ::-webkit-scrollbar {
+
             width: 8px;
+
         }
+
 
         ::-webkit-scrollbar-track {
+
             background: var(--bg);
+
         }
+
 
         ::-webkit-scrollbar-thumb {
+
             background: var(--purple);
+
             border-radius: 20px;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            GENERAL
-        ========================================================= */
+        ===================================================== */
 
         .container {
-            width: min(92%, 1150px);
+
+            width: min(90%, 1100px);
+
             margin: auto;
+
         }
+
 
         section {
+
             padding: 110px 0;
-            position: relative;
+
         }
+
 
         .section-label {
+
             color: var(--purple-light);
+
             font-size: 12px;
+
             font-weight: 800;
+
             letter-spacing: 2px;
+
             text-transform: uppercase;
+
             margin-bottom: 18px;
+
         }
+
 
         .section-title {
-            font-family: "Playfair Display", Georgia, serif;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
             font-size: clamp(42px, 6vw, 68px);
+
             line-height: 1.1;
+
             margin-bottom: 20px;
+
         }
+
 
         .section-description {
+
             color: var(--muted);
-            max-width: 800px;
+
+            max-width: 750px;
+
             margin-bottom: 45px;
+
         }
+
 
         .card {
+
             background: var(--card);
+
             border: 1px solid var(--border);
+
             border-radius: 24px;
+
             padding: 30px;
+
             backdrop-filter: blur(15px);
+
             transition:
-                transform 0.35s ease,
-                border-color 0.35s ease,
-                box-shadow 0.35s ease;
+                transform 0.3s ease,
+                border-color 0.3s ease;
+
         }
+
 
         .card:hover {
-            transform: translateY(-7px);
-            border-color: rgba(117,108,255,0.45);
-            box-shadow: 0 18px 50px rgba(0,0,0,0.20);
+
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(117,108,255,0.45);
+
         }
+
 
         .two-column {
+
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
             gap: 25px;
+
         }
+
 
         .three-column {
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 22px;
+
         }
 
 
-        /* =========================================================
-           ANIMATIONS
-        ========================================================= */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(35px);
-            transition:
-                opacity 0.8s ease,
-                transform 0.8s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @keyframes floatImage {
-            0%,100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes pulseDot {
-            0%,100% {
-                box-shadow: 0 0 8px var(--green);
-            }
-
-            50% {
-                box-shadow: 0 0 22px var(--green);
-            }
-        }
-
-        @keyframes fadeDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-        /* =========================================================
+        /* =====================================================
            NAVIGATION
-        ========================================================= */
+        ===================================================== */
 
         nav {
+
             position: fixed;
+
             top: 18px;
+
             left: 50%;
+
             transform: translateX(-50%);
-            width: min(94%, 1200px);
+
+            width: min(92%, 1120px);
+
             z-index: 1000;
 
-            background: rgba(13,13,18,0.84);
-            backdrop-filter: blur(20px);
+            background:
+                rgba(13,13,18,0.82);
 
-            border: 1px solid var(--border);
+            backdrop-filter:
+                blur(20px);
+
+            border:
+                1px solid var(--border);
+
             border-radius: 22px;
 
             box-shadow:
                 0 10px 40px rgba(0,0,0,0.30);
 
-            animation: fadeDown 0.8s ease;
         }
+
 
         .nav-inner {
-            min-height: 70px;
+
+            min-height: 72px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
-            padding: 0 22px;
-            gap: 15px;
+            padding: 0 24px;
+
+            gap: 20px;
+
         }
+
 
         .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
             font-weight: 800;
+
             white-space: nowrap;
-            letter-spacing: 1px;
-            font-size: 18px;
+
         }
 
-        .logo span {
-            color: var(--purple-light);
+
+        .logo-mark {
+
+            width: 38px;
+
+            height: 38px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #756cff,
+                    #9b7cff
+                );
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+            box-shadow:
+                0 8px 25px
+                rgba(117,108,255,0.35);
+
         }
+
 
         .nav-links {
+
             display: flex;
+
             align-items: center;
-            justify-content: center;
-            gap: 15px;
+
+            gap: 20px;
+
         }
+
 
         .nav-links a {
+
             color: var(--muted);
-            font-size: 11px;
-            font-weight: 600;
-            transition: 0.25s ease;
-            white-space: nowrap;
+
+            font-size: 13px;
+
+            transition: 0.25s;
+
         }
+
 
         .nav-links a:hover {
+
             color: var(--text);
+
         }
+
 
         .resume-button {
+
             background: var(--purple);
-            padding: 10px 16px;
+
+            padding: 10px 18px;
+
             border-radius: 12px;
-            font-size: 12px;
+
+            font-size: 13px;
+
             font-weight: 700;
+
             transition: 0.3s;
-            white-space: nowrap;
+
         }
+
 
         .resume-button:hover {
+
             transform: translateY(-2px);
+
             background: var(--purple-light);
-            color: #111;
+
         }
+
 
         .mobile-menu {
+
             display: none;
+
             background: transparent;
+
             color: white;
+
             border: none;
-            font-size: 25px;
+
+            font-size: 24px;
+
             cursor: pointer;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            HERO
-        ========================================================= */
+        ===================================================== */
 
         #home {
+
             min-height: 100vh;
+
             display: flex;
+
             align-items: center;
-            padding-top: 130px;
+
+            padding-top: 120px;
+
         }
+
 
         .hero-grid {
+
             display: grid;
-            grid-template-columns: 1.08fr 0.92fr;
-            gap: 65px;
+
+            grid-template-columns:
+                1.15fr 0.85fr;
+
+            gap: 70px;
+
             align-items: center;
+
         }
 
-        .hero-content {
-            animation: fadeDown 1s ease;
-        }
 
         .hero-tag {
+
             display: inline-flex;
+
             align-items: center;
-            gap: 9px;
+
+            gap: 8px;
 
             color: var(--purple-light);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
+
+            font-size: 13px;
+
+            font-weight: 700;
 
             margin-bottom: 22px;
+
         }
+
 
         .hero-tag::before {
+
             content: "";
+
             width: 9px;
+
             height: 9px;
-            background: var(--green);
+
+            background: #8fffbc;
+
             border-radius: 50%;
-            animation: pulseDot 2s infinite;
+
+            box-shadow:
+                0 0 15px #8fffbc;
+
         }
 
-        .hero h1 {
-            font-family: "Playfair Display", Georgia, serif;
 
-            font-size: clamp(58px, 8vw, 94px);
-            line-height: 0.96;
+        .hero h1 {
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(55px, 8vw, 95px);
+
+            line-height: 0.98;
+
             letter-spacing: -3px;
 
             margin-bottom: 25px;
+
         }
+
 
         .hero h1 span {
+
             color: var(--purple-light);
+
         }
 
-        .hero-headline {
-            color: #ddd9e8;
+
+        .hero-description {
+
+            color: var(--muted);
+
             font-size: 17px;
-            line-height: 1.7;
-            max-width: 780px;
+
+            max-width: 650px;
+
             margin-bottom: 30px;
+
         }
+
 
         .hero-buttons {
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 14px;
-            margin-bottom: 25px;
+
+            margin-bottom: 28px;
+
         }
 
-        .primary-button,
-        .secondary-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+
+        .primary-button {
+
+            background: var(--purple);
 
             padding: 14px 22px;
+
             border-radius: 13px;
 
             font-weight: 700;
-            transition: 0.3s ease;
+
+            transition: 0.3s;
+
         }
 
-        .primary-button {
-            background: var(--purple);
-        }
 
         .secondary-button {
+
             border: 1px solid var(--border);
-            background: rgba(255,255,255,0.025);
+
+            padding: 14px 22px;
+
+            border-radius: 13px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+
         }
+
 
         .primary-button:hover,
         .secondary-button:hover {
-            transform: translateY(-4px);
+
+            transform: translateY(-3px);
+
         }
 
-        .primary-button:hover {
-            background: var(--purple-light);
-            color: #111;
-        }
 
         .social-icons {
+
             display: flex;
+
             gap: 12px;
+
         }
 
+
         .social-icon {
-            width: 50px;
-            height: 50px;
+
+            width: 52px;
+
+            height: 52px;
 
             display: grid;
+
             place-items: center;
 
             border: 1px solid var(--border);
+
             border-radius: 50%;
 
-            font-size: 16px;
-            font-weight: 800;
+            color: var(--text);
+
+            font-size: 20px;
 
             transition: 0.3s;
+
         }
+
 
         .social-icon:hover {
+
             background: var(--purple);
+
             border-color: var(--purple);
+
             transform: translateY(-4px);
+
         }
 
+
         .profile-card {
+
             position: relative;
+
             height: 570px;
 
             border-radius: 35px;
+
             overflow: hidden;
 
             border: 1px solid var(--border);
+
             box-shadow: var(--shadow);
 
-            animation: floatImage 6s ease-in-out infinite;
         }
+
 
         .profile-card img {
+
             width: 100%;
+
             height: 100%;
+
             object-fit: cover;
+
             object-position: center;
+
         }
 
+
         .profile-overlay {
+
             position: absolute;
+
             inset: 0;
 
             background:
                 linear-gradient(
-                    transparent 45%,
-                    rgba(10,10,15,0.94)
+                    transparent 50%,
+                    rgba(10,10,15,0.92)
                 );
+
         }
+
 
         .profile-info {
+
             position: absolute;
+
             bottom: 28px;
+
             left: 28px;
+
             right: 28px;
+
         }
+
 
         .profile-info h3 {
+
             font-size: 26px;
+
         }
+
 
         .profile-info p {
+
             color: #d4d1df;
+
             font-size: 13px;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            ABOUT
-        ========================================================= */
+        ===================================================== */
 
         .about-content {
-            max-width: 920px;
+
+            max-width: 900px;
+
         }
+
 
         .about-content p {
+
             color: #d3d0dc;
+
             margin-bottom: 22px;
+
             font-size: 16px;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            RESEARCH
-        ========================================================= */
+        ===================================================== */
 
         .research-grid {
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 20px;
+
         }
+
 
         .research-number {
+
             color: var(--purple-light);
+
             font-size: 12px;
+
             font-weight: 800;
+
             letter-spacing: 2px;
+
             margin-bottom: 18px;
+
         }
+
 
         .research-card h3 {
-            font-size: 21px;
+
+            font-size: 22px;
+
             margin-bottom: 12px;
+
         }
+
 
         .research-card p {
+
             color: var(--muted);
+
             font-size: 14px;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            EDUCATION
-        ========================================================= */
+        ===================================================== */
 
         .timeline {
+
             display: grid;
+
             gap: 22px;
+
         }
 
+
         .timeline-item {
+
             position: relative;
+
             padding: 30px;
 
             background: var(--card);
+
             border: 1px solid var(--border);
+
             border-radius: 24px;
 
-            transition: 0.35s;
         }
 
-        .timeline-item:hover {
-            border-color: rgba(117,108,255,0.45);
-            transform: translateX(7px);
-        }
 
         .timeline-date {
+
             color: var(--purple-light);
+
             font-size: 12px;
+
             font-weight: 800;
+
             letter-spacing: 1.5px;
+
             margin-bottom: 10px;
+
         }
+
 
         .timeline-item h3 {
+
             font-size: 24px;
+
             margin-bottom: 7px;
+
         }
+
 
         .timeline-item h4 {
+
             color: #d8d4e3;
+
             font-weight: 600;
+
             margin-bottom: 12px;
+
         }
+
 
         .timeline-item p {
+
             color: var(--muted);
+
             margin-top: 8px;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            EXPERIENCE
-        ========================================================= */
+        ===================================================== */
 
         .experience-list {
+
             display: grid;
+
             gap: 20px;
+
         }
 
+
         .experience-card {
+
             display: grid;
-            grid-template-columns: 180px 1fr;
+
+            grid-template-columns:
+                180px 1fr;
+
             gap: 35px;
 
             padding: 30px;
 
             background: var(--card);
+
             border: 1px solid var(--border);
+
             border-radius: 24px;
 
-            transition: 0.35s;
         }
 
-        .experience-card:hover {
-            transform: translateX(7px);
-            border-color: rgba(117,108,255,0.45);
-        }
 
         .experience-date {
+
             color: var(--purple-light);
+
             font-size: 13px;
+
             font-weight: 700;
+
         }
+
 
         .experience-content h3 {
+
             font-size: 23px;
+
             margin-bottom: 7px;
+
         }
+
 
         .experience-content h4 {
+
             color: #d9d6e2;
+
             font-size: 15px;
+
             margin-bottom: 15px;
+
         }
+
 
         .experience-content ul {
+
             padding-left: 18px;
+
             color: var(--muted);
+
         }
+
 
         .experience-content li {
+
             margin-bottom: 8px;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            PUBLICATIONS
-        ========================================================= */
+        ===================================================== */
 
         .publication-list {
+
             display: grid;
+
             gap: 14px;
+
         }
 
+
         .publication {
+
             display: grid;
-            grid-template-columns: 55px 1fr auto;
+
+            grid-template-columns:
+                60px 1fr auto;
+
             align-items: center;
 
             gap: 20px;
 
-            padding: 21px;
+            padding: 22px;
 
             background: var(--card);
+
             border: 1px solid var(--border);
+
             border-radius: 20px;
 
-            transition: 0.35s ease;
+            transition: 0.3s;
+
         }
+
 
         .publication:hover {
-            transform: translateX(5px);
-            border-color: rgba(117,108,255,0.5);
+
+            border-color:
+                rgba(117,108,255,0.5);
+
         }
+
 
         .publication-number {
+
             color: var(--purple-light);
+
             font-size: 13px;
+
             font-weight: 800;
+
         }
+
 
         .publication h3 {
-            font-size: 16px;
-            line-height: 1.45;
+
+            font-size: 17px;
+
             margin-bottom: 5px;
+
         }
+
 
         .publication p {
+
             color: var(--muted);
+
             font-size: 13px;
+
         }
+
 
         .publication-link {
+
             color: var(--purple-light);
+
             font-size: 13px;
+
             font-weight: 700;
+
             white-space: nowrap;
-        }
 
-        .publication-link:hover {
-            color: white;
-        }
-
-        .hidden-publications {
-            display: none;
-        }
-
-        .hidden-publications.show {
-            display: grid;
-        }
-
-        .view-more-wrapper {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .view-more-button {
-            border: 1px solid var(--border);
-            background: var(--card);
-            color: var(--text);
-
-            padding: 14px 25px;
-            border-radius: 13px;
-
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: 700;
-
-            transition: 0.3s;
-        }
-
-        .view-more-button:hover {
-            background: var(--purple);
-            border-color: var(--purple);
-            transform: translateY(-3px);
         }
 
 
-        /* =========================================================
+        /* =====================================================
+           TESTIMONIALS
+        ===================================================== */
+
+        .quote {
+
+            color: var(--purple-light);
+
+            font-size: 55px;
+
+            line-height: 0.8;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .review-text {
+
+            color: #d4d1dc;
+
+            margin-bottom: 24px;
+
+        }
+
+
+        .review-person h3 {
+
+            font-size: 16px;
+
+        }
+
+
+        .review-person p {
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            margin-top: 4px;
+
+        }
+
+
+        /* =====================================================
            SKILLS
-        ========================================================= */
+        ===================================================== */
 
         .skills-grid {
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 12px;
+
         }
 
+
         .skill {
+
             border: 1px solid var(--border);
+
             background: var(--card);
 
             padding: 12px 17px;
+
             border-radius: 100px;
 
             color: #d8d5e1;
+
             font-size: 14px;
 
-            transition: 0.3s;
-        }
-
-        .skill:hover {
-            background: rgba(117,108,255,0.15);
-            border-color: var(--purple);
-            transform: translateY(-3px);
         }
 
 
-        /* =========================================================
-           SERVICES
-        ========================================================= */
-
-        .service-card {
-            min-height: 220px;
-        }
-
-        .service-icon {
-            width: 48px;
-            height: 48px;
-
-            display: grid;
-            place-items: center;
-
-            border-radius: 14px;
-
-            background: rgba(117,108,255,0.13);
-            color: var(--purple-light);
-
-            font-size: 21px;
-            font-weight: 800;
-
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 21px;
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-
-        /* =========================================================
-           LEADERSHIP & ACTIVITIES
-        ========================================================= */
-
-        .activity-card {
-            min-height: 220px;
-        }
-
-        .activity-card h3 {
-            font-size: 21px;
-            margin-bottom: 12px;
-        }
-
-        .activity-card p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .activity-number {
-            color: var(--purple-light);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            margin-bottom: 18px;
-        }
-
-
-        /* =========================================================
-           TESTIMONIALS
-        ========================================================= */
-
-        .quote {
-            color: var(--purple-light);
-            font-size: 55px;
-            line-height: 0.8;
-            margin-bottom: 15px;
-        }
-
-        .review-text {
-            color: #d4d1dc;
-            margin-bottom: 24px;
-        }
-
-        .review-person h3 {
-            font-size: 16px;
-        }
-
-        .review-person p {
-            color: var(--muted);
-            font-size: 12px;
-            margin-top: 4px;
-        }
-
-
-        /* =========================================================
+        /* =====================================================
            CONTACT
-        ========================================================= */
+        ===================================================== */
 
         .contact-grid {
+
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+
+            grid-template-columns:
+                1.1fr 0.9fr;
+
             gap: 25px;
+
         }
+
 
         .contact-card {
+
             padding: 40px;
+
         }
+
 
         .contact-card h3 {
+
             font-size: 28px;
+
             margin-bottom: 15px;
+
         }
+
 
         .contact-card p {
+
             color: var(--muted);
+
             margin-bottom: 25px;
+
         }
+
 
         .contact-links {
+
             display: grid;
+
             gap: 14px;
+
         }
 
+
         .contact-link {
+
             padding: 15px;
 
             border: 1px solid var(--border);
+
             border-radius: 14px;
 
             color: #ddd9e6;
 
             transition: 0.3s;
+
         }
+
 
         .contact-link:hover {
+
             background: rgba(117,108,255,0.10);
+
             border-color: var(--purple);
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            FOOTER
-        ========================================================= */
+        ===================================================== */
 
         footer {
+
             border-top: 1px solid var(--border);
+
             padding: 35px 0;
+
         }
 
+
         .footer-inner {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             gap: 20px;
 
             color: var(--muted);
+
             font-size: 13px;
+
         }
 
 
-        /* =========================================================
+        /* =====================================================
            RESPONSIVE
-        ========================================================= */
+        ===================================================== */
 
-        @media (max-width: 1100px) {
-
-            .nav-links {
-                gap: 10px;
-            }
-
-            .nav-links a {
-                font-size: 10px;
-            }
-
-        }
-
-
-        @media (max-width: 950px) {
+        @media (max-width: 900px) {
 
             .hero-grid,
             .contact-grid {
+
                 grid-template-columns: 1fr;
+
             }
 
-            .profile-card {
-                max-width: 600px;
-                width: 100%;
-                margin: auto;
-            }
 
             .research-grid {
-                grid-template-columns: repeat(2, 1fr);
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
             }
+
 
             .three-column {
-                grid-template-columns: 1fr 1fr;
+
+                grid-template-columns: 1fr;
+
             }
 
+
             .nav-links {
+
                 display: none;
 
                 position: absolute;
 
                 top: 78px;
+
                 left: 0;
+
                 right: 0;
 
                 flex-direction: column;
-                align-items: stretch;
 
                 background: #15151d;
 
                 border: 1px solid var(--border);
+
                 padding: 20px;
 
                 border-radius: 20px;
+
             }
 
-            .nav-links a {
-                font-size: 13px;
-                padding: 8px 5px;
-            }
 
             .nav-links.mobile-open {
+
                 display: flex;
+
             }
+
 
             .mobile-menu {
+
                 display: block;
+
             }
 
+
             .resume-button {
+
                 display: none;
+
             }
 
         }
@@ -999,48 +1272,66 @@
         @media (max-width: 650px) {
 
             section {
+
                 padding: 80px 0;
+
             }
 
-            .hero {
-                text-align: left;
-            }
 
             .hero h1 {
+
                 font-size: 58px;
+
                 letter-spacing: -2px;
+
             }
 
-            .hero-headline {
-                font-size: 15px;
-            }
 
             .profile-card {
+
                 height: 460px;
+
             }
+
 
             .research-grid,
-            .three-column,
             .two-column {
+
                 grid-template-columns: 1fr;
+
             }
+
 
             .experience-card {
+
                 grid-template-columns: 1fr;
+
                 gap: 10px;
+
             }
+
 
             .publication {
-                grid-template-columns: 40px 1fr;
+
+                grid-template-columns:
+                    40px 1fr;
+
             }
+
 
             .publication-link {
+
                 grid-column: 2;
+
             }
 
+
             .footer-inner {
+
                 flex-direction: column;
+
                 text-align: center;
+
             }
 
         }
@@ -1052,40 +1343,58 @@
 <body>
 
 
-    <!-- =========================================================
+    <!-- =====================================================
          NAVIGATION
-    ========================================================= -->
+    ===================================================== -->
 
     <nav>
 
         <div class="nav-inner">
 
-            <a href="#home" class="logo">
-                <span>SAMRA.</span>
+            <a href="#home"
+               class="logo">
+
+                <span class="logo-mark">
+                    S
+                </span>
+
+                <span>
+                    Samra Khaksar
+                </span>
+
             </a>
 
 
-            <div class="nav-links" id="navLinks">
+            <div class="nav-links"
+                 id="navLinks">
 
-                <a href="#about">About</a>
+                <a href="#about">
+                    About
+                </a>
 
-                <a href="#research">Research</a>
+                <a href="#research">
+                    Research
+                </a>
 
-                <a href="#publications">Publications</a>
+                <a href="#education">
+                    Education
+                </a>
 
-                <a href="#education">Education</a>
+                <a href="#experience">
+                    Experience
+                </a>
 
-                <a href="#experience">Experience</a>
+                <a href="#publications">
+                    Publications
+                </a>
 
-                <a href="#skills">Skills</a>
+                <a href="#testimonials">
+                    Testimonials
+                </a>
 
-                <a href="#services">Services</a>
-
-                <a href="#activities">Leadership & Activities</a>
-
-                <a href="#testimonials">Testimonials</a>
-
-                <a href="#contact">Contact</a>
+                <a href="#contact">
+                    Contact
+                </a>
 
             </div>
 
@@ -1094,15 +1403,14 @@
                target="_blank"
                class="resume-button">
 
-                CV ↗
+                View CV ↗
 
             </a>
 
 
-            <button
-                class="mobile-menu"
-                id="mobileMenu"
-                aria-label="Open Menu">
+            <button class="mobile-menu"
+                    id="mobileMenu"
+                    aria-label="Open Menu">
 
                 ☰
 
@@ -1113,10 +1421,9 @@
     </nav>
 
 
-
-    <!-- =========================================================
+    <!-- =====================================================
          HOME
-    ========================================================= -->
+    ===================================================== -->
 
     <section id="home">
 
@@ -1137,60 +1444,65 @@
                         Samra
                         <br>
 
-                        <span>Khaksar</span>
+                        <span>
+                            Khaksar
+                        </span>
 
                     </h1>
 
 
-                    <p class="hero-headline">
+                    <p class="hero-description">
 
-                        Strategic Studies Researcher | Nuclear Deterrence &
-                        Strategic Stability | South Asian Security |
-                        Geopolitics | Foreign & Defence Policy | OSINT
+                        Strategic Studies Researcher, Policy Writer,
+                        and emerging scholar working on nuclear
+                        deterrence, strategic stability, South Asian
+                        security, geopolitics, foreign policy, and
+                        international relations.
 
                     </p>
 
 
                     <div class="hero-buttons">
 
-                        <a href="#publications"
+                        <a href="#about"
                            class="primary-button">
 
-                            View Publications
+                            Explore My Work
 
                         </a>
 
 
-                        <a href="#contact"
+                        <a href="Curriculum Vitae.pdf"
+                           target="_blank"
                            class="secondary-button">
 
-                            Let's Talk
+                            Download CV
 
                         </a>
 
                     </div>
 
 
+                    <!-- ONLY LINKEDIN AND WHATSAPP ON HOME PAGE -->
+
                     <div class="social-icons">
 
-                        <a
-                            href="https://wa.me/923408996152"
-                            target="_blank"
-                            class="social-icon"
-                            aria-label="WhatsApp">
+                        <a href="https://www.linkedin.com/in/samra-khaksar-b098bb334/"
+                           target="_blank"
+                           class="social-icon"
+                           aria-label="LinkedIn">
 
-                            WA
+                            in
 
                         </a>
 
 
-                        <a
-                            href="https://www.linkedin.com/in/samra-khaksar-b098bb334/"
-                            target="_blank"
-                            class="social-icon"
-                            aria-label="LinkedIn">
+                        <a href="https://wa.me/923408996152"
+                           target="_blank"
+                           class="social-icon"
+                           aria-label="WhatsApp">
 
-                            in
+                            ☏
 
                         </a>
 
@@ -1199,14 +1511,10 @@
                 </div>
 
 
-
-                <!-- ONLY PHOTO ON ENTIRE WEBSITE -->
-
                 <div class="profile-card">
 
-                    <img
-                        src="samra.jpg"
-                        alt="Samra Khaksar">
+                    <img src="samra.jpg"
+                         alt="Samra Khaksar">
 
                     <div class="profile-overlay"></div>
 
@@ -1233,18 +1541,18 @@
     </section>
 
 
-
-    <!-- =========================================================
+    <!-- =====================================================
          ABOUT
-    ========================================================= -->
+    ===================================================== -->
 
-    <section id="about" class="reveal">
+    <section id="about">
 
         <div class="container">
 
             <div class="section-label">
                 01 — ABOUT
             </div>
+
 
             <h2 class="section-title">
                 About
@@ -1254,44 +1562,83 @@
             <div class="about-content">
 
                 <p>
+
                     I am a Strategic Studies scholar at the National
                     Defence University, Islamabad, with a research focus
                     on nuclear deterrence, strategic stability, South
                     Asian security, foreign policy, and international
-                    relations.
+                    relations. I am particularly interested in
+                    understanding how security challenges evolve in an
+                    increasingly complex geopolitical landscape and how
+                    evidence-based research can contribute to effective
+                    policymaking.
+
                 </p>
 
 
                 <p>
+
                     My work explores both traditional and emerging
                     security challenges, including nuclear strategy,
                     India–Pakistan relations, the Kashmir dispute,
                     narrative and hybrid warfare, regional geopolitics,
-                    human security, and governance.
+                    human security, and governance. My research and
+                    policy analyses have been published across national
+                    and international platforms, contributing to
+                    conversations on strategic affairs, regional
+                    security, and public policy.
+
                 </p>
 
 
                 <p>
-                    My research and policy analyses have been published
-                    across national and international platforms,
-                    contributing to conversations on strategic affairs,
-                    regional security, and public policy.
+
+                    To complement my academic research with practical
+                    policy experience, I have interned with the Senate
+                    of Pakistan, the Ministry of Law and Justice, the
+                    Ministry of Planning, Development and Special
+                    Initiatives, the Ministry of Finance, as well as
+                    leading policy research institutions. These
+                    experiences have strengthened my understanding of
+                    legislative processes, governance, and the realities
+                    of policymaking beyond the classroom.
+
                 </p>
 
 
                 <p>
-                    I have also gained practical policy exposure through
-                    internships and research experiences with government
-                    institutions and leading policy research
-                    organizations.
+
+                    Beyond research, I have had the privilege of
+                    delivering a statement at the 61st Session of the
+                    United Nations Human Rights Council, representing
+                    youth perspectives at the World Bank Group Youth
+                    Summit, and securing 3rd Place in a National Research
+                    Poster Competition as the only undergraduate
+                    competing alongside postgraduate researchers.
+
                 </p>
 
 
                 <p>
+
                     My long-term goal is to contribute to policy research
                     and strategic analysis that informs decision-making
-                    on security, defence, foreign policy, and governance
-                    in South Asia.
+                    on security, defence, and governance in South Asia.
+                    I am committed to producing rigorous, policy-oriented
+                    research that bridges the gap between academia and
+                    practice.
+
+                </p>
+
+
+                <p>
+
+                    I welcome opportunities to collaborate with
+                    researchers, policymakers, think tanks, government
+                    institutions, and international organizations working
+                    in strategic studies, defence and security, foreign
+                    policy, international relations, and governance.
+
                 </p>
 
             </div>
@@ -1301,12 +1648,11 @@
     </section>
 
 
-
-    <!-- =========================================================
+    <!-- =====================================================
          RESEARCH
-    ========================================================= -->
+    ===================================================== -->
 
-    <section id="research" class="reveal">
+    <section id="research">
 
         <div class="container">
 
@@ -1314,14 +1660,18 @@
                 02 — RESEARCH
             </div>
 
+
             <h2 class="section-title">
                 Research Areas
             </h2>
 
+
             <p class="section-description">
-                Research interests spanning strategic affairs,
-                security studies, geopolitics and contemporary
-                policy challenges.
+
+                My research interests focus on strategic affairs,
+                security studies, geopolitics, and contemporary policy
+                challenges.
+
             </p>
 
 
@@ -1358,7 +1708,8 @@
 
                     <p>
                         Regional security challenges, India–Pakistan
-                        relations, Kashmir, and geopolitical dynamics.
+                        relations, Kashmir, and evolving geopolitical
+                        dynamics.
                     </p>
 
                 </div>
@@ -1412,8 +1763,8 @@
                     </h3>
 
                     <p>
-                        Conflict, governance, society, development,
-                        and human security.
+                        The relationship between conflict, governance,
+                        society, development, and human security.
                     </p>
 
                 </div>
@@ -1430,8 +1781,8 @@
                     </h3>
 
                     <p>
-                        Regional geopolitics, public policy,
-                        governance, and global change.
+                        Regional geopolitics, public policy, governance,
+                        and the strategic implications of global change.
                     </p>
 
                 </div>
@@ -1444,1131 +1795,18 @@
     </section>
 
 
-
-    <!-- =========================================================
-         PUBLICATIONS
-    ========================================================= -->
-
-    <section id="publications" class="reveal">
-
-        <div class="container">
-
-            <div class="section-label">
-                03 — PUBLICATIONS
-            </div>
-
-            <h2 class="section-title">
-                Publications
-            </h2>
-
-            <p class="section-description">
-                Research articles, policy analyses and strategic
-                commentary published across national and international
-                platforms.
-            </p>
-
-
-            <div class="publication-list">
-
-
-                <!-- 01 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">01</div>
-
-                    <div>
-
-                        <h3>
-                            Impact of Indian Hybrid Warfare on Human Security in Pakistan
-                        </h3>
-
-                        <p>
-                            Shafaqna India · June 10, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://india.shafaqna.com/EN/impact-of-indian-hybrid-warfare-on-human-security-in-pakistan/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 02 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">02</div>
-
-                    <div>
-
-                        <h3>
-                            Impact of Indian Hybrid Warfare on Human Security in Pakistan
-                        </h3>
-
-                        <p>
-                            Pakistan Today · June 9, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://www.pakistantoday.com.pk/2026/06/09/impact-of-indian-hybrid-warfare-on-human-security-in-pakistan"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 03 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">03</div>
-
-                    <div>
-
-                        <h3>
-                            The Geography of Escalation
-                        </h3>
-
-                        <p>
-                            Pakistan Today · May 26, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://www.pakistantoday.com.pk/2026/05/26/the-geography-of-escalation"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 04 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">04</div>
-
-                    <div>
-
-                        <h3>
-                            From Escalation Ladders to Escalation Wormholes in Nuclear Deterrence
-                        </h3>
-
-                        <p>
-                            Centre for Strategic and Contemporary Research · May 19, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://cscr.pk/explore/themes/defense-security/from-escalation-ladders-to-escalation-wormholes-in-nuclear-deterrence/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 05 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">05</div>
-
-                    <div>
-
-                        <h3>
-                            Operation Bunyan-un-Marsoos: Strategic Signalling and Pakistan’s Calculated Response After Pahalgam
-                        </h3>
-
-                        <p>
-                            Kashmir Media Service · May 3, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://kmsnews.org/kms/2026/05/03/operation-bunyan-un-marsoos-strategic-signalling-and-pakistans-calculated-response-after-pahalgam.html"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 06 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">06</div>
-
-                    <div>
-
-                        <h3>
-                            Mediating the Unmediable: Pakistan’s High-Stakes Diplomacy in the US-Iran Shadow War
-                        </h3>
-
-                        <p>
-                            Medium · April 22, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://medium.com/@samrakhaksar14/mediating-the-unmediable-pakistans-high-stakes-diplomacy-in-the-us-iran-shadow-war-0d0ad8af4f71"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 07 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">07</div>
-
-                    <div>
-
-                        <h3>
-                            Between Law and Reality: Why Women Remain Unsafe in Pakistan
-                        </h3>
-
-                        <p>
-                            Daily the Destination · April 21, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://dailythedestination.com/flipbook/20-04-2026-isb/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 08 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">08</div>
-
-                    <div>
-
-                        <h3>
-                            Critical Minerals in Pakistan: Resource Potential, Strategic Significance, and Policy Challenges
-                        </h3>
-
-                        <p>
-                            The National Frontier · April 3, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://thenationalfrontier.com/featured/critical-minerals-in-pakistan-resource-potential-strategic-significance-and-policy-challenges/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 09 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">09</div>
-
-                    <div>
-
-                        <h3>
-                            Pakistan's Iran Gamble: A Litmus Test
-                        </h3>
-
-                        <p>
-                            The National Frontier · March 27, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://thenationalfrontier.com/opinion/pakistans-iran-gamble-a-litmus-test/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 10 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">10</div>
-
-                    <div>
-
-                        <h3>
-                            Pakistan's Iran Gamble: A Litmus Test
-                        </h3>
-
-                        <p>
-                            The National Frontier · March 27, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://thenationalfrontier.com/opinion/pakistans-iran-gamble-a-litmus-test/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- =====================================================
-                 REMAINING 24 PUBLICATIONS
-            ===================================================== -->
-
-            <div
-                class="publication-list hidden-publications"
-                id="morePublications">
-
-
-                <!-- 11 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">11</div>
-
-                    <div>
-
-                        <h3>
-                            Chokepoint Wars: How the Strait of Hormuz Crisis Is Reshaping Global Energy Security
-                        </h3>
-
-                        <p>
-                            Modern Diplomacy · March 21, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://moderndiplomacy.eu/2026/03/21/chokepoint-wars-how-the-strait-of-hormuz-crisis-is-reshaping-global-energy-security/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 12 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">12</div>
-
-                    <div>
-
-                        <h3>
-                            When Hormuz Falls Silent: A Global Oil Shock and Vulnerability
-                        </h3>
-
-                        <p>
-                            The National Frontier · March 17, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://thenationalfrontier.com/world/when-hormuz-falls-silent-a-global-oil-shock-and-vulnerability/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 13 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">13</div>
-
-                    <div>
-
-                        <h3>
-                            The Geography of Escalation: Living in an Age of Permanent Crisis
-                        </h3>
-
-                        <p>
-                            Islamabad Centre for Education and Peace · March 14, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://icep.org.pk/read?Id=124"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 14 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">14</div>
-
-                    <div>
-
-                        <h3>
-                            What Pakistan’s Entry into the Board of Peace Really Means?
-                        </h3>
-
-                        <p>
-                            The National Frontier · March 10, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://thenationalfrontier.com/national/what-pakistans-entry-into-the-board-of-peace-really-means/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 15 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">15</div>
-
-                    <div>
-
-                        <h3>
-                            Operation Ghazab lil Haq: Righteous Fury or Strategic Escalation?
-                        </h3>
-
-                        <p>
-                            The National Frontier · March 1, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://thenationalfrontier.com/opinion/operation-ghazab-lil-haq-righteous-fury-or-strategic-escalation/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 16 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">16</div>
-
-                    <div>
-
-                        <h3>
-                            Border Without Peace: Is Pakistan’s Escalation in Afghanistan the Beginning of a Broader Strategic Crisis?
-                        </h3>
-
-                        <p>
-                            The National Frontier · February 23, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://thenationalfrontier.com/world/border-without-peace-is-pakistans-escalation-in-afghanistan-the-beginning-of-a-broader-strategic-crisis/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 17 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">17</div>
-
-                    <div>
-
-                        <h3>
-                            Beyond the Blast: What the Quetta Attacks Reveal About Pakistan’s Balochistan Policy
-                        </h3>
-
-                        <p>
-                            Daily the Destination · February 1, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://dailythedestination.com/beyond-the-blast-what-the-quetta-attacks-reveal-about-pakistans-balochistan-policy/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 18 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">18</div>
-
-                    <div>
-
-                        <h3>
-                            Türkiye’s Evolving Stance on the Jammu and Kashmir Dispute
-                        </h3>
-
-                        <p>
-                            Institute of Strategic Studies Islamabad · January 30, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://issi.org.pk/issue-brief-on-turkiyes-evolving-stance-on-the-jammu-and-kashmir-dispute-from-early-support-to-erdogans-diplomacy/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 19 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">19</div>
-
-                    <div>
-
-                        <h3>
-                            Karachi on Fire: How Gul Plaza Exposed a City Without a State
-                        </h3>
-
-                        <p>
-                            The National Frontier · January 20, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://thenationalfrontier.com/national/karachi-on-fire-how-gul-plaza-exposed-a-city-without-a-state/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 20 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">20</div>
-
-                    <div>
-
-                        <h3>
-                            India’s Longing for a Limited War with Pakistan
-                        </h3>
-
-                        <p>
-                            Pakistan Today · January 13, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://www.pakistantoday.com.pk/2026/01/13/indias-longing-for-a-limited-war-with-pakistan"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 21 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">21</div>
-
-                    <div>
-
-                        <h3>
-                            Sovereignty on Trial: The Maduro Case and the Resurgence of Great-Power Politics
-                        </h3>
-
-                        <p>
-                            The National Frontier · January 8, 2026
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://thenationalfrontier.com/world/sovereignty-on-trial-the-maduro-case-and-the-resurgence-of-great-power-politics/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 22 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">22</div>
-
-                    <div>
-
-                        <h3>
-                            Weaponization of “Development”!
-                        </h3>
-
-                        <p>
-                            Stratheia · December 30, 2025
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://stratheia.com/weaponization-of-development/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 23 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">23</div>
-
-                    <div>
-
-                        <h3>
-                            China's Policy towards Jammu and Kashmir
-                        </h3>
-
-                        <p>
-                            Institute of Strategic Studies Islamabad · December 29, 2025
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://issi.org.pk/issue-brief-on-chinas-policy-towards-jammu-and-kashmir-dispute/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 24 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">24</div>
-
-                    <div>
-
-                        <h3>
-                            Why the Kashmir Issue Refuses to Die: A Strategic, Not Emotional, Reality
-                        </h3>
-
-                        <p>
-                            Asia Free Press · December 22, 2025
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://www.asiafreepress.com/review/analysis/why-the-kashmir-issue-refuses-to-die-a-strategic-not-emotional-reality/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 25 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">25</div>
-
-                    <div>
-
-                        <h3>
-                            India's Recent Propaganda and Narrative Warfare in Kashmir: A Case Study of Pahalgam Incident
-                        </h3>
-
-                        <p>
-                            KIIR Journal · December 10, 2025
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://www.kiir.org.pk/Research-Paper/indias-recent-propaganda-and-narrative-warfare-in-the-kashmir-dispute-a-case-study-of-the-pahalgam-incident-6453"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 26 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">26</div>
-
-                    <div>
-
-                        <h3>
-                            The Right to Exist: Jammu & Kashmir on Human Rights Day
-                        </h3>
-
-                        <p>
-                            Daily Country News · December 4, 2025
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://dailycountrynews.com/the-right-to-exist-jammu-kashmir-on-human-rights-day/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 27 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">27</div>
-
-                    <div>
-
-                        <h3>
-                            Jammu 1947: The Forgotten Genocide that redrew Kashmir's Soul
-                        </h3>
-
-                        <p>
-                            Daily Country News, Daily the Spokesman, Parliament Times, Daily Hamdard News · November 2, 2025
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://kmsnews.org/kms/2025/10/20/october-27-the-day-kashmir-lost-its-freedom.html"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 28 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">28</div>
-
-                    <div>
-
-                        <h3>
-                            October 27: The Day Kashmir Lost Its Freedom
-                        </h3>
-
-                        <p>
-                            Kashmir Media Service · October 20, 2025
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://kmsnews.org/kms/2025/10/20/october-27-the-day-kashmir-lost-its-freedom.html"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 29 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">29</div>
-
-                    <div>
-
-                        <h3>
-                            Kashmir: Where heroes are mourned, not honored
-                        </h3>
-
-                        <p>
-                            Kashmir Institute of International Relations · September 9, 2025
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://www.kiir.org.pk/blogs/kashmir-where-heroes-are-mourned-not-honored-1504"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 30 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">30</div>
-
-                    <div>
-
-                        <h3>
-                            The Spirit of September: Defending Borders, Upholding Freedom
-                        </h3>
-
-                        <p>
-                            Kashmir Media Service · September 6, 2025
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://kmsnews.org/kms/2025/09/06/the-spirit-of-september-defending-borders-upholding-freedom.html"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 31 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">31</div>
-
-                    <div>
-
-                        <h3>
-                            From Mountains to Ruins: The Climate Reckoning in Pakhtunkhwa
-                        </h3>
-
-                        <p>
-                            Daily Parliament Times · August 22, 2025
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://www.dailyparliamenttimes.com/2025/08/22/from-mountains-to-ruins-the-climate-reckoning-in-pakhtunkhwa-we-are-on-a-highway-to-climate-hell-with-our-foot-still-on-the-accelerator-antonio-guterrescop27/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 32 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">32</div>
-
-                    <div>
-
-                        <h3>
-                            Warfare Without Borders: The Unfolding Security Crisis of 2025
-                        </h3>
-
-                        <p>
-                            Global Strategem Insight · August 8, 2025
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://thegsinsight.com/warfare-without-borders-the-unfolding-security-crisis-of-2025/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 33 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">33</div>
-
-                    <div>
-
-                        <h3>
-                            Buried in Silence: The Forgotten Women of Balochistan
-                        </h3>
-
-                        <p>
-                            Daily Parliament Times · July 31, 2025
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://www.dailyparliamenttimes.com/2025/07/31/buried-in-silence-the-forgotten-women-of-balochistan/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- 34 -->
-
-                <div class="publication">
-
-                    <div class="publication-number">34</div>
-
-                    <div>
-
-                        <h3>
-                            Bleeding India with a Thousand Cuts: Pakistan’s Asymmetric Warfare Doctrine
-                        </h3>
-
-                        <p>
-                            World News Pakistan · May 29, 2025
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="https://wnp.com.pk/bleeding-india-with-a-thousand-cuts-pakistans-asymmetric-warfare-doctrine/"
-                        target="_blank"
-                        class="publication-link">
-
-                        Read ↗
-
-                    </a>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="view-more-wrapper">
-
-                <button
-                    class="view-more-button"
-                    id="viewMoreBtn">
-
-                    View More Publications ↓
-
-                </button>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
+    <!-- =====================================================
          EDUCATION
-    ========================================================= -->
+    ===================================================== -->
 
-    <section id="education" class="reveal">
+    <section id="education">
 
         <div class="container">
 
             <div class="section-label">
-                04 — EDUCATION
+                03 — EDUCATION
             </div>
+
 
             <h2 class="section-title">
                 Academic Journey
@@ -2626,9 +1864,13 @@
                     </p>
 
                     <p>
-                        Participated in debating, vocal performances
-                        and co-curricular activities while maintaining
-                        academic excellence.
+
+                        Actively participated in debating and vocal
+                        performances, along with various co-curricular
+                        activities. Demonstrated strong communication,
+                        creativity, and confidence, while maintaining
+                        consistent academic excellence.
+
                     </p>
 
                 </div>
@@ -2641,18 +1883,18 @@
     </section>
 
 
-
-    <!-- =========================================================
+    <!-- =====================================================
          EXPERIENCE
-    ========================================================= -->
+    ===================================================== -->
 
-    <section id="experience" class="reveal">
+    <section id="experience">
 
         <div class="container">
 
             <div class="section-label">
-                05 — EXPERIENCE
+                04 — EXPERIENCE
             </div>
+
 
             <h2 class="section-title">
                 Professional Experience
@@ -2668,6 +1910,7 @@
                         2025 — CURRENT
                     </div>
 
+
                     <div class="experience-content">
 
                         <h3>
@@ -2682,14 +1925,13 @@
 
                             <li>
                                 Published articles on geopolitics,
-                                security, foreign policy and human
-                                rights.
+                                security, and human rights across
+                                national and international platforms.
                             </li>
 
                             <li>
-                                Produced analytical commentary on
-                                Kashmir, regional security and global
-                                strategic affairs.
+                                Covered topics including Kashmir,
+                                global security, and climate challenges.
                             </li>
 
                         </ul>
@@ -2699,12 +1941,12 @@
                 </div>
 
 
-
                 <div class="experience-card">
 
                     <div class="experience-date">
                         07/2025 — 08/2025
                     </div>
+
 
                     <div class="experience-content">
 
@@ -2720,7 +1962,8 @@
 
                             <li>
                                 Conducted research on narrative warfare
-                                in Kashmir.
+                                in Kashmir, focusing on the Pahalgam
+                                incident.
                             </li>
 
                             <li>
@@ -2729,8 +1972,13 @@
                             </li>
 
                             <li>
-                                Participated in institutional dialogues
-                                and expert-led sessions.
+                                Engaged in institutional dialogues and
+                                expert-led sessions.
+                            </li>
+
+                            <li>
+                                Strengthened research, writing, and
+                                critical analysis skills.
                             </li>
 
                         </ul>
@@ -2740,12 +1988,12 @@
                 </div>
 
 
-
                 <div class="experience-card">
 
                     <div class="experience-date">
                         06/2025 — 08/2025
                     </div>
+
 
                     <div class="experience-content">
 
@@ -2761,17 +2009,22 @@
 
                             <li>
                                 Supervised and mentored a team of
-                                interns in policy research and writing.
+                                10+ interns in policy research and writing.
                             </li>
 
                             <li>
-                                Reviewed research papers and policy
-                                briefs.
+                                Reviewed and provided feedback on
+                                research papers and policy briefs.
                             </li>
 
                             <li>
                                 Coordinated research activities on
-                                international relations and conflict.
+                                international relations and conflict studies.
+                            </li>
+
+                            <li>
+                                Contributed to youth development and
+                                community engagement initiatives.
                             </li>
 
                         </ul>
@@ -2781,12 +2034,12 @@
                 </div>
 
 
-
                 <div class="experience-card">
 
                     <div class="experience-date">
                         08/2025 — 10/2026
                     </div>
+
 
                     <div class="experience-content">
 
@@ -2806,13 +2059,18 @@
                             </li>
 
                             <li>
-                                Contributed to analytical briefs and
-                                research notes.
+                                Published analytical briefs and
+                                research notes for institutional use.
                             </li>
 
                             <li>
-                                Participated in seminars and discussions
-                                with experts.
+                                Participated in high-level seminars
+                                and discussions with international experts.
+                            </li>
+
+                            <li>
+                                Developed expertise in policy analysis
+                                and strategic affairs.
                             </li>
 
                         </ul>
@@ -2829,28 +2087,483 @@
     </section>
 
 
+    <!-- =====================================================
+         PUBLICATIONS
+    ===================================================== -->
 
-    <!-- =========================================================
-         SKILLS
-    ========================================================= -->
-
-    <section id="skills" class="reveal">
+    <section id="publications">
 
         <div class="container">
 
             <div class="section-label">
-                06 — SKILLS
+                05 — PUBLICATIONS
             </div>
+
+
+            <h2 class="section-title">
+                Selected Publications
+            </h2>
+
+
+            <p class="section-description">
+
+                Selected research and policy analyses published across
+                national and international platforms.
+
+            </p>
+
+
+            <div class="publication-list">
+
+
+                <div class="publication">
+
+                    <div class="publication-number">01</div>
+
+                    <div>
+
+                        <h3>
+                            Impact of Indian Hybrid Warfare on Human Security in Pakistan
+                        </h3>
+
+                        <p>
+                            Shafaqna India · June 10, 2026
+                        </p>
+
+                    </div>
+
+                    <a href="https://india.shafaqna.com/EN/impact-of-indian-hybrid-warfare-on-human-security-in-pakistan/"
+                       target="_blank"
+                       class="publication-link">
+
+                        Read ↗
+
+                    </a>
+
+                </div>
+
+
+                <div class="publication">
+
+                    <div class="publication-number">02</div>
+
+                    <div>
+
+                        <h3>
+                            Impact of Indian Hybrid Warfare on Human Security in Pakistan
+                        </h3>
+
+                        <p>
+                            Pakistan Today · June 9, 2026
+                        </p>
+
+                    </div>
+
+                    <a href="https://www.pakistantoday.com.pk/2026/06/09/impact-of-indian-hybrid-warfare-on-human-security-in-pakistan"
+                       target="_blank"
+                       class="publication-link">
+
+                        Read ↗
+
+                    </a>
+
+                </div>
+
+
+                <div class="publication">
+
+                    <div class="publication-number">03</div>
+
+                    <div>
+
+                        <h3>
+                            The Geography of Escalation
+                        </h3>
+
+                        <p>
+                            Pakistan Today · May 26, 2026
+                        </p>
+
+                    </div>
+
+                    <a href="https://www.pakistantoday.com.pk/2026/05/26/the-geography-of-escalation"
+                       target="_blank"
+                       class="publication-link">
+
+                        Read ↗
+
+                    </a>
+
+                </div>
+
+
+                <div class="publication">
+
+                    <div class="publication-number">04</div>
+
+                    <div>
+
+                        <h3>
+                            From Escalation Ladders to Escalation Wormholes in Nuclear Deterrence
+                        </h3>
+
+                        <p>
+                            Centre for Strategic and Contemporary Research · May 19, 2026
+                        </p>
+
+                    </div>
+
+                    <a href="https://cscr.pk/explore/themes/defense-security/from-escalation-ladders-to-escalation-wormholes-in-nuclear-deterrence/"
+                       target="_blank"
+                       class="publication-link">
+
+                        Read ↗
+
+                    </a>
+
+                </div>
+
+
+                <div class="publication">
+
+                    <div class="publication-number">05</div>
+
+                    <div>
+
+                        <h3>
+                            Operation Bunyan-un-Marsoos: Strategic Signalling and Pakistan’s Calculated Response After Pahalgam
+                        </h3>
+
+                        <p>
+                            Kashmir Media Service · May 3, 2026
+                        </p>
+
+                    </div>
+
+                    <a href="https://kmsnews.org/kms/2026/05/03/operation-bunyan-un-marsoos-strategic-signalling-and-pakistans-calculated-response-after-pahalgam.html"
+                       target="_blank"
+                       class="publication-link">
+
+                        Read ↗
+
+                    </a>
+
+                </div>
+
+
+                <div class="publication">
+
+                    <div class="publication-number">06</div>
+
+                    <div>
+
+                        <h3>
+                            Mediating the Unmediable: Pakistan’s High-Stakes Diplomacy in the US-Iran Shadow War
+                        </h3>
+
+                        <p>
+                            Medium · April 22, 2026
+                        </p>
+
+                    </div>
+
+                    <a href="https://medium.com/@samrakhaksar14/mediating-the-unmediable-pakistans-high-stakes-diplomacy-in-the-us-iran-shadow-war-0d0ad8af4f71"
+                       target="_blank"
+                       class="publication-link">
+
+                        Read ↗
+
+                    </a>
+
+                </div>
+
+
+                <div class="publication">
+
+                    <div class="publication-number">07</div>
+
+                    <div>
+
+                        <h3>
+                            Critical Minerals in Pakistan: Resource Potential, Strategic Significance, and Policy Challenges
+                        </h3>
+
+                        <p>
+                            The National Frontier · April 3, 2026
+                        </p>
+
+                    </div>
+
+                    <a href="https://thenationalfrontier.com/featured/critical-minerals-in-pakistan-resource-potential-strategic-significance-and-policy-challenges/"
+                       target="_blank"
+                       class="publication-link">
+
+                        Read ↗
+
+                    </a>
+
+                </div>
+
+
+                <div class="publication">
+
+                    <div class="publication-number">08</div>
+
+                    <div>
+
+                        <h3>
+                            Pakistan's Iran Gamble: A Litmus Test
+                        </h3>
+
+                        <p>
+                            The National Frontier · March 27, 2026
+                        </p>
+
+                    </div>
+
+                    <a href="https://thenationalfrontier.com/opinion/pakistans-iran-gamble-a-litmus-test/"
+                       target="_blank"
+                       class="publication-link">
+
+                        Read ↗
+
+                    </a>
+
+                </div>
+
+
+                <div class="publication">
+
+                    <div class="publication-number">09</div>
+
+                    <div>
+
+                        <h3>
+                            Chokepoint Wars: How the Strait of Hormuz Crisis Is Reshaping Global Energy Security
+                        </h3>
+
+                        <p>
+                            Modern Diplomacy · March 21, 2026
+                        </p>
+
+                    </div>
+
+                    <a href="https://moderndiplomacy.eu/2026/03/21/chokepoint-wars-how-the-strait-of-hormuz-crisis-is-reshaping-global-energy-security/"
+                       target="_blank"
+                       class="publication-link">
+
+                        Read ↗
+
+                    </a>
+
+                </div>
+
+
+                <div class="publication">
+
+                    <div class="publication-number">10</div>
+
+                    <div>
+
+                        <h3>
+                            When Hormuz Falls Silent: A Global Oil Shock and Vulnerability
+                        </h3>
+
+                        <p>
+                            The National Frontier · March 17, 2026
+                        </p>
+
+                    </div>
+
+                    <a href="https://thenationalfrontier.com/world/when-hormuz-falls-silent-a-global-oil-shock-and-vulnerability/"
+                       target="_blank"
+                       class="publication-link">
+
+                        Read ↗
+
+                    </a>
+
+                </div>
+
+
+                <div class="publication">
+
+                    <div class="publication-number">11</div>
+
+                    <div>
+
+                        <h3>
+                            The Geography of Escalation: Living in an Age of Permanent Crisis
+                        </h3>
+
+                        <p>
+                            Islamabad Centre for Education and Peace · March 14, 2026
+                        </p>
+
+                    </div>
+
+                    <a href="https://icep.org.pk/read?Id=124"
+                       target="_blank"
+                       class="publication-link">
+
+                        Read ↗
+
+                    </a>
+
+                </div>
+
+
+                <div class="publication">
+
+                    <div class="publication-number">12</div>
+
+                    <div>
+
+                        <h3>
+                            What Pakistan’s Entry into the Board of Peace Really Means?
+                        </h3>
+
+                        <p>
+                            The National Frontier · March 10, 2026
+                        </p>
+
+                    </div>
+
+                    <a href="https://thenationalfrontier.com/national/what-pakistans-entry-into-the-board-of-peace-really-means/"
+                       target="_blank"
+                       class="publication-link">
+
+                        Read ↗
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TESTIMONIALS
+    ===================================================== -->
+
+    <section id="testimonials">
+
+        <div class="container">
+
+            <div class="section-label">
+                06 — TESTIMONIALS
+            </div>
+
+
+            <h2 class="section-title">
+                What People Say
+            </h2>
+
+
+            <div class="two-column">
+
+
+                <div class="card review-card">
+
+                    <div class="quote">
+                        “
+                    </div>
+
+
+                    <p class="review-text">
+
+                        I have had the pleasure of knowing Samra Khaksar
+                        and can confidently say she is a thoughtful and
+                        dedicated researcher. She has a strong
+                        understanding of geopolitics and South Asian
+                        security, which is reflected in her clear,
+                        well-structured writing and insightful analysis.
+                        Samra approaches her work with professionalism
+                        and sincerity, consistently delivering
+                        high-quality results. I would highly recommend
+                        her to any organisation seeking a capable and
+                        reliable professional.
+
+                    </p>
+
+
+                    <div class="review-person">
+
+                        <h3>
+                            Muhammad Nouman
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card review-card">
+
+                    <div class="quote">
+                        “
+                    </div>
+
+
+                    <p class="review-text">
+
+                        I have had the opportunity to work with Samra
+                        Khaksar and have consistently been impressed by
+                        her analytical depth and clarity of thought. As a
+                        Strategic Studies student and emerging policy
+                        researcher, she demonstrates a strong ability to
+                        critically engage with complex geopolitical
+                        issues, particularly relating to South Asia and
+                        the Kashmir dispute.
+
+                        Her writing reflects not only academic rigor but
+                        also a nuanced understanding of policy dynamics,
+                        making her work both insightful and relevant.
+                        Samra is highly dedicated, articulate, and
+                        proactive in academic and professional settings.
+
+                    </p>
+
+
+                    <div class="review-person">
+
+                        <h3>
+                            Shehroz Hussain
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SKILLS
+    ===================================================== -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <div class="section-label">
+                07 — SKILLS
+            </div>
+
 
             <h2 class="section-title">
                 Expertise & Skills
             </h2>
-
-            <p class="section-description">
-                A combination of research, analytical, communication,
-                writing and strategic skills developed through academic
-                and professional experience.
-            </p>
 
 
             <div class="skills-grid">
@@ -2903,22 +2616,6 @@
                     OSINT
                 </span>
 
-                <span class="skill">
-                    Policy Writing
-                </span>
-
-                <span class="skill">
-                    Research Writing
-                </span>
-
-                <span class="skill">
-                    Critical Thinking
-                </span>
-
-                <span class="skill">
-                    Strategic Communication
-                </span>
-
             </div>
 
         </div>
@@ -2926,401 +2623,21 @@
     </section>
 
 
-
-    <!-- =========================================================
-         SERVICES
-    ========================================================= -->
-
-    <section id="services" class="reveal">
-
-        <div class="container">
-
-            <div class="section-label">
-                07 — SERVICES
-            </div>
-
-            <h2 class="section-title">
-                Research & Writing Services
-            </h2>
-
-            <p class="section-description">
-                Professional research, analytical writing and policy
-                support for academic, institutional and strategic
-                projects.
-            </p>
-
-
-            <div class="three-column">
-
-
-                <div class="card service-card">
-
-                    <div class="service-icon">
-                        01
-                    </div>
-
-                    <h3>
-                        Policy Research
-                    </h3>
-
-                    <p>
-                        Research and analytical support on security,
-                        foreign policy, geopolitics, international
-                        relations and strategic affairs.
-                    </p>
-
-                </div>
-
-
-                <div class="card service-card">
-
-                    <div class="service-icon">
-                        02
-                    </div>
-
-                    <h3>
-                        Policy Writing
-                    </h3>
-
-                    <p>
-                        Clear, structured and evidence-based policy
-                        articles, briefs, analytical pieces and
-                        strategic commentary.
-                    </p>
-
-                </div>
-
-
-                <div class="card service-card">
-
-                    <div class="service-icon">
-                        03
-                    </div>
-
-                    <h3>
-                        Research Assistance
-                    </h3>
-
-                    <p>
-                        Support with literature reviews, research
-                        design, source identification, analysis and
-                        academic research projects.
-                    </p>
-
-                </div>
-
-
-                <div class="card service-card">
-
-                    <div class="service-icon">
-                        04
-                    </div>
-
-                    <h3>
-                        Strategic Analysis
-                    </h3>
-
-                    <p>
-                        Analytical perspectives on strategic stability,
-                        deterrence, regional security and geopolitical
-                        developments.
-                    </p>
-
-                </div>
-
-
-                <div class="card service-card">
-
-                    <div class="service-icon">
-                        05
-                    </div>
-
-                    <h3>
-                        Academic Writing
-                    </h3>
-
-                    <p>
-                        Research-oriented academic writing, editing,
-                        structuring and analytical development for
-                        scholarly work.
-                    </p>
-
-                </div>
-
-
-                <div class="card service-card">
-
-                    <div class="service-icon">
-                        06
-                    </div>
-
-                    <h3>
-                        OSINT Research
-                    </h3>
-
-                    <p>
-                        Open-source research and information analysis
-                        for understanding contemporary political and
-                        security developments.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         LEADERSHIP & ACTIVITIES
-    ========================================================= -->
-
-    <section id="activities" class="reveal">
-
-        <div class="container">
-
-            <div class="section-label">
-                08 — LEADERSHIP & ACTIVITIES
-            </div>
-
-            <h2 class="section-title">
-                Leadership & Activities
-            </h2>
-
-            <p class="section-description">
-                Selected leadership, advocacy, research and
-                extracurricular activities.
-            </p>
-
-
-            <div class="three-column">
-
-
-                <div class="card activity-card">
-
-                    <div class="activity-number">
-                        ACTIVITY 01
-                    </div>
-
-                    <h3>
-                        Youth Advocacy
-                    </h3>
-
-                    <p>
-                        Delivered a statement at the 61st Session of
-                        the United Nations Human Rights Council,
-                        representing youth perspectives.
-                    </p>
-
-                </div>
-
-
-                <div class="card activity-card">
-
-                    <div class="activity-number">
-                        ACTIVITY 02
-                    </div>
-
-                    <h3>
-                        World Bank Youth Summit
-                    </h3>
-
-                    <p>
-                        Participated in the World Bank Group Youth
-                        Summit and engaged with discussions on youth
-                        and global development.
-                    </p>
-
-                </div>
-
-
-                <div class="card activity-card">
-
-                    <div class="activity-number">
-                        ACTIVITY 03
-                    </div>
-
-                    <h3>
-                        Research Competition
-                    </h3>
-
-                    <p>
-                        Secured 3rd Place in a National Research Poster
-                        Competition while competing alongside
-                        postgraduate researchers.
-                    </p>
-
-                </div>
-
-
-                <div class="card activity-card">
-
-                    <div class="activity-number">
-                        ACTIVITY 04
-                    </div>
-
-                    <h3>
-                        Research Leadership
-                    </h3>
-
-                    <p>
-                        Supervised and mentored interns in policy
-                        research, analytical writing and research
-                        development.
-                    </p>
-
-                </div>
-
-
-                <div class="card activity-card">
-
-                    <div class="activity-number">
-                        ACTIVITY 05
-                    </div>
-
-                    <h3>
-                        Public Speaking
-                    </h3>
-
-                    <p>
-                        Engaged in speaking, advocacy, academic
-                        discussions and youth-oriented forums.
-                    </p>
-
-                </div>
-
-
-                <div class="card activity-card">
-
-                    <div class="activity-number">
-                        ACTIVITY 06
-                    </div>
-
-                    <h3>
-                        Policy Engagement
-                    </h3>
-
-                    <p>
-                        Participated in seminars, expert discussions
-                        and institutional activities related to
-                        strategic affairs and policy.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         TESTIMONIALS
-    ========================================================= -->
-
-    <section id="testimonials" class="reveal">
-
-        <div class="container">
-
-            <div class="section-label">
-                09 — TESTIMONIALS
-            </div>
-
-            <h2 class="section-title">
-                What People Say
-            </h2>
-
-
-            <div class="two-column">
-
-
-                <div class="card">
-
-                    <div class="quote">
-                        “
-                    </div>
-
-                    <p class="review-text">
-
-                        I have had the pleasure of knowing Samra Khaksar
-                        and can confidently say she is a thoughtful and
-                        dedicated researcher. She has a strong
-                        understanding of geopolitics and South Asian
-                        security, reflected in her clear, well-structured
-                        writing and insightful analysis.
-
-                    </p>
-
-                    <div class="review-person">
-
-                        <h3>
-                            Muhammad Nouman
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="card">
-
-                    <div class="quote">
-                        “
-                    </div>
-
-                    <p class="review-text">
-
-                        I have had the opportunity to work with Samra
-                        Khaksar and have consistently been impressed by
-                        her analytical depth and clarity of thought.
-                        She demonstrates a strong ability to critically
-                        engage with complex geopolitical issues,
-                        particularly relating to South Asia and the
-                        Kashmir dispute.
-
-                    </p>
-
-                    <div class="review-person">
-
-                        <h3>
-                            Shehroz Hussain
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
+    <!-- =====================================================
          CONTACT
-    ========================================================= -->
+    ===================================================== -->
 
-    <section id="contact" class="reveal">
+    <section id="contact">
 
         <div class="container">
 
             <div class="section-label">
-                10 — CONTACT
+                08 — CONTACT
             </div>
 
+
             <h2 class="section-title">
-                Let's Connect
+                Let’s Connect
             </h2>
 
 
@@ -3333,25 +2650,27 @@
                         Open to meaningful collaboration.
                     </h3>
 
+
                     <p>
+
                         I welcome opportunities to collaborate with
                         researchers, policymakers, think tanks,
-                        government institutions and organizations
-                        working in strategic studies, defence and
-                        security, foreign policy, international
-                        relations and governance.
+                        government institutions, and international
+                        organizations working in strategic studies,
+                        defence and security, foreign policy,
+                        international relations, and governance.
+
                     </p>
 
-                    <a
-                        href="mailto:samrakhaksar14@gmail.com"
-                        class="primary-button">
+
+                    <a href="mailto:samrakhaksar14@gmail.com"
+                       class="primary-button">
 
                         Send an Email
 
                     </a>
 
                 </div>
-
 
 
                 <div class="card contact-card">
@@ -3363,40 +2682,34 @@
 
                     <div class="contact-links">
 
-                        <a
-                            href="mailto:samrakhaksar14@gmail.com"
-                            class="contact-link">
+                        <a href="mailto:samrakhaksar14@gmail.com"
+                           class="contact-link">
 
-                            Email:
-                            samrakhaksar14@gmail.com
+                            Email: samrakhaksar14@gmail.com
 
                         </a>
 
 
-                        <a
-                            href="tel:+923408996152"
-                            class="contact-link">
+                        <a href="tel:+923408996152"
+                           class="contact-link">
 
-                            Phone:
-                            +92 340 8996152
+                            Phone: +92 340 8996152
 
                         </a>
 
 
-                        <a
-                            href="https://www.linkedin.com/in/samra-khaksar-b098bb334/"
-                            target="_blank"
-                            class="contact-link">
+                        <a href="https://www.linkedin.com/in/samra-khaksar-b098bb334/"
+                           target="_blank"
+                           class="contact-link">
 
                             LinkedIn Profile ↗
 
                         </a>
 
 
-                        <a
-                            href="https://wa.me/923408996152"
-                            target="_blank"
-                            class="contact-link">
+                        <a href="https://wa.me/923408996152"
+                           target="_blank"
+                           class="contact-link">
 
                             WhatsApp ↗
 
@@ -3414,10 +2727,9 @@
     </section>
 
 
-
-    <!-- =========================================================
+    <!-- =====================================================
          FOOTER
-    ========================================================= -->
+    ===================================================== -->
 
     <footer>
 
@@ -3428,6 +2740,7 @@
                 <p>
                     © 2026 Samra Khaksar. All Rights Reserved.
                 </p>
+
 
                 <p>
                     Strategic Studies Researcher & Policy Writer
@@ -3440,17 +2753,11 @@
     </footer>
 
 
-
-    <!-- =========================================================
+    <!-- =====================================================
          JAVASCRIPT
-    ========================================================= -->
+    ===================================================== -->
 
     <script>
-
-
-        /* =========================================================
-           MOBILE MENU
-        ========================================================= */
 
         const mobileMenu =
             document.getElementById("mobileMenu");
@@ -3474,6 +2781,7 @@
         document.querySelectorAll(
             ".nav-links a"
         ).forEach(
+
             function (link) {
 
                 link.addEventListener(
@@ -3488,170 +2796,11 @@
                 );
 
             }
+
         );
-
-
-
-        /* =========================================================
-           VIEW MORE PUBLICATIONS
-        ========================================================= */
-
-        const viewMoreBtn =
-            document.getElementById("viewMoreBtn");
-
-        const morePublications =
-            document.getElementById("morePublications");
-
-
-        viewMoreBtn.addEventListener(
-            "click",
-            function () {
-
-                morePublications.classList.toggle("show");
-
-
-                if (
-                    morePublications.classList.contains("show")
-                ) {
-
-                    viewMoreBtn.innerHTML =
-                        "Show Less Publications ↑";
-
-                    setTimeout(
-                        function () {
-
-                            morePublications.scrollIntoView({
-                                behavior: "smooth",
-                                block: "start"
-                            });
-
-                        },
-                        150
-                    );
-
-                } else {
-
-                    viewMoreBtn.innerHTML =
-                        "View More Publications ↓";
-
-                }
-
-            }
-        );
-
-
-
-        /* =========================================================
-           SCROLL REVEAL ANIMATION
-        ========================================================= */
-
-        const revealElements =
-            document.querySelectorAll(".reveal");
-
-
-        const revealObserver =
-            new IntersectionObserver(
-                function(entries) {
-
-                    entries.forEach(
-                        function(entry) {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                entry.target.classList.add(
-                                    "visible"
-                                );
-
-                            }
-
-                        }
-                    );
-
-                },
-                {
-                    threshold: 0.12
-                }
-            );
-
-
-        revealElements.forEach(
-            function(element) {
-
-                revealObserver.observe(element);
-
-            }
-        );
-
-
-
-        /* =========================================================
-           ACTIVE NAVIGATION
-        ========================================================= */
-
-        const sections =
-            document.querySelectorAll("section");
-
-        const navigationLinks =
-            document.querySelectorAll(".nav-links a");
-
-
-        window.addEventListener(
-            "scroll",
-            function() {
-
-                let current = "";
-
-                sections.forEach(
-                    function(section) {
-
-                        const sectionTop =
-                            section.offsetTop - 150;
-
-                        const sectionHeight =
-                            section.offsetHeight;
-
-                        if (
-                            window.scrollY >= sectionTop &&
-                            window.scrollY <
-                            sectionTop + sectionHeight
-                        ) {
-
-                            current =
-                                section.getAttribute("id");
-
-                        }
-
-                    }
-                );
-
-
-                navigationLinks.forEach(
-                    function(link) {
-
-                        link.style.color = "";
-
-                        if (
-                            link.getAttribute("href") ===
-                            "#" + current
-                        ) {
-
-                            link.style.color =
-                                "var(--purple-light)";
-
-                        }
-
-                    }
-                );
-
-            }
-        );
-
 
     </script>
 
 
 </body>
-
 </html>
